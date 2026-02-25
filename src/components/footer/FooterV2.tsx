@@ -8,21 +8,21 @@ import { MapPin, Phone, Mail, ChevronRight } from "lucide-react";
 const QUICK_LINKS = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
-    { name: "Immigration Support", href: "/services" },
+    { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact" },
 ] as const;
 
 const SERVICES = [
-    { name: "Student Visa", href: "/study-destinations" },
-    { name: "Graduate Routes", href: "/services" },
-    { name: "Hamuw Visa", href: "/services" },
-    { name: "Settlement", href: "/services" },
+    { name: "Study Destinations", href: "/study-destinations" },
+    { name: "Universities", href: "/universities" },
+    { name: "Scholarships", href: "/scholarships" },
+    { name: "Become a Partner", href: "/become-a-partner" },
 ] as const;
 
 const RESOURCES = [
     { name: "AI App", href: "/ai-search" },
-    { name: "Blog", href: "/blog" },
     { name: "Guides", href: "/scholarships" },
+    { name: "Book Now", href: "/book" },
 ] as const;
 
 const FooterV2 = () => {
@@ -163,11 +163,6 @@ const FooterV2 = () => {
                     {/* Copyright */}
                     <div className="text-xs sm:text-sm text-white space-y-1">
                         <p>© {new Date().getFullYear()} Uniguru • All Rights Reserved</p>
-                        <p className="flex items-center justify-center gap-2 flex-wrap">
-                            <Link href="/privacy" className="hover:text-[#D4AF37]">Privacy Policy</Link>
-                            <span>|</span>
-                            <Link href="/terms" className="hover:text-[#D4AF37]">Terms & Conditions</Link>
-                        </p>
                     </div>
                 </div>
             </div>
