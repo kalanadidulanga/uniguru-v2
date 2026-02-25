@@ -31,12 +31,14 @@ interface Video {
 const LatestNews = () => {
     const [videos, setVideos] = useState<Video[] | null>(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [displayCount, setDisplayCount] = useState(6);
+    const itemsPerLoad = 6;
 
     useEffect(() => {
         const fetchVideos = async () => {
             const apiKey = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY || '';
             const channelId = 'UCeEkbPAUP38Y6NfqLy9zo-A'; // Uniguru Channel ID
-            const maxResults = 3;
+            const maxResults = 50; // Fetch more videos to allow load more functionality
 
             if (!apiKey) {
                 setIsLoading(false);
@@ -157,14 +159,14 @@ const LatestNews = () => {
                 {/* Video cards – glass style, gold accent, bento feel */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                     {isLoading ? (
-                        [1, 2, 3].map((i) => (
+                        [1, 2, 3, 4, 5, 6].map((i) => (
                             <div
                                 key={i}
                                 className="rounded-2xl overflow-hidden bg-white/20 backdrop-blur-sm animate-pulse aspect-[4/3] w-full"
                             />
                         ))
                     ) : displayVideos.length > 0 ? (
-                        displayVideos.map((video, index) => {
+                        displayVideos.slice(0, displayCount).map((video, index) => {
                             const isFallback = String(video.id.videoId).startsWith("demo");
                             const href = isFallback
                                 ? "https://www.youtube.com/@Uniguru_"
@@ -234,6 +236,19 @@ const LatestNews = () => {
                         </div>
                     )}
                 </div>
+
+                {/* Load More Button */}
+                {displayVideos.length > displayCount && (
+                    <div className="flex justify-center mt-12 sm:mt-14 lg:mt-16">
+                        <button
+                            onClick={() => setDisplayCount(displayCount + itemsPerLoad)}
+                            className="px-8 py-3 rounded-full bg-[#D4AF37] text-[#1a3b85] font-semibold hover:bg-[#C49B2E] transition-colors shadow-lg hover:shadow-[0_8px_24px_rgba(212,175,55,0.3)] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black/40 focus-visible:ring-[#D4AF37]"
+                            aria-label="Load more videos"
+                        >
+                            Load More
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
     );
