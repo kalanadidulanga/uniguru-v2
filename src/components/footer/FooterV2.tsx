@@ -13,7 +13,6 @@ const QUICK_LINKS = [
 ] as const;
 
 const SERVICES = [
-    { name: "Study Destinations", href: "/study-destinations" },
     { name: "Universities", href: "/universities" },
     { name: "Scholarships", href: "/scholarships" },
     { name: "Become a Partner", href: "/become-a-partner" },
