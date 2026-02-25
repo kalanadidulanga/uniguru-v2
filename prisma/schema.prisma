@@ -1,0 +1,192 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-1.0.x"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int        @id @default(autoincrement())
+  name      String
+  email     String     @unique
+  password  String     @map("password_hash")
+  role      String
+  isBlock   Boolean    @default(false)
+  createdAt DateTime   @default(now())
+  partners  Partners[] // Define one-to-many relationship from User to Partners
+  students  Students[]
+}
+
+model Partners {
+  id          Int    @id @default(autoincrement())
+  userId      Int    @unique
+  nic         String @unique
+  fullName    String
+  partnerCode String @unique
+  mobile      String
+
+  studentQuestionnaires StudentQuestionnaires[]
+  user                  User                    @relation(fields: [userId], references: [id]) // Define relation to User model
+  Students              Students[]
+}
+
+model Intake {
+  id                    Int                     @id @default(autoincrement())
+  name                  String
+  status                String                  @default("Active")
+  studentQuestionnaires StudentQuestionnaires[]
+  students              Students[]
+}
+
+model StudentQuestionnaires {
+  id                                  Int      @id @default(autoincrement())
+  agentcode                           String? // Optional field
+  country                             String? // Optional field
+  name                                String
+  email                               String   @unique
+  mobile                              String
+  dob                                 String
+  intakeId                            Int
+  courselevel                         String
+  subject                             String
+  olenglish                           String
+  alenglish                           String
+  ieltsorpte                          String
+  academicqulification                String
+  finalgradeforhighestqualification   String?
+  gapmorethanthreemonthsoncv          String
+  Doyouhaveatleast2millionLKR         String?
+  doyouhavepreviousvisarefusal        String
+  whatisyourcurrentrelationshipstatus String
+  areyouplanningtobringdependents     String
+  status                              String   @default("Pending")
+  createdAt                           DateTime @default(now())
+
+  partners Partners? @relation(fields: [agentcode], references: [partnerCode])
+  intake   Intake    @relation(fields: [intakeId], references: [id]) // Define relation to User model
+  Students Students?
+}
+
+model Students {
+  id                      Int      @id @default(autoincrement())
+  StudentQuestionnaireoId Int      @unique
+  userId                  Int?     @unique
+  agentcode               String? // Optional field
+  name                    String
+  email                   String   @unique
+  mobile                  String
+  intakeId                Int
+  consultationDone        Boolean  @default(false)
+  cvSOPAssitance          Boolean  @default(false)
+  notes                   String?
+  feedbackReportSent      Boolean  @default(false)
+  status                  String   @default("Pending")
+  createdAt               DateTime @default(now())
+
+  user                  User?                 @relation(fields: [userId], references: [id])
+  intake                Intake                @relation(fields: [intakeId], references: [id])
+  studentUniversities   StudentUniversities[]
+  studentDocuments      StudentDocuments?
+  StudentQuestionnaireo StudentQuestionnaires @relation(fields: [StudentQuestionnaireoId], references: [id])
+  partners              Partners?             @relation(fields: [agentcode], references: [partnerCode])
+}
+
+model StudentDocuments {
+  id                           Int      @id @default(autoincrement())
+  studentId                    Int      @unique
+  completedUniguruForm         Boolean? @default(false)
+  passportCopy                 Boolean? @default(false)
+  ol                           Boolean? @default(false)
+  al                           Boolean? @default(false)
+  degreeCertificate            Boolean? @default(false)
+  degreeTranscript             Boolean? @default(false)
+  ieltsCertificate             Boolean? @default(false)
+  anUpToDateCV                 Boolean? @default(false)
+  statementOfPurpose           Boolean? @default(false)
+  academicReferenceLetters     Boolean? @default(false)
+  professionalReferenceLetters Boolean? @default(false)
+  serviceLetters               Boolean? @default(false)
+  notes                        String?
+
+  student Students @relation(fields: [studentId], references: [id])
+}
+
+model StudentUniversities {
+  id                                 Int      @id @default(autoincrement())
+  studentId                          Int
+  country                            String
+  currentStatusId                    Int
+  universityId                       Int
+  courseName                         String
+  statusNotes                        String?
+  tuitionPaid                        Boolean  @default(false)
+  financialDocumentationConsultation Boolean  @default(false)
+  tbTestCompleted                    Boolean  @default(false)
+  fundsMaturedInTheBank              Boolean  @default(false)
+  courseUrl                          String?
+  annualTutionFee                    String?
+  scholarship                        String?
+  initialUniversityFee               String?
+  requiredIELTSScore                 String?
+  remarks                            String?
+  createdAt                          DateTime @default(now())
+
+  student       Students                  @relation(fields: [studentId], references: [id])
+  currentStatus StudentUniversitiesStatus @relation(fields: [currentStatusId], references: [value])
+  university    UniversitiesList          @relation(fields: [universityId], references: [id])
+}
+
+model StudentUniversitiesStatus {
+  value               Int                   @id @default(autoincrement())
+  label               String
+  studentUniversities StudentUniversities[]
+}
+
+model Destination {
+  id          Int     @id @default(autoincrement())
+  destination String  @unique
+  src         String?
+  name        String
+
+  Accommodation Accommodation[]
+  universities  UniversitiesList[]
+}
+
+model Accommodation {
+  id            Int      @id @default(autoincrement())
+  destinationId Int
+  src           String   @db.VarChar(1000)
+  name          String
+  desc          String
+  location      String
+  price         String
+  createdAt     DateTime @default(now())
+
+  destination Destination @relation(fields: [destinationId], references: [id])
+}
+
+model UniversitiesList {
+  id            Int    @id @default(autoincrement())
+  destinationId Int
+  name          String
+  websiteUrl    String
+  imageUrl      String @db.VarChar(1000)
+
+  destination         Destination           @relation(fields: [destinationId], references: [id])
+  StudentUniversities StudentUniversities[]
+}
+
+model Notices {
+  id       Int      @id @default(autoincrement())
+  Notice   String?  @db.VarChar(500) // Limits the Notice field to 255 characters
+  dataTime DateTime @default(now())
+}
+
+model Emails {
+  id       Int      @id @default(autoincrement())
+  email    String   @unique
+  dataTime DateTime @default(now())
+}

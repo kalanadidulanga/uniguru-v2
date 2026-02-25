@@ -1,0 +1,1 @@
+"build": "prisma db push && prisma generate && next build",

@@ -1,0 +1,59 @@
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import SideBar from "@/components/partner/SideBar";
+import { Poppins } from "next/font/google"; // Import Poppins font
+import { getSession } from "@/lib/getSession";
+import { redirect } from "next/navigation";
+import LogoutBtn from "@/components/myComponents/LogoutBtn";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const layout = async ({ children }: { children: React.ReactNode }) => {
+  const session = await getSession();
+  if (!session || session?.user?.role !== "partner") {
+    redirect("/login");
+  }
+  return (
+    <div
+      className={`${poppins.className} flex flex-col flex-1 h-screen overflow-hidden`}
+    >
+      <div className=" p-3 flex items-center justify-between h-[10%]">
+        <Link href={"/partner"} className="">
+          <Image
+            src={"/logo2.png"}
+            alt="UNIGURU"
+            width={150}
+            height={100}
+            priority
+          />
+        </Link>
+        <div className=" flex items-center gap-2">
+          <LogoutBtn className=" hidden md:flex" />
+
+          <Avatar className="border">
+            <AvatarImage src="/person.jpg" />
+            <AvatarFallback>{session?.user.name?.slice(0, 2)}</AvatarFallback>
+          </Avatar>
+
+          <div className=" flex flex-col">
+            <p className=" text-my-gray font-medium">{session?.user.name}</p>
+            <p className=" text-my-gray2 text-sm">{session?.user.email}</p>
+          </div>
+        </div>
+      </div>
+      <div className=" flex flex-1 h-[90%]">
+        <SideBar />
+        <div className=" border flex-1 bg-[#FAFAFB] overflow-y-auto">
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default layout;
