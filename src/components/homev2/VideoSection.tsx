@@ -1,13 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Play, ArrowRight, Shield, Clock, Users, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Shield, Clock, Users, CheckCircle2 } from "lucide-react";
 
 const VideoSection = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-
   return (
     <section className="bg-[#fafbfc] py-16 sm:py-20 lg:py-24 font-sans">
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,34 +69,16 @@ const VideoSection = () => {
 
           {/* Left — Video */}
           <div>
-            <div
-              className="relative aspect-video rounded-lg overflow-hidden bg-[#0f2554] cursor-pointer group"
-              onClick={() => setIsPlaying(!isPlaying)}
-            >
-              {/* University campus thumbnail */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                style={{
-                  backgroundImage:
-                    "url(https://images.unsplash.com/photo-1565688534245-05d6b5be184a?auto=format&fit=crop&w=1200&q=80)",
-                }}
-              />
-              <div className="absolute inset-0 bg-[#0f2554]/45" />
-
-              {/* Play Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#D4AF37] flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
-                  <Play className="w-6 h-6 sm:w-7 sm:h-7 text-white ml-1" fill="white" />
-                </div>
-              </div>
-
-              {/* Bottom bar */}
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0f2554]/80 to-transparent px-4 pb-3 pt-8">
-                <div className="flex items-center justify-between">
-                  <p className="text-white text-sm font-medium">Our London Office — Your Journey Starts Here</p>
-                  <span className="bg-white/20 text-white text-xs px-2 py-0.5 rounded">2:45</span>
-                </div>
-              </div>
+            <div className="relative aspect-video rounded-lg overflow-hidden bg-[#0f2554] group">
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+              >
+                <source src="/1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
 
