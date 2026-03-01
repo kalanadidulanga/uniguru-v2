@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { STUDY_DESTINATIONS_v2 } from "@/constants/data";
 import { ArrowRight, CheckCircle2, ChevronDown } from "lucide-react";
 import { sendEligibilityAssessmentEmail } from "@/actions/mailSending";
+import TrustBarSection from "./TrustBarSection";
 
 const CODES = [
   { code: "+44", flag: "gb" }, { code: "+1",  flag: "us" },
@@ -266,64 +267,7 @@ const HeroSection = () => {
       </div>
 
       {/* Trust Bar - Bottom of Hero Section */}
-      <div className="relative z-10 w-full border-t border-white/20 bg-white/95 backdrop-blur-sm mt-auto">
-        <div className="max-w-[1800px] mx-auto px-4 sm:px-5 lg:px-6 xl:px-8 2xl:px-10 py-4 sm:py-5">
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:gap-12">
-            {/* British Council */}
-            <div className="flex items-center gap-2.5">
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
-                <Image src="/british-council-logo.png" alt="British Council" fill className="object-contain" />
-              </div>
-              <div>
-                <p className="text-xs sm:text-sm font-semibold text-gray-900">British Council</p>
-                <p className="text-[10px] sm:text-xs text-gray-500">Certified Centre</p>
-              </div>
-            </div>
-
-            {/* Divider */}
-            <div className="hidden sm:block w-px h-8 sm:h-10 bg-gray-200"></div>
-
-            {/* UCAS */}
-            <div className="flex items-center gap-2.5">
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
-                <Image src="/ucas-logo.png" alt="UCAS" fill className="object-contain" />
-              </div>
-              <div>
-                <p className="text-xs sm:text-sm font-semibold text-gray-900">UCAS</p>
-                <p className="text-[10px] sm:text-xs text-gray-500">Registered Centre</p>
-              </div>
-            </div>
-
-            {/* Divider */}
-            <div className="hidden sm:block w-px h-8 sm:h-10 bg-gray-200"></div>
-
-            {/* ICEF */}
-            <div className="flex items-center gap-2.5">
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
-                <Image src="/icef-logo.png" alt="ICEF" fill className="object-contain" />
-              </div>
-              <div>
-                <p className="text-xs sm:text-sm font-semibold text-gray-900">ICEF</p>
-                <p className="text-[10px] sm:text-xs text-gray-500">Certified Agent</p>
-              </div>
-            </div>
-
-            {/* Divider */}
-            <div className="hidden sm:block w-px h-8 sm:h-10 bg-gray-200"></div>
-
-            {/* IAA Regulated */}
-            <div className="flex items-center gap-2.5">
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
-                <Image src="/iaa-logo.png" alt="IAA Regulated" fill className="object-contain" />
-              </div>
-              <div>
-                <p className="text-xs sm:text-sm font-semibold text-gray-900">IAA</p>
-                <p className="text-[10px] sm:text-xs text-gray-500">Regulated Adviser</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <TrustBarSection />
     </section>
   );
 };
