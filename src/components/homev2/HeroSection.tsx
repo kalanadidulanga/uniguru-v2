@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import {
   Select,
   SelectContent,
@@ -14,7 +13,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { STUDY_DESTINATIONS_v2 } from "@/constants/data";
-import { ArrowRight, Star, MapPin, CheckCircle2, ChevronDown } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronDown } from "lucide-react";
 import { sendEligibilityAssessmentEmail } from "@/actions/mailSending";
 
 const CODES = [
@@ -269,65 +268,57 @@ const HeroSection = () => {
       {/* Trust Bar - Bottom of Hero Section */}
       <div className="relative z-10 w-full border-t border-white/20 bg-white/95 backdrop-blur-sm mt-auto">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-5 lg:px-6 xl:px-8 2xl:px-10 py-4 sm:py-5">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8">
-            {/* Google Reviews */}
-            <Link
-              href="https://www.google.com/search?q=uniguru+reviews"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2.5 sm:gap-3 group"
-            >
-              <div className="flex items-center gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-[#D4AF37] text-[#D4AF37]"
-                  />
-                ))}
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:gap-12">
+            {/* British Council */}
+            <div className="flex items-center gap-2.5">
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
+                <Image src="/british-council-logo.png" alt="British Council" fill className="object-contain" />
               </div>
               <div>
-                <p className="text-xs sm:text-sm font-semibold text-gray-900 group-hover:text-[#1a3b85] transition-colors">
-                  97+ Google Reviews
-                </p>
-                <p className="text-[10px] sm:text-xs text-gray-500">
-                  Trusted by students
-                </p>
-              </div>
-            </Link>
-
-            {/* Divider */}
-            <div className="hidden sm:block w-px h-8 sm:h-10 bg-gray-200"></div>
-
-            {/* IAA Regulated */}
-            <div className="flex items-center gap-2.5 sm:gap-3">
-              <div className="relative w-14 h-7 sm:w-16 sm:h-8 flex-shrink-0">
-                <Image src="/iaa-logo.png" alt="IAA Regulated" fill className="object-contain" />
-              </div>
-              <div>
-                <p className="text-xs sm:text-sm font-semibold text-gray-900">
-                  IAA Regulated
-                </p>
-                <p className="text-[10px] sm:text-xs text-gray-500">
-                  Immigration Advisers Authority
-                </p>
+                <p className="text-xs sm:text-sm font-semibold text-gray-900">British Council</p>
+                <p className="text-[10px] sm:text-xs text-gray-500">Certified Centre</p>
               </div>
             </div>
 
             {/* Divider */}
             <div className="hidden sm:block w-px h-8 sm:h-10 bg-gray-200"></div>
 
-            {/* London Registered Address */}
-            <div className="flex items-center gap-2.5 sm:gap-3">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#1a3b85]/5 flex items-center justify-center">
-                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#1a3b85]" />
+            {/* UCAS */}
+            <div className="flex items-center gap-2.5">
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
+                <Image src="/ucas-logo.png" alt="UCAS" fill className="object-contain" />
               </div>
               <div>
-                <p className="text-xs sm:text-sm font-semibold text-gray-900">
-                  London Registered
-                </p>
-                <p className="text-[10px] sm:text-xs text-gray-500">
-                  128 City Road, London EC1V 2NX
-                </p>
+                <p className="text-xs sm:text-sm font-semibold text-gray-900">UCAS</p>
+                <p className="text-[10px] sm:text-xs text-gray-500">Registered Centre</p>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="hidden sm:block w-px h-8 sm:h-10 bg-gray-200"></div>
+
+            {/* ICEF */}
+            <div className="flex items-center gap-2.5">
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
+                <Image src="/icef-logo.png" alt="ICEF" fill className="object-contain" />
+              </div>
+              <div>
+                <p className="text-xs sm:text-sm font-semibold text-gray-900">ICEF</p>
+                <p className="text-[10px] sm:text-xs text-gray-500">Certified Agent</p>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="hidden sm:block w-px h-8 sm:h-10 bg-gray-200"></div>
+
+            {/* IAA Regulated */}
+            <div className="flex items-center gap-2.5">
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
+                <Image src="/iaa-logo.png" alt="IAA Regulated" fill className="object-contain" />
+              </div>
+              <div>
+                <p className="text-xs sm:text-sm font-semibold text-gray-900">IAA</p>
+                <p className="text-[10px] sm:text-xs text-gray-500">Regulated Adviser</p>
               </div>
             </div>
           </div>

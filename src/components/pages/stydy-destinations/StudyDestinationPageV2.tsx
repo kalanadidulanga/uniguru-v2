@@ -22,7 +22,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
       <DestinationHero dataSet={dataSet} />
 
       {/* Bento: Why Choose, Quick Facts, Cost */}
-      <div id="details" className="relative z-10 -mt-8 lg:-mt-16 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 mb-16 sm:mb-20">
+      <div id="details" className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <DestinationWhyChoose data={dataSet.why_choose_section} />
           <DestinationQuickFacts data={dataSet.quick_facts_section} />
