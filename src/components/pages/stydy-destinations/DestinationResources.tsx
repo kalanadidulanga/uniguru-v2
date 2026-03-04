@@ -19,7 +19,7 @@ const DestinationResources = ({ dataSet }: DestinationResourcesProps) => {
       aria-labelledby="resources-heading"
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent" aria-hidden />
-      <div className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-start">
           {/* YouTube playlist */}
           <div className="space-y-6">
@@ -57,7 +57,7 @@ const DestinationResources = ({ dataSet }: DestinationResourcesProps) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {universities.universities.map((item, index) => (
                 <Link key={index} href={item.link} className="group block">
-                  <div className="bg-white/10 hover:bg-white/15 backdrop-blur-sm border border-white/10 hover:border-[#D4AF37]/30 p-6 rounded-2xl transition-all duration-300 flex items-center justify-between h-full">
+                  <div className="bg-white/10 hover:bg-white/15 border border-white/10 hover:border-[#D4AF37]/30 p-6 rounded-2xl transition-all duration-300 flex items-center justify-between h-full">
                     <span className="font-semibold text-lg">{item.name}</span>
                     <div className="p-2 rounded-xl bg-white/10 group-hover:bg-[#D4AF37] group-hover:text-[#1a3b85] text-white transition-colors shrink-0">
                       <ArrowRight size={18} className="group-hover:translate-x-0.5 transition-transform" aria-hidden />

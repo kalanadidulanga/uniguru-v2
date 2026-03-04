@@ -12,11 +12,10 @@ import {
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { STUDY_DESTINATIONS_v2 } from "@/constants/data";
 import { ArrowRight, CheckCircle2, ChevronDown } from "lucide-react";
-import { sendEligibilityAssessmentEmail } from "@/actions/mailSending";
+import { sendAccommodationEnquiryEmail } from "@/actions/mailSending";
 import TrustBarSection from "@/components/homev2/TrustBarSection";
-import type { StudyDestinationDataSet } from "./types";
+import type { AccommodationCountryDataSet } from "./types";
 
 const CODES = [
   { code: "+44", flag: "gb" }, { code: "+1",  flag: "us" },
@@ -26,44 +25,45 @@ const CODES = [
   { code: "+49", flag: "de" }, { code: "+31", flag: "nl" },
 ];
 
-interface DestinationHeroProps {
-  dataSet: StudyDestinationDataSet;
+interface Props {
+  dataSet: AccommodationCountryDataSet;
 }
 
-const DestinationHero = ({ dataSet }: DestinationHeroProps) => {
+const AccommodationCountryHero = ({ dataSet }: Props) => {
   const hero = dataSet.hero_section;
-  const heroImage1 = hero.images?.[0];
-  const UPPERCASE_DESTINATIONS: Record<string, string> = {
-    uk: "UK",
-  };
-  const destinationLabel =
-    UPPERCASE_DESTINATIONS[dataSet.destination] ||
-    dataSet.destination.charAt(0).toUpperCase() + dataSet.destination.slice(1);
+  const heroImage = hero.image;
 
-  const [destination, setDestination] = useState<string>(destinationLabel);
-  const [intake, setIntake] = useState<string>("");
-  const [whatsapp, setWhatsapp] = useState<string>("");
-  const [countryCode, setCountryCode] = useState<string>("+44");
+  const [intake, setIntake] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [countryCode, setCountryCode] = useState("+44");
+  const [budget, setBudget] = useState("");
+  const [city, setCity] = useState("");
   const [flagOpen, setFlagOpen] = useState(false);
-  const [wantsConsultation, setWantsConsultation] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [submitted, setSubmitted] = useState<boolean>(false);
-  const [error, setError] = useState<string>("");
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-    if (!destination || !intake || !whatsapp) {
-      setError("Please fill in all fields.");
+    if (!whatsapp) {
+      setError("Please enter your WhatsApp number.");
       return;
     }
     setLoading(true);
-    const result = await sendEligibilityAssessmentEmail({
-      destination,
-      intake,
-      whatsapp,
-      countryCode,
-      wantsConsultation,
+    const message = [
+      `Country: ${dataSet.country_name}`,
+      `Intake / Move-in: ${intake || "Not specified"}`,
+      `Budget band: ${budget || "Not specified"}`,
+      `Preferred city: ${city || "Not specified"}`,
+    ].join("\n");
+
+    const result = await sendAccommodationEnquiryEmail({
+      destination: dataSet.country_name,
+      name: "Accommodation Shortlist Request",
+      mobile: `${countryCode}${whatsapp}`,
+      email: "shortlist-request@uniguru.co",
+      message,
     });
     setLoading(false);
     if (result.status) {
@@ -75,12 +75,12 @@ const DestinationHero = ({ dataSet }: DestinationHeroProps) => {
 
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Background Image — destination hero image */}
+      {/* Background */}
       <div className="absolute inset-0">
-        {heroImage1 ? (
+        {heroImage ? (
           <Image
-            src={heroImage1.src}
-            alt={heroImage1.alt || `Study in ${destinationLabel}`}
+            src={heroImage.src}
+            alt={heroImage.alt}
             fill
             priority
             className="object-cover"
@@ -89,64 +89,68 @@ const DestinationHero = ({ dataSet }: DestinationHeroProps) => {
         ) : (
           <div className="absolute inset-0 bg-[#1a3b85]" />
         )}
-        {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/70" />
       </div>
 
-      {/* Main Content Container */}
+      {/* Content */}
       <div className="relative z-10 flex-1 flex flex-col w-full max-w-[1400px] mx-auto px-4 sm:px-5 lg:px-6 xl:px-8 2xl:px-10 pt-16 sm:pt-20 lg:pt-24">
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-5 gap-12 sm:gap-16 lg:gap-20 xl:gap-24 items-end lg:items-center pb-8 lg:pb-0">
-          {/* Left Side — Text Content */}
+          {/* Left: Text */}
           <div className="flex flex-col justify-start space-y-5 sm:space-y-6 lg:space-y-7 text-center lg:text-left pb-8 lg:pb-0 lg:col-span-3 w-full min-w-0">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-white leading-[1.2] tracking-tight w-full mx-auto lg:mx-0">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.2] tracking-tight">
               {hero.title}
             </h1>
-
-            <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed w-full mx-auto lg:mx-0 font-normal max-w-2xl">
-              {hero.description}
+            <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
+              {hero.subline}
+            </p>
+            <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              {hero.support_line}
             </p>
 
-            {/* Logo / Brand Element */}
+            {/* Chips */}
+            <div className="flex flex-wrap gap-3 pt-2 justify-center lg:justify-start">
+              {hero.chips.map((chip, i) => (
+                <span
+                  key={i}
+                  className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-medium"
+                >
+                  {chip.label}
+                </span>
+              ))}
+            </div>
+
+            {/* Brand */}
             <div className="flex items-center gap-3 pt-2 sm:pt-3 justify-center lg:justify-start">
               <div className="relative w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex-shrink-0">
-                <Image
-                  src="/logo-1.png"
-                  alt="Uniguru Logo"
-                  fill
-                  className="object-contain"
-                />
+                <Image src="/logo-1.png" alt="Uniguru Logo" fill className="object-contain" />
               </div>
-              <span className="text-base sm:text-lg lg:text-xl text-white/80 font-medium">
-                Uniguru
-              </span>
+              <span className="text-base sm:text-lg lg:text-xl text-white/80 font-medium">Uniguru</span>
             </div>
           </div>
 
-          {/* Right Side — Eligibility Form Card */}
+          {/* Right: Form */}
           <div className="w-full max-w-lg mx-auto lg:max-w-none lg:col-span-2 lg:self-end">
             <div className="bg-white rounded-t-2xl shadow-2xl p-5 sm:p-6 lg:p-7 border border-gray-100">
-              {/* Form Header */}
               <div className="mb-5 sm:mb-6">
                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-[#1a3b85] mb-1.5">
-                  Check Your {destinationLabel} Eligibility
+                  Get Your Shortlist
                 </h2>
                 <p className="text-xs sm:text-sm text-gray-600">
-                  Get your personalised shortlist in minutes
+                  Accommodation options matched to your needs
                 </p>
               </div>
 
               {submitted ? (
-                /* Success State */
                 <div className="flex flex-col items-center justify-center py-8 text-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
                     <CheckCircle2 className="w-8 h-8 text-green-600" />
                   </div>
                   <div>
                     <p className="text-lg font-semibold text-[#1a3b85]">Request Received!</p>
-                    <p className="text-sm text-gray-500 mt-1">Our team will reach out on your WhatsApp within 6 hours.</p>
+                    <p className="text-sm text-gray-500 mt-1">We will get back to you within 24 to 48 hours.</p>
                   </div>
                   <button
-                    onClick={() => { setSubmitted(false); setDestination(destinationLabel); setIntake(""); setWhatsapp(""); setCountryCode("+44"); setWantsConsultation(false); }}
+                    onClick={() => { setSubmitted(false); setIntake(""); setWhatsapp(""); setBudget(""); setCity(""); }}
                     className="text-xs text-[#1a3b85] underline underline-offset-2"
                   >
                     Submit another request
@@ -154,36 +158,16 @@ const DestinationHero = ({ dataSet }: DestinationHeroProps) => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
-                  {/* Destination Field */}
+                  {/* Intake */}
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
-                      Preferred Destination
-                    </label>
-                    <Select value={destination} onValueChange={setDestination}>
-                      <SelectTrigger className="w-full h-11 text-sm sm:text-base border-gray-300 focus:border-[#1a3b85] focus:ring-[#1a3b85]">
-                        <SelectValue placeholder="Select destination" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {STUDY_DESTINATIONS_v2.map((dest, index) => (
-                          <SelectItem key={index} value={dest.name}>
-                            {dest.name}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  {/* Intake Field */}
-                  <div>
-                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
-                      Preferred Intake
+                      Intake / Move-in
                     </label>
                     <Select value={intake} onValueChange={setIntake}>
                       <SelectTrigger className="w-full h-11 text-sm sm:text-base border-gray-300 focus:border-[#1a3b85] focus:ring-[#1a3b85]">
-                        <SelectValue placeholder="Select intake period" />
+                        <SelectValue placeholder="Select intake" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="January 2026">January 2026</SelectItem>
                         <SelectItem value="September 2026">September 2026</SelectItem>
                         <SelectItem value="January 2027">January 2027</SelectItem>
                         <SelectItem value="September 2027">September 2027</SelectItem>
@@ -191,10 +175,44 @@ const DestinationHero = ({ dataSet }: DestinationHeroProps) => {
                     </Select>
                   </div>
 
-                  {/* WhatsApp Field */}
+                  {/* Budget + City row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                    <div>
+                      <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
+                        Budget Band
+                      </label>
+                      <Select value={budget} onValueChange={setBudget}>
+                        <SelectTrigger className="w-full h-11 text-sm sm:text-base border-gray-300 focus:border-[#1a3b85] focus:ring-[#1a3b85]">
+                          <SelectValue placeholder="Select budget" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="Budget">Budget</SelectItem>
+                          <SelectItem value="Mid-range">Mid-range</SelectItem>
+                          <SelectItem value="Premium">Premium</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div>
+                      <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
+                        Preferred City
+                      </label>
+                      <Select value={city} onValueChange={setCity}>
+                        <SelectTrigger className="w-full h-11 text-sm sm:text-base border-gray-300 focus:border-[#1a3b85] focus:ring-[#1a3b85]">
+                          <SelectValue placeholder="Select city" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {dataSet.choose_city_section.cities.map((c, i) => (
+                            <SelectItem key={i} value={c.name}>{c.name}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+
+                  {/* WhatsApp */}
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
-                      WhatsApp Number
+                      WhatsApp Number <span className="text-red-400">*</span>
                     </label>
                     <div className="flex gap-2">
                       <Popover open={flagOpen} onOpenChange={setFlagOpen}>
@@ -235,42 +253,20 @@ const DestinationHero = ({ dataSet }: DestinationHeroProps) => {
                     </div>
                   </div>
 
-                  {/* Checkbox Option */}
-                  <div className="flex items-start gap-2.5 pt-0.5">
-                    <input
-                      type="checkbox"
-                      id="dest-consultation"
-                      checked={wantsConsultation}
-                      onChange={(e) => setWantsConsultation(e.target.checked)}
-                      className="mt-0.5 w-4 h-4 text-[#1a3b85] border-gray-300 rounded focus:ring-[#1a3b85] cursor-pointer"
-                    />
-                    <label
-                      htmlFor="dest-consultation"
-                      className="text-xs sm:text-sm text-gray-600 cursor-pointer leading-relaxed"
-                    >
-                      Book a free consultation within 1 hour
-                    </label>
-                  </div>
+                  {error && <p className="text-xs text-red-500">{error}</p>}
 
-                  {/* Error Message */}
-                  {error && (
-                    <p className="text-xs text-red-500">{error}</p>
-                  )}
-
-                  {/* Primary CTA Button */}
                   <Button
                     type="submit"
                     disabled={loading}
                     className="w-full h-11 sm:h-12 bg-[#1a3b85] hover:bg-[#152d6b] text-white font-medium text-sm sm:text-base rounded-lg shadow-md hover:shadow-lg transition-all duration-200 mt-1 relative overflow-hidden group disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     <span className="relative z-10 flex items-center justify-center">
-                      {loading ? "Submitting..." : "Free Eligibility Assessment"}
+                      {loading ? "Submitting..." : "Get My Shortlist"}
                       {!loading && <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />}
                     </span>
                     <span className="absolute top-0 right-0 w-1 h-full bg-[#D4AF37]" />
                   </Button>
 
-                  {/* Additional Info */}
                   <p className="text-[10px] sm:text-xs text-gray-500 text-center pt-1">
                     By submitting, you agree to our privacy policy
                   </p>
@@ -281,10 +277,9 @@ const DestinationHero = ({ dataSet }: DestinationHeroProps) => {
         </div>
       </div>
 
-      {/* Trust Bar — Bottom of Hero Section */}
       <TrustBarSection />
     </section>
   );
 };
 
-export default DestinationHero;
+export default AccommodationCountryHero;

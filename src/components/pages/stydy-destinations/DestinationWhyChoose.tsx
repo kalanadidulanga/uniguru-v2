@@ -16,9 +16,9 @@ const DestinationWhyChoose = ({ data }: DestinationWhyChooseProps) => {
         </div>
         <h2 className="text-xl sm:text-2xl font-semibold text-[#1a3b85]">{data.title}</h2>
       </div>
-      <p className="text-slate-600 text-base sm:text-lg leading-relaxed">{data.content}</p>
+      <p className="text-gray-600 text-base sm:text-lg leading-relaxed">{data.content}</p>
       {data.bullets && data.bullets.length > 0 && (
-        <ul className="mt-4 space-y-1 text-slate-600 text-base sm:text-lg leading-relaxed list-disc list-inside">
+        <ul className="mt-4 space-y-1 text-gray-600 text-base sm:text-lg leading-relaxed list-disc list-inside">
           {data.bullets.map((item, index) => (
             <li key={index}>{item}</li>
           ))}

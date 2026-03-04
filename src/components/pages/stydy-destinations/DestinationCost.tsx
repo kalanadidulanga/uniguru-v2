@@ -17,7 +17,7 @@ const DestinationCost = ({ data }: DestinationCostProps) => {
           </div>
           <div>
             <h2 className="text-xl sm:text-2xl font-semibold text-[#1a3b85]">{data.title}</h2>
-            <p className="text-slate-500 text-sm mt-0.5">Estimated expenses for international students</p>
+            <p className="text-gray-500 text-sm mt-0.5">Estimated expenses for international students</p>
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@ const DestinationCost = ({ data }: DestinationCostProps) => {
             key={index}
             className="p-4 rounded-xl bg-slate-50 hover:bg-[#1a3b85]/5 transition-colors border border-transparent hover:border-[#D4AF37]/20"
           >
-            <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-2 line-clamp-2 min-h-[2.5rem]">
+            <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-2 line-clamp-2 min-h-[2.5rem]">
               {row.education_level}
             </p>
             <p className="text-lg sm:text-xl font-semibold text-[#1a3b85]">{row.cost_range}</p>

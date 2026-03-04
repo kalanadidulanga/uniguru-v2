@@ -42,13 +42,13 @@ interface StudyDestinationPageV2Props {
 const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
   return (
     <div
-      className="min-h-screen font-sans text-slate-800 bg-slate-50 selection:bg-[#1a3b85] selection:text-white overflow-x-hidden"
+      className="min-h-screen text-gray-800 bg-slate-50 selection:bg-[#1a3b85] selection:text-white overflow-x-hidden"
       role="main"
     >
       <DestinationHero dataSet={dataSet} />
 
       {/* Bento: Why Choose + Quick Facts (+ Cost if no detailed costs section) */}
-      <div id="details" className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-16 sm:py-20">
+      <div id="details" className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <DestinationWhyChoose data={dataSet.why_choose_section} />
           <DestinationQuickFacts data={dataSet.quick_facts_section} />
@@ -59,8 +59,8 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
       </div>
 
       {dataSet.who_is_it_for_section && (
-        <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a3b85] mb-8 text-center">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-8 text-center">
             {dataSet.who_is_it_for_section.title}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -75,11 +75,11 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
                     <div className={`p-2.5 rounded-xl ${style.iconBg}`} aria-hidden>
                       {style.icon}
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-800">{col.title}</h3>
+                    <h3 className="text-lg font-semibold text-gray-800">{col.title}</h3>
                   </div>
                   <ul className="space-y-3">
                     {col.points.map((point, i) => (
-                      <li key={i} className="flex gap-3 text-sm sm:text-base text-slate-700 leading-snug">
+                      <li key={i} className="flex gap-3 text-sm sm:text-base text-gray-700 leading-snug">
                         <span className={`mt-1.5 w-1.5 h-1.5 rounded-full ${style.bullet} bg-current shrink-0`} />
                         {point}
                       </li>
@@ -94,7 +94,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* Intakes */}
       {dataSet.intakes_section && (
-        <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
           <div className="rounded-2xl bg-white shadow-[0_4px_24px_rgba(26,59,133,0.08)] p-8 sm:p-10 text-center">
             <div className="flex items-center justify-center gap-3 mb-4">
               <CalendarDays size={24} className="text-[#D4AF37]" />
@@ -103,14 +103,14 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-5">
               {dataSet.intakes_section.intakes.map((intake, i) => (
                 <React.Fragment key={intake}>
-                  <span className="text-lg sm:text-xl font-medium text-slate-800">{intake}</span>
+                  <span className="text-lg sm:text-xl font-medium text-gray-800">{intake}</span>
                   {i < dataSet.intakes_section!.intakes.length - 1 && (
                     <span className="text-[#D4AF37] text-xl">&#8226;</span>
                   )}
                 </React.Fragment>
               ))}
             </div>
-            <p className="text-slate-500 text-sm sm:text-base mb-6">{dataSet.intakes_section.description}</p>
+            <p className="text-gray-500 text-sm sm:text-base mb-6">{dataSet.intakes_section.description}</p>
             <Link
               href="/free-eligibility-check"
               className="inline-block px-6 py-3 rounded-xl bg-[#1a3b85] text-white font-medium text-sm sm:text-base hover:bg-[#15306b] transition-colors duration-200"
@@ -123,8 +123,8 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* Partner Institutions */}
       {dataSet.partner_institutions_section && (
-        <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a3b85] mb-8 text-center">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-8 text-center">
             {dataSet.partner_institutions_section.title}
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
@@ -138,14 +138,14 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
                 ) : (
                   <div className="flex items-center gap-2 text-center">
                     <GraduationCap size={18} className="text-[#1a3b85] shrink-0" />
-                    <span className="text-xs sm:text-sm font-medium text-slate-700">{partner.name}</span>
+                    <span className="text-xs sm:text-sm font-medium text-gray-700">{partner.name}</span>
                   </div>
                 )}
               </div>
             ))}
           </div>
           {dataSet.partner_institutions_section.note && (
-            <p className="text-center text-slate-400 text-xs sm:text-sm mt-5">
+            <p className="text-center text-gray-400 text-xs sm:text-sm mt-5">
               {dataSet.partner_institutions_section.note}
             </p>
           )}
@@ -154,12 +154,12 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* The Uniguru Method */}
       {dataSet.uniguru_method_section && (
-        <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
           <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a3b85] mb-3">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-3">
               {dataSet.uniguru_method_section.title}
             </h2>
-            <p className="text-slate-500 text-sm sm:text-base max-w-2xl mx-auto">
+            <p className="text-gray-500 text-sm sm:text-base max-w-2xl mx-auto">
               {dataSet.uniguru_method_section.intro}
             </p>
           </div>
@@ -169,16 +169,16 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
                 key={i}
                 className="relative rounded-2xl bg-white border border-slate-200 p-6 sm:p-8 shadow-sm hover:shadow-lg transition-shadow duration-300"
               >
-                <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#D4AF37] mb-2">
+                <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#D4AF37] mb-2">
                   {step.step}
                 </span>
                 <h3 className="text-base sm:text-lg font-semibold text-[#1a3b85] mb-2">{step.title}</h3>
-                <p className="text-sm text-slate-600 leading-relaxed">{step.description}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
           {dataSet.uniguru_method_section.micro_line && (
-            <p className="text-center text-slate-400 text-xs sm:text-sm mt-8 italic tracking-wide">
+            <p className="text-center text-gray-400 text-xs sm:text-sm mt-8 italic tracking-wide">
               {dataSet.uniguru_method_section.micro_line}
             </p>
           )}
@@ -187,14 +187,14 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* IAA Regulated Support */}
       {dataSet.iaa_section && (
-        <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
           <div className="rounded-2xl bg-[#1a3b85] text-white p-8 sm:p-10 lg:p-12">
             <div className="flex items-start gap-4 mb-4">
               <div className="p-3 rounded-xl bg-white/10 shrink-0" aria-hidden>
                 <Shield size={24} className="text-[#D4AF37]" />
               </div>
               <div>
-                <h2 className="text-xl sm:text-2xl font-bold">{dataSet.iaa_section.title}</h2>
+                <h2 className="text-xl sm:text-2xl font-semibold">{dataSet.iaa_section.title}</h2>
                 <p className="text-white/60 text-xs sm:text-sm mt-1">{dataSet.iaa_section.registration}</p>
               </div>
             </div>
@@ -219,7 +219,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* Graduate Route */}
       {dataSet.graduate_route_section && (
-        <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
           <div className="rounded-2xl bg-white shadow-[0_4px_24px_rgba(26,59,133,0.08)] p-8 sm:p-10">
             <div className="flex items-start gap-4 mb-5">
               <div className="p-3 rounded-xl bg-[#D4AF37]/15 shrink-0" aria-hidden>
@@ -229,14 +229,14 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
                 {dataSet.graduate_route_section.title}
               </h2>
             </div>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">
               {dataSet.graduate_route_section.content}
             </p>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
               {dataSet.graduate_route_section.eligibility_note}
             </p>
             {dataSet.graduate_route_section.micro_line && (
-              <p className="text-slate-400 text-xs sm:text-sm mt-5 italic">
+              <p className="text-gray-400 text-xs sm:text-sm mt-5 italic">
                 {dataSet.graduate_route_section.micro_line}
               </p>
             )}
@@ -246,15 +246,15 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* Costs and Planning */}
       {dataSet.costs_planning_section && (
-        <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
           <div className="text-center mb-10">
             <div className="flex items-center justify-center gap-3 mb-3">
               <PoundSterling size={24} className="text-[#D4AF37]" />
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#1a3b85]">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight">
                 {dataSet.costs_planning_section.title}
               </h2>
             </div>
-            <p className="text-slate-500 text-sm sm:text-base max-w-3xl mx-auto">
+            <p className="text-gray-500 text-sm sm:text-base max-w-3xl mx-auto">
               {dataSet.costs_planning_section.description}
             </p>
           </div>
@@ -273,14 +273,14 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
                   <h4 className="text-sm font-semibold text-[#1a3b85] mb-3">{item.label}</h4>
                   <ul className="space-y-2">
                     {item.points.map((point, j) => (
-                      <li key={j} className="flex gap-3 text-sm text-slate-700 leading-snug">
+                      <li key={j} className="flex gap-3 text-sm text-gray-700 leading-snug">
                         <CheckCircle2 className="w-4 h-4 shrink-0 text-[#D4AF37] mt-0.5" />
                         <span>{point}</span>
                       </li>
                     ))}
                   </ul>
                   {item.footnote && (
-                    <p className="text-xs text-slate-400 mt-3 italic">{item.footnote}</p>
+                    <p className="text-xs text-gray-400 mt-3 italic">{item.footnote}</p>
                   )}
                 </div>
               ))}
@@ -290,11 +290,11 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
           {/* What we will do / won't do */}
           <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
             <div className="px-6 sm:px-8 py-5 border-b border-slate-100">
-              <h3 className="text-lg font-semibold text-slate-800">
+              <h3 className="text-lg font-semibold text-gray-800">
                 {dataSet.costs_planning_section.will_wont.title}
               </h3>
             </div>
-            <div className="hidden sm:grid grid-cols-2 px-6 sm:px-8 py-3 bg-slate-50 border-b border-slate-100 text-xs font-bold uppercase tracking-wider text-slate-500">
+            <div className="hidden sm:grid grid-cols-2 px-6 sm:px-8 py-3 bg-slate-50 border-b border-slate-100 text-xs font-semibold uppercase tracking-widest text-gray-500">
               <span>{dataSet.costs_planning_section.will_wont.will_do_heading}</span>
               <span>{dataSet.costs_planning_section.will_wont.wont_do_heading}</span>
             </div>
@@ -303,11 +303,11 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
                 key={i}
                 className={`grid grid-cols-1 sm:grid-cols-2 px-6 sm:px-8 py-4 ${i < dataSet.costs_planning_section!.will_wont.rows.length - 1 ? "border-b border-slate-100" : ""}`}
               >
-                <div className="flex gap-2 text-sm text-slate-700 mb-2 sm:mb-0">
+                <div className="flex gap-2 text-sm text-gray-700 mb-2 sm:mb-0">
                   <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-500 mt-0.5" />
                   <span>{row.will_do}</span>
                 </div>
-                <div className="flex gap-2 text-sm text-slate-500">
+                <div className="flex gap-2 text-sm text-gray-500">
                   <XCircle className="w-4 h-4 shrink-0 text-red-400 mt-0.5" />
                   <span>{row.wont_do}</span>
                 </div>
@@ -316,7 +316,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
           </div>
 
           {dataSet.costs_planning_section.disclaimer && (
-            <p className="text-center text-slate-400 text-xs sm:text-sm mt-6 italic">
+            <p className="text-center text-gray-400 text-xs sm:text-sm mt-6 italic">
               {dataSet.costs_planning_section.disclaimer}
             </p>
           )}
@@ -325,8 +325,8 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* FAQ */}
       {dataSet.faq_section && (
-        <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a3b85] mb-8 text-center">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-8 text-center">
             {dataSet.faq_section.title}
           </h2>
           <div className="max-w-3xl mx-auto space-y-4">
@@ -336,10 +336,10 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
                 className="group rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden"
               >
                 <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none select-none hover:bg-slate-50 transition-colors">
-                  <span className="text-sm sm:text-base font-semibold text-slate-800">{item.question}</span>
-                  <ChevronDown size={18} className="text-slate-400 shrink-0 transition-transform duration-200 group-open:rotate-180" />
+                  <span className="text-sm sm:text-base font-semibold text-gray-800">{item.question}</span>
+                  <ChevronDown size={18} className="text-gray-400 shrink-0 transition-transform duration-200 group-open:rotate-180" />
                 </summary>
-                <div className="px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed">
+                <div className="px-6 pb-5 text-sm sm:text-base text-gray-600 leading-relaxed">
                   {item.answer}
                 </div>
               </details>
@@ -374,13 +374,13 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
         ];
 
         return (
-          <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+          <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
             <div className="text-center mb-12">
-              <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37] mb-3">Resources</span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1a3b85] mb-3">
+              <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#D4AF37] mb-3">Resources</span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-3">
                 {dataSet.opportunities_hub_section.title}
               </h2>
-              <p className="text-slate-500 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+              <p className="text-gray-500 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
                 {dataSet.opportunities_hub_section.subline}
               </p>
             </div>
@@ -397,10 +397,10 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
                     <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${cardAccents[i] || cardAccents[0]} ${cardIconText[i] || cardIconText[0]} flex items-center justify-center mb-5 shadow-md`}>
                       {cardIcons[i] || cardIcons[0]}
                     </div>
-                    <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-[#1a3b85] transition-colors">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-[#1a3b85] transition-colors">
                       {card.heading}
                     </h3>
-                    <p className="text-sm text-slate-500 leading-relaxed mb-6 flex-1">{card.text}</p>
+                    <p className="text-sm text-gray-500 leading-relaxed mb-6 flex-1">{card.text}</p>
                     <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#1a3b85] group-hover:text-[#D4AF37] transition-colors">
                       {card.cta_label}
                       <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
@@ -411,7 +411,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
             </div>
 
             <div className="mt-10 text-center">
-              <p className="text-slate-500 text-sm sm:text-base mb-4 italic">{dataSet.opportunities_hub_section.cta_text}</p>
+              <p className="text-gray-500 text-sm sm:text-base mb-4 italic">{dataSet.opportunities_hub_section.cta_text}</p>
               <a
                 href="#eligibility-form"
                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#1a3b85] text-white font-semibold text-sm sm:text-base hover:bg-[#15306b] transition-colors duration-200 shadow-md hover:shadow-lg"
@@ -426,9 +426,9 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* CTA - Start with clarity */}
       {dataSet.cta_section && (
-        <section id="eligibility-form" className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+        <section id="eligibility-form" className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
           <div className="rounded-2xl bg-[#1a3b85] text-white p-8 sm:p-10 lg:p-12 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-2">{dataSet.cta_section.title}</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-2">{dataSet.cta_section.title}</h2>
             <p className="text-white/80 text-base sm:text-lg mb-5">{dataSet.cta_section.subtitle}</p>
             <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
               {dataSet.cta_section.fields.map((field, i) => (
@@ -442,7 +442,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
             </div>
             <a
               href="#eligibility-form"
-              className="inline-block px-8 py-3.5 rounded-xl bg-[#D4AF37] text-[#1a3b85] font-bold text-sm sm:text-base hover:bg-[#c9a432] transition-colors duration-200 mb-5"
+              className="inline-block px-8 py-3.5 rounded-xl bg-[#D4AF37] text-[#1a3b85] font-semibold text-sm sm:text-base hover:bg-[#c9a432] transition-colors duration-200 mb-5"
             >
               {dataSet.cta_section.button_label}
             </a>
