@@ -57,12 +57,7 @@ const LONDON_BG_URL =
   "https://images.unsplash.com/photo-1486299267070-83823f5448dd?auto=format&fit=crop&w=2071&q=80";
 
 const StudyDestinations = () => {
-  const row1 = [
-    ...STUDY_DESTINATIONS,
-    ...STUDY_DESTINATIONS,
-    ...STUDY_DESTINATIONS,
-  ];
-  const row2 = [
+  const marqueeDestinations = [
     ...STUDY_DESTINATIONS,
     ...STUDY_DESTINATIONS,
     ...STUDY_DESTINATIONS,
@@ -100,34 +95,17 @@ const StudyDestinations = () => {
           </p>
         </header>
 
-        {/* Row 1: scroll left */}
+        {/* Scrolling row of destinations */}
         <div
           className="destinations-scroll-mask overflow-hidden"
-          aria-label="Study destinations row one"
+          aria-label="Top study destinations"
         >
           <div className="flex gap-4 sm:gap-6 w-max animate-scroll-3 will-change-transform hover:[animation-play-state:paused] py-2">
-            {row1.map((country, index) => (
+            {marqueeDestinations.map((country, index) => (
               <DestinationCard
-                key={`r1-${country.name}-${index}`}
+                key={`${country.name}-${index}`}
                 country={country}
                 index={index}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Row 2: scroll right – offset for visual interest */}
-        <div
-          className="destinations-scroll-mask overflow-hidden mt-3 sm:mt-4 lg:pl-[10%]"
-          aria-label="Study destinations row two"
-        >
-          <div className="flex gap-4 sm:gap-6 w-max animate-scroll-reverse-3 will-change-transform hover:[animation-play-state:paused] py-2">
-            {row2.map((country, index) => (
-              <DestinationCard
-                key={`r2-${country.name}-${index}`}
-                country={country}
-                index={index}
-                size="compact"
               />
             ))}
           </div>

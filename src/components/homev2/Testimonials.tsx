@@ -54,13 +54,13 @@ const Testimonials = () => {
       <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-5 lg:px-6 xl:px-8 2xl:px-10">
         <header className="text-center mb-10 sm:mb-12 lg:mb-16">
           <p className="text-xs font-semibold tracking-widest text-[#D4AF37] uppercase mb-3">
-            Success Stories
+            Student success
           </p>
           <h2
             id="testimonials-heading"
             className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold text-[#1a3b85] tracking-tight leading-tight"
           >
-            Voices of Triumph
+            More successful stories.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-2xl leading-relaxed mx-auto">
             Hear from students who started their global education journey with
@@ -186,28 +186,6 @@ const Testimonials = () => {
               })}
             </div>
           </div>
-        </div>
-
-        {/* Stats strip */}
-        <div className="mt-10 sm:mt-12 lg:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6">
-          {[
-            { label: "Visa success", value: "98%" },
-            { label: "Happy students", value: "5000+" },
-            { label: "Partner universities", value: "500+" },
-            { label: "Years experience", value: "12+" },
-          ].map((stat, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center justify-center py-4 sm:py-5 rounded-xl bg-white border border-gray-100 shadow-sm"
-            >
-              <span className="text-2xl sm:text-3xl font-semibold text-[#1a3b85]">
-                {stat.value}
-              </span>
-              <span className="text-xs sm:text-sm text-gray-500 font-medium uppercase tracking-wide mt-1">
-                {stat.label}
-              </span>
-            </div>
-          ))}
         </div>
       </div>
     </section>

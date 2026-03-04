@@ -80,15 +80,14 @@ const HeroSection = () => {
           <div className="flex flex-col justify-start space-y-5 sm:space-y-6 lg:space-y-7 text-center lg:text-left pb-8 lg:pb-0 lg:col-span-3 w-full min-w-0">
             {/* Main Heading - uses full 3-column width */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-white leading-[1.2] tracking-tight w-full mx-auto lg:mx-0">
-              Study abroad,
+              Study Abroad,
               <br />
-              guided from London
+              Guided From London
             </h1>
 
             {/* Supporting Text - uses full 3-column width */}
             <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed w-full mx-auto lg:mx-0 font-normal">
-              Free eligibility check, personalised shortlist in 4-6 hours,
-              consultation within 6 hours.
+              Moving abroad is personal. Get clear, regulated guidance without pressure, without guesswork.
             </p>
 
             {/* Logo/Brand Element */}
@@ -168,10 +167,10 @@ const HeroSection = () => {
                         <SelectValue placeholder="Select intake period" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="January 2026">January 2026</SelectItem>
+                        <SelectItem value="May 2026">May 2026</SelectItem>
                         <SelectItem value="September 2026">September 2026</SelectItem>
                         <SelectItem value="January 2027">January 2027</SelectItem>
-                        <SelectItem value="September 2027">September 2027</SelectItem>
+                        <SelectItem value="May 2027">May 2027</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -233,7 +232,8 @@ const HeroSection = () => {
                       htmlFor="consultation"
                       className="text-xs sm:text-sm text-gray-600 cursor-pointer leading-relaxed"
                     >
-                      Book a free consultation within 1 hour
+                      Free eligibility check, personalised shortlist in 4-6 hours,
+                      consultation within 6 hours.
                     </label>
                   </div>
 

@@ -23,10 +23,10 @@ const VideoSection = () => {
 
           <div className="relative grid grid-cols-2 lg:grid-cols-4">
             {[
-              { value: "100%", label: "Compliant", icon: CheckCircle2 },
-              { value: "IAA", label: "Regulated", icon: Shield },
-              { value: "5000+", label: "Students", icon: Users },
-              { value: "6 hrs", label: "Response time", icon: Clock },
+              { value: "98%", label: "Visa success", icon: CheckCircle2 },
+              { value: "5000+", label: "Happy students", icon: Users },
+              { value: "500+", label: "Partner universities", icon: Shield },
+              { value: "12+", label: "Years experience", icon: Clock },
             ].map((stat, i) => (
               <div
                 key={i}
@@ -46,13 +46,9 @@ const VideoSection = () => {
                 </div>
 
                 {/* Value */}
-                {stat.value === "IAA" ? (
-                  <div className="relative w-24 h-10 sm:w-28 sm:h-12">
-                    <Image src="/iaa-logo.png" alt="IAA Regulated" fill className="object-contain" />
-                  </div>
-                ) : (
-                  <p className="text-4xl sm:text-5xl font-black text-white leading-none tracking-tight">{stat.value}</p>
-                )}
+                <p className="text-4xl sm:text-5xl font-black text-white leading-none tracking-tight">
+                  {stat.value}
+                </p>
 
                 {/* Gold divider line */}
                 <span className="w-6 h-[2px] bg-[#D4AF37] rounded-full my-2.5" />
