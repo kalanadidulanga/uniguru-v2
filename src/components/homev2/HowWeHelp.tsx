@@ -101,7 +101,7 @@ const HowWeHelp = () => {
         </header>
 
         {/* Steps – 6 cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5 lg:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-5 lg:gap-4">
           {steps.map((step) => (
             <article
               key={step.id}
@@ -114,28 +114,28 @@ const HowWeHelp = () => {
                   alt={step.imageAlt}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 16vw"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 16vw"
                 />
               </div>
 
               {/* Icon badge */}
-              <div className="absolute top-3 right-3 z-10">
-                <div className="w-10 h-10 rounded-lg bg-white/90 backdrop-blur-sm border border-white/50 shadow-sm flex items-center justify-center">
-                  <step.icon className="w-5 h-5 text-[#0f2554]" aria-hidden />
+              <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white/90 backdrop-blur-sm border border-white/50 shadow-sm flex items-center justify-center">
+                  <step.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#0f2554]" aria-hidden />
                 </div>
               </div>
 
               {/* Content */}
-              <div className="flex-1 p-4 sm:p-5">
-                <h3 className="text-base sm:text-lg font-semibold text-white mb-1 leading-tight">
+              <div className="flex-1 p-3 sm:p-4 sm:p-5">
+                <h3 className="text-sm sm:text-base sm:text-lg font-semibold text-white mb-1 leading-tight">
                   {step.title}
                 </h3>
                 {step.subtitle && (
-                  <p className="text-xs text-[#D4AF37] font-medium mb-2">
+                  <p className="text-[10px] sm:text-xs text-[#D4AF37] font-medium mb-2">
                     {step.subtitle}
                   </p>
                 )}
-                <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
+                <p className="text-[11px] sm:text-xs sm:text-sm text-white/70 leading-relaxed">
                   {step.description}
                 </p>
               </div>
