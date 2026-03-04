@@ -620,20 +620,23 @@ export const STUDY_DESTINATIONS_FULLDATA = [
     why_choose_section: {
       title: "Why Choose the UK for Higher Education?",
       content:
-        "Studying in the UK means learning from some of the world’s best academics and experts. UK universities are known for their exceptional academic support and state-of-the-art technology. Students benefit from strong industry links, gaining access to placements, internships, and volunteering positions that provide real-world professional experience. Graduates from UK universities are highly sought after by employers worldwide.",
+        "The UK is a strong choice when you want globally recognised qualifications, rigorous academic standards, and clear progression routes. We help you choose options that fit your profile and budget, and we keep the process calm, compliant, and outcome-focused.",
+      bullets: [
+        "Global recognition: qualifications employers understand",
+        "Course depth: strong teaching and industry alignment",
+        "Progression: clear routes from study to next steps (where eligible)",
+      ],
     },
     quick_facts_section: {
       title: "Quick Facts",
       facts: [
-        "The UK conducts 5% of the world’s scientific research and produces 14% of the world’s most frequently cited papers.",
-        "Over 400,000 international students are welcomed to the UK each year.",
-        "A post-study work visa allows graduates to stay and work in the UK for 2 years.",
-        "12 of the world’s top 100 universities are in the UK (QS World Rankings 2023)..",
-        "14 of the best student cities in the world are in the UK (QS Best Student Cities 2023).",
-        "The UK offers 131 internationally reputed universities.",
-        "Admission without IELTS is possible.",
-        "Masters courses with 1-year work placements are available.",
+        "Globally recognised universities and qualifications",
+        "Wide range of courses and multiple intakes each year",
+        "One-year Master’s routes are common in many subjects (course-dependent)",
+        "Post-study options may be available depending on route and eligibility",
+        "We shortlist based on academic fit, budget fit, and credibility fit",
       ],
+      note: "Our approach: Advice is tailored to your profile - eligibility first, no guesswork.",
     },
     careers_insights_section: {
       title: "Careers & Industry Insights",

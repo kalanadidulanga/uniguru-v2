@@ -22,6 +22,11 @@ const DestinationQuickFacts = ({ data }: DestinationQuickFactsProps) => {
           </li>
         ))}
       </ul>
+      {data.note && (
+        <p className="mt-4 text-xs sm:text-sm text-white/70">
+          {data.note}
+        </p>
+      )}
     </div>
   );
 };

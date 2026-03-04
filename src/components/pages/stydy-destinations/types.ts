@@ -17,11 +17,13 @@ export interface HeroSectionData {
 export interface WhyChooseSectionData {
   title: string;
   content: string;
+  bullets?: string[];
 }
 
 export interface QuickFactsSectionData {
   title: string;
   facts: string[];
+  note?: string;
 }
 
 export interface CareersInsightsSectionData {
