@@ -1,3 +1,5 @@
+import type { StudyDestinationDataSet } from "@/components/pages/stydy-destinations/types";
+
 export const NAVBAR_DATA = [
   {
     name: "Study Destinations",
@@ -527,7 +529,7 @@ export const CONTACT_DETAILS = [
   },
 ];
 
-export const STUDY_DESTINATIONS_FULLDATA = [
+export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
   {
     destination: "canada",
     hero_section: {
@@ -540,29 +542,248 @@ export const STUDY_DESTINATIONS_FULLDATA = [
         },
       ],
       description:
-        "Start your study journey in a global career hub. Our study consultants are here to guide you through every step of the way to help you choose the perfect course, university, and destination suited to your academic and career aspirations.",
+        "Because moving countries is a life decision \u2014 you deserve calm, regulated guidance, not pressure. Eligibility-led shortlisting and a compliant plan \u2014 from programme selection to visa-ready evidence.",
     },
     why_choose_section: {
-      title: "Why Choose Canada for Higher Education?",
+      title: "Why Canada?",
       content:
-        "Studying in Canada in 2024 means learning from some of the world’s best academics and experts. Canadian universities are known for their exceptional academic support and state-of-the-art technology. Students benefit from strong industry links, gaining access to placements, internships, and volunteering positions that provide real-world professional experience. Graduates from Canadian universities are highly sought after by employers worldwide.",
+        "Canada is a strong choice when you want reputable education and clear progression routes \u2014 provided the course choice is credible and the evidence plan is clean.",
+      bullets: [
+        "Global recognition: qualifications employers understand",
+        "Programme breadth: wide options across provinces and subjects",
+        "Progression: post-study options may be available depending on route and eligibility",
+      ],
     },
     quick_facts_section: {
       title: "Quick Facts",
       facts: [
-        "Canada conducts a significant portion of the world’s scientific research and produces numerous frequently cited papers.",
-        "Over 500,000 international students are welcomed each year.",
-        "A post-study work visa allows graduates to stay and work in Canada for up to 3 years.",
-        "Many top universities and student cities are located in Canada.",
-        "Universities of international repute are available.",
-        "Admission without IELTS is possible in certain cases.",
-        "Masters courses with 1-year work placements are available.",
+        "Study permit fee: CAD $150 (IRCC fee list)",
+        "Biometrics fee (individual): CAD $85",
+        "Proof of financial support (living expenses, excluding tuition and transportation): CAN$22,895 for 1 applicant (outside Quebec)",
       ],
+      note: "Our Approach: Advice is tailored to your profile \u2014 eligibility first, no guesswork.",
+    },
+    who_is_it_for_section: {
+      title: "Who Canada Is For",
+      columns: [
+        {
+          title: "Best fit",
+          variant: "best_fit",
+          points: [
+            "You want a credible programme aligned to your background and outcomes",
+            "You can support a realistic budget and evidence plan",
+            "You want a structured process (not 'agent promises')",
+          ],
+        },
+        {
+          title: "Profile-dependent",
+          variant: "profile_dependent",
+          points: [
+            "City/province flexibility and programme choice",
+            "Funding sources and document history",
+            "Timeline alignment to intake and processing",
+          ],
+        },
+        {
+          title: "Not recommended",
+          variant: "not_recommended",
+          points: [
+            "You want guarantees rather than a credible plan",
+            "Your study logic is unclear or inconsistent",
+            "You're relying on unrealistic budgets",
+          ],
+        },
+      ],
+    },
+    uniguru_method_section: {
+      title: "A calm process, built for real outcomes",
+      intro:
+        "We run a structured process that keeps decisions clear, timelines realistic, and paperwork compliant.",
+      steps: [
+        {
+          step: "Step 1",
+          title: "Canada Eligibility Check (2 minutes)",
+          description: "Destination, intake, WhatsApp. That's it.",
+        },
+        {
+          step: "Step 2",
+          title: "Shortlist + Plan (24\u201348 hours)",
+          description:
+            "A realistic shortlist based on academic fit, budget, and credibility \u2014 with clear next steps.",
+        },
+        {
+          step: "Step 3",
+          title: "Offer/Admission \u2192 Evidence plan",
+          description:
+            "We guide you through what to prepare, how to present it, and what to avoid \u2014 so your submission is clean and consistent.",
+        },
+        {
+          step: "Step 4",
+          title: "Pre-departure readiness",
+          description:
+            "Accommodation and arrival planning support so you land prepared, not panicked.",
+        },
+      ],
+      micro_line:
+        "No pressure. No shortcuts. Just a plan that stands up to scrutiny.",
+    },
+    iaa_section: {
+      title: "Immigration Advice Authority (IAA) Regulated Support",
+      registration:
+        "Regulated by the Immigration Advice Authority (IAA) - Organisation Registration: F202537807",
+      description:
+        "When immigration advice is required, we provide guidance that's regulated, accountable, and standards-led. That means clear boundaries, proper record-keeping, and advice you can rely on \u2014 not sales talk.",
+      benefits_title: "What this means for you",
+      benefits: [
+        "Accountability: regulated standards and transparent processes",
+        "Clarity: eligibility-led guidance, not vague promises",
+        "Compliance-first: documentation planning that stands up to scrutiny",
+        "Integrity: no shortcuts, no pressure tactics",
+      ],
+      disclaimer:
+        "We do not guarantee outcomes \u2014 we deliver compliant guidance and clear next steps based on your profile.",
+    },
+    graduate_route_section: {
+      title: "Post-Graduation Work Permit (PGWP)",
+      content:
+        "Some graduates may be eligible for a Post-Graduation Work Permit (PGWP). Eligibility and length depend on your programme, institution, and current requirements.",
+      eligibility_note:
+        "We confirm what applies once your course and route are clear.",
+      micro_line:
+        "Rules can change. We advise based on requirements in force at the time of your case.",
+    },
+    costs_planning_section: {
+      title: "Costs and planning (Canada)",
+      description:
+        "A Canada study plan only works when the finances are realistic and consistent with your overall profile. We help you plan conservatively, document your assumptions, and avoid budgets that look credible on paper but fail in real life.",
+      costs_title: "Typical benchmarks and fees (planning guide)",
+      cost_items: [
+        {
+          label:
+            "IRCC living-cost benchmark (excluding tuition and transportation)",
+          points: ["CAN$22,895/year for 1 applicant (outside Quebec)"],
+        },
+        {
+          label: "Study permit fee",
+          points: ["CAD $150"],
+        },
+        {
+          label: "Biometrics fee (individual)",
+          points: ["CAD $85 (where required)"],
+        },
+      ],
+      will_wont: {
+        title: "What we will do / what we won't do",
+        will_do_heading: "What we will do",
+        wont_do_heading: "What we won't do",
+        rows: [
+          {
+            will_do:
+              "Provide a realistic budget framework tailored to city/province/route",
+            wont_do: "Pretend costs are the same everywhere",
+          },
+          {
+            will_do:
+              "Confirm current government fees and benchmarks during case review",
+            wont_do: "Quote outdated fees as 'guaranteed'",
+          },
+          {
+            will_do:
+              "Flag credibility risks early (funding pattern, timelines, consistency)",
+            wont_do: "Say 'it will be fine' without evidence",
+          },
+          {
+            will_do:
+              "Provide a structured evidence plan aligned to the budget",
+            wont_do: "Encourage vague budgets or unexplained funding",
+          },
+          {
+            will_do:
+              "Keep advice regulated, accountable, and properly recorded",
+            wont_do:
+              "Support shortcuts, false documents, or pressure tactics",
+          },
+        ],
+      },
+      disclaimer:
+        "Final amounts depend on your institution, course level, visa length/route, and current government requirements \u2014 we confirm these during your eligibility review.",
+    },
+    faq_section: {
+      title: "Frequently asked questions",
+      items: [
+        {
+          question: "Do you guarantee outcomes?",
+          answer:
+            "No. No credible regulated firm guarantees outcomes. We provide structured, compliant guidance and clear next steps based on your profile.",
+        },
+        {
+          question: "Do I need IELTS/English proof?",
+          answer:
+            "It depends on the institution and course. We confirm requirements after your eligibility review.",
+        },
+        {
+          question: "How long does the process take?",
+          answer:
+            "Timelines vary by institution and intake. Shortlists are typically issued within 24\u201348 hours (working days).",
+        },
+        {
+          question: "Can I work while studying?",
+          answer:
+            "Work permission depends on the route and conditions. We explain what applies once your offer is confirmed.",
+        },
+        {
+          question: "Am I eligible for post-study options?",
+          answer:
+            "Some applicants may be eligible depending on route and current rules. We confirm once your plan is final.",
+        },
+      ],
+      whatsapp_label: "Ask on WhatsApp",
+      whatsapp_link: "https://wa.me/447123456789",
+    },
+    cta_section: {
+      title: "Start with clarity",
+      subtitle: "Canada Eligibility Check (2 minutes)",
+      fields: ["Destination (Canada)", "Intake", "WhatsApp"],
+      button_label: "Get My Canada Shortlist",
+      micro_text:
+        "Shortlist & next steps typically within 24\u201348 hours (working days).",
+      trust_line:
+        "Immigration Advice Authority (IAA) Regulated \u2022 Organisation Registration: F202537807 \u2022 128 City Road, London EC1V 2NX \u2022 100+ Google Reviews",
+      disclaimer:
+        "We provide regulated guidance where required. We do not guarantee outcomes.",
+    },
+    opportunities_hub_section: {
+      title: "Canada Opportunities Hub",
+      subline:
+        "Curated resources and partner options \u2014 your final shortlist depends on your profile and intake.",
+      cards: [
+        {
+          heading: "Partner institutions (Canada)",
+          text: "Explore a curated list of institutions we work with.",
+          cta_label: "View Canada partner universities",
+          cta_link: "/universities",
+        },
+        {
+          heading: "Scholarships (Canada)",
+          text: "A practical overview of common scholarship types and eligibility.",
+          cta_label: "Explore scholarships",
+          cta_link: "/scholarships",
+        },
+        {
+          heading: "Careers & industry insights",
+          text: "Which courses lead to which outcomes \u2014 and what's credible for your profile.",
+          cta_label: "See career insights",
+          cta_link: "/careers",
+        },
+      ],
+      cta_text:
+        "Prefer a tailored recommendation? Get your Canada shortlist in 2 minutes.",
+      cta_button_label: "Get My Canada Shortlist",
     },
     careers_insights_section: {
       title: "Careers & Industry Insights",
       content:
-        "Canada’s economy continues to be highly globalized and diverse, with leading sectors including service industries, financial services, higher education, aerospace, pharmaceuticals, manufacturing, and production. Top-paying jobs are found in Information Technology, Engineering, Business and Financial Management, Legal professions, Aviation, Higher Education, and Medicine.",
+        "Canada's economy continues to be highly globalized and diverse, with leading sectors including service industries, financial services, higher education, aerospace, pharmaceuticals, manufacturing, and production. Top-paying jobs are found in Information Technology, Engineering, Business and Financial Management, Legal professions, Aviation, Higher Education, and Medicine.",
       images: [
         { src: "/images/study_destinations/carers1.png", alt: "" },
         { src: "/images/study_destinations/carers2.png", alt: "" },
@@ -615,10 +836,10 @@ export const STUDY_DESTINATIONS_FULLDATA = [
         { src: "/images/study_destinations/uk/2.jpg", alt: "" },
       ],
       description:
-        "With an academic reputation built on centuries-old heritage, the UK is home to some of the world’s oldest and most prestigious universities. Known for their consistent high rankings and rich legacy of welcoming international students, UK universities offer an unforgettable student experience, catering well to the needs and aspirations of their students.",
+        "With an academic reputation built on centuries-old heritage, the UK is home to some of the world's oldest and most prestigious universities. Known for their consistent high rankings and rich legacy of welcoming international students, UK universities offer an unforgettable student experience, catering well to the needs and aspirations of their students.",
     },
     why_choose_section: {
-      title: "Why Choose the UK for Higher Education?",
+      title: "Why UK?",
       content:
         "The UK is a strong choice when you want globally recognised qualifications, rigorous academic standards, and clear progression routes. We help you choose options that fit your profile and budget, and we keep the process calm, compliant, and outcome-focused.",
       bullets: [
@@ -632,16 +853,270 @@ export const STUDY_DESTINATIONS_FULLDATA = [
       facts: [
         "Globally recognised universities and qualifications",
         "Wide range of courses and multiple intakes each year",
-        "One-year Master’s routes are common in many subjects (course-dependent)",
+        "One-year Master's routes are common in many subjects (course-dependent)",
         "Post-study options may be available depending on route and eligibility",
         "We shortlist based on academic fit, budget fit, and credibility fit",
       ],
       note: "Our approach: Advice is tailored to your profile - eligibility first, no guesswork.",
     },
+    who_is_it_for_section: {
+      title: "Who The UK Is For",
+      columns: [
+        {
+          title: "Best fit",
+          variant: "best_fit",
+          points: [
+            "You want a recognised UK qualification",
+            "You have a clear study/career direction (or want help defining it)",
+            "You want structured, compliant guidance",
+          ],
+        },
+        {
+          title: "Profile-dependent",
+          variant: "profile_dependent",
+          points: [
+            "You're switching fields",
+            "You need flexible entry options",
+            "You're balancing budget and city choice",
+          ],
+        },
+        {
+          title: "Not recommended",
+          variant: "not_recommended",
+          points: [
+            "You're choosing the UK without credible study logic",
+            "You're relying on unrealistic budgets",
+            'You want shortcuts or "guarantees"',
+          ],
+        },
+      ],
+    },
+    intakes_section: {
+      intakes: ["January", "May", "September", "November"],
+      description:
+        "Your best intake depends on readiness, documents, and timelines - we'll advise after eligibility.",
+      cta_label: "Free Eligibility Check",
+    },
+    partner_institutions_section: {
+      title: "Selected UK partner institutions",
+      partners: [
+        { name: "University of Law" },
+        { name: "Wrexham University" },
+        { name: "University College Birmingham" },
+        { name: "Northumbria University London" },
+        { name: "Ulster University" },
+        { name: "Coventry University" },
+      ],
+      note: "Final recommendations depend on your profile, budget, and course goals.",
+    },
+    uniguru_method_section: {
+      title: "A calm process, built for real outcomes",
+      intro:
+        "We run a structured process that keeps decisions clear, timelines realistic, and paperwork compliant.",
+      steps: [
+        {
+          step: "Step 1",
+          title: "UK Eligibility Check (2 minutes)",
+          description:
+            "Destination, intake, WhatsApp. That's it.",
+        },
+        {
+          step: "Step 2",
+          title: "Shortlist + Plan (24-48 hours)",
+          description:
+            "A realistic shortlist based on academic fit, budget, and credibility - with clear next steps.",
+        },
+        {
+          step: "Step 3",
+          title: "Offer > CAS > Visa-ready evidence plan",
+          description:
+            "We guide you through what to prepare, how to present it, and what to avoid - so your submission is clean and consistent.",
+        },
+        {
+          step: "Step 4",
+          title: "Pre-departure readiness",
+          description:
+            "Accommodation and arrival planning support so you land prepared, not panicked.",
+        },
+      ],
+      micro_line:
+        "No pressure. No shortcuts. Just a plan that stands up to scrutiny.",
+    },
+    iaa_section: {
+      title: "Immigration Advice Authority (IAA) Regulated Support",
+      registration: "Regulated by the Immigration Advice Authority (IAA) - Organisation Registration: F202537807",
+      description:
+        "When immigration advice is required, we provide guidance that's regulated, accountable, and standards-led. That means clear boundaries, proper record-keeping, and advice you can rely on - not sales talk.",
+      benefits_title: "What this means for you",
+      benefits: [
+        "Accountability: regulated standards and transparent processes",
+        "Clarity: eligibility-led guidance, not vague promises",
+        "Compliance-first: documentation planning that stands up to scrutiny",
+        "Integrity: no shortcuts, no pressure tactics",
+      ],
+      disclaimer:
+        "We do not guarantee outcomes - we deliver compliant guidance and clear next steps based on your profile.",
+    },
+    graduate_route_section: {
+      title: "Graduate Route (Post-Study Permission)",
+      content:
+        "Some students may be eligible to apply for the Graduate Route after successfully completing an eligible UK qualification with an eligible provider.",
+      eligibility_note:
+        "Eligibility depends on factors such as your course, institution, and compliance with current requirements. We'll confirm what applies to your profile and explain the correct next steps.",
+      micro_line:
+        "Rules can change. We advise based on the requirements in force at the time of your case.",
+    },
+    costs_planning_section: {
+      title: "Costs and planning (UK)",
+      description:
+        "A UK study plan only works when the finances are realistic and consistent with your overall profile. We help you plan conservatively, document your assumptions, and avoid budgets that look credible on paper but fail in real life.",
+      costs_title: "Typical cost ranges (planning guide)",
+      cost_items: [
+        {
+          label: "Maintenance (living costs) - UKVI benchmark",
+          points: [
+            "London: \u00A31,529 per month (up to 9 months)",
+            "Outside London: \u00A31,171 per month (up to 9 months)",
+          ],
+          footnote:
+            "These are regulatory benchmark figures for visa financial evidence - not your full lifestyle budget.",
+        },
+        {
+          label: "Student visa application fee",
+          points: ["\u00A3524 (Student visa application fee)"],
+        },
+        {
+          label: "Immigration Health Surcharge (IHS)",
+          points: [
+            "\u00A3776 per year for students (charged based on visa length)",
+          ],
+        },
+        {
+          label: "Living costs - practical planning range",
+          points: [
+            "London: \u00A31,300\u2013\u00A31,400 per month",
+            "Rest of the UK: \u00A3900\u2013\u00A31,300 per month",
+          ],
+          footnote:
+            "For practical budgeting (rent + bills + food + transport), the British Council suggests these planning ranges.",
+        },
+      ],
+      will_wont: {
+        title: "What we will do / what we won't do",
+        will_do_heading: "What we will do",
+        wont_do_heading: "What we won't do",
+        rows: [
+          {
+            will_do:
+              "Build a realistic budget framework for London vs outside London",
+            wont_do:
+              "Pretend London costs the same as a cheaper city",
+          },
+          {
+            will_do:
+              "Confirm current UK government fees during case review",
+            wont_do:
+              'Quote outdated fee numbers as "guaranteed"',
+          },
+          {
+            will_do:
+              "Flag credibility risks early (funds pattern, timelines, consistency)",
+            wont_do:
+              'Tell you "it will be fine" without evidence',
+          },
+          {
+            will_do:
+              "Provide a clear, structured evidence plan aligned to your budget",
+            wont_do:
+              "Encourage vague budgets or unexplained funding",
+          },
+          {
+            will_do:
+              "Keep advice regulated, accountable, and properly recorded",
+            wont_do:
+              "Support shortcuts, false documents, or pressure tactics",
+          },
+        ],
+      },
+      disclaimer:
+        "Final amounts depend on your institution, course level, visa length, and current UK government fees - we confirm these during your eligibility review.",
+    },
+    faq_section: {
+      title: "Frequently asked questions",
+      items: [
+        {
+          question: "Do you guarantee visa outcomes?",
+          answer:
+            "No. No credible regulated firm guarantees outcomes. We provide structured, compliant guidance and clear next steps based on your profile.",
+        },
+        {
+          question: "Do I need IELTS?",
+          answer:
+            "It depends on the institution, course and your background. In some cases an IELTS waiver may be possible. We confirm requirements after your eligibility review.",
+        },
+        {
+          question: "How long does the process take?",
+          answer:
+            "Timelines vary by institution and intake. After your eligibility check, we provide a realistic plan and next steps. Shortlists are typically issued within 24-48 hours (working days).",
+        },
+        {
+          question: "Can I work in the UK while studying?",
+          answer:
+            "Work permission depends on your visa conditions and your course/provider. We explain what applies to you after reviewing your offer and route.",
+        },
+        {
+          question: "Am I eligible for the Graduate Route?",
+          answer:
+            "Some students may be eligible depending on course, provider and current requirements. We'll confirm eligibility and the correct process once your study plan is clear.",
+        },
+      ],
+      whatsapp_label: "Ask on WhatsApp",
+      whatsapp_link: "https://wa.me/447123456789",
+    },
+    cta_section: {
+      title: "Start with clarity",
+      subtitle: "UK Eligibility Check (2 minutes)",
+      fields: ["Destination (UK)", "Intake", "WhatsApp"],
+      button_label: "Get My UK Shortlist",
+      micro_text:
+        "Shortlist & next steps typically within 24-48 hours (working days).",
+      trust_line:
+        "Immigration Advice Authority (IAA) Regulated \u2022 Organisation Registration: F202537807 \u2022 128 City Road, London EC1V 2NX \u2022 100+ Google Reviews",
+      disclaimer:
+        "We provide regulated guidance where required. We do not guarantee outcomes.",
+    },
+    opportunities_hub_section: {
+      title: "UK Opportunities Hub",
+      subline:
+        "Curated resources and partner options - your final shortlist depends on your profile and intake.",
+      cards: [
+        {
+          heading: "Partner universities (UK)",
+          text: "Explore a curated list of institutions we work with.",
+          cta_label: "View UK partner universities",
+          cta_link: "/universities",
+        },
+        {
+          heading: "Scholarships (UK)",
+          text: "A practical overview of common scholarship types and eligibility.",
+          cta_label: "Explore scholarships",
+          cta_link: "/scholarships",
+        },
+        {
+          heading: "Careers & industry insights",
+          text: "Which courses lead to which outcomes - and what's credible for your profile.",
+          cta_label: "See career insights",
+          cta_link: "/careers",
+        },
+      ],
+      cta_text:
+        "Prefer a tailored recommendation? Get your UK shortlist in 2 minutes.",
+      cta_button_label: "Get My UK Shortlist",
+    },
     careers_insights_section: {
       title: "Careers & Industry Insights",
       content:
-        "The UK’s economy is one of the most globalized in the world, comprising England, Scotland, Wales, and Northern Ireland. Dominated by sectors such as services, financial services, higher education, aerospace, pharmaceuticals, and manufacturing, the UK offers a wide range of lucrative career opportunities. Top-paying jobs include roles in Information Technology, Engineering, Business and Financial Management, Legal professions, Aviation, Higher Education, and Medicine.",
+        "The UK's economy is one of the most globalized in the world, comprising England, Scotland, Wales, and Northern Ireland. Dominated by sectors such as services, financial services, higher education, aerospace, pharmaceuticals, and manufacturing, the UK offers a wide range of lucrative career opportunities. Top-paying jobs include roles in Information Technology, Engineering, Business and Financial Management, Legal professions, Aviation, Higher Education, and Medicine.",
       images: [
         { src: "/images/study_destinations/carers1.png", alt: "" },
         { src: "/images/study_destinations/carers2.png", alt: "" },
@@ -688,29 +1163,244 @@ export const STUDY_DESTINATIONS_FULLDATA = [
         { src: "/images/study_destinations/australia/2.jpg", alt: "" },
       ],
       description:
-        "Australia continues to be home to some of the world’s oldest and most prestigious universities. Known for their consistent high rankings and rich legacy of welcoming international students, Australian universities offer an unforgettable student experience, catering well to the needs and aspirations of their students.",
+        "Because high-scrutiny routes demand high-standard planning \u2014 you deserve clear, regulated guidance, not sales talk. Eligibility-led shortlisting and a compliant plan \u2014 from programme selection to visa-ready evidence.",
     },
     why_choose_section: {
-      title: "Why Choose Australia for Higher Education?",
+      title: "Why Australia?",
       content:
-        "Studying in Australia in 2024 means learning from some of the world’s best academics and experts. Australian universities are known for their exceptional academic support and state-of-the-art technology. Students benefit from strong industry links, gaining access to placements, internships, and volunteering positions that provide real-world professional experience. Graduates from Australian universities are highly sought after by employers worldwide.",
+        "Australia can be a strong option for globally recognised education and graduate outcomes \u2014 when your course choice is credible and your evidence is consistent.",
+      bullets: [
+        "Programme choice across sectors and levels",
+        "Structured admission and compliance requirements",
+        "Post-study options may be available depending on eligibility",
+      ],
     },
     quick_facts_section: {
       title: "Quick Facts",
       facts: [
-        "Australia conducts a significant portion of the world’s scientific research and produces numerous frequently cited papers.",
-        "Over 450,000 international students are welcomed each year.",
-        "A post-study work visa allows graduates to stay and work in Australia for up to 4 years.",
-        "Many top universities and student cities are located in Australia.",
-        "Universities of international repute are available.",
-        "Admission without IELTS is possible in certain cases.",
-        "Masters courses with 1-year work placements are available.",
+        "Student visa (Subclass 500) application charge: from AUD $2,000 (unless exempt)",
+        "Financial capacity requirement: Home Affairs publishes minimum funds expectations and periodically updates them",
       ],
+      note: "Our Approach: Advice is tailored to your profile \u2014 eligibility first, no guesswork.",
+    },
+    who_is_it_for_section: {
+      title: "Who Australia Is For",
+      columns: [
+        {
+          title: "Best fit",
+          variant: "best_fit",
+          points: [
+            "You want a credible programme aligned to your background and outcomes",
+            "You can support a realistic budget and evidence plan",
+            "You want a structured process (not 'agent promises')",
+          ],
+        },
+        {
+          title: "Profile-dependent",
+          variant: "profile_dependent",
+          points: [
+            "City/province flexibility and programme choice",
+            "Funding sources and document history",
+            "Timeline alignment to intake and processing",
+          ],
+        },
+        {
+          title: "Not recommended",
+          variant: "not_recommended",
+          points: [
+            "You want guarantees rather than a credible plan",
+            "Your study logic is unclear or inconsistent",
+            "You're relying on unrealistic budgets",
+          ],
+        },
+      ],
+    },
+    uniguru_method_section: {
+      title: "A calm process, built for real outcomes",
+      intro:
+        "We run a structured process that keeps decisions clear, timelines realistic, and paperwork compliant.",
+      steps: [
+        {
+          step: "Step 1",
+          title: "Australia Eligibility Check (2 minutes)",
+          description: "Destination, intake, WhatsApp. That's it.",
+        },
+        {
+          step: "Step 2",
+          title: "Shortlist + Plan (24\u201348 hours)",
+          description:
+            "A realistic shortlist based on academic fit, budget, and credibility \u2014 with clear next steps.",
+        },
+        {
+          step: "Step 3",
+          title: "Offer/Admission \u2192 Evidence plan",
+          description:
+            "We guide you through what to prepare, how to present it, and what to avoid \u2014 so your submission is clean and consistent.",
+        },
+        {
+          step: "Step 4",
+          title: "Pre-departure readiness",
+          description:
+            "Accommodation and arrival planning support so you land prepared, not panicked.",
+        },
+      ],
+      micro_line:
+        "No pressure. No shortcuts. Just a plan that stands up to scrutiny.",
+    },
+    iaa_section: {
+      title: "Immigration Advice Authority (IAA) Regulated Support",
+      registration:
+        "Regulated by the Immigration Advice Authority (IAA) - Organisation Registration: F202537807",
+      description:
+        "When immigration advice is required, we provide guidance that's regulated, accountable, and standards-led. That means clear boundaries, proper record-keeping, and advice you can rely on \u2014 not sales talk.",
+      benefits_title: "What this means for you",
+      benefits: [
+        "Accountability: regulated standards and transparent processes",
+        "Clarity: eligibility-led guidance, not vague promises",
+        "Compliance-first: documentation planning that stands up to scrutiny",
+        "Integrity: no shortcuts, no pressure tactics",
+      ],
+      disclaimer:
+        "We do not guarantee outcomes \u2014 we deliver compliant guidance and clear next steps based on your profile.",
+    },
+    graduate_route_section: {
+      title: "Temporary Graduate Visa (Subclass 485)",
+      content:
+        "Eligible graduates may be able to apply for the Temporary Graduate visa (Subclass 485). Streams and durations vary.",
+      eligibility_note:
+        "We confirm what applies once your course, provider and route are confirmed.",
+      micro_line:
+        "Rules can change. We advise based on requirements in force at the time of your case.",
+    },
+    costs_planning_section: {
+      title: "Costs and planning (Australia)",
+      description:
+        "An Australia study plan only works when the finances are realistic and consistent with your overall profile. We help you plan conservatively, document your assumptions, and avoid budgets that look credible on paper but fail in real life.",
+      costs_title: "Typical benchmarks and fees (planning guide)",
+      cost_items: [
+        {
+          label: "Student visa (Subclass 500) charge",
+          points: ["From AUD $2,000 (unless exempt)"],
+        },
+        {
+          label: "Financial capacity",
+          points: [
+            "Home Affairs publishes minimum funds expectations and periodically updates them; we confirm the current figure during case review",
+          ],
+        },
+      ],
+      will_wont: {
+        title: "What we will do / what we won't do",
+        will_do_heading: "What we will do",
+        wont_do_heading: "What we won't do",
+        rows: [
+          {
+            will_do:
+              "Provide a realistic budget framework tailored to city/province/route",
+            wont_do: "Pretend costs are the same everywhere",
+          },
+          {
+            will_do:
+              "Confirm current government fees and benchmarks during case review",
+            wont_do: "Quote outdated fees as 'guaranteed'",
+          },
+          {
+            will_do:
+              "Flag credibility risks early (funding pattern, timelines, consistency)",
+            wont_do: "Say 'it will be fine' without evidence",
+          },
+          {
+            will_do:
+              "Provide a structured evidence plan aligned to the budget",
+            wont_do: "Encourage vague budgets or unexplained funding",
+          },
+          {
+            will_do:
+              "Keep advice regulated, accountable, and properly recorded",
+            wont_do:
+              "Support shortcuts, false documents, or pressure tactics",
+          },
+        ],
+      },
+      disclaimer:
+        "Final amounts depend on your institution, course level, visa length/route, and current government requirements \u2014 we confirm these during your eligibility review.",
+    },
+    faq_section: {
+      title: "Frequently asked questions",
+      items: [
+        {
+          question: "Do you guarantee outcomes?",
+          answer:
+            "No. No credible regulated firm guarantees outcomes. We provide structured, compliant guidance and clear next steps based on your profile.",
+        },
+        {
+          question: "Do I need IELTS/English proof?",
+          answer:
+            "It depends on the institution and course. We confirm requirements after your eligibility review.",
+        },
+        {
+          question: "How long does the process take?",
+          answer:
+            "Timelines vary by institution and intake. Shortlists are typically issued within 24\u201348 hours (working days).",
+        },
+        {
+          question: "Can I work while studying?",
+          answer:
+            "Work permission depends on the route and conditions. We explain what applies once your offer is confirmed.",
+        },
+        {
+          question: "Am I eligible for post-study options?",
+          answer:
+            "Some applicants may be eligible depending on route and current rules. We confirm once your plan is final.",
+        },
+      ],
+      whatsapp_label: "Ask on WhatsApp",
+      whatsapp_link: "https://wa.me/447123456789",
+    },
+    cta_section: {
+      title: "Start with clarity",
+      subtitle: "Australia Eligibility Check (2 minutes)",
+      fields: ["Destination (Australia)", "Intake", "WhatsApp"],
+      button_label: "Get My Australia Shortlist",
+      micro_text:
+        "Shortlist & next steps typically within 24\u201348 hours (working days).",
+      trust_line:
+        "Immigration Advice Authority (IAA) Regulated \u2022 Organisation Registration: F202537807 \u2022 128 City Road, London EC1V 2NX \u2022 100+ Google Reviews",
+      disclaimer:
+        "We provide regulated guidance where required. We do not guarantee outcomes.",
+    },
+    opportunities_hub_section: {
+      title: "Australia Opportunities Hub",
+      subline:
+        "Curated resources and partner options \u2014 your final shortlist depends on your profile and intake.",
+      cards: [
+        {
+          heading: "Partner institutions (Australia)",
+          text: "Explore a curated list of institutions we work with.",
+          cta_label: "View Australia partner universities",
+          cta_link: "/universities",
+        },
+        {
+          heading: "Scholarships (Australia)",
+          text: "A practical overview of common scholarship types and eligibility.",
+          cta_label: "Explore scholarships",
+          cta_link: "/scholarships",
+        },
+        {
+          heading: "Careers & industry insights",
+          text: "Which courses lead to which outcomes \u2014 and what's credible for your profile.",
+          cta_label: "See career insights",
+          cta_link: "/careers",
+        },
+      ],
+      cta_text:
+        "Prefer a tailored recommendation? Get your Australia shortlist in 2 minutes.",
+      cta_button_label: "Get My Australia Shortlist",
     },
     careers_insights_section: {
       title: "Careers & Industry Insights",
       content:
-        "Australia’s economy remains highly globalized and diverse, with leading sectors including service industries, financial services, higher education, aerospace, pharmaceuticals, manufacturing, and production. Top-paying jobs are found in Information Technology, Engineering, Business and Financial Management, Legal professions, Aviation, Higher Education, and Medicine.",
+        "Australia's economy remains highly globalized and diverse, with leading sectors including service industries, financial services, higher education, aerospace, pharmaceuticals, manufacturing, and production. Top-paying jobs are found in Information Technology, Engineering, Business and Financial Management, Legal professions, Aviation, Higher Education, and Medicine.",
       images: [
         { src: "/images/study_destinations/carers1.png", alt: "" },
         { src: "/images/study_destinations/carers2.png", alt: "" },
@@ -763,29 +1453,243 @@ export const STUDY_DESTINATIONS_FULLDATA = [
         { src: "/images/study_destinations/netherlands/2.jpg", alt: "" },
       ],
       description:
-        "The Netherlands remains known for its high-quality education system and welcoming attitude towards international students. Dutch universities consistently rank among the best in the world, offering an unforgettable student experience that caters to the needs and aspirations of their students.",
+        "Because a credible plan beats generic advice \u2014 you deserve regulated guidance and clear next steps. Eligibility-led shortlisting and a compliant plan \u2014 from programme selection to visa-ready evidence.",
     },
     why_choose_section: {
-      title: "Why Choose the Netherlands for Higher Education?",
+      title: "Why Netherlands?",
       content:
-        "Studying in the Netherlands in 2024 means learning from some of the world’s best academics and experts. Dutch universities are known for their exceptional academic support and state-of-the-art technology. Students benefit from strong industry links, gaining access to placements, internships, and volunteering positions that provide real-world professional experience. Graduates from Dutch universities are highly sought after by employers worldwide.",
+        "The Netherlands offers strong English-taught options and a structured student residence system \u2014 but the financial and sponsor requirements must be handled precisely.",
+      bullets: [
+        "Strong English-taught programme availability",
+        "Sponsor-led admission/residence permit process",
+        "Post-study options may be available depending on eligibility",
+      ],
     },
     quick_facts_section: {
       title: "Quick Facts",
       facts: [
-        "The Netherlands conducts a significant portion of the world’s scientific research and produces numerous frequently cited papers.",
-        "Over 300,000 international students are welcomed each year.",
-        "A post-study work visa allows graduates to stay and work in the Netherlands for up to 2 years.",
-        "Many top universities and student cities are located in the Netherlands.",
-        "Universities of international repute are available.",
-        "Admission without IELTS is possible in certain cases.",
-        "Masters courses with 1-year work placements are available.",
+        "IND required amount for study (HBO/university) 2026: EUR 1,130.77 per month",
       ],
+      note: "Our Approach: Advice is tailored to your profile \u2014 eligibility first, no guesswork.",
+    },
+    who_is_it_for_section: {
+      title: "Who Netherlands Is For",
+      columns: [
+        {
+          title: "Best fit",
+          variant: "best_fit",
+          points: [
+            "You want a credible programme aligned to your background and outcomes",
+            "You can support a realistic budget and evidence plan",
+            "You want a structured process (not 'agent promises')",
+          ],
+        },
+        {
+          title: "Profile-dependent",
+          variant: "profile_dependent",
+          points: [
+            "City/province flexibility and programme choice",
+            "Funding sources and document history",
+            "Timeline alignment to intake and processing",
+          ],
+        },
+        {
+          title: "Not recommended",
+          variant: "not_recommended",
+          points: [
+            "You want guarantees rather than a credible plan",
+            "Your study logic is unclear or inconsistent",
+            "You're relying on unrealistic budgets",
+          ],
+        },
+      ],
+    },
+    uniguru_method_section: {
+      title: "A calm process, built for real outcomes",
+      intro:
+        "We run a structured process that keeps decisions clear, timelines realistic, and paperwork compliant.",
+      steps: [
+        {
+          step: "Step 1",
+          title: "Netherlands Eligibility Check (2 minutes)",
+          description: "Destination, intake, WhatsApp. That's it.",
+        },
+        {
+          step: "Step 2",
+          title: "Shortlist + Plan (24\u201348 hours)",
+          description:
+            "A realistic shortlist based on academic fit, budget, and credibility \u2014 with clear next steps.",
+        },
+        {
+          step: "Step 3",
+          title: "Offer/Admission \u2192 Evidence plan",
+          description:
+            "We guide you through what to prepare, how to present it, and what to avoid \u2014 so your submission is clean and consistent.",
+        },
+        {
+          step: "Step 4",
+          title: "Pre-departure readiness",
+          description:
+            "Accommodation and arrival planning support so you land prepared, not panicked.",
+        },
+      ],
+      micro_line:
+        "No pressure. No shortcuts. Just a plan that stands up to scrutiny.",
+    },
+    iaa_section: {
+      title: "Immigration Advice Authority (IAA) Regulated Support",
+      registration:
+        "Regulated by the Immigration Advice Authority (IAA) - Organisation Registration: F202537807",
+      description:
+        "When immigration advice is required, we provide guidance that's regulated, accountable, and standards-led. That means clear boundaries, proper record-keeping, and advice you can rely on \u2014 not sales talk.",
+      benefits_title: "What this means for you",
+      benefits: [
+        "Accountability: regulated standards and transparent processes",
+        "Clarity: eligibility-led guidance, not vague promises",
+        "Compliance-first: documentation planning that stands up to scrutiny",
+        "Integrity: no shortcuts, no pressure tactics",
+      ],
+      disclaimer:
+        "We do not guarantee outcomes \u2014 we deliver compliant guidance and clear next steps based on your profile.",
+    },
+    graduate_route_section: {
+      title: "Orientation Year Residence Permit",
+      content:
+        "Eligible graduates may be able to apply for an orientation year residence permit after study, subject to conditions and current requirements.",
+      eligibility_note:
+        "We confirm what applies once your course and provider are confirmed.",
+      micro_line:
+        "Rules can change. We advise based on requirements in force at the time of your case.",
+    },
+    costs_planning_section: {
+      title: "Costs and planning (Netherlands)",
+      description:
+        "A Netherlands study plan only works when the finances are realistic and consistent with your overall profile. We help you plan conservatively, document your assumptions, and avoid budgets that look credible on paper but fail in real life.",
+      costs_title: "Typical benchmarks and planning notes",
+      cost_items: [
+        {
+          label: "IND study required amount (HBO/university) 2026",
+          points: ["EUR 1,130.77 per month"],
+        },
+        {
+          label: "Residence-permit fees and tuition",
+          points: [
+            "Vary by institution and programme; we confirm the correct category and amounts during case review",
+          ],
+        },
+      ],
+      will_wont: {
+        title: "What we will do / what we won't do",
+        will_do_heading: "What we will do",
+        wont_do_heading: "What we won't do",
+        rows: [
+          {
+            will_do:
+              "Provide a realistic budget framework tailored to city/province/route",
+            wont_do: "Pretend costs are the same everywhere",
+          },
+          {
+            will_do:
+              "Confirm current government fees and benchmarks during case review",
+            wont_do: "Quote outdated fees as 'guaranteed'",
+          },
+          {
+            will_do:
+              "Flag credibility risks early (funding pattern, timelines, consistency)",
+            wont_do: "Say 'it will be fine' without evidence",
+          },
+          {
+            will_do:
+              "Provide a structured evidence plan aligned to the budget",
+            wont_do: "Encourage vague budgets or unexplained funding",
+          },
+          {
+            will_do:
+              "Keep advice regulated, accountable, and properly recorded",
+            wont_do:
+              "Support shortcuts, false documents, or pressure tactics",
+          },
+        ],
+      },
+      disclaimer:
+        "Final amounts depend on your institution, course level, visa length/route, and current government requirements \u2014 we confirm these during your eligibility review.",
+    },
+    faq_section: {
+      title: "Frequently asked questions",
+      items: [
+        {
+          question: "Do you guarantee outcomes?",
+          answer:
+            "No. No credible regulated firm guarantees outcomes. We provide structured, compliant guidance and clear next steps based on your profile.",
+        },
+        {
+          question: "Do I need IELTS/English proof?",
+          answer:
+            "It depends on the institution and course. We confirm requirements after your eligibility review.",
+        },
+        {
+          question: "How long does the process take?",
+          answer:
+            "Timelines vary by institution and intake. Shortlists are typically issued within 24\u201348 hours (working days).",
+        },
+        {
+          question: "Can I work while studying?",
+          answer:
+            "Work permission depends on the route and conditions. We explain what applies once your offer is confirmed.",
+        },
+        {
+          question: "Am I eligible for post-study options?",
+          answer:
+            "Some applicants may be eligible depending on route and current rules. We confirm once your plan is final.",
+        },
+      ],
+      whatsapp_label: "Ask on WhatsApp",
+      whatsapp_link: "https://wa.me/447123456789",
+    },
+    cta_section: {
+      title: "Start with clarity",
+      subtitle: "Netherlands Eligibility Check (2 minutes)",
+      fields: ["Destination (Netherlands)", "Intake", "WhatsApp"],
+      button_label: "Get My Netherlands Shortlist",
+      micro_text:
+        "Shortlist & next steps typically within 24\u201348 hours (working days).",
+      trust_line:
+        "Immigration Advice Authority (IAA) Regulated \u2022 Organisation Registration: F202537807 \u2022 128 City Road, London EC1V 2NX \u2022 100+ Google Reviews",
+      disclaimer:
+        "We provide regulated guidance where required. We do not guarantee outcomes.",
+    },
+    opportunities_hub_section: {
+      title: "Netherlands Opportunities Hub",
+      subline:
+        "Curated resources and partner options \u2014 your final shortlist depends on your profile and intake.",
+      cards: [
+        {
+          heading: "Partner institutions (Netherlands)",
+          text: "Explore a curated list of institutions we work with.",
+          cta_label: "View Netherlands partner universities",
+          cta_link: "/universities",
+        },
+        {
+          heading: "Scholarships (Netherlands)",
+          text: "A practical overview of common scholarship types and eligibility.",
+          cta_label: "Explore scholarships",
+          cta_link: "/scholarships",
+        },
+        {
+          heading: "Careers & industry insights",
+          text: "Which courses lead to which outcomes \u2014 and what's credible for your profile.",
+          cta_label: "See career insights",
+          cta_link: "/careers",
+        },
+      ],
+      cta_text:
+        "Prefer a tailored recommendation? Get your Netherlands shortlist in 2 minutes.",
+      cta_button_label: "Get My Netherlands Shortlist",
     },
     careers_insights_section: {
       title: "Careers & Industry Insights",
       content:
-        "The Netherlands’ economy remains highly globalized and diverse, with leading sectors including service industries, financial services, higher education, aerospace, pharmaceuticals, manufacturing, and production. Top-paying jobs are found in Information Technology, Engineering, Business and Financial Management, Legal professions, Aviation, Higher Education, and Medicine.",
+        "The Netherlands' economy remains highly globalized and diverse, with leading sectors including service industries, financial services, higher education, aerospace, pharmaceuticals, manufacturing, and production. Top-paying jobs are found in Information Technology, Engineering, Business and Financial Management, Legal professions, Aviation, Higher Education, and Medicine.",
       images: [
         { src: "/images/study_destinations/carers1.png", alt: "" },
         { src: "/images/study_destinations/carers2.png", alt: "" },
@@ -838,29 +1742,246 @@ export const STUDY_DESTINATIONS_FULLDATA = [
         { src: "/images/study_destinations/germany/2.jpg", alt: "" },
       ],
       description:
-        "Germany remains renowned for its high-quality education system and welcoming attitude towards international students. German universities consistently rank among the best in the world, offering an unforgettable student experience that caters to the needs and aspirations of their students.",
+        "Because value destinations still require precision \u2014 you deserve regulated guidance and zero guesswork. Eligibility-led shortlisting and a compliant plan \u2014 from programme selection to visa-ready evidence.",
     },
     why_choose_section: {
-      title: "Why Choose Germany for Higher Education?",
+      title: "Why Germany?",
       content:
-        "Studying in Germany in 2024 means learning from some of the world’s best academics and experts. German universities are known for their exceptional academic support and state-of-the-art technology. Students benefit from strong industry links, gaining access to placements, internships, and volunteering positions that provide real-world professional experience. Graduates from German universities are highly sought after by employers worldwide.",
+        "Germany is compelling for strong academics and value \u2014 but the evidence plan must be precise, especially around finances and route requirements.",
+      bullets: [
+        "Academic strength and structured routes",
+        "High value in many programmes (route-dependent)",
+        "Post-study options may exist depending on conditions",
+      ],
     },
     quick_facts_section: {
       title: "Quick Facts",
       facts: [
-        "Germany conducts a significant portion of the world’s scientific research and produces numerous frequently cited papers.",
-        "Over 350,000 international students are welcomed each year.",
-        "A post-study work visa allows graduates to stay and work in Germany for up to 18 months.",
-        "Many top universities and student cities are located in Germany.",
-        "Universities of international repute are available.",
-        "Admission without IELTS is possible in certain cases.",
-        "Masters courses with 1-year work placements are available.",
+        "Blocked account benchmark for 2026 commonly cited: EUR 11,904/year (EUR 992/month)",
+        "Prospects after graduation: residence permit up to 18 months to seek qualified employment (conditions apply)",
       ],
+      note: "Our Approach: Advice is tailored to your profile \u2014 eligibility first, no guesswork.",
+    },
+    who_is_it_for_section: {
+      title: "Who Germany Is For",
+      columns: [
+        {
+          title: "Best fit",
+          variant: "best_fit",
+          points: [
+            "You want a credible programme aligned to your background and outcomes",
+            "You can support a realistic budget and evidence plan",
+            "You want a structured process (not 'agent promises')",
+          ],
+        },
+        {
+          title: "Profile-dependent",
+          variant: "profile_dependent",
+          points: [
+            "City/province flexibility and programme choice",
+            "Funding sources and document history",
+            "Timeline alignment to intake and processing",
+          ],
+        },
+        {
+          title: "Not recommended",
+          variant: "not_recommended",
+          points: [
+            "You want guarantees rather than a credible plan",
+            "Your study logic is unclear or inconsistent",
+            "You're relying on unrealistic budgets",
+          ],
+        },
+      ],
+    },
+    uniguru_method_section: {
+      title: "A calm process, built for real outcomes",
+      intro:
+        "We run a structured process that keeps decisions clear, timelines realistic, and paperwork compliant.",
+      steps: [
+        {
+          step: "Step 1",
+          title: "Germany Eligibility Check (2 minutes)",
+          description: "Destination, intake, WhatsApp. That's it.",
+        },
+        {
+          step: "Step 2",
+          title: "Shortlist + Plan (24\u201348 hours)",
+          description:
+            "A realistic shortlist based on academic fit, budget, and credibility \u2014 with clear next steps.",
+        },
+        {
+          step: "Step 3",
+          title: "Offer/Admission \u2192 Evidence plan",
+          description:
+            "We guide you through what to prepare, how to present it, and what to avoid \u2014 so your submission is clean and consistent.",
+        },
+        {
+          step: "Step 4",
+          title: "Pre-departure readiness",
+          description:
+            "Accommodation and arrival planning support so you land prepared, not panicked.",
+        },
+      ],
+      micro_line:
+        "No pressure. No shortcuts. Just a plan that stands up to scrutiny.",
+    },
+    iaa_section: {
+      title: "Immigration Advice Authority (IAA) Regulated Support",
+      registration:
+        "Regulated by the Immigration Advice Authority (IAA) - Organisation Registration: F202537807",
+      description:
+        "When immigration advice is required, we provide guidance that's regulated, accountable, and standards-led. That means clear boundaries, proper record-keeping, and advice you can rely on \u2014 not sales talk.",
+      benefits_title: "What this means for you",
+      benefits: [
+        "Accountability: regulated standards and transparent processes",
+        "Clarity: eligibility-led guidance, not vague promises",
+        "Compliance-first: documentation planning that stands up to scrutiny",
+        "Integrity: no shortcuts, no pressure tactics",
+      ],
+      disclaimer:
+        "We do not guarantee outcomes \u2014 we deliver compliant guidance and clear next steps based on your profile.",
+    },
+    graduate_route_section: {
+      title: "Post-Study Residence Permit (Germany)",
+      content:
+        "Eligible graduates may have the possibility of obtaining a residence permit valid for up to 18 months to look for qualified employment, subject to conditions.",
+      eligibility_note:
+        "We confirm what applies based on your route and local requirements.",
+      micro_line:
+        "Rules can change. We advise based on requirements in force at the time of your case.",
+    },
+    costs_planning_section: {
+      title: "Costs and planning (Germany)",
+      description:
+        "A Germany study plan only works when the finances are realistic and consistent with your overall profile. We help you plan conservatively, document your assumptions, and avoid budgets that look credible on paper but fail in real life.",
+      costs_title: "Typical benchmarks (planning guide)",
+      cost_items: [
+        {
+          label: "Financial proof (blocked account benchmark)",
+          points: [
+            "EUR 11,904/year (EUR 992/month) is commonly cited for 2026",
+          ],
+        },
+        {
+          label: "Living costs and tuition/semester contributions",
+          points: [
+            "Vary by city, institution and state; we confirm the correct requirements and budget assumptions after eligibility and shortlist",
+          ],
+        },
+      ],
+      will_wont: {
+        title: "What we will do / what we won't do",
+        will_do_heading: "What we will do",
+        wont_do_heading: "What we won't do",
+        rows: [
+          {
+            will_do:
+              "Provide a realistic budget framework tailored to city/province/route",
+            wont_do: "Pretend costs are the same everywhere",
+          },
+          {
+            will_do:
+              "Confirm current government fees and benchmarks during case review",
+            wont_do: "Quote outdated fees as 'guaranteed'",
+          },
+          {
+            will_do:
+              "Flag credibility risks early (funding pattern, timelines, consistency)",
+            wont_do: "Say 'it will be fine' without evidence",
+          },
+          {
+            will_do:
+              "Provide a structured evidence plan aligned to the budget",
+            wont_do: "Encourage vague budgets or unexplained funding",
+          },
+          {
+            will_do:
+              "Keep advice regulated, accountable, and properly recorded",
+            wont_do:
+              "Support shortcuts, false documents, or pressure tactics",
+          },
+        ],
+      },
+      disclaimer:
+        "Final amounts depend on your institution, course level, visa length/route, and current government requirements \u2014 we confirm these during your eligibility review.",
+    },
+    faq_section: {
+      title: "Frequently asked questions",
+      items: [
+        {
+          question: "Do you guarantee outcomes?",
+          answer:
+            "No. No credible regulated firm guarantees outcomes. We provide structured, compliant guidance and clear next steps based on your profile.",
+        },
+        {
+          question: "Do I need IELTS/English proof?",
+          answer:
+            "It depends on the institution and course. We confirm requirements after your eligibility review.",
+        },
+        {
+          question: "How long does the process take?",
+          answer:
+            "Timelines vary by institution and intake. Shortlists are typically issued within 24\u201348 hours (working days).",
+        },
+        {
+          question: "Can I work while studying?",
+          answer:
+            "Work permission depends on the route and conditions. We explain what applies once your offer is confirmed.",
+        },
+        {
+          question: "Am I eligible for post-study options?",
+          answer:
+            "Some applicants may be eligible depending on route and current rules. We confirm once your plan is final.",
+        },
+      ],
+      whatsapp_label: "Ask on WhatsApp",
+      whatsapp_link: "https://wa.me/447123456789",
+    },
+    cta_section: {
+      title: "Start with clarity",
+      subtitle: "Germany Eligibility Check (2 minutes)",
+      fields: ["Destination (Germany)", "Intake", "WhatsApp"],
+      button_label: "Get My Germany Shortlist",
+      micro_text:
+        "Shortlist & next steps typically within 24\u201348 hours (working days).",
+      trust_line:
+        "Immigration Advice Authority (IAA) Regulated \u2022 Organisation Registration: F202537807 \u2022 128 City Road, London EC1V 2NX \u2022 100+ Google Reviews",
+      disclaimer:
+        "We provide regulated guidance where required. We do not guarantee outcomes.",
+    },
+    opportunities_hub_section: {
+      title: "Germany Opportunities Hub",
+      subline:
+        "Curated resources and partner options \u2014 your final shortlist depends on your profile and intake.",
+      cards: [
+        {
+          heading: "Partner institutions (Germany)",
+          text: "Explore a curated list of institutions we work with.",
+          cta_label: "View Germany partner universities",
+          cta_link: "/universities",
+        },
+        {
+          heading: "Scholarships (Germany)",
+          text: "A practical overview of common scholarship types and eligibility.",
+          cta_label: "Explore scholarships",
+          cta_link: "/scholarships",
+        },
+        {
+          heading: "Careers & industry insights",
+          text: "Which courses lead to which outcomes \u2014 and what's credible for your profile.",
+          cta_label: "See career insights",
+          cta_link: "/careers",
+        },
+      ],
+      cta_text:
+        "Prefer a tailored recommendation? Get your Germany shortlist in 2 minutes.",
+      cta_button_label: "Get My Germany Shortlist",
     },
     careers_insights_section: {
       title: "Careers & Industry Insights",
       content:
-        "Germany’s economy remains highly globalized and diverse, with leading sectors including service industries, financial services, higher education, aerospace, pharmaceuticals, manufacturing, and production. Top-paying jobs are found in Information Technology, Engineering, Business and Financial Management, Legal professions, Aviation, Higher Education, and Medicine.",
+        "Germany's economy remains highly globalized and diverse, with leading sectors including service industries, financial services, higher education, aerospace, pharmaceuticals, manufacturing, and production. Top-paying jobs are found in Information Technology, Engineering, Business and Financial Management, Legal professions, Aviation, Higher Education, and Medicine.",
       images: [
         { src: "/images/study_destinations/carers1.png", alt: "" },
         { src: "/images/study_destinations/carers2.png", alt: "" },

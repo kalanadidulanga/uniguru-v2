@@ -1,13 +1,39 @@
 "use client";
 
 import React from "react";
+import { CheckCircle2, AlertTriangle, XCircle, CalendarDays, GraduationCap, Shield, Briefcase, PoundSterling, ChevronDown, MessageCircle, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import DestinationHero from "./DestinationHero";
 import DestinationWhyChoose from "./DestinationWhyChoose";
 import DestinationQuickFacts from "./DestinationQuickFacts";
 import DestinationCost from "./DestinationCost";
 import DestinationCareers from "./DestinationCareers";
 import DestinationResources from "./DestinationResources";
-import type { StudyDestinationDataSet } from "./types";
+import type { StudyDestinationDataSet, WhoIsItForColumn } from "./types";
+
+const VARIANT_STYLES: Record<WhoIsItForColumn["variant"], { bg: string; border: string; iconBg: string; icon: React.ReactNode; bullet: string }> = {
+  best_fit: {
+    bg: "bg-emerald-50",
+    border: "border-emerald-200",
+    iconBg: "bg-emerald-100 text-emerald-600",
+    icon: <CheckCircle2 size={22} />,
+    bullet: "text-emerald-500",
+  },
+  profile_dependent: {
+    bg: "bg-amber-50",
+    border: "border-amber-200",
+    iconBg: "bg-amber-100 text-amber-600",
+    icon: <AlertTriangle size={22} />,
+    bullet: "text-amber-500",
+  },
+  not_recommended: {
+    bg: "bg-red-50",
+    border: "border-red-200",
+    iconBg: "bg-red-100 text-red-600",
+    icon: <XCircle size={22} />,
+    bullet: "text-red-500",
+  },
+};
 
 interface StudyDestinationPageV2Props {
   dataSet: StudyDestinationDataSet;
@@ -21,17 +47,421 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
     >
       <DestinationHero dataSet={dataSet} />
 
-      {/* Bento: Why Choose, Quick Facts, Cost */}
+      {/* Bento: Why Choose + Quick Facts (+ Cost if no detailed costs section) */}
       <div id="details" className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <DestinationWhyChoose data={dataSet.why_choose_section} />
           <DestinationQuickFacts data={dataSet.quick_facts_section} />
-          <DestinationCost data={dataSet.cost_of_study_section} />
+          {!dataSet.costs_planning_section && (
+            <DestinationCost data={dataSet.cost_of_study_section} />
+          )}
         </div>
       </div>
 
-      <DestinationCareers dataSet={dataSet} />
-      <DestinationResources dataSet={dataSet} />
+      {dataSet.who_is_it_for_section && (
+        <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a3b85] mb-8 text-center">
+            {dataSet.who_is_it_for_section.title}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {dataSet.who_is_it_for_section.columns.map((col) => {
+              const style = VARIANT_STYLES[col.variant];
+              return (
+                <div
+                  key={col.variant}
+                  className={`rounded-2xl border ${style.border} ${style.bg} p-6 sm:p-8 transition-shadow duration-300 hover:shadow-lg`}
+                >
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className={`p-2.5 rounded-xl ${style.iconBg}`} aria-hidden>
+                      {style.icon}
+                    </div>
+                    <h3 className="text-lg font-semibold text-slate-800">{col.title}</h3>
+                  </div>
+                  <ul className="space-y-3">
+                    {col.points.map((point, i) => (
+                      <li key={i} className="flex gap-3 text-sm sm:text-base text-slate-700 leading-snug">
+                        <span className={`mt-1.5 w-1.5 h-1.5 rounded-full ${style.bullet} bg-current shrink-0`} />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      {/* Intakes */}
+      {dataSet.intakes_section && (
+        <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+          <div className="rounded-2xl bg-white shadow-[0_4px_24px_rgba(26,59,133,0.08)] p-8 sm:p-10 text-center">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <CalendarDays size={24} className="text-[#D4AF37]" />
+              <h2 className="text-xl sm:text-2xl font-semibold text-[#1a3b85]">Intakes we support</h2>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-5">
+              {dataSet.intakes_section.intakes.map((intake, i) => (
+                <React.Fragment key={intake}>
+                  <span className="text-lg sm:text-xl font-medium text-slate-800">{intake}</span>
+                  {i < dataSet.intakes_section!.intakes.length - 1 && (
+                    <span className="text-[#D4AF37] text-xl">&#8226;</span>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+            <p className="text-slate-500 text-sm sm:text-base mb-6">{dataSet.intakes_section.description}</p>
+            <Link
+              href="/free-eligibility-check"
+              className="inline-block px-6 py-3 rounded-xl bg-[#1a3b85] text-white font-medium text-sm sm:text-base hover:bg-[#15306b] transition-colors duration-200"
+            >
+              {dataSet.intakes_section.cta_label}
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* Partner Institutions */}
+      {dataSet.partner_institutions_section && (
+        <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a3b85] mb-8 text-center">
+            {dataSet.partner_institutions_section.title}
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+            {dataSet.partner_institutions_section.partners.map((partner) => (
+              <div
+                key={partner.name}
+                className="flex items-center justify-center rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
+              >
+                {partner.logo ? (
+                  <img src={partner.logo} alt={partner.name} className="h-10 object-contain" />
+                ) : (
+                  <div className="flex items-center gap-2 text-center">
+                    <GraduationCap size={18} className="text-[#1a3b85] shrink-0" />
+                    <span className="text-xs sm:text-sm font-medium text-slate-700">{partner.name}</span>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          {dataSet.partner_institutions_section.note && (
+            <p className="text-center text-slate-400 text-xs sm:text-sm mt-5">
+              {dataSet.partner_institutions_section.note}
+            </p>
+          )}
+        </section>
+      )}
+
+      {/* The Uniguru Method */}
+      {dataSet.uniguru_method_section && (
+        <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a3b85] mb-3">
+              {dataSet.uniguru_method_section.title}
+            </h2>
+            <p className="text-slate-500 text-sm sm:text-base max-w-2xl mx-auto">
+              {dataSet.uniguru_method_section.intro}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {dataSet.uniguru_method_section.steps.map((step, i) => (
+              <div
+                key={i}
+                className="relative rounded-2xl bg-white border border-slate-200 p-6 sm:p-8 shadow-sm hover:shadow-lg transition-shadow duration-300"
+              >
+                <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#D4AF37] mb-2">
+                  {step.step}
+                </span>
+                <h3 className="text-base sm:text-lg font-semibold text-[#1a3b85] mb-2">{step.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{step.description}</p>
+              </div>
+            ))}
+          </div>
+          {dataSet.uniguru_method_section.micro_line && (
+            <p className="text-center text-slate-400 text-xs sm:text-sm mt-8 italic tracking-wide">
+              {dataSet.uniguru_method_section.micro_line}
+            </p>
+          )}
+        </section>
+      )}
+
+      {/* IAA Regulated Support */}
+      {dataSet.iaa_section && (
+        <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+          <div className="rounded-2xl bg-[#1a3b85] text-white p-8 sm:p-10 lg:p-12">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="p-3 rounded-xl bg-white/10 shrink-0" aria-hidden>
+                <Shield size={24} className="text-[#D4AF37]" />
+              </div>
+              <div>
+                <h2 className="text-xl sm:text-2xl font-bold">{dataSet.iaa_section.title}</h2>
+                <p className="text-white/60 text-xs sm:text-sm mt-1">{dataSet.iaa_section.registration}</p>
+              </div>
+            </div>
+            <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-6">
+              {dataSet.iaa_section.description}
+            </p>
+            <h3 className="text-base font-semibold text-[#D4AF37] mb-3">{dataSet.iaa_section.benefits_title}</h3>
+            <ul className="space-y-3 mb-6">
+              {dataSet.iaa_section.benefits.map((benefit, i) => (
+                <li key={i} className="flex gap-3 text-sm sm:text-base text-white/85 leading-snug">
+                  <CheckCircle2 className="w-5 h-5 shrink-0 text-[#D4AF37] mt-0.5" />
+                  <span>{benefit}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-white/50 text-xs sm:text-sm border-t border-white/10 pt-4">
+              {dataSet.iaa_section.disclaimer}
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* Graduate Route */}
+      {dataSet.graduate_route_section && (
+        <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+          <div className="rounded-2xl bg-white shadow-[0_4px_24px_rgba(26,59,133,0.08)] p-8 sm:p-10">
+            <div className="flex items-start gap-4 mb-5">
+              <div className="p-3 rounded-xl bg-[#D4AF37]/15 shrink-0" aria-hidden>
+                <Briefcase size={24} className="text-[#D4AF37]" />
+              </div>
+              <h2 className="text-xl sm:text-2xl font-semibold text-[#1a3b85]">
+                {dataSet.graduate_route_section.title}
+              </h2>
+            </div>
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
+              {dataSet.graduate_route_section.content}
+            </p>
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              {dataSet.graduate_route_section.eligibility_note}
+            </p>
+            {dataSet.graduate_route_section.micro_line && (
+              <p className="text-slate-400 text-xs sm:text-sm mt-5 italic">
+                {dataSet.graduate_route_section.micro_line}
+              </p>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* Costs and Planning */}
+      {dataSet.costs_planning_section && (
+        <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+          <div className="text-center mb-10">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <PoundSterling size={24} className="text-[#D4AF37]" />
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1a3b85]">
+                {dataSet.costs_planning_section.title}
+              </h2>
+            </div>
+            <p className="text-slate-500 text-sm sm:text-base max-w-3xl mx-auto">
+              {dataSet.costs_planning_section.description}
+            </p>
+          </div>
+
+          {/* Cost Items */}
+          <div className="mb-10">
+            <h3 className="text-lg sm:text-xl font-semibold text-[#1a3b85] mb-6">
+              {dataSet.costs_planning_section.costs_title}
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {dataSet.costs_planning_section.cost_items.map((item, i) => (
+                <div
+                  key={i}
+                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <h4 className="text-sm font-semibold text-[#1a3b85] mb-3">{item.label}</h4>
+                  <ul className="space-y-2">
+                    {item.points.map((point, j) => (
+                      <li key={j} className="flex gap-3 text-sm text-slate-700 leading-snug">
+                        <CheckCircle2 className="w-4 h-4 shrink-0 text-[#D4AF37] mt-0.5" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {item.footnote && (
+                    <p className="text-xs text-slate-400 mt-3 italic">{item.footnote}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* What we will do / won't do */}
+          <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+            <div className="px-6 sm:px-8 py-5 border-b border-slate-100">
+              <h3 className="text-lg font-semibold text-slate-800">
+                {dataSet.costs_planning_section.will_wont.title}
+              </h3>
+            </div>
+            <div className="hidden sm:grid grid-cols-2 px-6 sm:px-8 py-3 bg-slate-50 border-b border-slate-100 text-xs font-bold uppercase tracking-wider text-slate-500">
+              <span>{dataSet.costs_planning_section.will_wont.will_do_heading}</span>
+              <span>{dataSet.costs_planning_section.will_wont.wont_do_heading}</span>
+            </div>
+            {dataSet.costs_planning_section.will_wont.rows.map((row, i) => (
+              <div
+                key={i}
+                className={`grid grid-cols-1 sm:grid-cols-2 px-6 sm:px-8 py-4 ${i < dataSet.costs_planning_section!.will_wont.rows.length - 1 ? "border-b border-slate-100" : ""}`}
+              >
+                <div className="flex gap-2 text-sm text-slate-700 mb-2 sm:mb-0">
+                  <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-500 mt-0.5" />
+                  <span>{row.will_do}</span>
+                </div>
+                <div className="flex gap-2 text-sm text-slate-500">
+                  <XCircle className="w-4 h-4 shrink-0 text-red-400 mt-0.5" />
+                  <span>{row.wont_do}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {dataSet.costs_planning_section.disclaimer && (
+            <p className="text-center text-slate-400 text-xs sm:text-sm mt-6 italic">
+              {dataSet.costs_planning_section.disclaimer}
+            </p>
+          )}
+        </section>
+      )}
+
+      {/* FAQ */}
+      {dataSet.faq_section && (
+        <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a3b85] mb-8 text-center">
+            {dataSet.faq_section.title}
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {dataSet.faq_section.items.map((item, i) => (
+              <details
+                key={i}
+                className="group rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden"
+              >
+                <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none select-none hover:bg-slate-50 transition-colors">
+                  <span className="text-sm sm:text-base font-semibold text-slate-800">{item.question}</span>
+                  <ChevronDown size={18} className="text-slate-400 shrink-0 transition-transform duration-200 group-open:rotate-180" />
+                </summary>
+                <div className="px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed">
+                  {item.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+          <div className="text-center mt-6">
+            <a
+              href={dataSet.faq_section.whatsapp_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#1a3b85] hover:text-[#D4AF37] transition-colors"
+            >
+              <MessageCircle size={16} />
+              {dataSet.faq_section.whatsapp_label}
+            </a>
+          </div>
+        </section>
+      )}
+
+      {/* Opportunities Hub */}
+      {dataSet.opportunities_hub_section && (() => {
+        const cardAccents = [
+          "from-[#1a3b85] to-[#2a5bb5]",
+          "from-[#D4AF37] to-[#e8c84a]",
+          "from-emerald-600 to-emerald-500",
+        ];
+        const cardIconText = ["text-white", "text-[#1a3b85]", "text-white"];
+        const cardIcons = [
+          <GraduationCap key="uni" size={26} />,
+          <Shield key="sch" size={26} />,
+          <Briefcase key="car" size={26} />,
+        ];
+
+        return (
+          <section className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+            <div className="text-center mb-12">
+              <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37] mb-3">Resources</span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1a3b85] mb-3">
+                {dataSet.opportunities_hub_section.title}
+              </h2>
+              <p className="text-slate-500 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+                {dataSet.opportunities_hub_section.subline}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+              {dataSet.opportunities_hub_section.cards.map((card, i) => (
+                <Link
+                  key={card.heading}
+                  href={card.cta_link}
+                  className="group relative rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex flex-col"
+                >
+                  <div className={`h-1.5 bg-gradient-to-r ${cardAccents[i] || cardAccents[0]}`} />
+                  <div className="p-6 sm:p-8 flex flex-col flex-1">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${cardAccents[i] || cardAccents[0]} ${cardIconText[i] || cardIconText[0]} flex items-center justify-center mb-5 shadow-md`}>
+                      {cardIcons[i] || cardIcons[0]}
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-[#1a3b85] transition-colors">
+                      {card.heading}
+                    </h3>
+                    <p className="text-sm text-slate-500 leading-relaxed mb-6 flex-1">{card.text}</p>
+                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#1a3b85] group-hover:text-[#D4AF37] transition-colors">
+                      {card.cta_label}
+                      <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-10 text-center">
+              <p className="text-slate-500 text-sm sm:text-base mb-4 italic">{dataSet.opportunities_hub_section.cta_text}</p>
+              <a
+                href="#eligibility-form"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#1a3b85] text-white font-semibold text-sm sm:text-base hover:bg-[#15306b] transition-colors duration-200 shadow-md hover:shadow-lg"
+              >
+                {dataSet.opportunities_hub_section.cta_button_label}
+                <ArrowRight size={16} />
+              </a>
+            </div>
+          </section>
+        );
+      })()}
+
+      {/* CTA - Start with clarity */}
+      {dataSet.cta_section && (
+        <section id="eligibility-form" className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+          <div className="rounded-2xl bg-[#1a3b85] text-white p-8 sm:p-10 lg:p-12 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2">{dataSet.cta_section.title}</h2>
+            <p className="text-white/80 text-base sm:text-lg mb-5">{dataSet.cta_section.subtitle}</p>
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+              {dataSet.cta_section.fields.map((field, i) => (
+                <React.Fragment key={field}>
+                  <span className="text-sm sm:text-base text-white/70">{field}</span>
+                  {i < dataSet.cta_section!.fields.length - 1 && (
+                    <span className="text-[#D4AF37]">&#8226;</span>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+            <a
+              href="#eligibility-form"
+              className="inline-block px-8 py-3.5 rounded-xl bg-[#D4AF37] text-[#1a3b85] font-bold text-sm sm:text-base hover:bg-[#c9a432] transition-colors duration-200 mb-5"
+            >
+              {dataSet.cta_section.button_label}
+            </a>
+            <p className="text-white/50 text-xs sm:text-sm mb-4">{dataSet.cta_section.micro_text}</p>
+            <p className="text-white/40 text-[10px] sm:text-xs leading-relaxed max-w-2xl mx-auto mb-2">
+              {dataSet.cta_section.trust_line}
+            </p>
+            <p className="text-white/35 text-[10px] sm:text-xs">{dataSet.cta_section.disclaimer}</p>
+          </div>
+        </section>
+      )}
+
+      {/* Legacy sections — only for destinations without Opportunities Hub */}
+      {!dataSet.opportunities_hub_section && (
+        <>
+          <DestinationCareers dataSet={dataSet} />
+          <DestinationResources dataSet={dataSet} />
+        </>
+      )}
     </div>
   );
 };

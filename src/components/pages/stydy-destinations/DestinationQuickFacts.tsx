@@ -22,11 +22,19 @@ const DestinationQuickFacts = ({ data }: DestinationQuickFactsProps) => {
           </li>
         ))}
       </ul>
-      {data.note && (
-        <p className="mt-4 text-xs sm:text-sm text-white/70">
-          {data.note}
-        </p>
-      )}
+      {data.note && (() => {
+        const colonIndex = data.note.indexOf(":");
+        const label = colonIndex !== -1 ? data.note.slice(0, colonIndex + 1) : "";
+        const rest = colonIndex !== -1 ? data.note.slice(colonIndex + 1) : data.note;
+        return (
+          <div className="mt-6 pt-5 border-t border-white/15">
+            <p className="text-sm sm:text-base text-white/90 leading-relaxed">
+              {label && <span className="font-bold text-white">{label}</span>}
+              {rest}
+            </p>
+          </div>
+        );
+      })()}
     </div>
   );
 };
