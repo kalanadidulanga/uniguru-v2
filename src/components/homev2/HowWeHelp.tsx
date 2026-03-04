@@ -2,151 +2,159 @@
 
 import Image from "next/image";
 import {
-  UserSearch,
-  School,
-  FileEdit,
-  PlaneTakeoff,
-  ArrowRight,
+  ClipboardCheck,
+  FileText,
+  Mic,
+  Scale,
+  Home,
+  Briefcase,
+  MessageCircle,
 } from "lucide-react";
 
 const steps = [
   {
     id: 1,
-    title: "Profile evaluation",
+    title: "Eligibility & Shortlist",
     description:
-      "We analyse your academic background and career goals to find your best match.",
-    icon: UserSearch,
+      "We confirm what's realistic for your profile and budget, then build your shortlist and plan.",
+    icon: ClipboardCheck,
     imageUrl:
       "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80",
-    imageAlt: "Consultation and profile discussion",
+    imageAlt: "Consultation and eligibility assessment",
   },
   {
     id: 2,
-    title: "University shortlisting",
+    title: "Admissions Support",
     description:
-      "A curated list of universities that align with your aspirations and budget.",
-    icon: School,
+      "Structured applications, clean documentation, and timeline control so your submission is consistent.",
+    icon: FileText,
     imageUrl:
       "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=80",
-    imageAlt: "University campus and buildings",
+    imageAlt: "University admissions and documentation",
   },
   {
     id: 3,
-    title: "Application support",
+    title: "IELTS & Interview Preparation",
     description:
-      "From SOPs to application forms, our experts help your application stand out.",
-    icon: FileEdit,
+      "Diagnostics, planning, mock sessions, and feedback designed to improve performance, not just confidence.",
+    icon: Mic,
     imageUrl:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80",
-    imageAlt: "Documents and application preparation",
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80",
+    imageAlt: "Interview and test preparation",
   },
   {
     id: 4,
-    title: "Visa & departure",
+    title: "Immigration Support",
+    subtitle: "(IAA Regulated)",
     description:
-      "Complete visa guidance and pre-departure briefings for a smooth journey.",
-    icon: PlaneTakeoff,
+      "Regulated guidance where required. Fixed fee discipline. Clear scope with no pressure tactics.",
+    icon: Scale,
+    imageUrl:
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80",
+    imageAlt: "Immigration and visa documents",
+  },
+  {
+    id: 5,
+    title: "Accommodation Shortlist",
+    description:
+      "Practical options aligned to city, budget, and contract terms with third party options guided.",
+    icon: Home,
+    imageUrl:
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80",
+    imageAlt: "Student accommodation options",
+  },
+  {
+    id: 6,
+    title: "Arrival & Work Readiness",
+    description:
+      "Travel planning, first week checklist, and part time work readiness system (no guarantees).",
+    icon: Briefcase,
     imageUrl:
       "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80",
-    imageAlt: "Travel and departure",
+    imageAlt: "Travel and work preparation",
   },
 ];
 
 const HowWeHelp = () => {
   return (
     <section
-      className="relative bg-gradient-to-br from-[#f8fafc] via-white to-[#f0f4ff] py-20 sm:py-24 lg:py-28 font-sans overflow-hidden"
+      className="relative bg-[#0f2554] py-20 sm:py-24 lg:py-28 font-sans overflow-hidden"
       aria-labelledby="how-we-help-heading"
     >
-      {/* Soft background accents */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-[#1a3b85]/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3 pointer-events-none" />
-
       <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-5 lg:px-6 xl:px-8 2xl:px-10">
-        {/* Section header – clean style */}
+        {/* Section header */}
         <header className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <p className="text-xs font-semibold tracking-widest text-[#D4AF37] uppercase mb-3">
+          <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-3 sm:mb-4">
             Our Process
           </p>
           <h2
             id="how-we-help-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold text-[#1a3b85] tracking-tight leading-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold text-white tracking-tight leading-tight"
           >
-            How We Help You Succeed
+            End to End Support{" "}
+            <span className="text-[#D4AF37]">(London led)</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-2xl leading-relaxed mx-auto">
-            Your journey to a top global university is complex; we make it
-            simple. From first contact to admission.
+          <p className="mt-4 text-base sm:text-lg text-white/70 max-w-3xl leading-relaxed mx-auto">
+            One team, one process from shortlist to settlement, with regulated
+            guidance where required.
           </p>
         </header>
 
-        {/* Steps – each card with unique image */}
-        <div className="relative">
-          {/* Desktop: horizontal connector line behind step numbers */}
-          <div
-            className="hidden lg:block absolute left-0 right-0 top-7 h-px bg-[#1a3b85]/10"
-            aria-hidden
-          />
+        {/* Steps – 6 cards grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5 lg:gap-4">
+          {steps.map((step) => (
+            <article
+              key={step.id}
+              className="relative flex flex-col bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl overflow-hidden transition-all duration-300 hover:border-[#D4AF37]/40 hover:bg-white/15 group"
+            >
+              {/* Image */}
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#1a3b85]/30">
+                <Image
+                  src={step.imageUrl}
+                  alt={step.imageAlt}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 16vw"
+                />
+              </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-6">
-            {steps.map((step, index) => (
-              <article
-                key={step.id}
-                className="relative flex flex-col items-center lg:items-start text-center lg:text-left group"
-              >
-                {/* Step number + icon row */}
-                <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 mb-4 lg:mb-5">
-                  <div
-                    className="relative z-10 flex items-center justify-center w-14 h-14 rounded-full border-2 border-[#D4AF37] bg-white text-[#1a3b85] font-semibold text-lg tabular-nums shrink-0 shadow-sm"
-                    aria-hidden
-                  >
-                    {String(step.id).padStart(2, "0")}
-                  </div>
-                  <div
-                    className="w-12 h-12 rounded-lg bg-[#1a3b85]/5 flex items-center justify-center shrink-0 group-hover:bg-[#1a3b85]/10 transition-colors"
-                    aria-hidden
-                  >
-                    <step.icon
-                      className="w-6 h-6 text-[#1a3b85]"
-                      aria-hidden
-                    />
-                  </div>
+              {/* Icon badge */}
+              <div className="absolute top-3 right-3 z-10">
+                <div className="w-10 h-10 rounded-lg bg-white/90 backdrop-blur-sm border border-white/50 shadow-sm flex items-center justify-center">
+                  <step.icon className="w-5 h-5 text-[#0f2554]" aria-hidden />
                 </div>
+              </div>
 
-                {/* Card with image */}
-                <div className="w-full bg-white border border-gray-100 rounded-xl overflow-hidden transition-all duration-200 hover:border-[#1a3b85]/20 hover:shadow-lg">
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100">
-                    <Image
-                      src={step.imageUrl}
-                      alt={step.imageAlt}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 1024px) 100vw, 25vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1a3b85]/30 via-transparent to-transparent pointer-events-none" />
-                  </div>
-                  <div className="p-5 sm:p-6">
-                    <h3 className="text-lg sm:text-xl font-semibold text-[#1a3b85] mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Mobile: arrow between steps */}
-                {index < steps.length - 1 && (
-                  <div
-                    className="lg:hidden flex justify-center mt-6 text-gray-300"
-                    aria-hidden
-                  >
-                    <ArrowRight className="w-5 h-5 rotate-90" />
-                  </div>
+              {/* Content */}
+              <div className="flex-1 p-4 sm:p-5">
+                <h3 className="text-base sm:text-lg font-semibold text-white mb-1 leading-tight">
+                  {step.title}
+                </h3>
+                {step.subtitle && (
+                  <p className="text-xs text-[#D4AF37] font-medium mb-2">
+                    {step.subtitle}
+                  </p>
                 )}
-              </article>
-            ))}
-          </div>
+                <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 sm:mt-16">
+          <button className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0f2554] font-semibold rounded-full transition-colors text-sm sm:text-base shadow-lg shadow-[#D4AF37]/20">
+            Get My Shortlist
+          </button>
+          <button className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-medium rounded-full transition-colors text-sm sm:text-base border border-white/20">
+            Book Free 15 Minute Triage
+          </button>
+          <button className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-medium rounded-full transition-colors text-sm sm:text-base">
+            <MessageCircle className="w-4 h-4" />
+            Chat on WhatsApp
+          </button>
         </div>
       </div>
     </section>

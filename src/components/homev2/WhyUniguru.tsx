@@ -51,8 +51,8 @@ const WhyUniguru = () => {
 
         {/* Header */}
         <header className="text-center mb-12 sm:mb-14 lg:mb-16">
-          <p className="text-xs font-semibold tracking-widest text-[#D4AF37] uppercase mb-3">
-            Why Uniguru
+          <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-3 sm:mb-4">
+            Why Choose Us
           </p>
           <h2
             id="why-uniguru-heading"
