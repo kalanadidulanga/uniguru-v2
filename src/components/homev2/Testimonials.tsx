@@ -3,57 +3,57 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { REVIEWS } from "@/constants/reviews";
-import { Star, MapPin, GraduationCap } from "lucide-react";
+import { Star, MapPin, GraduationCap, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const TRANSITION_MS = 350;
+const TRANSITION_MS = 400;
 
 const Testimonials = () => {
-  const [featuredIndex, setFeaturedIndex] = useState(0);
-  const [expanded, setExpanded] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     setExpanded(false);
-  }, [featuredIndex]);
+  }, [activeIndex]);
 
   const goToIndex = useCallback(
     (nextIndex: number) => {
-      if (nextIndex === featuredIndex) return;
+      if (nextIndex === activeIndex || isTransitioning) return;
       setIsTransitioning(true);
       setTimeout(() => {
-        setFeaturedIndex(nextIndex);
+        setActiveIndex(nextIndex);
         setTimeout(() => setIsTransitioning(false), 50);
-      }, TRANSITION_MS);
+      }, TRANSITION_MS / 2);
     },
-    [featuredIndex]
+    [activeIndex, isTransitioning]
   );
 
-  // Auto carousel: cycle featured testimonial every 6 seconds
+  const goNext = useCallback(() => {
+    goToIndex((activeIndex + 1) % REVIEWS.length);
+  }, [activeIndex, goToIndex]);
+
+  const goPrev = useCallback(() => {
+    goToIndex((activeIndex - 1 + REVIEWS.length) % REVIEWS.length);
+  }, [activeIndex, goToIndex]);
+
+  // Auto carousel: cycle every 7 seconds
   useEffect(() => {
-    const interval = setInterval(() => {
-      goToIndex((featuredIndex + 1) % REVIEWS.length);
-    }, 6000);
+    const interval = setInterval(goNext, 7000);
     return () => clearInterval(interval);
-  }, [featuredIndex, goToIndex]);
+  }, [goNext]);
 
-  const featured = REVIEWS[featuredIndex];
-  const others = REVIEWS.filter((_, i) => i !== featuredIndex);
-
-  const oneLiner = (text: string, max = 80) =>
-    text.length <= max ? text : `${text.slice(0, max).trim()}…`;
+  const featured = REVIEWS[activeIndex];
 
   return (
     <section
-      className="relative py-20 sm:py-24 lg:py-28 font-sans overflow-hidden bg-gradient-to-br from-[#f8fafc] via-white to-[#f0f4ff]"
+      className="relative py-20 sm:py-24 lg:py-32 font-sans overflow-hidden bg-[#f8f9fc]"
       aria-labelledby="testimonials-heading"
     >
-      <div className="absolute top-0 left-0 w-72 h-72 bg-[#1a3b85]/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none" />
-
-      <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-5 lg:px-6 xl:px-8 2xl:px-10">
-        <header className="text-center mb-10 sm:mb-12 lg:mb-16">
-          <p className="text-xs font-semibold tracking-widest text-[#D4AF37] uppercase mb-3">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <header className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-3 sm:mb-4">
             Student success
           </p>
           <h2
@@ -62,81 +62,96 @@ const Testimonials = () => {
           >
             More successful stories.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-2xl leading-relaxed mx-auto">
+          <p className="mt-4 sm:mt-5 text-base sm:text-lg text-gray-500 max-w-2xl leading-relaxed mx-auto">
             Hear from students who started their global education journey with
             Uniguru.
           </p>
         </header>
 
-        {/* Bento: featured card + voice tiles */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-8 items-stretch">
-          {/* Featured – large card with gold accent */}
+        {/* Main testimonial card */}
+        <div className="relative max-w-5xl mx-auto">
+          {/* Large quote icon */}
+          <div className="absolute -top-8 left-8 sm:left-12 lg:left-16 z-20">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#D4AF37] flex items-center justify-center shadow-xl shadow-[#D4AF37]/20">
+              <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+            </div>
+          </div>
+
           <article
-            className="lg:col-span-7 flex flex-col rounded-xl sm:rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-lg border-l-4 border-l-[#D4AF37]"
+            className={cn(
+              "relative bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-xl shadow-gray-200/50 transition-all ease-out",
+              isTransitioning ? "opacity-0 scale-[0.98]" : "opacity-100 scale-100"
+            )}
+            style={{ transitionDuration: `${TRANSITION_MS}ms` }}
             aria-live="polite"
             aria-atomic="true"
           >
-            <div
-              className={cn(
-                "flex flex-col sm:flex-row flex-1 min-h-0 transition-all duration-300 ease-out",
-                isTransitioning
-                  ? "opacity-0 translate-y-2 sm:translate-y-0 sm:translate-x-2"
-                  : "opacity-100 translate-y-0 sm:translate-x-0"
-              )}
-              style={{ transitionDuration: `${TRANSITION_MS}ms` }}
-            >
-              <div className="relative w-full sm:w-2/5 min-h-[200px] sm:min-h-[280px] flex-shrink-0">
+            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px] sm:min-h-[450px]">
+              {/* Image side */}
+              <div className="relative h-[300px] sm:h-[350px] lg:h-auto overflow-hidden">
                 <Image
                   src={featured.img}
                   alt={featured.name}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 640px) 100vw, 40vw"
-                  priority={featuredIndex === 0}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority={activeIndex === 0}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#1a3b85]/50 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 flex items-center gap-3 p-3 rounded-lg bg-white/95 backdrop-blur-sm border border-gray-100">
-                  <div className="w-10 h-10 rounded-lg bg-[#1a3b85]/10 flex items-center justify-center shrink-0">
-                    <GraduationCap className="w-5 h-5 text-[#1a3b85]" />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-[10px] sm:text-xs text-gray-500 font-medium uppercase tracking-wide">
-                      Admitted to
-                    </p>
-                    <p className="text-sm font-semibold text-[#1a3b85] truncate">
-                      {featured.university}
-                    </p>
+                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#1a3b85]/80 via-[#1a3b85]/30 to-transparent" />
+                
+                {/* University badge - floating on image */}
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 lg:right-auto">
+                  <div className="inline-flex items-center gap-3 px-4 py-3 rounded-xl bg-white border border-gray-100 shadow-lg">
+                    <div className="w-10 h-10 rounded-lg bg-[#1a3b85] flex items-center justify-center shrink-0">
+                      <GraduationCap className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-[10px] sm:text-xs text-gray-500 font-medium uppercase tracking-wide">
+                        Admitted to
+                      </p>
+                      <p className="text-sm font-bold text-[#1a3b85] truncate">
+                        {featured.university}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col flex-1 p-5 sm:p-6 lg:p-7">
-                <div className="flex gap-0.5 mb-3" aria-hidden>
+
+              {/* Content side */}
+              <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10 xl:p-12">
+                {/* Stars */}
+                <div className="flex gap-1 mb-4 sm:mb-6" aria-hidden>
                   {[...Array(featured.stars)].map((_, i) => (
                     <Star
                       key={i}
-                      className="w-4 h-4 fill-[#D4AF37] text-[#D4AF37]"
+                      className="w-5 h-5 sm:w-6 sm:h-6 fill-[#D4AF37] text-[#D4AF37]"
                     />
                   ))}
                 </div>
-                <blockquote className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed font-medium mb-3 flex-1">
+
+                {/* Quote */}
+                <blockquote className="text-lg sm:text-xl lg:text-2xl text-gray-700 leading-relaxed font-light mb-4 sm:mb-6">
                   &quot;{expanded ? featured.review : (featured.summary || featured.review)}&quot;
                 </blockquote>
+
                 {featured.review && featured.summary && (
                   <button
                     type="button"
                     onClick={() => setExpanded(!expanded)}
-                    className="text-sm font-medium text-[#1a3b85] hover:underline mb-4 w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3b85] focus-visible:ring-offset-2 rounded"
+                    className="text-sm font-medium text-[#1a3b85] hover:text-[#2a4b95] transition-colors mb-6 w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3b85] focus-visible:ring-offset-2 rounded"
                     aria-expanded={expanded}
                   >
                     {expanded ? "Show less" : "Read full review"}
                   </button>
                 )}
-                <div className="pt-4 border-t border-gray-100">
-                  <h3 className="text-base sm:text-lg font-semibold text-[#1a3b85]">
+
+                {/* Author info */}
+                <div className="pt-6">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-[#1a3b85] mb-1">
                     {featured.name}
                   </h3>
-                  <div className="flex items-center gap-2 text-sm text-gray-600 mt-0.5">
-                    <MapPin className="w-4 h-4 text-[#1a3b85] shrink-0" />
+                  <div className="flex items-center gap-2 text-sm sm:text-base text-gray-500">
+                    <MapPin className="w-4 h-4 text-[#D4AF37] shrink-0" />
                     <span>{featured.university}</span>
                   </div>
                 </div>
@@ -144,47 +159,76 @@ const Testimonials = () => {
             </div>
           </article>
 
-          {/* Voice tiles – click to feature; horizontal scroll on mobile, column on lg */}
-          <div className="lg:col-span-5 flex flex-col gap-3 sm:gap-4 overflow-hidden">
-            <div className="flex lg:flex-col gap-3 sm:gap-4 overflow-x-auto pb-2 lg:pb-0 snap-x snap-mandatory lg:snap-none lg:overflow-visible">
-              {others.map((review) => {
-                const originalIndex = REVIEWS.indexOf(review);
-                return (
-                  <button
-                    key={originalIndex}
-                    type="button"
-                    onClick={() => goToIndex(originalIndex)}
-                    className={cn(
-                      "flex items-center gap-4 p-4 sm:p-5 rounded-xl border text-left transition-all duration-200 shrink-0 w-[85vw] sm:w-auto sm:min-w-0 snap-center",
-                      "bg-white border-gray-100 hover:border-[#1a3b85]/30 hover:shadow-md",
-                      "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3b85] focus-visible:ring-offset-2"
-                    )}
-                    aria-label={`Show review by ${review.name}`}
-                  >
-                    <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden bg-gray-100 shrink-0 ring-2 ring-white shadow">
-                      <Image
-                        src={review.img}
-                        alt=""
-                        fill
-                        className="object-cover"
-                        sizes="56px"
-                      />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-sm sm:text-base font-semibold text-[#1a3b85] truncate">
-                        {review.name}
-                      </p>
-                      <p className="text-xs sm:text-sm text-gray-500 truncate">
-                        {review.university}
-                      </p>
-                      <p className="text-xs sm:text-sm text-gray-600 mt-1 line-clamp-2">
-                        {oneLiner(review.summary || review.review, 70)}
-                      </p>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
+          {/* Navigation arrows */}
+          <div className="absolute top-1/2 -translate-y-1/2 -left-4 sm:-left-6 lg:-left-16 z-30">
+            <button
+              type="button"
+              onClick={goPrev}
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white hover:bg-gray-50 border border-gray-200 shadow-lg flex items-center justify-center text-[#1a3b85] transition-all duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3b85]"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+          </div>
+          <div className="absolute top-1/2 -translate-y-1/2 -right-4 sm:-right-6 lg:-right-16 z-30">
+            <button
+              type="button"
+              onClick={goNext}
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white hover:bg-gray-50 border border-gray-200 shadow-lg flex items-center justify-center text-[#1a3b85] transition-all duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3b85]"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+
+        {/* Thumbnail navigation */}
+        <div className="mt-10 sm:mt-12 lg:mt-16">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
+            {REVIEWS.map((review, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => goToIndex(index)}
+                className={cn(
+                  "relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3b85] focus-visible:ring-offset-2",
+                  activeIndex === index
+                    ? "ring-3 ring-[#D4AF37] scale-110 shadow-lg shadow-[#D4AF37]/20"
+                    : "ring-2 ring-gray-200 hover:ring-[#1a3b85]/40 opacity-70 hover:opacity-100"
+                )}
+                aria-label={`Show review by ${review.name}`}
+                aria-current={activeIndex === index ? "true" : undefined}
+              >
+                <Image
+                  src={review.img}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="64px"
+                />
+                {activeIndex === index && (
+                  <div className="absolute inset-0 bg-[#D4AF37]/10" />
+                )}
+              </button>
+            ))}
+          </div>
+
+          {/* Progress dots for mobile */}
+          <div className="flex items-center justify-center gap-2 mt-6 sm:hidden">
+            {REVIEWS.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => goToIndex(index)}
+                className={cn(
+                  "w-2 h-2 rounded-full transition-all duration-300",
+                  activeIndex === index
+                    ? "bg-[#D4AF37] w-6"
+                    : "bg-gray-300 hover:bg-gray-400"
+                )}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
       </div>

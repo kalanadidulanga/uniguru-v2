@@ -35,7 +35,7 @@ export const REVIEWS = [
     review:
       "By God's grace, I received my UK visa, and I owe a huge thanks to Uniguru Consultants for their exceptional service and expertise. After facing two refusals from Canada due to a fraudulent agency, Uniguru turned everything around for me, helping me secure a UK visa and even a £15,000 scholarship in a short time. Their quick responses, deep respect for clients, and expert advice truly set them apart from other agencies. Special thanks to Mr. Hasitha and Mr. Pasan for their outstanding support. I highly recommend Uniguru Consultants as the best consultancy service, and they don't even charge a single penny for their help!",
     summary:
-      "After facing previous refusals, Uniguru's expert team turned everything around, securing my UK visa and a valuable scholarship. Their quick, respectful responses and thorough guidance made all the difference—special thanks to Hasitha and Pasan for their outstanding support.",
+      "After facing previous refusals, Uniguru's expert team turned everything around, securing my UK visa and a valuable scholarship. Their quick, respectful responses and thorough guidance made all the difference. Special thanks to Hasitha and Pasan for their outstanding support.",
     stars: 5,
     university: "Coventry University",
   },
