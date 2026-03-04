@@ -151,10 +151,16 @@ const HowWeHelp = () => {
           <button className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-medium rounded-full transition-colors text-sm sm:text-base border border-white/20">
             Book Free 15 Minute Triage
           </button>
-          <button className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-medium rounded-full transition-colors text-sm sm:text-base">
+          <a
+            href={`https://api.whatsapp.com/send?phone=94770578521&text=${encodeURIComponent("Hi Uniguru! 👋 I want my UK shortlist for [intake] 🎓")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp to request your UK shortlist"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-medium rounded-full transition-colors text-sm sm:text-base"
+          >
             <MessageCircle className="w-4 h-4" />
-            Chat on WhatsApp
-          </button>
+            Get my UK shortlist on WhatsApp
+          </a>
         </div>
       </div>
     </section>
