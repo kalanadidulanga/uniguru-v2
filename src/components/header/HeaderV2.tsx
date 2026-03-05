@@ -57,7 +57,10 @@ const HeaderV2 = () => {
                 )}>
                   {item.name} <ChevronsUpDown className="h-3 w-3 opacity-50" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white shadow-2xl rounded-lg p-2 min-w-[240px] mt-2">
+                <DropdownMenuContent className={cn(
+                  "bg-white shadow-2xl rounded-lg p-2 mt-2",
+                  item.subOptions.length > 6 ? "min-w-[460px] grid grid-cols-2 gap-0.5" : "min-w-[240px]"
+                )}>
                   {item.subOptions.map((subItem, subIndex) => (
                     <Link key={subIndex} href={subItem.link}>
                       <DropdownMenuItem className={cn(

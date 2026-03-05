@@ -22,6 +22,7 @@ import {
   CalendarDays,
 } from "lucide-react";
 import TrustBarSection from "@/components/homev2/TrustBarSection";
+import { GetMyShortlistSection } from "@/components/forms/GetMyShortlistForm";
 
 const WHATSAPP_LINK =
   "https://wa.me/447747525946?text=Hi%2C%20I%20need%20help%20choosing%20the%20right%20services";
@@ -702,65 +703,7 @@ const ServicesPageV2 = () => {
       </section>
 
       {/* ═══════════════ BOTTOM CTA ═══════════════ */}
-      <section className="py-14 sm:py-16 lg:py-20 bg-[#0f2554]">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white tracking-tight mb-4">
-              Not sure where to start?
-            </h2>
-            <p className="text-white/60 text-sm sm:text-base mb-8">
-              Tell us your situation. We&apos;ll recommend the right services - no obligation.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
-              <Link
-                href="/book"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-semibold rounded-lg transition-colors text-sm sm:text-base"
-              >
-                Get My Shortlist
-                <ArrowRight size={16} />
-              </Link>
-              <a
-                href={WHATSAPP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/10 hover:bg-white/15 text-white font-semibold rounded-lg transition-colors text-sm sm:text-base"
-              >
-                <MessageCircle size={16} className="text-[#25D366]" />
-                Chat on WhatsApp
-              </a>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-4">
-              {[
-                {
-                  icon: <Shield size={12} />,
-                  text: "IAA Regulated F202537807",
-                },
-                {
-                  icon: <CheckCircle2 size={12} />,
-                  text: "100+ Google Reviews",
-                },
-                {
-                  icon: <MapPin size={12} />,
-                  text: "128 City Road, London EC1V 2NX",
-                },
-              ].map((item, i) => (
-                <span
-                  key={i}
-                  className="inline-flex items-center gap-1.5 text-white/50 text-xs"
-                >
-                  <span className="text-[#D4AF37]/70">{item.icon}</span>
-                  {item.text}
-                </span>
-              ))}
-            </div>
-            <p className="text-white/40 text-xs">
-              WhatsApp +44 7747 525946 · info@uniguru.co.uk
-            </p>
-          </div>
-        </div>
-      </section>
+      <GetMyShortlistSection />
     </div>
   );
 };

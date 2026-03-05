@@ -8,20 +8,29 @@ import { MapPin, Phone, Mail, ChevronRight } from "lucide-react";
 const QUICK_LINKS = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
-    { name: "Careers", href: "/careers" },
+    { name: "Services", href: "/services" },
     { name: "Contact", href: "/contact" },
-] as const;
-
-const SERVICES = [
-    { name: "Universities", href: "/universities" },
-    { name: "Scholarships", href: "/scholarships" },
+    { name: "Careers", href: "/careers" },
     { name: "Become a Partner", href: "/become-a-partner" },
 ] as const;
 
+const SERVICES = [
+    { name: "Eligibility & Shortlist", href: "/services/eligibility-shortlist" },
+    { name: "Admissions Support", href: "/services/admissions-support" },
+    { name: "IELTS & Interview Prep", href: "/services/ielts-interview-prep" },
+    { name: "Financial Help", href: "/services/financial-help" },
+    { name: "Accommodation", href: "/services/accommodation" },
+    { name: "Air Ticketing", href: "/services/air-ticketing" },
+] as const;
+
 const RESOURCES = [
-    { name: "AI App", href: "/ai-search" },
-    { name: "Guides", href: "/scholarships" },
-    { name: "Book Now", href: "/book" },
+    { name: "Study in UK", href: "/study-destinations/uk" },
+    { name: "Study in Canada", href: "/study-destinations/canada" },
+    { name: "Study in Australia", href: "/study-destinations/australia" },
+    { name: "Universities", href: "/universities" },
+    { name: "Scholarships", href: "/scholarships" },
+    { name: "AI Search", href: "/ai-search" },
+    { name: "Get My Shortlist", href: "/book" },
 ] as const;
 
 const FooterV2 = () => {
@@ -80,7 +89,7 @@ const FooterV2 = () => {
                     {/* Resources */}
                     <div>
                         <h4 className="text-sm font-semibold text-white mb-4 border-b-2 border-[#D4AF37] pb-2 inline-block">
-                            Resources
+                            Study & Resources
                         </h4>
                         <ul className="space-y-2.5 mt-4" role="list">
                             {RESOURCES.map((item) => (
@@ -109,7 +118,7 @@ const FooterV2 = () => {
                             </li>
                             <li className="flex items-center gap-2">
                                 <Phone size={16} className="text-[#D4AF37] shrink-0" aria-hidden />
-                                <span>+44 20 1234 5678</span>
+                                <span>+44 7747 525946</span>
                             </li>
                             <li className="flex items-center gap-2">
                                 <Mail size={16} className="text-[#D4AF37] shrink-0" aria-hidden />
