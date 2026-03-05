@@ -91,7 +91,7 @@ const AccommodationPageV2 = () => {
       <div className="min-h-screen flex flex-col">
       {/* 1) HERO */}
       <section className="relative flex-1 flex items-center overflow-hidden">
-        {/* Dark nighttime image — text reads naturally */}
+        {/* Dark nighttime image  - text reads naturally */}
         <Image
           src="https://images.unsplash.com/photo-1519922639192-e73293ca430e?auto=format&fit=crop&w=2070&q=80"
           alt="London skyline at night"
@@ -107,7 +107,7 @@ const AccommodationPageV2 = () => {
 
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-            {/* Left — copy (3 cols) */}
+            {/* Left  - copy (3 cols) */}
             <div className="lg:col-span-3 text-center lg:text-left">
               <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-4 sm:mb-5">
                 Student Housing Support
@@ -169,7 +169,7 @@ const AccommodationPageV2 = () => {
               </p>
             </div>
 
-            {/* Right — stacked images (2 cols) */}
+            {/* Right  - stacked images (2 cols) */}
             <div className="lg:col-span-2 relative hidden lg:block">
               <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
                 <Image
@@ -209,7 +209,7 @@ const AccommodationPageV2 = () => {
       </div>
 
       {/* ═══════════════════════════════════════════════════
-          3) WHAT WE HELP WITH — 3 clean cards
+          3) WHAT WE HELP WITH  - 3 clean cards
          ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -260,7 +260,7 @@ const AccommodationPageV2 = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          4) HOW IT WORKS — dark section (same as WhyUniguru)
+          4) HOW IT WORKS  - dark section (same as WhyUniguru)
          ═══════════════════════════════════════════════════ */}
       <section className="bg-[#0f2554] py-16 sm:py-20 lg:py-24">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -333,7 +333,7 @@ const AccommodationPageV2 = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          5) CHOOSE YOUR DESTINATION — country tiles
+          5) CHOOSE YOUR DESTINATION  - country tiles
          ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -392,7 +392,7 @@ const AccommodationPageV2 = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          6) WHAT YOU RECEIVE — image + list
+          6) WHAT YOU RECEIVE  - image + list
          ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -457,7 +457,7 @@ const AccommodationPageV2 = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          7) MID-PAGE CTA — dark section
+          7) MID-PAGE CTA  - dark section
          ═══════════════════════════════════════════════════ */}
       <section className="bg-[#0f2554] py-16 sm:py-20 lg:py-24">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">

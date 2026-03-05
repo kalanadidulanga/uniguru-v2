@@ -19,6 +19,7 @@ import {
   GraduationCap,
   ClipboardCheck,
   Mic,
+  CalendarDays,
 } from "lucide-react";
 import TrustBarSection from "@/components/homev2/TrustBarSection";
 
@@ -127,9 +128,9 @@ const STAGES: Stage[] = [
         icon: <ClipboardCheck size={20} />,
         image:
           "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
-        link: "/book",
+        link: "/services/document-readiness",
         ctaLabel: "View service",
-        ctaSecondary: { label: "Get my plan", link: "/book" },
+        ctaSecondary: { label: "Get my pack", link: "/services/document-readiness#document-pack" },
       },
     ],
   },
@@ -189,6 +190,19 @@ const STAGES: Stage[] = [
         ctaSecondary: {
           label: "Get my plan",
           link: "/services/part-time-work#work-plan",
+        },
+      },
+      {
+        title: "Arrival & Settlement",
+        description: "First 14 days plan  - practical steps, right order.",
+        icon: <CalendarDays size={20} />,
+        image:
+          "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80",
+        link: "/services/arrival-settlement",
+        ctaLabel: "View service",
+        ctaSecondary: {
+          label: "Get my plan",
+          link: "/services/arrival-settlement#arrival-plan",
         },
       },
     ],
@@ -257,7 +271,7 @@ const ServicesPageV2 = () => {
                 One team. One process. Complete clarity.
               </p>
               <p className="text-sm sm:text-base text-white/70 leading-relaxed mb-8 max-w-xl">
-                From your first shortlist to settling into your new city — we guide you through every stage. Structured support, regulated where required, and always transparent about what we can deliver.
+                From your first shortlist to settling into your new city  - we guide you through every stage. Structured support, regulated where required, and always transparent about what we can deliver.
               </p>
 
               {/* Stats Row */}
@@ -649,14 +663,14 @@ const ServicesPageV2 = () => {
                   </div>
                 )}
 
-                {/* Row 2: Stage 3 — full width, 3 cards */}
+                {/* Row 2: Stage 3  - full width, 3 cards */}
                 {stage3 && (
                   <div>
                     {renderStageGroup(stage3)}
                   </div>
                 )}
 
-                {/* Row 3: Stage 4 — full width, 4 cards */}
+                {/* Row 3: Stage 4  - full width, 4 cards */}
                 {stage4 && (
                   <div>
                     {renderStageGroup(stage4)}

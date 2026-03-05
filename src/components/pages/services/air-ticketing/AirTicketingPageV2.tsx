@@ -321,7 +321,7 @@ const AirTicketingPageV2 = () => {
               </h1>
 
               <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-3 max-w-2xl">
-                Timing, routes, baggage, arrival — everything aligned.
+                Timing, routes, baggage, arrival  - everything aligned.
               </p>
               <p className="text-base sm:text-lg text-white/60 leading-relaxed mb-10 max-w-2xl">
                 We shortlist smart flight options through trusted travel partners
@@ -332,7 +332,7 @@ const AirTicketingPageV2 = () => {
               {/* Elegant feature highlights */}
               <div className="flex flex-wrap gap-x-8 gap-y-3 mb-10">
                 {[
-                  "Route plan in 24–48h",
+                  "Route plan in 24-48h",
                   "Baggage aligned",
                   "Third-party guided",
                 ].map((chip, i) => (
@@ -367,7 +367,7 @@ const AirTicketingPageV2 = () => {
               </div>
 
               <p className="text-xs sm:text-sm text-white/40 max-w-lg">
-                Prices change quickly — we plan conservatively and confirm fare
+                Prices change quickly  - we plan conservatively and confirm fare
                 conditions before you book.
               </p>
             </div>
@@ -594,7 +594,7 @@ const AirTicketingPageV2 = () => {
           </div>
 
           <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start max-w-[1200px] mx-auto">
-            {/* Left side — Form (3/5) */}
+            {/* Left side  - Form (3/5) */}
             <div className="lg:col-span-3">
               <form
                 onSubmit={handleSubmit}
@@ -606,11 +606,11 @@ const AirTicketingPageV2 = () => {
                   </h3>
                   <p className="text-gray-500 text-sm mt-1">
                     Takes about 2 minutes. Plan and next steps typically within
-                    24–48 hours (working days).
+                    24-48 hours (working days).
                   </p>
                 </div>
 
-                {/* Row 1 — Destination + Arrival */}
+                {/* Row 1  - Destination + Arrival */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
@@ -644,7 +644,7 @@ const AirTicketingPageV2 = () => {
                   </div>
                 </div>
 
-                {/* Row 2 — WhatsApp + Email */}
+                {/* Row 2  - WhatsApp + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
@@ -678,7 +678,7 @@ const AirTicketingPageV2 = () => {
                   </div>
                 </div>
 
-                {/* Row 3 — Departure + Budget */}
+                {/* Row 3  - Departure + Budget */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
@@ -707,7 +707,7 @@ const AirTicketingPageV2 = () => {
                   </div>
                 </div>
 
-                {/* Row 4 — Baggage */}
+                {/* Row 4  - Baggage */}
                 <div>
                   <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
                     Baggage needs (optional)
@@ -740,18 +740,18 @@ const AirTicketingPageV2 = () => {
                 </button>
 
                 <p className="text-[10px] sm:text-xs text-gray-400 text-center pt-0.5">
-                  Plan and next steps typically within 24–48 hours (working days).
+                  Plan and next steps typically within 24-48 hours (working days).
                 </p>
               </form>
             </div>
 
-            {/* Right side — Sidebar (2/5) */}
+            {/* Right side  - Sidebar (2/5) */}
             <div className="lg:col-span-2 flex flex-col gap-5">
               {/* Quick stats */}
               <div className="grid grid-cols-2 gap-3">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/15">
                   <div className="text-2xl sm:text-3xl font-bold text-[#D4AF37] mb-0.5">
-                    24–48h
+                    24-48h
                   </div>
                   <div className="text-white/80 text-xs sm:text-sm">
                     Response time
@@ -759,7 +759,7 @@ const AirTicketingPageV2 = () => {
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/15">
                   <div className="text-2xl sm:text-3xl font-bold text-[#D4AF37] mb-0.5">
-                    2–4
+                    2-4
                   </div>
                   <div className="text-white/80 text-xs sm:text-sm">
                     Route options

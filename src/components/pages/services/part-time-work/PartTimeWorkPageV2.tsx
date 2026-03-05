@@ -685,18 +685,18 @@ const PartTimeWorkPageV2 = () => {
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-[#D4AF37] to-[#f5d76e] bg-clip-text text-transparent">
-                  — done responsibly
+                   - done responsibly
                 </span>
               </h1>
 
               <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-3 max-w-2xl">
-                Because the goal isn&apos;t a promise — it&apos;s readiness,
+                Because the goal isn&apos;t a promise  - it&apos;s readiness,
                 access, and fast execution.
               </p>
               <p className="text-base sm:text-lg text-white/60 leading-relaxed mb-10 max-w-2xl">
                 We help you prepare for part&#8209;time work with a CV &amp;
                 profile pack, a daily job-search system, and practical interview
-                readiness — with partner direction where available.
+                readiness  - with partner direction where available.
               </p>
 
               <div className="flex flex-wrap gap-x-8 gap-y-3 mb-10">
@@ -1345,7 +1345,7 @@ const PartTimeWorkPageV2 = () => {
               Ready to start your job search properly?
             </h2>
             <p className="text-white text-base sm:text-lg max-w-xl mx-auto font-medium drop-shadow-sm">
-              Get a structured work plan, CV pack, and 7-day sprint — tailored
+              Get a structured work plan, CV pack, and 7-day sprint  - tailored
               to your city and availability.
             </p>
           </div>

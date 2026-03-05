@@ -102,7 +102,7 @@ const PropertyCard = ({ property, countryImage }: { property: AccommodationPrope
           ))}
         </div>
 
-        {/* Enquire CTA — pushed to bottom */}
+        {/* Enquire CTA  - pushed to bottom */}
         <a
           href="#accommodation-form"
           className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-[#1a3b85] hover:text-[#D4AF37] transition-colors"

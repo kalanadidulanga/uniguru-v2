@@ -51,7 +51,7 @@ const WHAT_YOU_GET = [
     icon: <Download size={24} />,
     title: "Free access forever",
     description:
-      "All materials available at no cost — download and study at your pace.",
+      "All materials available at no cost  - download and study at your pace.",
   },
 ];
 
@@ -139,13 +139,13 @@ const FreeIeltsServicePageV2 = () => {
               </h1>
 
               <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-3 max-w-2xl">
-                Comprehensive, cost-free IELTS preparation materials — from
+                Comprehensive, cost-free IELTS preparation materials  - from
                 practice tests to expert video lessons.
               </p>
               <p className="text-base sm:text-lg text-white/60 leading-relaxed mb-10 max-w-2xl">
                 We believe quality education should be accessible to everyone.
                 Download worksheets, watch tutorials, and practise at your own
-                pace — completely free.
+                pace  - completely free.
               </p>
 
               {/* Trust chips */}
@@ -153,7 +153,7 @@ const FreeIeltsServicePageV2 = () => {
                 {[
                   "4 modules covered",
                   "Video lessons + worksheets",
-                  "100% free — no sign-up",
+                  "100% free  - no sign-up",
                 ].map((chip, i) => (
                   <span
                     key={i}
@@ -410,7 +410,7 @@ const FreeIeltsServicePageV2 = () => {
             <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
               These free resources are a great starting point. If you need a
               diagnostic, personalised plan, mock practice with feedback, and
-              interview coaching — our IELTS &amp; Interview Prep service is
+              interview coaching  - our IELTS &amp; Interview Prep service is
               built for that.
             </p>
 

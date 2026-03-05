@@ -41,13 +41,13 @@ const WHAT_YOU_GET = [
   },
   {
     icon: <CalendarDays size={24} />,
-    title: "Personalised 2–4 week plan",
+    title: "Personalised 2-4 week plan",
     description: "Weekly structure and targets.",
   },
   {
     icon: <PenTool size={24} />,
     title: "IELTS practice",
-    description: "Mock or section practice — timed tasks + feedback.",
+    description: "Mock or section practice  - timed tasks + feedback.",
   },
   {
     icon: <Mic size={24} />,
@@ -353,7 +353,7 @@ const IeltsInterviewPrepPageV2 = () => {
       formData.append("mobile", form.whatsapp);
       formData.append(
         "subject",
-        `Prep Plan Request — ${form.service} — ${form.destination}`
+        `Prep Plan Request  - ${form.service}  - ${form.destination}`
       );
       formData.append("message", message);
 
@@ -425,14 +425,14 @@ const IeltsInterviewPrepPageV2 = () => {
               </p>
               <p className="text-base sm:text-lg text-white/60 leading-relaxed mb-10 max-w-2xl">
                 We assess your starting point, build a targeted plan, and run
-                realistic practice with feedback — so you improve faster and
+                realistic practice with feedback  - so you improve faster and
                 perform under pressure.
               </p>
 
               {/* Trust chips */}
               <div className="flex flex-wrap gap-x-8 gap-y-3 mb-10">
                 {[
-                  "Diagnostic + plan in 24–48h (working days)",
+                  "Diagnostic + plan in 24-48h (working days)",
                   "Mock practice + feedback",
                   "Structured improvement loop",
                 ].map((chip, i) => (
@@ -470,7 +470,7 @@ const IeltsInterviewPrepPageV2 = () => {
               </div>
 
               <p className="text-xs sm:text-sm text-white/40 max-w-lg">
-                No guarantees — just a disciplined preparation system that
+                No guarantees  - just a disciplined preparation system that
                 raises performance.
               </p>
             </div>
@@ -532,7 +532,7 @@ const IeltsInterviewPrepPageV2 = () => {
               IELTS preparation that improves results
             </h2>
             <p className="text-gray-600 text-base sm:text-lg mb-10 max-w-2xl">
-              We focus on the parts that move scores — clarity, structure,
+              We focus on the parts that move scores  - clarity, structure,
               accuracy, timing.
             </p>
 
@@ -585,7 +585,7 @@ const IeltsInterviewPrepPageV2 = () => {
               Interview preparation that sounds credible and calm
             </h2>
             <p className="text-gray-600 text-base sm:text-lg mb-10 max-w-2xl">
-              We train clear, truthful answers and confidence under pressure —
+              We train clear, truthful answers and confidence under pressure  -
               aligned to your route and background.
             </p>
 
@@ -879,11 +879,11 @@ const IeltsInterviewPrepPageV2 = () => {
                   </h3>
                   <p className="text-gray-500 text-sm mt-1">
                     Takes about 2 minutes. Plan &amp; next steps typically within
-                    24–48 hours (working days).
+                    24-48 hours (working days).
                   </p>
                 </div>
 
-                {/* Row 1 — Destination + Date */}
+                {/* Row 1  - Destination + Date */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
@@ -917,7 +917,7 @@ const IeltsInterviewPrepPageV2 = () => {
                   </div>
                 </div>
 
-                {/* Row 2 — WhatsApp + Service */}
+                {/* Row 2  - WhatsApp + Service */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
@@ -949,7 +949,7 @@ const IeltsInterviewPrepPageV2 = () => {
                   </div>
                 </div>
 
-                {/* Row 3 — Target band + Current level */}
+                {/* Row 3  - Target band + Current level */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
@@ -981,7 +981,7 @@ const IeltsInterviewPrepPageV2 = () => {
                   </div>
                 </div>
 
-                {/* Row 4 — Notes */}
+                {/* Row 4  - Notes */}
                 <div>
                   <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
                     Biggest challenge (optional)

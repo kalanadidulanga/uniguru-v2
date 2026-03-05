@@ -727,7 +727,7 @@ const FinancialHelpPageV2 = () => {
                   </p>
                 </div>
 
-                {/* Row 1 — Destination + Intake */}
+                {/* Row 1  - Destination + Intake */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
@@ -761,7 +761,7 @@ const FinancialHelpPageV2 = () => {
                   </div>
                 </div>
 
-                {/* Row 2 — WhatsApp + Funding */}
+                {/* Row 2  - WhatsApp + Funding */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
@@ -792,7 +792,7 @@ const FinancialHelpPageV2 = () => {
                   </div>
                 </div>
 
-                {/* Row 3 — Budget + Income */}
+                {/* Row 3  - Budget + Income */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
@@ -800,7 +800,7 @@ const FinancialHelpPageV2 = () => {
                     </label>
                     <input
                       type="text"
-                      placeholder="e.g. £15,000 – £25,000"
+                      placeholder="e.g. £15,000 - £25,000"
                       value={form.budget}
                       onChange={(e) =>
                         setForm({ ...form, budget: e.target.value })
@@ -821,7 +821,7 @@ const FinancialHelpPageV2 = () => {
                   </div>
                 </div>
 
-                {/* Row 4 — Notes */}
+                {/* Row 4  - Notes */}
                 <div>
                   <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
                     Notes (optional)
