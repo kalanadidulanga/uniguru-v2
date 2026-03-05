@@ -9,7 +9,7 @@ interface DestinationQuickFactsProps {
 
 const DestinationQuickFacts = ({ data }: DestinationQuickFactsProps) => {
   return (
-    <div className="rounded-2xl overflow-hidden bg-[#1a3b85] text-white p-8 shadow-[0_8px_30px_rgba(26,59,133,0.2)]">
+    <div className="rounded-2xl bg-[#1a3b85] text-white p-6 sm:p-8 shadow-sm">
       <h3 className="text-lg font-semibold mb-6 flex items-center gap-2">
         <BookOpen size={20} className="text-[#D4AF37]" aria-hidden />
         {data.title}

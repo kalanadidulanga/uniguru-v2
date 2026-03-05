@@ -9,7 +9,7 @@ interface DestinationCostProps {
 
 const DestinationCost = ({ data }: DestinationCostProps) => {
   return (
-    <div className="lg:col-span-3 rounded-2xl overflow-hidden bg-white shadow-[0_4px_24px_rgba(26,59,133,0.08)] hover:shadow-[0_12px_40px_rgba(26,59,133,0.12)] transition-shadow duration-300 p-8 lg:p-10">
+    <div className="lg:col-span-3 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 p-6 sm:p-8">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
         <div className="flex items-center gap-3">
           <div className="p-3 rounded-xl bg-[#1a3b85]/10 text-[#1a3b85]" aria-hidden>
@@ -21,7 +21,7 @@ const DestinationCost = ({ data }: DestinationCostProps) => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
         {data.table.map((row, index) => (
           <div
             key={index}
