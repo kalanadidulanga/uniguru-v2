@@ -371,51 +371,55 @@ const ServicesPageV2 = () => {
         </section>
       </div>
 
-      {/* ═══════════════ STAGES CONTENT (min-h-screen) ═══════════════ */}
-      <section id="stages" className="scroll-mt-24 py-12 sm:py-16 lg:py-20 bg-gray-50 min-h-screen">
+      {/* ═══════════════ STAGES CONTENT ═══════════════ */}
+      <section id="stages" className="scroll-mt-24 py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-12 sm:space-y-16">
-            {STAGES.filter(
+          {/*
+            Stage grid layout (desktop):
+            Row 1: Stage 1 (1 card = 1/3) + Stage 2 (2 cards = 2/3)
+            Row 2: Stage 3 (3 cards = full width)
+            Row 3: Stage 4 (4 cards = full width)
+          */}
+          {(() => {
+            const filtered = STAGES.filter(
               (s) => activeStage === null || activeStage === s.number
-            ).map((stage) => (
+            );
+
+            /* ── Render a single stage group ── */
+            const renderStageGroup = (stage: Stage) => (
               <div key={stage.number}>
                 {/* Stage Header */}
-                <div className="flex items-start gap-4 mb-6 sm:mb-8">
-                  <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-[#1a3b85] text-white flex-shrink-0">
-                    {stage.icon}
+                <div className="flex items-center gap-3 mb-4 pb-3 border-b border-gray-200">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#0f2554] text-white text-xs font-bold flex-shrink-0">
+                    {stage.number}
                   </div>
-                  <div>
-                    <p className="text-xs font-semibold text-[#D4AF37] uppercase tracking-wide mb-1">
-                      Stage {stage.number}
-                    </p>
-                    <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-base sm:text-lg font-semibold text-gray-900 leading-tight">
                       {stage.title}
                     </h2>
-                    <p className="text-gray-500 text-sm mt-0.5">
+                    <p className="text-gray-500 text-xs truncate">
                       {stage.subtitle}
                     </p>
                   </div>
                 </div>
 
-                {/* Service Cards Grid */}
-                <div
-                  className={`grid gap-4 sm:gap-5 ${
-                    stage.services.length === 1
-                      ? "grid-cols-1 max-w-md"
-                      : stage.services.length === 2
-                      ? "grid-cols-1 sm:grid-cols-2 max-w-3xl"
-                      : stage.services.length === 4
-                      ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
-                      : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-                  }`}
-                >
+                {/* Service Cards */}
+                <div className={`grid gap-3 ${
+                  stage.services.length >= 4
+                    ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+                    : stage.services.length === 3
+                    ? "grid-cols-1 sm:grid-cols-3"
+                    : stage.services.length === 2
+                    ? "grid-cols-1 sm:grid-cols-2"
+                    : "grid-cols-1"
+                }`}>
                   {stage.services.map((service, i) => (
                     <div
                       key={i}
                       className="group bg-white rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all duration-200 overflow-hidden flex flex-col"
                     >
-                      {/* Image Section */}
-                      <div className="relative h-36 sm:h-40 overflow-hidden">
+                      {/* Image */}
+                      <div className="relative h-32 sm:h-36 overflow-hidden">
                         <Image
                           src={service.image}
                           alt={service.title}
@@ -425,44 +429,44 @@ const ServicesPageV2 = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
 
                         {service.badge && (
-                          <div className="absolute top-3 right-3 px-2 py-1 rounded bg-[#D4AF37] text-[#0d1b3e] text-[10px] font-bold uppercase tracking-wide flex items-center gap-1">
+                          <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded bg-[#D4AF37] text-[#0d1b3e] text-[10px] font-bold uppercase tracking-wide flex items-center gap-1">
                             <Shield size={10} />
                             {service.badge}
                           </div>
                         )}
 
-                        <div className="absolute bottom-3 left-3">
-                          <div className="w-9 h-9 rounded-lg bg-white/90 flex items-center justify-center text-[#1a3b85]">
+                        <div className="absolute bottom-2.5 left-2.5">
+                          <div className="w-8 h-8 rounded-lg bg-white/90 flex items-center justify-center text-[#1a3b85]">
                             {service.icon}
                           </div>
                         </div>
                       </div>
 
-                      {/* Content Section */}
-                      <div className="p-4 flex flex-col flex-1">
+                      {/* Content */}
+                      <div className="p-3.5 flex flex-col flex-1">
                         <h3 className="text-sm font-semibold text-gray-900 mb-1 leading-snug">
                           {service.title}
                         </h3>
-                        <p className="text-gray-500 text-xs leading-relaxed mb-4 flex-1">
+                        <p className="text-gray-500 text-xs leading-relaxed mb-3 flex-1">
                           {service.description}
                         </p>
 
-                        <div className="space-y-2">
+                        <div className="space-y-1.5">
                           <Link
                             href={service.link}
-                            className="flex items-center justify-center gap-2 w-full px-3 py-2.5 bg-[#1a3b85] hover:bg-[#152d6b] text-white text-xs font-semibold rounded-lg transition-colors"
+                            className="flex items-center justify-center gap-2 w-full px-3 py-2 bg-[#1a3b85] hover:bg-[#152d6b] text-white text-xs font-semibold rounded-lg transition-colors"
                           >
                             {service.ctaLabel}
-                            <ArrowRight size={12} />
+                            <ArrowRight size={11} />
                           </Link>
 
                           {service.ctaSecondary && (
                             <Link
                               href={service.ctaSecondary.link}
-                              className="flex items-center justify-center gap-2 w-full px-3 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-semibold rounded-lg transition-colors"
+                              className="flex items-center justify-center gap-2 w-full px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-semibold rounded-lg transition-colors"
                             >
                               {service.ctaSecondary.label}
-                              <ArrowRight size={12} />
+                              <ArrowRight size={11} />
                             </Link>
                           )}
                         </div>
@@ -471,8 +475,97 @@ const ServicesPageV2 = () => {
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
+            );
+
+            /* ── When a single stage is filtered, show it full-width ── */
+            if (filtered.length === 1) {
+              const stage = filtered[0];
+              return (
+                <div className={`grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-2 ${
+                  stage.services.length >= 4 ? "lg:grid-cols-4" : stage.services.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-2"
+                }`}>
+                  {stage.services.map((service, i) => (
+                    <div
+                      key={i}
+                      className="group bg-white rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all duration-200 overflow-hidden flex flex-col"
+                    >
+                      <div className="relative h-36 sm:h-40 overflow-hidden">
+                        <Image src={service.image} alt={service.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                        {service.badge && (
+                          <div className="absolute top-3 right-3 px-2 py-1 rounded bg-[#D4AF37] text-[#0d1b3e] text-[10px] font-bold uppercase tracking-wide flex items-center gap-1">
+                            <Shield size={10} />
+                            {service.badge}
+                          </div>
+                        )}
+                        <div className="absolute bottom-3 left-3">
+                          <div className="w-9 h-9 rounded-lg bg-white/90 flex items-center justify-center text-[#1a3b85]">{service.icon}</div>
+                        </div>
+                      </div>
+                      <div className="p-4 flex flex-col flex-1">
+                        <h3 className="text-sm font-semibold text-gray-900 mb-1 leading-snug">{service.title}</h3>
+                        <p className="text-gray-500 text-xs leading-relaxed mb-4 flex-1">{service.description}</p>
+                        <div className="space-y-2">
+                          <Link href={service.link} className="flex items-center justify-center gap-2 w-full px-3 py-2.5 bg-[#1a3b85] hover:bg-[#152d6b] text-white text-xs font-semibold rounded-lg transition-colors">
+                            {service.ctaLabel} <ArrowRight size={12} />
+                          </Link>
+                          {service.ctaSecondary && (
+                            <Link href={service.ctaSecondary.link} className="flex items-center justify-center gap-2 w-full px-3 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-semibold rounded-lg transition-colors">
+                              {service.ctaSecondary.label} <ArrowRight size={12} />
+                            </Link>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              );
+            }
+
+            /* ── All stages: grid layout ── */
+            // Group stages into rows based on service count
+            // Row 1: Stage 1 (1 card) + Stage 2 (2 cards) = 3 units
+            // Row 2: Stage 3 (3 cards) = 3 units
+            // Row 3: Stage 4 (4 cards) = 4 units
+            const stage1 = filtered.find((s) => s.number === 1);
+            const stage2 = filtered.find((s) => s.number === 2);
+            const stage3 = filtered.find((s) => s.number === 3);
+            const stage4 = filtered.find((s) => s.number === 4);
+
+            return (
+              <div className="space-y-6">
+                {/* Row 1: Stage 1 + Stage 2 side by side */}
+                {(stage1 || stage2) && (
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                    {stage1 && (
+                      <div className="lg:col-span-1">
+                        {renderStageGroup(stage1)}
+                      </div>
+                    )}
+                    {stage2 && (
+                      <div className={stage1 ? "lg:col-span-2" : "lg:col-span-3"}>
+                        {renderStageGroup(stage2)}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Row 2: Stage 3 — full width, 3 cards */}
+                {stage3 && (
+                  <div>
+                    {renderStageGroup(stage3)}
+                  </div>
+                )}
+
+                {/* Row 3: Stage 4 — full width, 4 cards */}
+                {stage4 && (
+                  <div>
+                    {renderStageGroup(stage4)}
+                  </div>
+                )}
+              </div>
+            );
+          })()}
         </div>
       </section>
 

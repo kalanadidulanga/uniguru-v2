@@ -27,7 +27,7 @@ const RESOURCES = [
 const FooterV2 = () => {
     return (
         <footer
-            className="relative bg-[#0f172a] text-white overflow-hidden"
+            className="relative bg-[#0a1120] text-white overflow-hidden"
             role="contentinfo"
             aria-label="Site footer"
         >
@@ -131,7 +131,7 @@ const FooterV2 = () => {
                         fill
                         className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/50" />
+                    <div className="absolute inset-0 bg-black/70" />
                 </div>
 
                 {/* Social icons and copyright */}
@@ -146,7 +146,7 @@ const FooterV2 = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center hover:bg-[#D4AF37] transition-colors"
-                                aria-label={`${item.name || "Social link"}`}
+                                aria-label="Social link"
                             >
                                 <Image
                                     src={item.src}
