@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail, Send } from "lucide-react";
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube, FaTiktok, FaWhatsapp } from "react-icons/fa6";
 import { COMPANY_INFO } from "@/constants/data";
@@ -57,9 +58,16 @@ const FooterV2 = () => {
                     
                     {/* Brand + Contact */}
                     <div className="lg:col-span-4 space-y-6">
-                        <Link href="/" className="inline-block">
-                            <span className="text-4xl font-bold tracking-tight">
-                                Uni<span className="text-[#D4AF37]">guru</span>
+                        <Link href="/" className="inline-flex items-center gap-3">
+                            <Image
+                                src="/logo-1.png"
+                                alt="Uniguru Logo"
+                                width={40}
+                                height={40}
+                                className="h-10 w-auto"
+                            />
+                            <span className="text-3xl font-bold tracking-tight">
+                                Uniguru
                             </span>
                         </Link>
                         <p className="text-white/50 text-sm leading-relaxed max-w-xs">
