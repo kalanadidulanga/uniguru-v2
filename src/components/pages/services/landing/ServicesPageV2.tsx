@@ -11,7 +11,7 @@ import {
   Shield,
   CheckCircle2,
   MapPin,
-  BookOpen,
+  Upload,
   Plane,
   Wallet,
   Briefcase,
@@ -61,17 +61,9 @@ const STAGES: Stage[] = [
         image:
           "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
         link: "/book",
-        ctaLabel: "View service",
-        ctaSecondary: { label: "Get my shortlist", link: "/book" },
+        ctaLabel: "Get My Shortlist",
+        ctaSecondary: { label: "Learn more", link: "/book" },
       },
-    ],
-  },
-  {
-    number: 2,
-    title: "Prepare",
-    subtitle: "Applications, documents, and readiness",
-    icon: <FileText size={18} />,
-    services: [
       {
         title: "Admissions Support",
         description: "Application, documents, timeline managed.",
@@ -79,26 +71,16 @@ const STAGES: Stage[] = [
         image:
           "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80",
         link: "/book",
-        ctaLabel: "View service",
-        ctaSecondary: { label: "Get my shortlist", link: "/book" },
-      },
-      {
-        title: "Immigration Support",
-        description: "Regulated. Disciplined. Clear scope.",
-        icon: <Shield size={20} />,
-        image:
-          "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80",
-        link: "/book",
-        ctaLabel: "View service",
-        badge: "IAA Regulated",
+        ctaLabel: "Start Application",
+        ctaSecondary: { label: "Learn more", link: "/book" },
       },
     ],
   },
   {
-    number: 3,
-    title: "Secure",
-    subtitle: "Test prep, documents, and compliance",
-    icon: <CheckCircle2 size={18} />,
+    number: 2,
+    title: "Prepare",
+    subtitle: "Test prep, documents, and finances",
+    icon: <FileText size={18} />,
     services: [
       {
         title: "IELTS & Interview Preparation",
@@ -107,20 +89,11 @@ const STAGES: Stage[] = [
         image:
           "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
         link: "/services/ielts-interview-prep",
-        ctaLabel: "View service",
+        ctaLabel: "Get My Prep Plan",
         ctaSecondary: {
-          label: "Get my plan",
+          label: "Learn more",
           link: "/services/ielts-interview-prep#prep-plan",
         },
-      },
-      {
-        title: "Free IELTS Resources",
-        description: "Video lessons and practice materials, free.",
-        icon: <BookOpen size={20} />,
-        image:
-          "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80",
-        link: "/services/free-ielts-service",
-        ctaLabel: "Access free materials",
       },
       {
         title: "Document Readiness & Compliance Check",
@@ -129,8 +102,48 @@ const STAGES: Stage[] = [
         image:
           "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
         link: "/services/document-readiness",
-        ctaLabel: "View service",
-        ctaSecondary: { label: "Get my pack", link: "/services/document-readiness#document-pack" },
+        ctaLabel: "Get My Document Pack",
+        ctaSecondary: { label: "Learn more", link: "/services/document-readiness#document-pack" },
+      },
+      {
+        title: "Financial Help",
+        description: "Budget framework and funding pathways.",
+        icon: <Wallet size={20} />,
+        image:
+          "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
+        link: "/services/financial-help",
+        ctaLabel: "Get My Finance Plan",
+        ctaSecondary: {
+          label: "Learn more",
+          link: "/services/financial-help#finance-plan",
+        },
+      },
+    ],
+  },
+  {
+    number: 3,
+    title: "Secure",
+    subtitle: "Immigration and submission support",
+    icon: <CheckCircle2 size={18} />,
+    services: [
+      {
+        title: "Immigration Support",
+        description: "Regulated. Disciplined. Clear scope.",
+        icon: <Shield size={20} />,
+        image:
+          "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80",
+        link: "/book",
+        ctaLabel: "Book Consultation",
+        badge: "IAA Regulated",
+      },
+      {
+        title: "Submission Support",
+        description: "Final checks, formatting, and tracked submission.",
+        icon: <Upload size={20} />,
+        image:
+          "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80",
+        link: "/book",
+        ctaLabel: "Get Submission Support",
       },
     ],
   },
@@ -147,10 +160,23 @@ const STAGES: Stage[] = [
         image:
           "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
         link: "/services/accommodation",
-        ctaLabel: "View service",
+        ctaLabel: "Find Accommodation",
         ctaSecondary: {
-          label: "Get my plan",
+          label: "Learn more",
           link: "/services/accommodation",
+        },
+      },
+      {
+        title: "Arrival & Settlement",
+        description: "First 14 days plan - practical steps, right order.",
+        icon: <CalendarDays size={20} />,
+        image:
+          "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80",
+        link: "/services/arrival-settlement",
+        ctaLabel: "Get My Arrival Plan",
+        ctaSecondary: {
+          label: "Learn more",
+          link: "/services/arrival-settlement#arrival-plan",
         },
       },
       {
@@ -160,23 +186,10 @@ const STAGES: Stage[] = [
         image:
           "https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&fit=crop&w=800&q=80",
         link: "/services/air-ticketing",
-        ctaLabel: "View service",
+        ctaLabel: "Get My Travel Plan",
         ctaSecondary: {
-          label: "Get my plan",
+          label: "Learn more",
           link: "/services/air-ticketing#travel-plan",
-        },
-      },
-      {
-        title: "Financial Help",
-        description: "Budget framework and funding pathways.",
-        icon: <Wallet size={20} />,
-        image:
-          "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
-        link: "/services/financial-help",
-        ctaLabel: "View service",
-        ctaSecondary: {
-          label: "Get my plan",
-          link: "/services/financial-help#finance-plan",
         },
       },
       {
@@ -186,23 +199,10 @@ const STAGES: Stage[] = [
         image:
           "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
         link: "/services/part-time-work",
-        ctaLabel: "View service",
+        ctaLabel: "Get My Work Plan",
         ctaSecondary: {
-          label: "Get my plan",
+          label: "Learn more",
           link: "/services/part-time-work#work-plan",
-        },
-      },
-      {
-        title: "Arrival & Settlement",
-        description: "First 14 days plan  - practical steps, right order.",
-        icon: <CalendarDays size={20} />,
-        image:
-          "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80",
-        link: "/services/arrival-settlement",
-        ctaLabel: "View service",
-        ctaSecondary: {
-          label: "Get my plan",
-          link: "/services/arrival-settlement#arrival-plan",
         },
       },
     ],
@@ -216,11 +216,15 @@ const DISCLAIMERS = [
   },
   {
     label: "Finance:",
-    text: "Not a lender. Third party approvals",
+    text: "Not a lender. Third-party approvals apply",
   },
   {
     label: "Work:",
-    text: "No job guarantees",
+    text: "No job guarantees. Guidance only",
+  },
+  {
+    label: "Accommodation:",
+    text: "Shortlisted options. Final booking is yours",
   },
 ];
 
@@ -255,23 +259,19 @@ const ServicesPageV2 = () => {
               <div className="inline-flex items-center gap-3 mb-6">
                 <div className="w-10 h-[3px] bg-gradient-to-r from-[#D4AF37] to-[#e6c456] rounded-full" />
                 <p className="text-xs sm:text-sm font-bold tracking-[0.2em] text-[#D4AF37] uppercase">
-                  Our Services
+                  London-led Support System
                 </p>
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-6">
-                End-to-End Support
-                <br />
-                <span className="bg-gradient-to-r from-[#D4AF37] via-[#e6c456] to-[#D4AF37] bg-clip-text text-transparent">
-                  London Led
-                </span>
+                Services
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-white/95 leading-relaxed mb-2 font-medium">
-                One team. One process. Complete clarity.
+                End-to-end support - from shortlist to settlement - with regulated guidance where required.
               </p>
               <p className="text-sm sm:text-base text-white/70 leading-relaxed mb-8 max-w-xl">
-                From your first shortlist to settling into your new city  - we guide you through every stage. Structured support, regulated where required, and always transparent about what we can deliver.
+                Choose the support you need below. Clear scope. Fixed deliverables. No pressure tactics.
               </p>
 
               {/* Stats Row */}
@@ -281,7 +281,7 @@ const ServicesPageV2 = () => {
                   <span className="text-xs sm:text-sm text-white/60">Journey Stages</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-2xl sm:text-3xl font-bold text-white">10+</span>
+                  <span className="text-2xl sm:text-3xl font-bold text-white">11</span>
                   <span className="text-xs sm:text-sm text-white/60">Specialist Services</span>
                 </div>
                 <div className="flex flex-col">
@@ -295,7 +295,7 @@ const ServicesPageV2 = () => {
                   href="#stages"
                   className="group inline-flex items-center justify-center gap-3 px-7 py-4 bg-gradient-to-r from-[#D4AF37] to-[#e6c456] hover:from-[#c9a432] hover:to-[#D4AF37] text-[#0d1b3e] font-bold rounded-xl transition-all duration-300 text-sm sm:text-base shadow-lg shadow-[#D4AF37]/20 hover:shadow-[#D4AF37]/30 hover:scale-[1.02]"
                 >
-                  Explore All Services
+                  Get My Shortlist
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
@@ -489,8 +489,8 @@ const ServicesPageV2 = () => {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           {/*
             Stage grid layout (desktop):
-            Row 1: Stage 1 (1 card = 1/3) + Stage 2 (2 cards = 2/3)
-            Row 2: Stage 3 (3 cards = full width)
+            Row 1: Stage 1 (2 cards) + Stage 2 (3 cards)
+            Row 2: Stage 3 (2 cards = full width)
             Row 3: Stage 4 (4 cards = full width)
           */}
           {(() => {
@@ -637,9 +637,9 @@ const ServicesPageV2 = () => {
 
             /* ── All stages: grid layout ── */
             // Group stages into rows based on service count
-            // Row 1: Stage 1 (1 card) + Stage 2 (2 cards) = 3 units
-            // Row 2: Stage 3 (3 cards) = 3 units
-            // Row 3: Stage 4 (4 cards) = 4 units
+            // Row 1: Stage 1 (2 cards) + Stage 2 (3 cards)
+            // Row 2: Stage 3 (2 cards)
+            // Row 3: Stage 4 (4 cards)
             const stage1 = filtered.find((s) => s.number === 1);
             const stage2 = filtered.find((s) => s.number === 2);
             const stage3 = filtered.find((s) => s.number === 3);
@@ -649,14 +649,14 @@ const ServicesPageV2 = () => {
               <div className="space-y-6">
                 {/* Row 1: Stage 1 + Stage 2 side by side */}
                 {(stage1 || stage2) && (
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                  <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
                     {stage1 && (
-                      <div className="lg:col-span-1">
+                      <div className="lg:col-span-2">
                         {renderStageGroup(stage1)}
                       </div>
                     )}
                     {stage2 && (
-                      <div className={stage1 ? "lg:col-span-2" : "lg:col-span-3"}>
+                      <div className={stage1 ? "lg:col-span-3" : "lg:col-span-5"}>
                         {renderStageGroup(stage2)}
                       </div>
                     )}
@@ -706,10 +706,10 @@ const ServicesPageV2 = () => {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white tracking-tight mb-4">
-              Not sure what you need?
+              Not sure where to start?
             </h2>
             <p className="text-white/60 text-sm sm:text-base mb-8">
-              Get a shortlist of the right services in 2 minutes.
+              Tell us your situation. We&apos;ll recommend the right services - no obligation.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">

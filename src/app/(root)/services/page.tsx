@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Our Services | Uniguru (London)",
+  title: "Services | Uniguru (London-led support)",
   description:
     "End-to-end support from shortlist to settlement. Eligibility, admissions, immigration, IELTS, accommodation, air ticketing, financial help, and part-time work support.",
 };
