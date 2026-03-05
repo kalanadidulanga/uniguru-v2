@@ -49,7 +49,7 @@ const FooterV2 = () => {
                     {/* Brand + Contact */}
                     <div className="lg:col-span-4 space-y-6">
                         <Link href="/" className="inline-block">
-                            <span className="text-2xl font-bold tracking-tight">
+                            <span className="text-4xl font-bold tracking-tight">
                                 Uni<span className="text-[#D4AF37]">guru</span>
                             </span>
                         </Link>
