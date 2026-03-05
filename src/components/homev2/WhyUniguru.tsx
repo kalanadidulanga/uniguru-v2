@@ -9,6 +9,7 @@ import {
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { COMPANY_INFO } from "@/constants/data";
 
 const features = [
   {
@@ -103,10 +104,10 @@ const WhyUniguru = () => {
         {/* Bottom Row — Trust + CTA */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p className="text-xs sm:text-sm text-white/40">
-            Trusted by 10,000+ students worldwide · 128 City Road, London EC1V 2NX
+            Trusted by 10,000+ students worldwide · {COMPANY_INFO.address}
           </p>
           <Link
-            href="/book"
+            href={COMPANY_INFO.bookUrl}
             className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#c5a030] text-white text-sm font-semibold px-6 py-3 rounded-full transition-colors flex-shrink-0"
           >
             Get started

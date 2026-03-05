@@ -14,6 +14,7 @@ import {
   Ban,
   CheckCircle2,
 } from "lucide-react";
+import { COMPANY_INFO } from "@/constants/data";
 
 const BOOK_LINK = "https://uniguru-v2.vercel.app/book";
 
@@ -95,14 +96,14 @@ const RegulationPageV2 = () => {
             <div className="flex items-center gap-2">
               <BadgeCheck size={16} className="text-[#D4AF37] shrink-0" />
               <span className="text-white/90 text-xs sm:text-sm font-medium">
-                Organisation Registration: F202537807
+                Organisation Registration: {COMPANY_INFO.iaaReg}
               </span>
             </div>
             <div className="hidden sm:block w-px h-5 bg-white/20" />
             <div className="flex items-center gap-2">
               <MapPin size={16} className="text-[#D4AF37] shrink-0" />
               <span className="text-white/90 text-xs sm:text-sm font-medium">
-                128 City Road, London EC1V 2NX
+                {COMPANY_INFO.address}
               </span>
             </div>
           </div>

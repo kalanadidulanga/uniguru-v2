@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { sendContactEmail } from "@/actions/mailSending";
 import toast from "react-hot-toast";
+import { COMPANY_INFO } from "@/constants/data";
 
 /* ── Types ── */
 
@@ -182,7 +183,6 @@ const IN_UK_OPTIONS: DropdownOption[] = [
   { value: "No", label: "No" },
 ];
 
-const WHATSAPP_NUMBER = "447747525946";
 
 /* ── Form Component ── */
 
@@ -246,7 +246,7 @@ const GetMyShortlistForm = ({
           `Budget: ${form.budget || "Not specified"}\n` +
           `Notes: ${form.notes || "None"}`
       );
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`, "_blank");
+      window.open(`https://wa.me/${COMPANY_INFO.phoneRaw}?text=${waText}`, "_blank");
 
       toast.success(
         "Received. We'll review your details and message you on WhatsApp with your shortlist and next steps."
@@ -445,8 +445,6 @@ const GetMyShortlistForm = ({
 
 /* ── Wrapper with sidebar for "section" placement ── */
 
-const WHATSAPP_LINK =
-  "https://wa.me/447747525946?text=Hi%2C%20I%20need%20help%20with%20eligibility%20and%20shortlisting";
 
 export const GetMyShortlistSection = ({
   preSelectedDestination,
@@ -511,7 +509,7 @@ export const GetMyShortlistSection = ({
                 <Shield size={18} className="text-[#D4AF37]" />
               </div>
               <span className="text-white text-sm font-medium leading-snug">
-                IAA Regulated &middot; F202537807
+                IAA Regulated &middot; {COMPANY_INFO.iaaReg}
               </span>
             </div>
             <div className="flex items-center gap-3">
@@ -519,7 +517,7 @@ export const GetMyShortlistSection = ({
                 <CheckCircle2 size={18} className="text-[#D4AF37]" />
               </div>
               <span className="text-white text-sm font-medium leading-snug">
-                100+ Google Reviews
+                {COMPANY_INFO.googleReviews} Google Reviews
               </span>
             </div>
             <div className="flex items-center gap-3">
@@ -527,7 +525,7 @@ export const GetMyShortlistSection = ({
                 <MapPin size={18} className="text-[#D4AF37]" />
               </div>
               <span className="text-white text-sm font-medium leading-snug">
-                128 City Road, London EC1V 2NX
+                {COMPANY_INFO.address}
               </span>
             </div>
           </div>
@@ -537,7 +535,7 @@ export const GetMyShortlistSection = ({
               Prefer to chat first?
             </p>
             <a
-              href={WHATSAPP_LINK}
+              href={COMPANY_INFO.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold rounded-lg transition-colors text-sm"
@@ -546,7 +544,7 @@ export const GetMyShortlistSection = ({
               Chat on WhatsApp
             </a>
             <p className="text-white/60 text-xs mt-2.5 text-center">
-              +44 7747 525946 &middot; info@uniguru.co.uk
+              {COMPANY_INFO.phone} &middot; {COMPANY_INFO.email}
             </p>
           </div>
         </div>

@@ -9,9 +9,7 @@ import {
   MapPin,
 } from "lucide-react";
 import GetMyShortlistForm from "@/components/forms/GetMyShortlistForm";
-
-const WHATSAPP_LINK =
-  "https://wa.me/447747525946?text=Hi%2C%20I%20need%20help%20getting%20started";
+import { COMPANY_INFO } from "@/constants/data";
 
 const BookPageV2 = () => {
   return (
@@ -82,7 +80,7 @@ const BookPageV2 = () => {
                     <Shield size={18} className="text-[#D4AF37] hidden sm:block" />
                   </div>
                   <span className="text-white/90 text-xs sm:text-sm font-medium leading-snug">
-                    IAA Regulated &middot; F202537807
+                    IAA Regulated &middot; {COMPANY_INFO.iaaReg}
                   </span>
                 </div>
                 <div className="flex items-center gap-2.5 sm:gap-3">
@@ -91,7 +89,7 @@ const BookPageV2 = () => {
                     <CheckCircle2 size={18} className="text-[#D4AF37] hidden sm:block" />
                   </div>
                   <span className="text-white/90 text-xs sm:text-sm font-medium leading-snug">
-                    100+ Google Reviews
+                    {COMPANY_INFO.googleReviews} Google Reviews
                   </span>
                 </div>
                 <div className="flex items-center gap-2.5 sm:gap-3">
@@ -100,7 +98,7 @@ const BookPageV2 = () => {
                     <MapPin size={18} className="text-[#D4AF37] hidden sm:block" />
                   </div>
                   <span className="text-white/90 text-xs sm:text-sm font-medium leading-snug">
-                    128 City Road, London EC1V 2NX
+                    {COMPANY_INFO.address}
                   </span>
                 </div>
               </div>
@@ -111,7 +109,7 @@ const BookPageV2 = () => {
                   Prefer to chat first?
                 </p>
                 <a
-                  href={WHATSAPP_LINK}
+                  href={COMPANY_INFO.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 w-full px-4 sm:px-5 py-2.5 sm:py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold rounded-lg transition-colors text-xs sm:text-sm"
@@ -121,7 +119,7 @@ const BookPageV2 = () => {
                   Chat on WhatsApp
                 </a>
                 <p className="text-white/40 text-[10px] sm:text-xs mt-2 sm:mt-2.5 text-center">
-                  +44 7747 525946 &middot; info@uniguru.co.uk
+                  {COMPANY_INFO.phone} &middot; {COMPANY_INFO.email}
                 </p>
               </div>
 

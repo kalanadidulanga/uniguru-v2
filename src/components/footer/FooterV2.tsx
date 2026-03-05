@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail, Send } from "lucide-react";
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube, FaTiktok, FaWhatsapp } from "react-icons/fa6";
+import { COMPANY_INFO } from "@/constants/data";
 
 const SOCIAL_ICONS = [
   { icon: FaFacebookF, link: "https://facebook.com/uniguruedu/", color: "#1877F2", label: "Facebook" },
@@ -10,7 +11,7 @@ const SOCIAL_ICONS = [
   { icon: FaInstagram, link: "https://www.instagram.com/uniguruedu/", color: "#E4405F", label: "Instagram" },
   { icon: FaYoutube, link: "https://www.youtube.com/@Uniguru_", color: "#FF0000", label: "YouTube" },
   { icon: FaTiktok, link: "https://www.tiktok.com/@uniguru_", color: "#000000", label: "TikTok" },
-  { icon: FaWhatsapp, link: "https://wa.me/447747525946", color: "#25D366", label: "WhatsApp" },
+  { icon: FaWhatsapp, link: COMPANY_INFO.whatsapp, color: "#25D366", label: "WhatsApp" },
 ];
 
 const FOOTER_LINKS = {
@@ -69,15 +70,15 @@ const FooterV2 = () => {
                         <div className="space-y-2 text-sm text-white/60">
                             <div className="flex items-center gap-2">
                                 <MapPin size={14} className="text-[#D4AF37] shrink-0" />
-                                <span>128 City Road, London</span>
+                                <span>{COMPANY_INFO.addressShort}</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <Phone size={14} className="text-[#D4AF37] shrink-0" />
-                                <span>+44 7747 525946</span>
+                                <span>{COMPANY_INFO.phone}</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <Mail size={14} className="text-[#D4AF37] shrink-0" />
-                                <span>info@uniguru.co.uk</span>
+                                <span>{COMPANY_INFO.email}</span>
                             </div>
                         </div>
 
@@ -207,7 +208,7 @@ const FooterV2 = () => {
                     <div className="flex items-center gap-4">
                         <Link href="/policies" className="hover:text-white/60 transition-colors">Privacy</Link>
                         <Link href="/policies" className="hover:text-white/60 transition-colors">Terms</Link>
-                        <span className="hidden sm:inline">IAA Reg: F202537807</span>
+                        <span className="hidden sm:inline">IAA Reg: {COMPANY_INFO.iaaReg}</span>
                         <span className="sm:hidden">IAA Regulated</span>
                     </div>
                 </div>

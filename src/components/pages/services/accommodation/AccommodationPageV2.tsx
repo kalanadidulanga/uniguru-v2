@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ACCOMMODATION_DESTINATIONS } from "@/constants/data";
+import { ACCOMMODATION_DESTINATIONS, COMPANY_INFO } from "@/constants/data";
 import {
   Home,
   ArrowRight,
@@ -21,8 +21,6 @@ import {
 import { sendAccommodationEnquiryEmail } from "@/actions/mailSending";
 import toast from "react-hot-toast";
 
-const WHATSAPP_LINK =
-  "https://wa.me/447123456789?text=Hi%2C%20I%20need%20help%20with%20accommodation";
 
 const COUNTRY_IMAGES: Record<string, string> = {
   canada: "/images/study_destinations/canada/1.png",
@@ -154,7 +152,7 @@ const AccommodationPageV2 = () => {
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
-                  href={WHATSAPP_LINK}
+                  href={COMPANY_INFO.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-[#25D366] text-white font-medium py-3.5 px-6 rounded-lg hover:bg-[#20bd5a] transition-colors text-sm sm:text-base"
@@ -201,8 +199,8 @@ const AccommodationPageV2 = () => {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
           <Shield className="w-4 h-4 text-[#D4AF37] shrink-0" />
           <p className="text-white/90 text-xs sm:text-sm tracking-wide text-center">
-            Immigration Advice Authority (IAA) Regulated &bull; F202537807 &bull;
-            128 City Road, London EC1V 2NX &bull; 100+ Google Reviews
+            Immigration Advice Authority (IAA) Regulated &bull; {COMPANY_INFO.iaaReg} &bull;
+            {COMPANY_INFO.address} &bull; {COMPANY_INFO.googleReviews} Google Reviews
           </p>
         </div>
       </section>
@@ -477,7 +475,7 @@ const AccommodationPageV2 = () => {
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
-              href={WHATSAPP_LINK}
+              href={COMPANY_INFO.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] text-white font-medium py-3.5 px-6 rounded-lg hover:bg-[#20bd5a] transition-colors text-sm sm:text-base"
@@ -655,8 +653,7 @@ const AccommodationPageV2 = () => {
             <div className="flex items-center justify-center gap-2">
               <Shield className="w-3.5 h-3.5 text-[#D4AF37]" />
               <p className="text-xs text-gray-400">
-                IAA Regulated &bull; F202537807 &bull; 128 City Road, London
-                EC1V 2NX &bull; 100+ Google Reviews
+                IAA Regulated &bull; {COMPANY_INFO.iaaReg} &bull; {COMPANY_INFO.address} &bull; {COMPANY_INFO.googleReviews} Google Reviews
               </p>
             </div>
           </div>

@@ -21,9 +21,7 @@ import {
   Target,
 } from "lucide-react";
 import TrustBarSection from "@/components/homev2/TrustBarSection";
-
-const WHATSAPP_LINK =
-  "https://wa.me/447747525946?text=Hi%2C%20I%20need%20help%20with%20IELTS%20preparation";
+import { COMPANY_INFO } from "@/constants/data";
 
 const GOOGLE_DRIVE_LINK =
   "https://drive.google.com/drive/folders/1oiNxjDb-BUZG-1COPZKXj7vYvVhxHxc5?usp=sharing";
@@ -426,7 +424,7 @@ const FreeIeltsServicePageV2 = () => {
                 />
               </Link>
               <a
-                href={WHATSAPP_LINK}
+                href={COMPANY_INFO.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 px-6 py-4 bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white font-semibold rounded-xl transition-all duration-300 text-sm sm:text-base"
@@ -439,9 +437,9 @@ const FreeIeltsServicePageV2 = () => {
             {/* Trust line */}
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-10">
               {[
-                { icon: <Shield size={14} />, text: "IAA Regulated \u00B7 F202537807" },
-                { icon: <CheckCircle2 size={14} />, text: "100+ Google Reviews" },
-                { icon: <MapPin size={14} />, text: "128 City Road, London EC1V 2NX" },
+                { icon: <Shield size={14} />, text: `IAA Regulated \u00B7 ${COMPANY_INFO.iaaReg}` },
+                { icon: <CheckCircle2 size={14} />, text: `${COMPANY_INFO.googleReviews} Google Reviews` },
+                { icon: <MapPin size={14} />, text: COMPANY_INFO.address },
               ].map((item, i) => (
                 <span
                   key={i}
@@ -454,7 +452,7 @@ const FreeIeltsServicePageV2 = () => {
             </div>
 
             <p className="text-white/40 text-xs mt-4">
-              WhatsApp +44 7747 525946 &middot; info@uniguru.co.uk
+              WhatsApp {COMPANY_INFO.phone} &middot; {COMPANY_INFO.email}
             </p>
           </div>
         </div>

@@ -14,6 +14,7 @@ import {
   Mail,
   MessageCircle,
 } from "lucide-react";
+import { COMPANY_INFO } from "@/constants/data";
 
 const ANCHOR_LINKS = [
   { label: "Privacy", anchor: "#privacy", icon: Lock },
@@ -22,8 +23,6 @@ const ANCHOR_LINKS = [
   { label: "Complaints", anchor: "#complaints", icon: MessageSquareWarning },
 ];
 
-const WHATSAPP_LINK =
-  "https://wa.me/447747525946?text=Hi%2C%20I%20have%20a%20question";
 
 const PoliciesPageV2 = () => {
   return (
@@ -107,10 +106,10 @@ const PoliciesPageV2 = () => {
             <p className="mt-6 text-sm text-gray-500">
               Contact for privacy:{" "}
               <a
-                href="mailto:info@uniguru.co.uk"
+                href={`mailto:${COMPANY_INFO.email}`}
                 className="text-[#1a3b85] font-medium hover:underline"
               >
-                info@uniguru.co.uk
+                {COMPANY_INFO.email}
               </a>
             </p>
           </div>
@@ -233,10 +232,10 @@ const PoliciesPageV2 = () => {
                   <p className="text-sm text-gray-500 mt-1">
                     Send to:{" "}
                     <a
-                      href="mailto:info@uniguru.co.uk?subject=Complaint"
+                      href={`mailto:${COMPANY_INFO.email}?subject=Complaint`}
                       className="text-[#1a3b85] font-medium hover:underline"
                     >
-                      info@uniguru.co.uk
+                      {COMPANY_INFO.email}
                     </a>{" "}
                     (Subject: Complaint)
                   </p>
@@ -278,20 +277,20 @@ const PoliciesPageV2 = () => {
             {/* Contact */}
             <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
               <a
-                href={WHATSAPP_LINK}
+                href={COMPANY_INFO.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-white/80 hover:text-[#D4AF37] text-sm transition-colors"
               >
                 <MessageCircle size={16} className="text-[#D4AF37]" />
-                +44 7747 525946
+                {COMPANY_INFO.phone}
               </a>
               <a
-                href="mailto:info@uniguru.co.uk"
+                href={`mailto:${COMPANY_INFO.email}`}
                 className="inline-flex items-center gap-2 text-white/80 hover:text-[#D4AF37] text-sm transition-colors"
               >
                 <Mail size={16} className="text-[#D4AF37]" />
-                info@uniguru.co.uk
+                {COMPANY_INFO.email}
               </a>
             </div>
 
@@ -303,15 +302,15 @@ const PoliciesPageV2 = () => {
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <BadgeCheck size={14} className="text-[#D4AF37]" />
-                F202537807
+                {COMPANY_INFO.iaaReg}
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <MapPin size={14} className="text-[#D4AF37]" />
-                128 City Road, London EC1V 2NX
+                {COMPANY_INFO.address}
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Star size={14} className="text-[#D4AF37]" />
-                100+ Google Reviews
+                {COMPANY_INFO.googleReviews} Google Reviews
               </span>
             </div>
           </div>

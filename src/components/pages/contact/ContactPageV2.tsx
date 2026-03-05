@@ -19,9 +19,7 @@ import {
 } from "lucide-react";
 import { sendContactEmail } from "@/actions/mailSending";
 import toast from "react-hot-toast";
-
-const WHATSAPP_LINK =
-  "https://wa.me/447747525946?text=Hi%2C%20I%20need%20help%20getting%20started";
+import { COMPANY_INFO } from "@/constants/data";
 
 const REASON_OPTIONS = [
   "Shortlist",
@@ -157,7 +155,7 @@ const ContactPageV2 = () => {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
-                href={WHATSAPP_LINK}
+                href={COMPANY_INFO.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-sm rounded-lg transition-colors"
@@ -189,7 +187,7 @@ const ContactPageV2 = () => {
 
               <div className="space-y-4">
                 <a
-                  href={WHATSAPP_LINK}
+                  href={COMPANY_INFO.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-[#25D366]/30 transition-colors group"
@@ -201,12 +199,12 @@ const ContactPageV2 = () => {
                     <p className="text-sm font-semibold text-gray-900 mb-0.5">
                       WhatsApp
                     </p>
-                    <p className="text-sm text-gray-600">+44 7747 525946</p>
+                    <p className="text-sm text-gray-600">{COMPANY_INFO.phone}</p>
                   </div>
                 </a>
 
                 <a
-                  href="mailto:info@uniguru.co.uk"
+                  href={`mailto:${COMPANY_INFO.email}`}
                   className="flex items-start gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-[#1a3b85]/30 transition-colors"
                 >
                   <div className="w-10 h-10 rounded-lg bg-[#1a3b85]/10 flex items-center justify-center shrink-0">
@@ -216,7 +214,7 @@ const ContactPageV2 = () => {
                     <p className="text-sm font-semibold text-gray-900 mb-0.5">
                       Email
                     </p>
-                    <p className="text-sm text-gray-600">info@uniguru.co.uk</p>
+                    <p className="text-sm text-gray-600">{COMPANY_INFO.email}</p>
                   </div>
                 </a>
 
@@ -229,7 +227,7 @@ const ContactPageV2 = () => {
                       Address
                     </p>
                     <p className="text-sm text-gray-600">
-                      128 City Road, London EC1V 2NX
+                      {COMPANY_INFO.address}
                     </p>
                   </div>
                 </div>
@@ -243,7 +241,7 @@ const ContactPageV2 = () => {
                       Office hours
                     </p>
                     <p className="text-sm text-gray-600">
-                      Mon–Fri, 9am–6pm (UK time)
+                      {COMPANY_INFO.officeHours}
                     </p>
                   </div>
                 </div>
@@ -375,33 +373,33 @@ const ContactPageV2 = () => {
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <BadgeCheck size={14} className="text-[#D4AF37]" />
-                F202537807
+                {COMPANY_INFO.iaaReg}
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <MapPin size={14} className="text-[#D4AF37]" />
-                128 City Road, London EC1V 2NX
+                {COMPANY_INFO.address}
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Star size={14} className="text-[#D4AF37]" />
-                100+ Google Reviews
+                {COMPANY_INFO.googleReviews} Google Reviews
               </span>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
               <a
-                href={WHATSAPP_LINK}
+                href={COMPANY_INFO.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-white/80 hover:text-[#D4AF37] text-sm transition-colors"
               >
                 <Phone size={14} className="text-[#D4AF37]" />
-                +44 7747 525946
+                {COMPANY_INFO.phone}
               </a>
               <a
-                href="mailto:info@uniguru.co.uk"
+                href={`mailto:${COMPANY_INFO.email}`}
                 className="inline-flex items-center gap-2 text-white/80 hover:text-[#D4AF37] text-sm transition-colors"
               >
                 <Mail size={14} className="text-[#D4AF37]" />
-                info@uniguru.co.uk
+                {COMPANY_INFO.email}
               </a>
             </div>
           </div>

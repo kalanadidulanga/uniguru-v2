@@ -27,9 +27,7 @@ import {
 import { sendContactEmail } from "@/actions/mailSending";
 import TrustBarSection from "@/components/homev2/TrustBarSection";
 import toast from "react-hot-toast";
-
-const WHATSAPP_LINK =
-  "https://wa.me/447747525946?text=Hi%2C%20I%20need%20help%20with%20IELTS%20%2F%20interview%20preparation";
+import { COMPANY_INFO } from "@/constants/data";
 
 /* ── Data ── */
 
@@ -459,7 +457,7 @@ const IeltsInterviewPrepPageV2 = () => {
                   />
                 </a>
                 <a
-                  href={WHATSAPP_LINK}
+                  href={COMPANY_INFO.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 px-6 py-4 bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white font-semibold rounded-xl transition-all duration-300 text-sm sm:text-base"
@@ -1025,7 +1023,7 @@ const IeltsInterviewPrepPageV2 = () => {
                     <Shield size={18} className="text-[#D4AF37]" />
                   </div>
                   <span className="text-white text-sm font-medium leading-snug">
-                    IAA Regulated &middot; F202537807
+                    IAA Regulated &middot; {COMPANY_INFO.iaaReg}
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -1033,7 +1031,7 @@ const IeltsInterviewPrepPageV2 = () => {
                     <CheckCircle2 size={18} className="text-[#D4AF37]" />
                   </div>
                   <span className="text-white text-sm font-medium leading-snug">
-                    100+ Google Reviews
+                    {COMPANY_INFO.googleReviews} Google Reviews
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -1041,7 +1039,7 @@ const IeltsInterviewPrepPageV2 = () => {
                     <MapPin size={18} className="text-[#D4AF37]" />
                   </div>
                   <span className="text-white text-sm font-medium leading-snug">
-                    128 City Road, London EC1V 2NX
+                    {COMPANY_INFO.address}
                   </span>
                 </div>
               </div>
@@ -1051,7 +1049,7 @@ const IeltsInterviewPrepPageV2 = () => {
                   Prefer to chat first?
                 </p>
                 <a
-                  href={WHATSAPP_LINK}
+                  href={COMPANY_INFO.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold rounded-lg transition-colors text-sm"
@@ -1060,7 +1058,7 @@ const IeltsInterviewPrepPageV2 = () => {
                   Chat on WhatsApp
                 </a>
                 <p className="text-white/60 text-xs mt-2.5 text-center">
-                  +44 7747 525946 &middot; info@uniguru.co.uk
+                  {COMPANY_INFO.phone} &middot; {COMPANY_INFO.email}
                 </p>
               </div>
 

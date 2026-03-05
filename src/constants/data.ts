@@ -1,5 +1,19 @@
 import type { StudyDestinationDataSet } from "@/components/pages/stydy-destinations/types";
 
+export const COMPANY_INFO = {
+  name: "Uniguru",
+  phone: "+44 7747 525946",
+  phoneRaw: "447747525946",
+  email: "info@uniguru.co.uk",
+  address: "128 City Road, London EC1V 2NX",
+  addressShort: "128 City Road, London",
+  whatsapp: "https://wa.me/447747525946?text=Hi%2C%20I%20need%20help%20getting%20started",
+  iaaReg: "F202537807",
+  googleReviews: "100+",
+  officeHours: "Mon–Fri, 9am–6pm (UK time)",
+  bookUrl: "/book",
+} as const;
+
 export const NAVBAR_DATA = [
   {
     name: "Study Destinations",

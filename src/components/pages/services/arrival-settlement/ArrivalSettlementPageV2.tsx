@@ -26,9 +26,7 @@ import {
 import { sendContactEmail } from "@/actions/mailSending";
 import TrustBarSection from "@/components/homev2/TrustBarSection";
 import toast from "react-hot-toast";
-
-const WHATSAPP_LINK =
-  "https://wa.me/447747525946?text=Hi%2C%20I%20need%20help%20with%20arrival%20and%20settlement%20planning";
+import { COMPANY_INFO } from "@/constants/data";
 
 /* ── Data ── */
 
@@ -458,7 +456,7 @@ const ArrivalSettlementPageV2 = () => {
                   />
                 </a>
                 <a
-                  href={WHATSAPP_LINK}
+                  href={COMPANY_INFO.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 px-6 py-4 bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white font-semibold rounded-xl transition-all duration-300 text-sm sm:text-base"
@@ -900,7 +898,7 @@ const ArrivalSettlementPageV2 = () => {
                   Prefer to chat?
                 </h3>
                 <a
-                  href={WHATSAPP_LINK}
+                  href={COMPANY_INFO.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 px-5 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold rounded-lg transition-colors text-sm w-full justify-center"
@@ -909,7 +907,7 @@ const ArrivalSettlementPageV2 = () => {
                   WhatsApp Us
                 </a>
                 <p className="text-white/40 text-xs mt-3 text-center">
-                  +44 7747 525946
+                  {COMPANY_INFO.phone}
                 </p>
               </div>
 
@@ -941,15 +939,15 @@ const ArrivalSettlementPageV2 = () => {
                   {[
                     {
                       icon: <Shield size={16} />,
-                      text: "IAA Regulated F202537807",
+                      text: `IAA Regulated ${COMPANY_INFO.iaaReg}`,
                     },
                     {
                       icon: <CheckCircle2 size={16} />,
-                      text: "100+ Google Reviews",
+                      text: `${COMPANY_INFO.googleReviews} Google Reviews`,
                     },
                     {
                       icon: <MapPin size={16} />,
-                      text: "128 City Road, London EC1V 2NX",
+                      text: COMPANY_INFO.address,
                     },
                   ].map((item, i) => (
                     <div
@@ -975,21 +973,21 @@ const ArrivalSettlementPageV2 = () => {
             landlords / providers.
           </p>
           <p className="text-white/40 text-xs mb-4">
-            WhatsApp +44 7747 525946 · info@uniguru.co.uk
+            WhatsApp {COMPANY_INFO.phone} · {COMPANY_INFO.email}
           </p>
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
             {[
               {
                 icon: <Shield size={12} />,
-                text: "IAA Regulated F202537807",
+                text: `IAA Regulated ${COMPANY_INFO.iaaReg}`,
               },
               {
                 icon: <CheckCircle2 size={12} />,
-                text: "100+ Google Reviews",
+                text: `${COMPANY_INFO.googleReviews} Google Reviews`,
               },
               {
                 icon: <MapPin size={12} />,
-                text: "128 City Road, London EC1V 2NX",
+                text: COMPANY_INFO.address,
               },
             ].map((item, i) => (
               <span

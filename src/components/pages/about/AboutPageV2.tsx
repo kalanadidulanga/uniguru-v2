@@ -20,9 +20,7 @@ import {
   Handshake,
 } from "lucide-react";
 import TrustBarSection from "@/components/homev2/TrustBarSection";
-
-const WHATSAPP_LINK =
-  "https://wa.me/447747525946?text=Hi%2C%20I%20need%20help%20getting%20started";
+import { COMPANY_INFO } from "@/constants/data";
 
 /* ── Data ── */
 
@@ -192,7 +190,7 @@ const AboutPageV2 = () => {
                   />
                 </a>
                 <a
-                  href={WHATSAPP_LINK}
+                  href={COMPANY_INFO.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 px-5 sm:px-6 py-3.5 sm:py-4 bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white font-semibold rounded-xl transition-all duration-300 text-sm sm:text-base"
@@ -435,7 +433,7 @@ const AboutPageV2 = () => {
               and clear client outcomes.
             </p>
             <a
-              href={WHATSAPP_LINK}
+              href={COMPANY_INFO.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#1a3b85] hover:bg-[#152d6b] text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-sm sm:text-base"
@@ -470,7 +468,7 @@ const AboutPageV2 = () => {
                 <ArrowRight size={16} />
               </a>
               <a
-                href={WHATSAPP_LINK}
+                href={COMPANY_INFO.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/10 hover:bg-white/15 text-white font-semibold rounded-lg transition-colors text-sm sm:text-base"
@@ -484,15 +482,15 @@ const AboutPageV2 = () => {
               {[
                 {
                   icon: <Shield size={12} />,
-                  text: "IAA Regulated · F202537807",
+                  text: `IAA Regulated · ${COMPANY_INFO.iaaReg}`,
                 },
                 {
                   icon: <CheckCircle2 size={12} />,
-                  text: "100+ Google Reviews",
+                  text: `${COMPANY_INFO.googleReviews} Google Reviews`,
                 },
                 {
                   icon: <MapPin size={12} />,
-                  text: "128 City Road, London EC1V 2NX",
+                  text: COMPANY_INFO.address,
                 },
               ].map((item, i) => (
                 <span
@@ -505,7 +503,7 @@ const AboutPageV2 = () => {
               ))}
             </div>
             <p className="text-white/40 text-xs">
-              WhatsApp +44 7747 525946 &middot; info@uniguru.co.uk
+              WhatsApp {COMPANY_INFO.phone} &middot; {COMPANY_INFO.email}
             </p>
           </div>
         </div>
