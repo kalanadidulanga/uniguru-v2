@@ -15,14 +15,6 @@ export const NAVBAR_DATA = [
   {
     name: "Services",
     link: "/services",
-    subOptions: [
-      { name: "Accommodation", link: "/services/accommodation" },
-      { name: "Free IELTS Service", link: "/services/free-ielts-service" },
-      { name: "Air Ticketing", link: "/services/air-ticketing" },
-      { name: "Financial Help", link: "/services/financial-help" },
-      { name: "IELTS & Interview Prep", link: "/services/ielts-interview-prep" },
-      { name: "Part-Time Work Support", link: "/services/part-time-work" },
-    ],
   },
   {
     name: "Company",

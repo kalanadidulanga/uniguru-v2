@@ -220,7 +220,7 @@ const ServicesPageV2 = () => {
       {/* ═══════════════ HERO + TRUST BAR + YOUR JOURNEY (all in one screen) ═══════════════ */}
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
-        <section className="relative flex items-center overflow-hidden flex-1">
+        <section className="relative flex items-center overflow-hidden flex-1 min-h-[70vh]">
           <Image
             src="/1.jpg"
             alt="Big Ben and Houses of Parliament London at golden hour"
@@ -229,48 +229,68 @@ const ServicesPageV2 = () => {
             className="object-cover object-center scale-105"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/80 to-[#0a1628]/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/70 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/85 to-[#0a1628]/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/80 via-transparent to-transparent" />
+          
+          {/* Decorative floating elements */}
+          <div className="absolute top-20 right-20 w-64 h-64 bg-[#D4AF37]/10 rounded-full blur-3xl animate-pulse hidden lg:block" />
+          <div className="absolute bottom-32 right-40 w-40 h-40 bg-[#1a3b85]/20 rounded-full blur-2xl hidden lg:block" />
 
-          <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-3 mb-4">
-                <div className="w-8 h-[2px] bg-[#D4AF37]" />
-                <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase">
+          <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-3 mb-6">
+                <div className="w-10 h-[3px] bg-gradient-to-r from-[#D4AF37] to-[#e6c456] rounded-full" />
+                <p className="text-xs sm:text-sm font-bold tracking-[0.2em] text-[#D4AF37] uppercase">
                   Our Services
                 </p>
               </div>
 
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-tight mb-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-6">
                 End-to-End Support
                 <br />
-                <span className="text-[#D4AF37]">London Led</span>
+                <span className="bg-gradient-to-r from-[#D4AF37] via-[#e6c456] to-[#D4AF37] bg-clip-text text-transparent">
+                  London Led
+                </span>
               </h1>
 
-              <p className="text-sm sm:text-base text-white/90 leading-relaxed mb-1">
-                One team. One process.
+              <p className="text-base sm:text-lg md:text-xl text-white/95 leading-relaxed mb-2 font-medium">
+                One team. One process. Complete clarity.
               </p>
-              <p className="text-xs sm:text-sm text-white/60 leading-relaxed mb-6 max-w-xl">
-                The support you need from shortlist to settlement, structured,
-                regulated where required, and always honest about what we can
-                and cannot do.
+              <p className="text-sm sm:text-base text-white/70 leading-relaxed mb-8 max-w-xl">
+                From your first shortlist to settling into your new city — we guide you through every stage. Structured support, regulated where required, and always transparent about what we can deliver.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+              {/* Stats Row */}
+              <div className="flex flex-wrap gap-6 sm:gap-8 mb-8">
+                <div className="flex flex-col">
+                  <span className="text-2xl sm:text-3xl font-bold text-[#D4AF37]">4</span>
+                  <span className="text-xs sm:text-sm text-white/60">Journey Stages</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-2xl sm:text-3xl font-bold text-white">10+</span>
+                  <span className="text-xs sm:text-sm text-white/60">Specialist Services</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-2xl sm:text-3xl font-bold text-white">UK</span>
+                  <span className="text-xs sm:text-sm text-white/60">Based Team</span>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
                   href="#stages"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-semibold rounded-lg transition-colors text-sm"
+                  className="group inline-flex items-center justify-center gap-3 px-7 py-4 bg-gradient-to-r from-[#D4AF37] to-[#e6c456] hover:from-[#c9a432] hover:to-[#D4AF37] text-[#0d1b3e] font-bold rounded-xl transition-all duration-300 text-sm sm:text-base shadow-lg shadow-[#D4AF37]/20 hover:shadow-[#D4AF37]/30 hover:scale-[1.02]"
                 >
-                  Get My Shortlist
-                  <ArrowRight size={14} />
+                  Explore All Services
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/15 text-white font-semibold rounded-lg transition-colors text-sm"
+                  className="group inline-flex items-center justify-center gap-3 px-7 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all duration-300 text-sm sm:text-base border border-white/20 hover:border-white/30 backdrop-blur-sm"
                 >
-                  <MessageCircle size={14} className="text-[#25D366]" />
+                  <MessageCircle size={16} className="text-[#25D366]" />
                   Chat on WhatsApp
                 </a>
               </div>
