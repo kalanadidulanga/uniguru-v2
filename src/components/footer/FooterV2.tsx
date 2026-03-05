@@ -3,174 +3,210 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SOCIAL_LINKS } from "@/constants/data";
-import { MapPin, Phone, Mail, ChevronRight } from "lucide-react";
+import { MapPin, Phone, Mail, Send } from "lucide-react";
 
-const QUICK_LINKS = [
-    { name: "Home", href: "/" },
-    { name: "About Us", href: "/about-us" },
-    { name: "Services", href: "/services" },
-    { name: "Contact", href: "/contact" },
-    { name: "Careers", href: "/careers" },
-    { name: "Become a Partner", href: "/become-a-partner" },
-] as const;
-
-const SERVICES = [
-    { name: "Eligibility & Shortlist", href: "/services/eligibility-shortlist" },
-    { name: "Admissions Support", href: "/services/admissions-support" },
-    { name: "IELTS & Interview Prep", href: "/services/ielts-interview-prep" },
-    { name: "Financial Help", href: "/services/financial-help" },
-    { name: "Accommodation", href: "/services/accommodation" },
-    { name: "Air Ticketing", href: "/services/air-ticketing" },
-] as const;
-
-const RESOURCES = [
-    { name: "Study in UK", href: "/study-destinations/uk" },
-    { name: "Study in Canada", href: "/study-destinations/canada" },
-    { name: "Study in Australia", href: "/study-destinations/australia" },
-    { name: "Universities", href: "/universities" },
-    { name: "Scholarships", href: "/scholarships" },
-    { name: "AI Search", href: "/ai-search" },
-    { name: "Get My Shortlist", href: "/book" },
-] as const;
+const FOOTER_LINKS = {
+    navigate: [
+        { name: "Home", href: "/" },
+        { name: "About", href: "/about-us" },
+        { name: "Services", href: "/services" },
+        { name: "Contact", href: "/contact" },
+    ],
+    legal: [
+        { name: "Careers", href: "/careers" },
+        { name: "Partner", href: "/become-a-partner" },
+        { name: "Regulation", href: "/regulation" },
+        { name: "Policies", href: "/policies" },
+    ],
+    services: [
+        { name: "Eligibility & Shortlist", href: "/services/eligibility-shortlist" },
+        { name: "Admissions Support", href: "/services/admissions-support" },
+        { name: "IELTS & Interview Prep", href: "/services/ielts-interview-prep" },
+        { name: "Financial Help", href: "/services/financial-help" },
+        { name: "Accommodation", href: "/services/accommodation" },
+        { name: "Air Ticketing", href: "/services/air-ticketing" },
+    ],
+    destinations: [
+        { name: "UK", href: "/study-destinations/uk" },
+        { name: "Canada", href: "/study-destinations/canada" },
+        { name: "Australia", href: "/study-destinations/australia" },
+        { name: "USA", href: "/study-destinations/usa" },
+    ],
+} as const;
 
 const FooterV2 = () => {
     return (
         <footer
-            className="relative bg-[#0a1120] text-white overflow-hidden"
+            className="relative bg-[#0f1a2e] text-white overflow-hidden"
             role="contentinfo"
             aria-label="Site footer"
         >
-            {/* Top Content */}
-            <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+            <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
                 
-                {/* Links grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10">
+                {/* Main Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 mb-10 pb-10 border-b border-white/10">
                     
-                    {/* Quick Links */}
-                    <div>
-                        <h4 className="text-sm font-semibold text-white mb-4 border-b-2 border-[#D4AF37] pb-2 inline-block">
-                            Quick Links
-                        </h4>
-                        <ul className="space-y-2.5 mt-4" role="list">
-                            {QUICK_LINKS.map((item) => (
-                                <li key={item.name}>
-                                    <Link
-                                        href={item.href}
-                                        className="text-gray-400 text-sm hover:text-[#D4AF37] transition-colors flex items-center gap-2 group"
-                                    >
-                                        <ChevronRight size={14} className="text-[#D4AF37] shrink-0 group-hover:translate-x-0.5 transition-transform" />
-                                        {item.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Services */}
-                    <div>
-                        <h4 className="text-sm font-semibold text-white mb-4 border-b-2 border-[#D4AF37] pb-2 inline-block">
-                            Services
-                        </h4>
-                        <ul className="space-y-2.5 mt-4" role="list">
-                            {SERVICES.map((item) => (
-                                <li key={item.name}>
-                                    <Link
-                                        href={item.href}
-                                        className="text-gray-400 text-sm hover:text-[#D4AF37] transition-colors flex items-center gap-2 group"
-                                    >
-                                        <ChevronRight size={14} className="text-[#D4AF37] shrink-0 group-hover:translate-x-0.5 transition-transform" />
-                                        {item.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Resources */}
-                    <div>
-                        <h4 className="text-sm font-semibold text-white mb-4 border-b-2 border-[#D4AF37] pb-2 inline-block">
-                            Study & Resources
-                        </h4>
-                        <ul className="space-y-2.5 mt-4" role="list">
-                            {RESOURCES.map((item) => (
-                                <li key={item.name}>
-                                    <Link
-                                        href={item.href}
-                                        className="text-gray-400 text-sm hover:text-[#D4AF37] transition-colors flex items-center gap-2 group"
-                                    >
-                                        <ChevronRight size={14} className="text-[#D4AF37] shrink-0 group-hover:translate-x-0.5 transition-transform" />
-                                        {item.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Contact Us */}
-                    <div>
-                        <h4 className="text-sm font-semibold text-white mb-4 border-b-2 border-[#D4AF37] pb-2 inline-block">
-                            Contact Us
-                        </h4>
-                        <ul className="space-y-3 mt-4 text-gray-400 text-sm" role="list">
-                            <li className="flex items-start gap-2">
-                                <MapPin size={16} className="text-[#D4AF37] shrink-0 mt-0.5" aria-hidden />
-                                <span>128 City Road, London EC1V 2NX</span>
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <Phone size={16} className="text-[#D4AF37] shrink-0" aria-hidden />
+                    {/* Brand + Contact */}
+                    <div className="lg:col-span-4 space-y-6">
+                        <Link href="/" className="inline-block">
+                            <span className="text-2xl font-bold tracking-tight">
+                                Uni<span className="text-[#D4AF37]">guru</span>
+                            </span>
+                        </Link>
+                        <p className="text-white/50 text-sm leading-relaxed max-w-xs">
+                            London-led guidance for international students. Clear scope, fixed deliverables.
+                        </p>
+                        
+                        {/* Contact - Compact */}
+                        <div className="space-y-2 text-sm text-white/60">
+                            <div className="flex items-center gap-2">
+                                <MapPin size={14} className="text-[#D4AF37] shrink-0" />
+                                <span>128 City Road, London</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Phone size={14} className="text-[#D4AF37] shrink-0" />
                                 <span>+44 7747 525946</span>
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <Mail size={16} className="text-[#D4AF37] shrink-0" aria-hidden />
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Mail size={14} className="text-[#D4AF37] shrink-0" />
                                 <span>info@uniguru.co.uk</span>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
+
+                        {/* CTA Buttons */}
+                        <div className="flex items-center gap-2 pt-2">
+                            <Link
+                                href="/book"
+                                className="inline-flex items-center gap-2 px-4 py-2 bg-[#D4AF37] text-[#0f1a2e] text-xs font-semibold rounded-full hover:bg-[#e6c456] transition-colors"
+                            >
+                                Get My Shortlist
+                                <Send size={12} />
+                            </Link>
+                            <Link
+                                href="/contact"
+                                className="inline-flex items-center px-4 py-2 bg-white/5 text-white text-xs font-medium rounded-full border border-white/10 hover:bg-white/10 transition-colors"
+                            >
+                                Contact
+                            </Link>
+                        </div>
+                    </div>
+
+                    {/* Links Section */}
+                    <div className="lg:col-span-8">
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4">
+                            
+                            {/* Navigate */}
+                            <div>
+                                <h4 className="text-[10px] font-semibold text-white/30 uppercase tracking-widest mb-3">
+                                    Navigate
+                                </h4>
+                                <ul className="space-y-1.5">
+                                    {FOOTER_LINKS.navigate.map((item) => (
+                                        <li key={item.name}>
+                                            <Link
+                                                href={item.href}
+                                                className="text-white/60 text-sm hover:text-[#D4AF37] transition-colors"
+                                            >
+                                                {item.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* More */}
+                            <div>
+                                <h4 className="text-[10px] font-semibold text-white/30 uppercase tracking-widest mb-3">
+                                    More
+                                </h4>
+                                <ul className="space-y-1.5">
+                                    {FOOTER_LINKS.legal.map((item) => (
+                                        <li key={item.name}>
+                                            <Link
+                                                href={item.href}
+                                                className="text-white/60 text-sm hover:text-[#D4AF37] transition-colors"
+                                            >
+                                                {item.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Services */}
+                            <div>
+                                <h4 className="text-[10px] font-semibold text-white/30 uppercase tracking-widest mb-3">
+                                    Services
+                                </h4>
+                                <ul className="space-y-1.5">
+                                    {FOOTER_LINKS.services.map((item) => (
+                                        <li key={item.name}>
+                                            <Link
+                                                href={item.href}
+                                                className="text-white/60 text-sm hover:text-[#D4AF37] transition-colors"
+                                            >
+                                                {item.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Destinations */}
+                            <div>
+                                <h4 className="text-[10px] font-semibold text-white/30 uppercase tracking-widest mb-3">
+                                    Destinations
+                                </h4>
+                                <ul className="space-y-1.5">
+                                    {FOOTER_LINKS.destinations.map((item) => (
+                                        <li key={item.name}>
+                                            <Link
+                                                href={item.href}
+                                                className="text-white/60 text-sm hover:text-[#D4AF37] transition-colors"
+                                            >
+                                                Study in {item.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-
-            {/* Bottom section with London background */}
-            <div className="relative h-72 sm:h-80">
-                {/* Background Image */}
-                <div className="absolute inset-0">
-                    <Image
-                        src="/1.jpg"
-                        alt="London skyline"
-                        fill
-                        className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/70" />
-                </div>
-
-                {/* Social icons and copyright */}
-                <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-center text-center">
+                {/* Bottom Bar */}
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
+                    {/* Copyright */}
+                    <p>© {new Date().getFullYear()} Uniguru. All rights reserved.</p>
                     
-                    {/* Social Icons */}
-                    <div className="flex gap-3 mb-6">
+                    {/* Social Icons - Center */}
+                    <div className="flex items-center gap-2 order-first sm:order-none">
                         {SOCIAL_LINKS.map((item, index) => (
                             <Link
                                 key={index}
                                 href={item.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center hover:bg-[#D4AF37] transition-colors"
+                                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#D4AF37] hover:border-[#D4AF37] transition-all group"
                                 aria-label="Social link"
                             >
                                 <Image
                                     src={item.src}
                                     alt=""
-                                    width={18}
-                                    height={18}
-                                    className="brightness-0"
+                                    width={24}
+                                    height={24}
+                                    className="brightness-0 invert opacity-50 group-hover:opacity-100 group-hover:invert-0"
                                 />
                             </Link>
                         ))}
                     </div>
-
-                    {/* Copyright */}
-                    <div className="text-xs sm:text-sm text-white space-y-1">
-                        <p>© {new Date().getFullYear()} Uniguru • All Rights Reserved</p>
+                    
+                    {/* Legal Links */}
+                    <div className="flex items-center gap-4">
+                        <Link href="/policies" className="hover:text-white/60 transition-colors">Privacy</Link>
+                        <Link href="/policies" className="hover:text-white/60 transition-colors">Terms</Link>
+                        <span className="hidden sm:inline">IAA Reg: F202537807</span>
+                        <span className="sm:hidden">IAA Regulated</span>
                     </div>
                 </div>
             </div>

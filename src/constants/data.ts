@@ -21,6 +21,7 @@ export const NAVBAR_DATA = [
     link: "/about",
     subOptions: [
       { name: "About Us", link: "/about-us" },
+      { name: "Regulation & Scope", link: "/regulation" },
       { name: "Careers", link: "/careers" },
       { name: "Contact", link: "/contact" },
     ],
