@@ -401,7 +401,7 @@ const IeltsInterviewPrepPageV2 = () => {
           <div className="absolute top-1/3 right-1/4 w-16 h-16 rounded-full bg-[#D4AF37]/5 blur-lg hidden lg:block" />
 
           <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28">
-            <div className="max-w-3xl">
+            <div className="max-w-4xl">
               <div className="inline-flex items-center gap-3 mb-6">
                 <div className="w-10 h-[2px] bg-gradient-to-r from-[#D4AF37] to-[#D4AF37]/40" />
                 <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase">
@@ -499,7 +499,7 @@ const IeltsInterviewPrepPageV2 = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {WHAT_YOU_GET.map((item, i) => (
               <div
                 key={i}
@@ -523,7 +523,7 @@ const IeltsInterviewPrepPageV2 = () => {
       {/* ═══════════════ 4A) IELTS PREPARATION ═══════════════ */}
       <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1a3b85]/10 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
               <PenTool size={14} />
               Section A
@@ -576,7 +576,7 @@ const IeltsInterviewPrepPageV2 = () => {
       {/* ═══════════════ 4B) INTERVIEW PREPARATION ═══════════════ */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1a3b85]/10 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
               <Mic size={14} />
               Section B
@@ -639,7 +639,7 @@ const IeltsInterviewPrepPageV2 = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
             <div className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
               <div className="bg-[#1a3b85] px-6 py-4 flex items-center gap-3">
                 <CheckCircle2 size={20} className="text-[#D4AF37]" />
@@ -759,7 +759,7 @@ const IeltsInterviewPrepPageV2 = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
             <div className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
               <div className="bg-[#1a3b85] px-6 py-4 flex items-center gap-3">
                 <CheckCircle2 size={20} className="text-[#D4AF37]" />
@@ -841,7 +841,7 @@ const IeltsInterviewPrepPageV2 = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start max-w-[1200px] mx-auto">
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start max-w-6xl mx-auto">
             {/* Form (3/5) */}
             <div className="lg:col-span-3">
               <form
