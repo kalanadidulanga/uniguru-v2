@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   ClipboardCheck,
   FileText,
@@ -10,6 +11,7 @@ import {
   Briefcase,
   MessageCircle,
 } from "lucide-react";
+import { COMPANY_INFO } from "@/constants/data";
 
 const steps = [
   {
@@ -145,14 +147,14 @@ const HowWeHelp = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 sm:mt-16">
-          <button className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0f2554] font-semibold rounded-full transition-colors text-sm sm:text-base shadow-lg shadow-[#D4AF37]/20">
+          <Link
+            href="/book"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0f2554] font-semibold rounded-full transition-colors text-sm sm:text-base shadow-lg shadow-[#D4AF37]/20"
+          >
             Get My Shortlist
-          </button>
-          <button className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-medium rounded-full transition-colors text-sm sm:text-base border border-white/20">
-            Book Free 15 Minute Triage
-          </button>
+          </Link>
           <a
-            href={`https://api.whatsapp.com/send?phone=94770578521&text=${encodeURIComponent("Hi Uniguru! 👋 I want my UK shortlist for [intake] 🎓")}`}
+            href={COMPANY_INFO.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp to request your UK shortlist"
