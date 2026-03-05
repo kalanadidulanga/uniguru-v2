@@ -19,6 +19,8 @@ No test runner is configured. Prisma generates on `postinstall`.
 
 **Path alias:** `@/*` → `./src/*`
 
+**Image config:** `next.config.mjs` allows remote images from any hostname (HTTP/HTTPS). ESLint and TypeScript build errors are ignored.
+
 ### Route Groups
 
 - `(root)/` — Public marketing site with `HeaderV2` + `FooterV2` layout
@@ -38,7 +40,7 @@ No test runner is configured. Prisma generates on `postinstall`.
 
 ### Auth
 
-NextAuth v5 beta with Credentials provider. JWT stores `id` and `role`. Roles: `superadmin`, `admin`, `partner`, `student`. Middleware is minimal; role guards live in layout files.
+NextAuth v5 beta with Credentials provider. JWT stores `id` and `role`. Roles: `superadmin`, `admin`, `partner`, `student`. Middleware excludes `api`, `_next/*`, `favicon.ico`, and `study-destinations` routes; role guards live in layout files.
 
 ### Email
 
@@ -47,6 +49,21 @@ Nodemailer via `src/actions/mailSending.ts`. SMTP: `uniguru.co:465`. Functions: 
 ### Study Destinations
 
 Statically generated via `generateStaticParams()` from `STUDY_DESTINATIONS_FULLDATA` constant (not DB). Each destination has typed data including quick facts, costs, careers, resources.
+
+### Services
+
+Services landing page at `/services` organizes all services into 4 stages: Decide → Prepare → Secure → Settle. Individual service pages:
+
+| Route | Component |
+|---|---|
+| `/services/accommodation` | AccommodationCountryPage |
+| `/services/air-ticketing` | AirTicketingPageV2 |
+| `/services/financial-help` | FinancialHelpPageV2 |
+| `/services/free-ielts-service` | FreeIeltsServicePageV2 |
+| `/services/ielts-interview-prep` | IeltsInterviewPrepPageV2 |
+| `/services/part-time-work` | PartTimeWorkPageV2 |
+
+All are listed in `NAVBAR_DATA` subOptions in `src/constants/data.ts`.
 
 ## Patterns
 
@@ -58,12 +75,13 @@ Statically generated via `generateStaticParams()` from `STUDY_DESTINATIONS_FULLD
 
 ## Service Pages Design System
 
-Premium service pages (air-ticketing, financial-help, etc.) share a consistent design system:
+Premium service pages share a consistent design system:
 - **Colors:** Navy `#0f2554` / `#1a3b85`, gold accent `#D4AF37`, hero overlay `#0a1628`
 - **Container:** `max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8`
-- **Structure:** Hero (Unsplash bg + gradient overlay) → TrustBarSection → What You Get cards → Content sections → How It Works (timeline) → Boundaries table (will/won't) → Form section with 3/5 + 2/5 grid layout
+- **Structure:** Hero (image bg + gradient overlay) → TrustBarSection → What You Get cards → Content sections → How It Works (timeline) → Boundaries table (will/won't) → Form section with 3/5 + 2/5 grid layout
 - **Form pattern:** `lg:grid-cols-5` with `lg:col-span-3` form + `lg:col-span-2` sidebar (glass cards: `bg-white/10 backdrop-blur-sm rounded-xl border border-white/15`). All form rows use `sm:grid-cols-2`
 - **CustomDropdown:** Reusable dropdown with icons, descriptions, click-outside-close, clear option
+- **MultiSelectDropdown:** Used in part-time-work for selecting up to N items with chip tags
 - **Icons:** `lucide-react` exclusively
 - **Toasts:** `react-hot-toast`
 - **CTAs:** Primary gold button scrolls to form `#section-id`, secondary WhatsApp link (+44 7747 525946)

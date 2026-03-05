@@ -217,9 +217,10 @@ const ServicesPageV2 = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* ═══════════════ HERO ═══════════════ */}
-      <div className="flex flex-col">
-        <section className="relative flex items-center overflow-hidden min-h-[70vh] lg:min-h-[75vh]">
+      {/* ═══════════════ HERO + TRUST BAR + YOUR JOURNEY (all in one screen) ═══════════════ */}
+      <div className="flex flex-col min-h-screen">
+        {/* Hero Section */}
+        <section className="relative flex items-center overflow-hidden flex-1">
           <Image
             src="/1.jpg"
             alt="Big Ben and Houses of Parliament London at golden hour"
@@ -231,45 +232,45 @@ const ServicesPageV2 = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/80 to-[#0a1628]/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/70 via-transparent to-transparent" />
 
-          <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-3 mb-5">
+              <div className="inline-flex items-center gap-3 mb-4">
                 <div className="w-8 h-[2px] bg-[#D4AF37]" />
                 <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase">
                   Our Services
                 </p>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight tracking-tight mb-5">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-tight mb-4">
                 End-to-End Support
                 <br />
                 <span className="text-[#D4AF37]">London Led</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-white/90 leading-relaxed mb-2">
+              <p className="text-sm sm:text-base text-white/90 leading-relaxed mb-1">
                 One team. One process.
               </p>
-              <p className="text-sm sm:text-base text-white/60 leading-relaxed mb-8 max-w-xl">
+              <p className="text-xs sm:text-sm text-white/60 leading-relaxed mb-6 max-w-xl">
                 The support you need from shortlist to settlement, structured,
                 regulated where required, and always honest about what we can
                 and cannot do.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <a
                   href="#stages"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-semibold rounded-lg transition-colors text-sm sm:text-base"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-semibold rounded-lg transition-colors text-sm"
                 >
                   Get My Shortlist
-                  <ArrowRight size={16} />
+                  <ArrowRight size={14} />
                 </a>
                 <a
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/10 hover:bg-white/15 text-white font-semibold rounded-lg transition-colors text-sm sm:text-base"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/15 text-white font-semibold rounded-lg transition-colors text-sm"
                 >
-                  <MessageCircle size={16} className="text-[#25D366]" />
+                  <MessageCircle size={14} className="text-[#25D366]" />
                   Chat on WhatsApp
                 </a>
               </div>
@@ -277,100 +278,101 @@ const ServicesPageV2 = () => {
           </div>
         </section>
 
+        {/* Trust Bar Section */}
         <TrustBarSection />
-      </div>
 
-      {/* ═══════════════ STAGE NAVIGATION ═══════════════ */}
-      <section className="py-4 sm:py-5 bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-40 shadow-sm">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-4">
-            {/* Left label - hidden on mobile */}
-            <p className="hidden lg:block text-sm font-medium text-gray-500">
-              Your Journey
-            </p>
+        {/* Your Journey - Stage Navigation */}
+        <section className="py-3 sm:py-4 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between gap-4">
+              {/* Left label - hidden on mobile */}
+              <p className="hidden lg:block text-sm font-medium text-gray-500">
+                Your Journey
+              </p>
 
-            {/* Stage Navigation */}
-            <div className="flex-1 flex items-center justify-center">
-              <div className="inline-flex items-center bg-[#0f2554] rounded-xl p-1.5 gap-1 sm:gap-2 border border-[#1a3b85]/50 shadow-lg">
-                {STAGES.map((stage, index) => {
-                  const isActive = activeStage === stage.number;
-                  const isShowingAll = activeStage === null;
-                  return (
-                    <React.Fragment key={stage.number}>
-                      <button
-                        onClick={() =>
-                          setActiveStage(
-                            activeStage === stage.number ? null : stage.number
-                          )
-                        }
-                        className={`group relative flex items-center gap-2 sm:gap-2.5 px-3 sm:px-5 py-2.5 sm:py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
-                          isActive
-                            ? "bg-[#D4AF37] text-[#0f2554] shadow-lg shadow-[#D4AF37]/30"
-                            : isShowingAll
-                            ? "bg-[#1a3b85] text-white shadow-sm hover:bg-[#234a9a]"
-                            : "text-white/60 hover:text-white hover:bg-[#1a3b85]/50"
-                        }`}
-                      >
-                        <span
-                          className={`flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-full text-xs font-bold transition-all ${
+              {/* Stage Navigation */}
+              <div className="flex-1 flex items-center justify-center">
+                <div className="inline-flex items-center bg-[#0f2554] rounded-xl p-1 sm:p-1.5 gap-1 sm:gap-2 border border-[#1a3b85]/50 shadow-lg">
+                  {STAGES.map((stage, index) => {
+                    const isActive = activeStage === stage.number;
+                    const isShowingAll = activeStage === null;
+                    return (
+                      <React.Fragment key={stage.number}>
+                        <button
+                          onClick={() =>
+                            setActiveStage(
+                              activeStage === stage.number ? null : stage.number
+                            )
+                          }
+                          className={`group relative flex items-center gap-1.5 sm:gap-2.5 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 ${
                             isActive
-                              ? "bg-[#0f2554]/20 text-[#0f2554]"
+                              ? "bg-[#D4AF37] text-[#0f2554] shadow-lg shadow-[#D4AF37]/30"
                               : isShowingAll
-                              ? "bg-white/20 text-white"
-                              : "bg-white/10 text-white/60 group-hover:bg-white/20 group-hover:text-white"
+                              ? "bg-[#1a3b85] text-white shadow-sm hover:bg-[#234a9a]"
+                              : "text-white/60 hover:text-white hover:bg-[#1a3b85]/50"
                           }`}
                         >
-                          {stage.number}
-                        </span>
-                        <span className="hidden sm:block">{stage.title}</span>
-                        <span className="sm:hidden text-xs">{stage.title.slice(0, 3)}</span>
+                          <span
+                            className={`flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full text-[10px] sm:text-xs font-bold transition-all ${
+                              isActive
+                                ? "bg-[#0f2554]/20 text-[#0f2554]"
+                                : isShowingAll
+                                ? "bg-white/20 text-white"
+                                : "bg-white/10 text-white/60 group-hover:bg-white/20 group-hover:text-white"
+                            }`}
+                          >
+                            {stage.number}
+                          </span>
+                          <span className="hidden sm:block">{stage.title}</span>
+                          <span className="sm:hidden text-[10px]">{stage.title.slice(0, 3)}</span>
+                          
+                          {/* Active indicator dot */}
+                          {isActive && (
+                            <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full" />
+                          )}
+                        </button>
                         
-                        {/* Active indicator dot */}
-                        {isActive && (
-                          <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full" />
+                        {/* Connector line between stages */}
+                        {index < STAGES.length - 1 && (
+                          <div className="hidden md:flex items-center px-0.5">
+                            <div className={`w-4 h-0.5 rounded-full transition-colors ${
+                              isShowingAll || (activeStage && activeStage > stage.number)
+                                ? "bg-[#D4AF37]/40"
+                                : "bg-white/20"
+                            }`} />
+                          </div>
                         )}
-                      </button>
-                      
-                      {/* Connector line between stages */}
-                      {index < STAGES.length - 1 && (
-                        <div className="hidden md:flex items-center px-1">
-                          <div className={`w-6 h-0.5 rounded-full transition-colors ${
-                            isShowingAll || (activeStage && activeStage > stage.number)
-                              ? "bg-[#D4AF37]/40"
-                              : "bg-white/20"
-                          }`} />
-                        </div>
-                      )}
-                    </React.Fragment>
-                  );
-                })}
+                      </React.Fragment>
+                    );
+                  })}
+                </div>
               </div>
+
+              {/* Show All button */}
+              <button
+                onClick={() => setActiveStage(null)}
+                className={`hidden lg:flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium transition-all ${
+                  activeStage === null
+                    ? "bg-[#1a3b85] text-white border border-[#D4AF37]/30"
+                    : "text-gray-500 hover:text-white hover:bg-[#1a3b85]"
+                }`}
+              >
+                {activeStage === null ? (
+                  <>
+                    <CheckCircle2 size={12} />
+                    All Stages
+                  </>
+                ) : (
+                  "Show All"
+                )}
+              </button>
             </div>
-
-            {/* Show All button */}
-            <button
-              onClick={() => setActiveStage(null)}
-              className={`hidden lg:flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                activeStage === null
-                  ? "bg-[#1a3b85] text-white border border-[#D4AF37]/30"
-                  : "text-gray-500 hover:text-white hover:bg-[#1a3b85]"
-              }`}
-            >
-              {activeStage === null ? (
-                <>
-                  <CheckCircle2 size={14} />
-                  All Stages
-                </>
-              ) : (
-                "Show All"
-              )}
-            </button>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
-      {/* ═══════════════ STAGES CONTENT ═══════════════ */}
-      <section id="stages" className="scroll-mt-24 py-12 sm:py-16 lg:py-20 bg-gray-50">
+      {/* ═══════════════ STAGES CONTENT (min-h-screen) ═══════════════ */}
+      <section id="stages" className="scroll-mt-24 py-12 sm:py-16 lg:py-20 bg-gray-50 min-h-screen">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-12 sm:space-y-16">
             {STAGES.filter(
