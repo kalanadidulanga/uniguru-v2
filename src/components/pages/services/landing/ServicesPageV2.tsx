@@ -282,17 +282,22 @@ const ServicesPageV2 = () => {
         <TrustBarSection />
 
         {/* Your Journey - Stage Navigation */}
-        <section className="py-3 sm:py-4 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <section className="py-4 sm:py-5 lg:py-6 bg-gradient-to-b from-white to-gray-50/80 backdrop-blur-md border-b border-gray-200/60 sticky top-0 z-40">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between gap-4">
-              {/* Left label - hidden on mobile */}
-              <p className="hidden lg:block text-sm font-medium text-gray-500">
-                Your Journey
-              </p>
+            {/* Desktop & Tablet Layout */}
+            <div className="hidden sm:flex items-center justify-between gap-6 lg:gap-8">
+              {/* Left label with decorative element */}
+              <div className="hidden lg:flex items-center gap-3">
+                <div className="w-1 h-8 bg-gradient-to-b from-[#D4AF37] to-[#0f2554] rounded-full" />
+                <div>
+                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Navigate</p>
+                  <p className="text-sm font-semibold text-gray-700">Your Journey</p>
+                </div>
+              </div>
 
-              {/* Stage Navigation */}
+              {/* Stage Navigation Pills */}
               <div className="flex-1 flex items-center justify-center">
-                <div className="inline-flex items-center bg-[#0f2554] rounded-xl p-1 sm:p-1.5 gap-1 sm:gap-2 border border-[#1a3b85]/50 shadow-lg">
+                <div className="inline-flex items-center bg-gradient-to-r from-[#0f2554] to-[#1a3b85] rounded-2xl p-2 gap-2 border border-[#1a3b85]/30">
                   {STAGES.map((stage, index) => {
                     const isActive = activeStage === stage.number;
                     const isShowingAll = activeStage === null;
@@ -304,41 +309,45 @@ const ServicesPageV2 = () => {
                               activeStage === stage.number ? null : stage.number
                             )
                           }
-                          className={`group relative flex items-center gap-1.5 sm:gap-2.5 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 ${
+                          className={`group relative flex items-center justify-center gap-2 lg:gap-3 px-4 lg:px-5 py-2.5 lg:py-3 rounded-xl text-xs lg:text-sm font-semibold transition-all duration-300 ease-out ${
                             isActive
-                              ? "bg-[#D4AF37] text-[#0f2554] shadow-lg shadow-[#D4AF37]/30"
+                              ? "bg-gradient-to-r from-[#D4AF37] to-[#e6c456] text-[#0f2554] scale-[1.02]"
                               : isShowingAll
-                              ? "bg-[#1a3b85] text-white shadow-sm hover:bg-[#234a9a]"
-                              : "text-white/60 hover:text-white hover:bg-[#1a3b85]/50"
+                              ? "bg-white/15 text-white shadow-inner hover:bg-white/25 hover:scale-[1.01]"
+                              : "text-white/50 hover:text-white hover:bg-white/10"
                           }`}
                         >
                           <span
-                            className={`flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full text-[10px] sm:text-xs font-bold transition-all ${
+                            className={`flex items-center justify-center w-6 h-6 lg:w-7 lg:h-7 rounded-lg text-[10px] lg:text-xs font-bold transition-all ${
                               isActive
-                                ? "bg-[#0f2554]/20 text-[#0f2554]"
+                                ? "bg-[#0f2554]/15 text-[#0f2554]"
                                 : isShowingAll
                                 ? "bg-white/20 text-white"
-                                : "bg-white/10 text-white/60 group-hover:bg-white/20 group-hover:text-white"
+                                : "bg-white/10 text-white/50 group-hover:bg-white/15 group-hover:text-white"
                             }`}
                           >
                             {stage.number}
                           </span>
-                          <span className="hidden sm:block">{stage.title}</span>
-                          <span className="sm:hidden text-[10px]">{stage.title.slice(0, 3)}</span>
+                          <span className="whitespace-nowrap">{stage.title}</span>
                           
-                          {/* Active indicator dot */}
+                          {/* Active glow effect */}
                           {isActive && (
-                            <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full" />
+                            <span className="absolute inset-0 rounded-xl bg-[#D4AF37]/20 blur-md -z-10" />
                           )}
                         </button>
                         
-                        {/* Connector line between stages */}
+                        {/* Connector dots between stages */}
                         {index < STAGES.length - 1 && (
-                          <div className="hidden md:flex items-center px-0.5">
-                            <div className={`w-4 h-0.5 rounded-full transition-colors ${
+                          <div className="hidden lg:flex items-center gap-1 px-1">
+                            <div className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
                               isShowingAll || (activeStage && activeStage > stage.number)
-                                ? "bg-[#D4AF37]/40"
+                                ? "bg-[#D4AF37]"
                                 : "bg-white/20"
+                            }`} />
+                            <div className={`w-1 h-1 rounded-full transition-all duration-300 ${
+                              isShowingAll || (activeStage && activeStage > stage.number)
+                                ? "bg-[#D4AF37]/60"
+                                : "bg-white/10"
                             }`} />
                           </div>
                         )}
@@ -351,21 +360,91 @@ const ServicesPageV2 = () => {
               {/* Show All button */}
               <button
                 onClick={() => setActiveStage(null)}
-                className={`hidden lg:flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium transition-all ${
+                className={`flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs lg:text-sm font-semibold transition-all duration-300 ${
                   activeStage === null
-                    ? "bg-[#1a3b85] text-white border border-[#D4AF37]/30"
-                    : "text-gray-500 hover:text-white hover:bg-[#1a3b85]"
+                    ? "bg-gradient-to-r from-[#0f2554] to-[#1a3b85] text-white border border-[#D4AF37]/30"
+                    : "bg-gray-100 text-gray-600 hover:bg-[#0f2554] hover:text-white border border-gray-200 hover:border-transparent"
                 }`}
               >
                 {activeStage === null ? (
                   <>
-                    <CheckCircle2 size={12} />
-                    All Stages
+                    <CheckCircle2 size={14} className="text-[#D4AF37]" />
+                    <span>All Stages</span>
                   </>
                 ) : (
-                  "Show All"
+                  <>
+                    <span>View All</span>
+                    <ArrowRight size={14} />
+                  </>
                 )}
               </button>
+            </div>
+
+            {/* Mobile Layout - Compact & Clean */}
+            <div className="sm:hidden space-y-3">
+              {/* Stage Pills - Scrollable */}
+              <div className="flex items-center justify-center">
+                <div className="inline-flex items-center bg-gradient-to-r from-[#0f2554] to-[#1a3b85] rounded-2xl p-1.5 gap-1 border border-[#1a3b85]/30">
+                  {STAGES.map((stage) => {
+                    const isActive = activeStage === stage.number;
+                    const isShowingAll = activeStage === null;
+                    return (
+                      <button
+                        key={stage.number}
+                        onClick={() =>
+                          setActiveStage(
+                            activeStage === stage.number ? null : stage.number
+                          )
+                        }
+                        className={`relative flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-[11px] font-semibold transition-all duration-300 ${
+                          isActive
+                            ? "bg-gradient-to-r from-[#D4AF37] to-[#e6c456] text-[#0f2554]"
+                            : isShowingAll
+                            ? "bg-white/15 text-white"
+                            : "text-white/50"
+                        }`}
+                      >
+                        <span
+                          className={`flex items-center justify-center w-5 h-5 rounded-md text-[9px] font-bold ${
+                            isActive
+                              ? "bg-[#0f2554]/15 text-[#0f2554]"
+                              : isShowingAll
+                              ? "bg-white/20 text-white"
+                              : "bg-white/10 text-white/50"
+                          }`}
+                        >
+                          {stage.number}
+                        </span>
+                        <span>{stage.title.slice(0, 3)}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Mobile Show All - Pill Style */}
+              <div className="flex justify-center">
+                <button
+                  onClick={() => setActiveStage(null)}
+                  className={`flex items-center justify-center gap-1.5 px-4 py-2 rounded-full text-[10px] font-semibold transition-all duration-300 ${
+                    activeStage === null
+                      ? "bg-[#0f2554] text-white"
+                      : "bg-gray-100 text-gray-600 hover:bg-[#0f2554] hover:text-white"
+                  }`}
+                >
+                  {activeStage === null ? (
+                    <>
+                      <CheckCircle2 size={12} className="text-[#D4AF37]" />
+                      <span>Viewing All Stages</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>View All Stages</span>
+                      <ArrowRight size={12} />
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
           </div>
         </section>
