@@ -435,47 +435,31 @@ const AirTicketingPageV2 = () => {
             </h2>
           </div>
 
-          {/* Timeline layout */}
-          <div className="max-w-4xl mx-auto">
-            <div className="relative">
-              {/* Connecting line */}
-              <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#D4AF37]/60 via-[#D4AF37]/30 to-transparent -translate-x-1/2" />
-
-              <div className="space-y-8 lg:space-y-0">
-                {HOW_IT_WORKS.map((item, i) => (
-                  <div
-                    key={i}
-                    className={`lg:flex lg:items-center lg:gap-8 ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
-                  >
-                    {/* Content card */}
-                    <div className={`lg:w-5/12 ${i % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
-                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-7">
-                        <div className={`flex items-center gap-3 mb-3 ${i % 2 === 0 ? "lg:justify-end" : "lg:justify-start"}`}>
-                          <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-[#D4AF37]/20 text-[#D4AF37]">
-                            {item.icon}
-                          </div>
-                          <h3 className="text-base sm:text-lg font-semibold text-white">
-                            {item.title}
-                          </h3>
-                        </div>
-                        <p className="text-white/70 text-sm leading-relaxed">
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Step number (center) */}
-                    <div className="hidden lg:flex lg:w-2/12 justify-center my-4 lg:my-0">
-                      <div className="w-14 h-14 rounded-full bg-[#D4AF37] flex items-center justify-center shadow-lg shadow-[#D4AF37]/30">
-                        <span className="text-xl font-bold text-[#0f2554]">{item.step}</span>
-                      </div>
-                    </div>
-
-                    {/* Spacer for alternating layout */}
-                    <div className="hidden lg:block lg:w-5/12" />
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+              {HOW_IT_WORKS.map((item, i) => (
+                <div key={i} className="relative flex flex-col items-center text-center">
+                  {i < HOW_IT_WORKS.length - 1 && (
+                    <div className="hidden lg:block absolute top-6 left-[calc(50%+28px)] w-[calc(100%-56px+2rem)] h-px bg-gradient-to-r from-[#D4AF37]/60 to-[#D4AF37]/20" />
+                  )}
+                  <div className="w-12 h-12 rounded-full bg-[#D4AF37] flex items-center justify-center shadow-lg shadow-[#D4AF37]/30 mb-4 relative z-10">
+                    <span className="text-lg font-bold text-[#0f2554]">{item.step}</span>
                   </div>
-                ))}
-              </div>
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-5 w-full flex-1">
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#D4AF37]/20 text-[#D4AF37]">
+                        {item.icon}
+                      </div>
+                    </div>
+                    <h3 className="text-sm sm:text-base font-semibold text-white mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-white/70 text-xs sm:text-sm leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
