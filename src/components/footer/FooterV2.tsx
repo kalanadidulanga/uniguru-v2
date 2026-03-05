@@ -1,9 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { SOCIAL_LINKS } from "@/constants/data";
 import { MapPin, Phone, Mail, Send } from "lucide-react";
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube, FaTiktok, FaWhatsapp } from "react-icons/fa6";
+
+const SOCIAL_ICONS = [
+  { icon: FaFacebookF, link: "https://facebook.com/uniguruedu/", color: "#1877F2", label: "Facebook" },
+  { icon: FaLinkedinIn, link: "https://www.linkedin.com/company/uniguru-solutions/", color: "#0A66C2", label: "LinkedIn" },
+  { icon: FaInstagram, link: "https://www.instagram.com/uniguruedu/", color: "#E4405F", label: "Instagram" },
+  { icon: FaYoutube, link: "https://www.youtube.com/@Uniguru_", color: "#FF0000", label: "YouTube" },
+  { icon: FaTiktok, link: "https://www.tiktok.com/@uniguru_", color: "#000000", label: "TikTok" },
+  { icon: FaWhatsapp, link: "https://wa.me/447747525946", color: "#25D366", label: "WhatsApp" },
+];
 
 const FOOTER_LINKS = {
     navigate: [
@@ -181,22 +189,16 @@ const FooterV2 = () => {
                     
                     {/* Social Icons - Center */}
                     <div className="flex items-center gap-2 order-first sm:order-none">
-                        {SOCIAL_LINKS.map((item, index) => (
+                        {SOCIAL_ICONS.map((item) => (
                             <Link
-                                key={index}
+                                key={item.label}
                                 href={item.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#D4AF37] hover:border-[#D4AF37] transition-all group"
-                                aria-label="Social link"
+                                className="w-10 h-10 rounded-full bg-white border border-white/10 flex items-center justify-center hover:scale-110 transition-all"
+                                aria-label={item.label}
                             >
-                                <Image
-                                    src={item.src}
-                                    alt=""
-                                    width={24}
-                                    height={24}
-                                    className="brightness-0 invert opacity-50 group-hover:opacity-100 group-hover:invert-0"
-                                />
+                                <item.icon className="w-5 h-5 transition-colors" style={{ color: item.color }} />
                             </Link>
                         ))}
                     </div>
