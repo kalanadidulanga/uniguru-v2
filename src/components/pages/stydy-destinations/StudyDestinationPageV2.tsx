@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { CheckCircle2, AlertTriangle, XCircle, CalendarDays, GraduationCap, Shield, Briefcase, PoundSterling, ChevronDown, MessageCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import DestinationHero from "./DestinationHero";
@@ -40,6 +41,9 @@ interface StudyDestinationPageV2Props {
 }
 
 const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
+  const bgImage1 =
+    dataSet.hero_section.images?.[0]?.src || "/images/study_destinations/uk/1.jpg";
+
   return (
     <div
       className="min-h-screen text-gray-800 bg-slate-50 selection:bg-[#1a3b85] selection:text-white overflow-x-hidden"
@@ -48,7 +52,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
       <DestinationHero dataSet={dataSet} />
 
       {/* Bento: Why Choose + Quick Facts (+ Cost if no detailed costs section) */}
-      <div id="details" className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-16 sm:py-20">
+      <div id="details" className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <DestinationWhyChoose data={dataSet.why_choose_section} />
           <DestinationQuickFacts data={dataSet.quick_facts_section} />
@@ -59,7 +63,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
       </div>
 
       {dataSet.who_is_it_for_section && (
-        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-8 text-center">
             {dataSet.who_is_it_for_section.title}
           </h2>
@@ -94,7 +98,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* Intakes */}
       {dataSet.intakes_section && (
-        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
           <div className="rounded-2xl bg-white border border-slate-200 shadow-sm p-8 sm:p-10 text-center">
             <div className="flex items-center justify-center gap-3 mb-5">
               <CalendarDays size={24} className="text-[#D4AF37]" />
@@ -123,7 +127,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* Partner Institutions */}
       {dataSet.partner_institutions_section && (
-        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-8 text-center">
             {dataSet.partner_institutions_section.title}
           </h2>
@@ -154,7 +158,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* The Uniguru Method */}
       {dataSet.uniguru_method_section && (
-        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-3">
               {dataSet.uniguru_method_section.title}
@@ -187,7 +191,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* IAA Regulated Support */}
       {dataSet.iaa_section && (
-        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
           <div className="rounded-2xl bg-[#1a3b85] text-white p-8 sm:p-10">
             <div className="flex items-start gap-4 mb-4">
               <div className="p-3 rounded-xl bg-white/10 shrink-0" aria-hidden>
@@ -219,7 +223,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* Graduate Route */}
       {dataSet.graduate_route_section && (
-        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
           <div className="rounded-2xl bg-white border border-slate-200 shadow-sm p-8 sm:p-10">
             <div className="flex items-start gap-4 mb-5">
               <div className="p-3 rounded-xl bg-[#D4AF37]/15 shrink-0" aria-hidden>
@@ -244,88 +248,97 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
         </section>
       )}
 
-      {/* Costs and Planning */}
+      {/* Costs and Planning — half-bleed bg image */}
       {dataSet.costs_planning_section && (
-        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
-          <div className="text-center mb-8">
-            <div className="flex items-center justify-center gap-3 mb-3">
-              <PoundSterling size={24} className="text-[#D4AF37]" />
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight">
-                {dataSet.costs_planning_section.title}
-              </h2>
-            </div>
-            <p className="text-gray-500 text-sm sm:text-base max-w-3xl mx-auto">
-              {dataSet.costs_planning_section.description}
-            </p>
+        <section className="relative overflow-hidden py-12 sm:py-16">
+          {/* Full-width background image */}
+          <div className="absolute inset-0">
+            <Image src={bgImage1} alt="" fill className="object-cover object-center brightness-[0.6]" sizes="100vw" priority />
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-transparent to-slate-50" />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-transparent to-slate-50" />
           </div>
 
-          {/* Cost Items */}
-          <div className="mb-10">
-            <h3 className="text-lg sm:text-xl font-semibold text-[#1a3b85] mb-6">
-              {dataSet.costs_planning_section.costs_title}
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {dataSet.costs_planning_section.cost_items.map((item, i) => (
+          <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
+            <div className="text-center mb-8">
+              <div className="flex items-center justify-center gap-3 mb-3">
+                <PoundSterling size={24} className="text-[#D4AF37]" />
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight">
+                  {dataSet.costs_planning_section.title}
+                </h2>
+              </div>
+              <p className="text-gray-500 text-sm sm:text-base max-w-3xl mx-auto">
+                {dataSet.costs_planning_section.description}
+              </p>
+            </div>
+
+            {/* Cost Items */}
+            <div className="mb-10">
+              <h3 className="text-lg sm:text-xl font-semibold text-[#1a3b85] mb-6">
+                {dataSet.costs_planning_section.costs_title}
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {dataSet.costs_planning_section.cost_items.map((item, i) => (
+                  <div
+                    key={i}
+                    className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm"
+                  >
+                    <h4 className="text-sm font-semibold text-[#1a3b85] mb-3">{item.label}</h4>
+                    <ul className="space-y-2">
+                      {item.points.map((point, j) => (
+                        <li key={j} className="flex gap-3 text-sm text-gray-700 leading-snug">
+                          <CheckCircle2 className="w-4 h-4 shrink-0 text-[#D4AF37] mt-0.5" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {item.footnote && (
+                      <p className="text-xs text-gray-400 mt-3 italic">{item.footnote}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* What we will do / won't do */}
+            <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+              <div className="px-6 sm:px-8 py-5 border-b border-slate-100">
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {dataSet.costs_planning_section.will_wont.title}
+                </h3>
+              </div>
+              <div className="hidden sm:grid grid-cols-2 px-6 sm:px-8 py-3 bg-slate-50 border-b border-slate-100 text-xs font-semibold uppercase tracking-widest text-gray-500">
+                <span>{dataSet.costs_planning_section.will_wont.will_do_heading}</span>
+                <span>{dataSet.costs_planning_section.will_wont.wont_do_heading}</span>
+              </div>
+              {dataSet.costs_planning_section.will_wont.rows.map((row, i) => (
                 <div
                   key={i}
-                  className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm"
+                  className={`grid grid-cols-1 sm:grid-cols-2 px-6 sm:px-8 py-4 ${i < dataSet.costs_planning_section!.will_wont.rows.length - 1 ? "border-b border-slate-100" : ""}`}
                 >
-                  <h4 className="text-sm font-semibold text-[#1a3b85] mb-3">{item.label}</h4>
-                  <ul className="space-y-2">
-                    {item.points.map((point, j) => (
-                      <li key={j} className="flex gap-3 text-sm text-gray-700 leading-snug">
-                        <CheckCircle2 className="w-4 h-4 shrink-0 text-[#D4AF37] mt-0.5" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {item.footnote && (
-                    <p className="text-xs text-gray-400 mt-3 italic">{item.footnote}</p>
-                  )}
+                  <div className="flex gap-2 text-sm text-gray-700 mb-2 sm:mb-0">
+                    <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-500 mt-0.5" />
+                    <span>{row.will_do}</span>
+                  </div>
+                  <div className="flex gap-2 text-sm text-gray-500">
+                    <XCircle className="w-4 h-4 shrink-0 text-red-400 mt-0.5" />
+                    <span>{row.wont_do}</span>
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
 
-          {/* What we will do / won't do */}
-          <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-            <div className="px-6 sm:px-8 py-5 border-b border-slate-100">
-              <h3 className="text-lg font-semibold text-gray-800">
-                {dataSet.costs_planning_section.will_wont.title}
-              </h3>
-            </div>
-            <div className="hidden sm:grid grid-cols-2 px-6 sm:px-8 py-3 bg-slate-50 border-b border-slate-100 text-xs font-semibold uppercase tracking-widest text-gray-500">
-              <span>{dataSet.costs_planning_section.will_wont.will_do_heading}</span>
-              <span>{dataSet.costs_planning_section.will_wont.wont_do_heading}</span>
-            </div>
-            {dataSet.costs_planning_section.will_wont.rows.map((row, i) => (
-              <div
-                key={i}
-                className={`grid grid-cols-1 sm:grid-cols-2 px-6 sm:px-8 py-4 ${i < dataSet.costs_planning_section!.will_wont.rows.length - 1 ? "border-b border-slate-100" : ""}`}
-              >
-                <div className="flex gap-2 text-sm text-gray-700 mb-2 sm:mb-0">
-                  <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-500 mt-0.5" />
-                  <span>{row.will_do}</span>
-                </div>
-                <div className="flex gap-2 text-sm text-gray-500">
-                  <XCircle className="w-4 h-4 shrink-0 text-red-400 mt-0.5" />
-                  <span>{row.wont_do}</span>
-                </div>
-              </div>
-            ))}
+            {dataSet.costs_planning_section.disclaimer && (
+              <p className="text-center text-gray-400 text-xs sm:text-sm mt-6 italic">
+                {dataSet.costs_planning_section.disclaimer}
+              </p>
+            )}
           </div>
-
-          {dataSet.costs_planning_section.disclaimer && (
-            <p className="text-center text-gray-400 text-xs sm:text-sm mt-6 italic">
-              {dataSet.costs_planning_section.disclaimer}
-            </p>
-          )}
         </section>
       )}
 
       {/* FAQ */}
       {dataSet.faq_section && (
-        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-8 text-center">
             {dataSet.faq_section.title}
           </h2>
@@ -368,7 +381,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
         ];
 
         return (
-          <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+          <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
             <div className="text-center mb-8">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-3">
                 {dataSet.opportunities_hub_section.title}
@@ -416,7 +429,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* CTA - Start with clarity */}
       {dataSet.cta_section && (
-        <section id="eligibility-form" className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-16 sm:pb-20">
+        <section id="eligibility-form" className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
           <div className="rounded-2xl bg-[#1a3b85] text-white p-8 sm:p-10 text-center">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-2">{dataSet.cta_section.title}</h2>
             <p className="text-white/80 text-base sm:text-lg mb-5">{dataSet.cta_section.subtitle}</p>
