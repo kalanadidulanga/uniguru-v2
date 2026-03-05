@@ -15,7 +15,7 @@ No test runner is configured. Prisma generates on `postinstall`.
 
 ## Architecture
 
-**Stack:** Next.js 14 (App Router), React 18, TypeScript 5, Tailwind CSS, Prisma (MySQL), NextAuth v5 beta
+**Stack:** Next.js 14.2 (App Router), React 18, TypeScript 5, Tailwind CSS, Prisma (MySQL), NextAuth v5 beta (v5.0.0-beta.23)
 
 **Path alias:** `@/*` → `./src/*`
 
@@ -29,26 +29,26 @@ No test runner is configured. Prisma generates on `postinstall`.
 
 ### Key Directories
 
-- `src/actions/` — Server actions (`"use server"`). Email sending in `mailSending.ts`, auth wrappers, Gemini AI search, CRUD actions organized by role (`superAdmin/`, `partner/`)
+- `src/actions/` — Server actions (`"use server"`). Email sending in `mailSending.ts`, auth wrappers, Gemini AI search (`gemini.ts`), CRUD actions organized by role (`superAdmin/`, `partner/`)
 - `src/components/pages/` — Page-level components. Active versions use `*V2` suffix. Organized by route: `services/`, `stydy-destinations/` (typo is intentional), `contact/`, etc.
 - `src/components/ui/` — shadcn/ui primitives (Radix-based)
 - `src/components/homev2/` — Homepage sections (shared `TrustBarSection` used across service pages)
-- `src/constants/data.ts` — `NAVBAR_DATA` (nav dropdown structure), `STUDY_DESTINATIONS_FULLDATA` (used for `generateStaticParams()`)
+- `src/constants/data.ts` — `NAVBAR_DATA`, `COMPANY_INFO` (phone, email, WhatsApp), `STUDY_DESTINATIONS_FULLDATA`, `ACCOMMODATION_COUNTRY_FULLDATA`
 - `src/lib/clients.ts` — Singleton Prisma client (uses global in dev to prevent hot-reload exhaustion)
 - `src/lib/getSession.ts` — React `cache()`-wrapped `auth()` for server component session reads
 - `src/lib/utils.ts` — `cn()` for merging Tailwind classes
 
 ### Auth
 
-NextAuth v5 beta with Credentials provider. JWT stores `id` and `role`. Roles: `superadmin`, `admin`, `partner`, `student`. Middleware excludes `api`, `_next/*`, `favicon.ico`, and `study-destinations` routes; role guards live in layout files.
+NextAuth v5 beta with Credentials provider (`src/auth.ts`). JWT stores `id` and `role`. Users have an `isBlock` field that prevents login. Roles: `superadmin`, `admin`, `partner`, `student`. Middleware excludes `api`, `_next/*`, `favicon.ico`, and `study-destinations` routes; role guards live in layout files.
 
 ### Email
 
-Nodemailer via `src/actions/mailSending.ts`. SMTP: `uniguru.co:465`. Functions: `sendContactEmail`, `sendFinanceSupportEmail`, `sendAccommodationEnquiryEmail`, `sendScholarshipEnquiryEmail`, `sendConsultationEmail`, etc. HTML templates in `src/lib/emailTemplates/`.
+Nodemailer via `src/actions/mailSending.ts`. SMTP host: `uniguru.co`, port 465, user `noreply@uniguru.co`. Key functions: `sendContactEmail`, `sendConsultationEmail`, `sendFinanceSupportEmail`, `sendAccommodationEnquiryEmail`, `sendScholarshipEnquiryEmail`, `sendEligibilityAssessmentEmail`, `sendNewQuestionnaireSubmitted`, `sendNewMessageFromStudent`. Templates exist in `src/lib/emailTemplates/` but most email functions currently use plain text.
 
 ### Study Destinations
 
-Statically generated via `generateStaticParams()` from `STUDY_DESTINATIONS_FULLDATA` constant (not DB). Each destination has typed data including quick facts, costs, careers, resources.
+Statically generated via `generateStaticParams()` from `STUDY_DESTINATIONS_FULLDATA` constant (not DB). Each destination has typed data including quick facts, costs, careers, resources. Current destinations: UK, Canada, Australia, Netherlands, Germany.
 
 ### Services
 
@@ -56,14 +56,21 @@ Services landing page at `/services` organizes all services into 4 stages: Decid
 
 | Route | Component |
 |---|---|
-| `/services/accommodation` | AccommodationCountryPage |
+| `/services/accommodation` | AccommodationPageV2 |
+| `/services/accommodation/[country]` | AccommodationCountryPage |
+| `/services/admissions-support` | AdmissionsSupportPageV2 |
 | `/services/air-ticketing` | AirTicketingPageV2 |
+| `/services/arrival-settlement` | ArrivalSettlementPageV2 |
+| `/services/document-readiness` | DocumentReadinessPageV2 |
+| `/services/eligibility-shortlist` | EligibilityShortlistPageV2 |
 | `/services/financial-help` | FinancialHelpPageV2 |
 | `/services/free-ielts-service` | FreeIeltsServicePageV2 |
 | `/services/ielts-interview-prep` | IeltsInterviewPrepPageV2 |
 | `/services/part-time-work` | PartTimeWorkPageV2 |
 
-All are listed in `NAVBAR_DATA` subOptions in `src/constants/data.ts`.
+### AI Search
+
+`/ai-search` — Gemini AI-powered course finder. Server action in `src/actions/gemini.ts` uses `gemini-2.5-flash` with `responseMimeType: "application/json"`. Returns course recommendations with university, country, fees, match percentage. Client component in `src/app/(root)/ai-search/AISearchClient.tsx`.
 
 ## Patterns
 
@@ -71,9 +78,16 @@ All are listed in `NAVBAR_DATA` subOptions in `src/constants/data.ts`.
 - Import Prisma client from `@/lib/clients`, never instantiate directly
 - Use `getSession()` from `@/lib/getSession.ts` for server-side session reads
 - Use `cn()` from `@/lib/utils` for Tailwind class merging
-- Nav links are defined in `src/constants/data.ts` — update `NAVBAR_DATA.subOptions` when adding new service pages
+- Use `COMPANY_INFO` from `@/constants/data` for phone, email, WhatsApp links — never hardcode contact info
+- Nav links are defined in `src/constants/data.ts` via `NAVBAR_DATA`
 
-## Service Pages Design System
+## Design System
+
+### Header
+
+`HeaderV2` — Fixed position, transparent by default, white bg on scroll. Text colors swap dynamically based on scroll state (white on transparent for dark hero pages, dark on white bg). AI Search link stays gold `#D4AF37` in all states. Height: `h-14`. Container: `max-w-[1400px]`.
+
+### Service Pages
 
 Premium service pages share a consistent design system:
 - **Colors:** Navy `#0f2554` / `#1a3b85`, gold accent `#D4AF37`, hero overlay `#0a1628`
@@ -84,4 +98,4 @@ Premium service pages share a consistent design system:
 - **MultiSelectDropdown:** Used in part-time-work for selecting up to N items with chip tags
 - **Icons:** `lucide-react` exclusively
 - **Toasts:** `react-hot-toast`
-- **CTAs:** Primary gold button scrolls to form `#section-id`, secondary WhatsApp link (+44 7747 525946)
+- **CTAs:** Primary gold button links to `/book`, secondary WhatsApp link via `COMPANY_INFO.whatsapp`
