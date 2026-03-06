@@ -99,3 +99,39 @@ Premium service pages share a consistent design system:
 - **Icons:** `lucide-react` exclusively
 - **Toasts:** `react-hot-toast`
 - **CTAs:** Primary gold button links to `/book`, secondary WhatsApp link via `COMPANY_INFO.whatsapp`
+- **Hero overlay:** `bg-black/50` + `bg-gradient-to-b from-black/40 via-transparent to-black/50` (no decorative blur orbs)
+- **Badges:** `inline-flex items-center gap-2` with gold icon (size 14-16) + `text-xs font-semibold text-[#D4AF37] uppercase tracking-widest` — NO background, NO border
+- **Buttons:** Primary `h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg shadow-md`, Secondary `h-11 sm:h-12 px-7 sm:px-9 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg border border-white/30`
+- **Will/Won't cards:** Emerald `border-2 border-emerald-200` / Red `border-2 border-red-200` with colored icon boxes on `bg-gray-50`
+- **What You Get icon boxes:** `w-14 h-14 rounded-2xl bg-[#1a3b85] text-white`
+- **How It Works:** On `bg-[#0f2554]`, gold numbered circles, glass cards `bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl`
+- **Form sections:** Solid `bg-[#0f2554]` background (no background images, no blur orbs)
+- **Section spacing:** `py-16 sm:py-20` consistently
+- **Symbols:** Use `-` not `&ndash;`, use `|` not `&middot;`
+- **Images:** Always add `unoptimized` prop to `next/image` components
+
+## Fonts & Analytics
+
+- **Google Fonts:** Poppins (100-900 weights, project-wide) and Signika_Negative (display: swap), configured in `src/app/layout.tsx`
+- **Speed Insights:** Vercel Speed Insights integrated in root layout
+
+## Database Models
+
+Key Prisma models for student lifecycle (`prisma/schema.prisma`):
+- **User** — Auth users with role (`superadmin`, `admin`, `partner`, `student`) and `isBlock` field
+- **StudentQuestionnaires** — Intake questionnaires from prospective students
+- **StudentDocuments** — Document tracking (passport, degree, IELTS, CV, SOP, references)
+- **StudentUniversities** — Application tracking with status, fees, scholarships, exam scores
+- **Intake** — Batch/cohort management
+- **Accommodation / UniversitiesList** — DB-backed destination catalogs (distinct from static `STUDY_DESTINATIONS_FULLDATA`)
+- **Notices** — Admin notices system
+- **Emails** — Email subscription tracking
+
+Binary targets: `native` + `debian-openssl-1.0.x` for cross-platform compatibility.
+
+## Build & Debug Notes
+
+- NextAuth `debug: true` is enabled globally in `src/auth.ts`
+- ESLint and TypeScript build errors are **ignored** during production builds (`next.config.mjs`)
+- `reactStrictMode: true` is enabled
+- Custom Tailwind animations: `blob`, `float`, `scroll`, `scroll-reverse` for hero/banner effects (`tailwind.config.ts`)
