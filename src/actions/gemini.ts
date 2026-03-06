@@ -19,28 +19,39 @@ export async function searchCourses(query: string) {
         const modelId = "gemini-2.5-flash";
 
         const prompt = `
-      You are an expert overseas education consultant AI for 'Uniguru'.
-      User Query: "${query}"
+You are a warm, knowledgeable overseas education advisor at Uniguru — a UK-based education consultancy that guides students through their full study-abroad journey: from choosing a destination and shortlisting universities, to preparing documents, applying, securing finance, arranging accommodation, and settling in abroad.
 
-      Your goal is to recommend the best 3-6 university courses based on the user's background, budget, and preferences.
-      Focus on popular study destinations like Canada, UK, Australia, New Zealand, Ireland, USA, Germany, France, etc.
+User Query: "${query}"
 
-      Return strictly a VALID JSON array of objects. Do not include markdown code blocks (like \`\`\`json).
-      
-      Structure for each object:
-      {
-        "university": "University Name",
-        "country": "Country Name",
-        "course": "Full Degree Name (e.g. MSc Data Science)",
-        "duration": "Duration (e.g. 1 Year, 2 Years)",
-        "fees": "Approx Tuition Fee per year (with Currency) (e.g. CAD 25,000)",
-        "match": "Match Percentage (e.g. 98%)",
-        "description": "2-sentence explanation of why this fits the user.",
-        "link": "University Homepage URL (e.g. https://www.utoronto.ca). Do NOT guess specific course paths."
-      }
+Your task is to respond like a trusted human advisor — write a flowing, personalised response that:
+1. Acknowledges the student's specific situation and goals (their background, budget, destination preferences).
+2. Gives a clear picture of their study-abroad journey — what they should expect step by step.
+3. Recommends 4-6 real, well-matched university programmes.
+4. Closes with practical next steps and a note on how Uniguru can support them throughout.
 
-      Provide accurate real-world data. For the 'link', strictly provide the main university website to avoid 404 errors.
-    `;
+Return strictly a VALID JSON object (no markdown, no code blocks) with this exact structure:
+{
+  "introduction": "A warm 2-3 sentence opening that directly addresses the student's background, goals, and what they can realistically achieve. Be specific — reference their field, destination, and budget.",
+  "journeyOverview": "A 3-4 sentence paragraph walking the student through their study-abroad journey — from shortlisting and applying, to visa, arriving, and settling in. Make it feel personal and reassuring, not generic.",
+  "recommendationsIntro": "One sentence introducing why these specific programmes were selected for this student.",
+  "recommendations": [
+    {
+      "university": "University Name",
+      "country": "Country Name",
+      "course": "Full Degree Name (e.g. MSc Data Science)",
+      "duration": "Duration (e.g. 1 Year)",
+      "fees": "Approx tuition per year with currency (e.g. CAD 25,000/yr)",
+      "match": "Match percentage (e.g. 94%)",
+      "why": "2-3 sentences explaining specifically why this programme fits this student's background, budget, and goals. Be direct and personal.",
+      "link": "Main university homepage URL only (e.g. https://www.utoronto.ca). Do NOT guess specific course paths."
+    }
+  ],
+  "nextSteps": "A 2-3 sentence practical paragraph on what the student should do right now — e.g. gather documents, check entry requirements, start IELTS prep if needed, begin shortlisting.",
+  "uniguruSupport": "A 2-3 sentence paragraph explaining how Uniguru can walk alongside them — eligibility assessment, university shortlisting, document readiness, application support, visa guidance, accommodation, and arrival support. Keep it helpful, not salesy."
+}
+
+Focus on popular destinations: UK, Canada, Australia, Germany, Netherlands, Ireland, New Zealand. Use accurate real-world data for fees and programmes.
+`;
 
         const result = await genAI.models.generateContent({
             model: modelId,
@@ -85,14 +96,14 @@ export async function searchCourses(query: string) {
 
         try {
             const data = JSON.parse(cleanedText);
-            return Array.isArray(data) ? data : [];
+            return data && typeof data === "object" && !Array.isArray(data) ? data : null;
         } catch (parseError) {
             console.error("JSON Parse Error:", parseError, "Raw Text:", text);
-            return [];
+            return null;
         }
 
     } catch (error) {
         console.error("Gemini API Error:", error);
-        return [];
+        return null;
     }
 }
