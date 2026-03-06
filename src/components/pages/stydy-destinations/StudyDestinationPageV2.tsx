@@ -254,89 +254,105 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
         </section>
       )}
 
-      {/* Costs and Planning — half-bleed bg image */}
+      {/* Costs and Planning */}
       {dataSet.costs_planning_section && (
-        <section className="relative overflow-hidden py-16 sm:py-20">
-          {/* Full-width background image */}
-          <div className="absolute inset-0">
-            <Image src={bgImage1} alt="" fill unoptimized className="object-cover object-center" sizes="100vw" priority />
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-transparent to-slate-50" />
-          </div>
-
-          <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
-            <div className="text-center mb-8">
-              <div className="flex items-center justify-center gap-3 mb-3">
-                <PoundSterling size={24} className="text-[#D4AF37]" />
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight">
-                  {dataSet.costs_planning_section.title}
-                </h2>
+        <section className="relative z-10 overflow-hidden">
+          {/* Top: Dark navy hero banner with bg image */}
+          <div className="relative py-16 sm:py-20">
+            <div className="absolute inset-0">
+              <Image src={bgImage1} alt="" fill unoptimized className="object-cover object-center" sizes="100vw" priority />
+              <div className="absolute inset-0 bg-[#0a1628]/80" />
+            </div>
+            <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-5">
+                <PoundSterling size={16} className="text-[#D4AF37]" />
+                <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">Financial Planning</span>
               </div>
-              <p className="text-gray-500 text-sm sm:text-base max-w-3xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight mb-4">
+                {dataSet.costs_planning_section.title}
+              </h2>
+              <p className="text-white/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
                 {dataSet.costs_planning_section.description}
               </p>
             </div>
+          </div>
 
-            {/* Cost Items */}
-            <div className="mb-10">
-              <h3 className="text-lg sm:text-xl font-semibold text-[#1a3b85] mb-6">
-                {dataSet.costs_planning_section.costs_title}
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {dataSet.costs_planning_section.cost_items.map((item, i) => (
-                  <div
-                    key={i}
-                    className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm"
-                  >
-                    <h4 className="text-sm font-semibold text-[#1a3b85] mb-3">{item.label}</h4>
-                    <ul className="space-y-2">
-                      {item.points.map((point, j) => (
-                        <li key={j} className="flex gap-3 text-sm text-gray-700 leading-snug">
-                          <CheckCircle2 className="w-4 h-4 shrink-0 text-[#D4AF37] mt-0.5" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    {item.footnote && (
-                      <p className="text-xs text-gray-400 mt-3 italic">{item.footnote}</p>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* What we will do / won't do */}
-            <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-              <div className="px-6 sm:px-8 py-5 border-b border-slate-100">
-                <h3 className="text-lg font-semibold text-gray-800">
-                  {dataSet.costs_planning_section.will_wont.title}
+          {/* Bottom: Cost cards + Will/Won't — light bg */}
+          <div className="bg-slate-50 py-12 sm:py-16">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
+              {/* Cost Items */}
+              <div className="mb-12">
+                <h3 className="text-lg sm:text-xl font-semibold text-[#1a3b85] mb-6 text-center">
+                  {dataSet.costs_planning_section.costs_title}
                 </h3>
-              </div>
-              <div className="hidden sm:grid grid-cols-2 px-6 sm:px-8 py-3 bg-slate-50 border-b border-slate-100 text-xs font-semibold uppercase tracking-widest text-gray-500">
-                <span>{dataSet.costs_planning_section.will_wont.will_do_heading}</span>
-                <span>{dataSet.costs_planning_section.will_wont.wont_do_heading}</span>
-              </div>
-              {dataSet.costs_planning_section.will_wont.rows.map((row, i) => (
-                <div
-                  key={i}
-                  className={`grid grid-cols-1 sm:grid-cols-2 px-6 sm:px-8 py-4 ${i < dataSet.costs_planning_section!.will_wont.rows.length - 1 ? "border-b border-slate-100" : ""}`}
-                >
-                  <div className="flex gap-2 text-sm text-gray-700 mb-2 sm:mb-0">
-                    <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-500 mt-0.5" />
-                    <span>{row.will_do}</span>
-                  </div>
-                  <div className="flex gap-2 text-sm text-gray-500">
-                    <XCircle className="w-4 h-4 shrink-0 text-red-400 mt-0.5" />
-                    <span>{row.wont_do}</span>
-                  </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  {dataSet.costs_planning_section.cost_items.map((item, i) => (
+                    <div
+                      key={i}
+                      className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow duration-200 relative overflow-hidden"
+                    >
+                      <div className="absolute top-0 left-0 w-1 h-full bg-[#D4AF37]" />
+                      <h4 className="text-sm font-semibold text-[#1a3b85] mb-3 pl-3">{item.label}</h4>
+                      <ul className="space-y-2.5 pl-3">
+                        {item.points.map((point, j) => (
+                          <li key={j} className="flex gap-3 text-sm text-gray-700 leading-snug">
+                            <CheckCircle2 className="w-4 h-4 shrink-0 text-[#D4AF37] mt-0.5" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {item.footnote && (
+                        <p className="text-xs text-gray-400 mt-3 italic pl-3">{item.footnote}</p>
+                      )}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
 
-            {dataSet.costs_planning_section.disclaimer && (
-              <p className="text-center text-gray-400 text-xs sm:text-sm mt-6 italic">
-                {dataSet.costs_planning_section.disclaimer}
-              </p>
-            )}
+              {/* Will / Won't — two-column card layout */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Will Do */}
+                <div className="rounded-2xl bg-white border border-emerald-200 p-6 sm:p-7">
+                  <div className="flex items-center gap-2.5 mb-5">
+                    <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
+                      <CheckCircle2 className="w-4.5 h-4.5 text-emerald-600" />
+                    </div>
+                    <h3 className="text-base font-semibold text-gray-800">{dataSet.costs_planning_section.will_wont.will_do_heading}</h3>
+                  </div>
+                  <ul className="space-y-3.5">
+                    {dataSet.costs_planning_section.will_wont.rows.map((row, i) => (
+                      <li key={i} className="flex gap-3 text-sm text-gray-700 leading-snug">
+                        <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-500 mt-0.5" />
+                        <span>{row.will_do}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {/* Won't Do */}
+                <div className="rounded-2xl bg-white border border-red-200 p-6 sm:p-7">
+                  <div className="flex items-center gap-2.5 mb-5">
+                    <div className="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center">
+                      <XCircle className="w-4.5 h-4.5 text-red-500" />
+                    </div>
+                    <h3 className="text-base font-semibold text-gray-800">{dataSet.costs_planning_section.will_wont.wont_do_heading}</h3>
+                  </div>
+                  <ul className="space-y-3.5">
+                    {dataSet.costs_planning_section.will_wont.rows.map((row, i) => (
+                      <li key={i} className="flex gap-3 text-sm text-gray-500 leading-snug">
+                        <XCircle className="w-4 h-4 shrink-0 text-red-400 mt-0.5" />
+                        <span>{row.wont_do}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {dataSet.costs_planning_section.disclaimer && (
+                <p className="text-center text-gray-400 text-xs sm:text-sm mt-8 italic">
+                  {dataSet.costs_planning_section.disclaimer}
+                </p>
+              )}
+            </div>
           </div>
         </section>
       )}
