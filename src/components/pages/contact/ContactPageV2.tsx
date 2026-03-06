@@ -2,6 +2,8 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import TrustBarSection from "@/components/homev2/TrustBarSection";
 import {
   MapPin,
   Phone,
@@ -142,46 +144,55 @@ const ContactPageV2 = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* ── SECTION 1 - Hero ── */}
-      <section className="bg-[#0f2554] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(212,175,55,0.08),transparent_60%)]" />
-        <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-14 sm:pb-16 lg:pb-20">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
-              Contact
-            </h1>
-            <p className="text-white/60 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-8">
-              Tell us what you need - we&apos;ll direct you to the right
-              service.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              <a
-                href={COMPANY_INFO.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-sm rounded-lg transition-colors"
-              >
-                <MessageCircle size={16} />
-                Chat on WhatsApp
-              </a>
-              <Link
-                href="/book"
-                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0a1628] font-semibold text-sm rounded-lg transition-colors"
-              >
-                Get My Shortlist
-                <ChevronRight size={16} />
-              </Link>
+      <section className="relative min-h-screen flex flex-col overflow-hidden">
+        <Image src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1920&q=80" alt="Contact" fill className="object-cover" priority unoptimized />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
+        <div className="flex-1 flex items-center justify-center">
+          <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <Mail size={14} className="text-[#D4AF37]" />
+                <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">Get In Touch</span>
+              </div>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white tracking-tight mb-4">
+                Contact
+              </h1>
+              <p className="text-white/60 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+                Tell us what you need - we&apos;ll direct you to the right
+                service.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <a
+                  href={COMPANY_INFO.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg transition-all duration-200 text-sm border border-white/30"
+                >
+                  <MessageCircle size={16} className="text-[#25D366]" />
+                  Chat on WhatsApp
+                </a>
+                <Link
+                  href="/book"
+                  className="group inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg transition-all duration-200 text-sm shadow-md"
+                >
+                  Get My Shortlist
+                  <ChevronRight size={16} />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
+        <TrustBarSection />
       </section>
 
       {/* ── SECTIONS 2 & 3 - Contact details + Form ── */}
-      <section className="py-14 sm:py-18 lg:py-24">
+      <section className="py-16 sm:py-20">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 max-w-6xl mx-auto">
             {/* Left - Contact details */}
             <div className="lg:col-span-2 space-y-6">
-              <h2 className="text-xl sm:text-2xl font-bold text-[#0f2554]">
+              <h2 className="text-xl sm:text-2xl font-semibold text-[#0f2554]">
                 Get in touch
               </h2>
 

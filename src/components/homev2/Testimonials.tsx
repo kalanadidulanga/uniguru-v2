@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { REVIEWS } from "@/constants/reviews";
-import { Star, MapPin, GraduationCap, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { Star, GraduationCap, ChevronLeft, ChevronRight, Quote, Award } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const TRANSITION_MS = 400;
@@ -47,22 +47,25 @@ const Testimonials = () => {
 
   return (
     <section
-      className="relative py-20 sm:py-24 lg:py-32 font-sans overflow-hidden bg-[#f8f9fc]"
+      className="relative py-16 sm:py-20 font-sans overflow-hidden bg-[#f8f9fc]"
       aria-labelledby="testimonials-heading"
     >
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <header className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-3 sm:mb-4">
-            Student success
-          </p>
+        <header className="text-center mb-10 sm:mb-14">
+          <div className="inline-flex items-center gap-2 mb-4">
+            <Award size={14} className="text-[#D4AF37]" />
+            <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+              Student Success
+            </span>
+          </div>
           <h2
             id="testimonials-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold text-[#1a3b85] tracking-tight leading-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#1a3b85] tracking-tight leading-tight"
           >
-            More successful stories.
+            More Successful Stories
           </h2>
-          <p className="mt-4 sm:mt-5 text-base sm:text-lg text-gray-500 max-w-2xl leading-relaxed mx-auto">
+          <p className="mt-4 text-base sm:text-lg text-gray-500 max-w-2xl leading-relaxed mx-auto">
             Hear from students who started their global education journey with
             Uniguru.
           </p>
@@ -79,7 +82,7 @@ const Testimonials = () => {
 
           <article
             className={cn(
-              "relative bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-xl shadow-gray-200/50 transition-all ease-out",
+              "relative bg-[#0f2554] border border-white/10 rounded-3xl overflow-hidden shadow-xl transition-all ease-out",
               isTransitioning ? "opacity-0 scale-[0.98]" : "opacity-100 scale-100"
             )}
             style={{ transitionDuration: `${TRANSITION_MS}ms` }}
@@ -96,29 +99,28 @@ const Testimonials = () => {
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority={activeIndex === 0}
+                  unoptimized
                 />
-                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#1a3b85]/80 via-[#1a3b85]/30 to-transparent" />
-                
-                {/* University badge - floating on image */}
-                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 lg:right-auto">
-                  <div className="inline-flex items-center gap-3 px-4 py-3 rounded-xl bg-white border border-gray-100 shadow-lg">
-                    <div className="w-10 h-10 rounded-lg bg-[#1a3b85] flex items-center justify-center shrink-0">
-                      <GraduationCap className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="text-[10px] sm:text-xs text-gray-500 font-medium uppercase tracking-wide">
-                        Admitted to
-                      </p>
-                      <p className="text-sm font-bold text-[#1a3b85] truncate">
-                        {featured.university}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#0f2554] via-[#0f2554]/20 to-transparent" />
               </div>
 
               {/* Content side */}
               <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10 xl:p-12">
+                {/* University badge */}
+                <div className="inline-flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 mb-5 w-fit">
+                  <div className="w-9 h-9 rounded-lg bg-[#D4AF37] flex items-center justify-center shrink-0">
+                    <GraduationCap className="w-4 h-4 text-white" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-[10px] text-white/50 font-medium uppercase tracking-wide">
+                      Admitted to
+                    </p>
+                    <p className="text-sm font-bold text-white truncate">
+                      {featured.university}
+                    </p>
+                  </div>
+                </div>
+
                 {/* Stars */}
                 <div className="flex gap-1 mb-4 sm:mb-6" aria-hidden>
                   {[...Array(featured.stars)].map((_, i) => (
@@ -130,7 +132,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Quote */}
-                <blockquote className="text-lg sm:text-xl lg:text-2xl text-gray-700 leading-relaxed font-light mb-4 sm:mb-6">
+                <blockquote className="text-lg sm:text-xl lg:text-2xl text-white/80 leading-relaxed font-light mb-4 sm:mb-6">
                   &quot;{expanded ? featured.review : (featured.summary || featured.review)}&quot;
                 </blockquote>
 
@@ -138,7 +140,7 @@ const Testimonials = () => {
                   <button
                     type="button"
                     onClick={() => setExpanded(!expanded)}
-                    className="text-sm font-medium text-[#1a3b85] hover:text-[#2a4b95] transition-colors mb-6 w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3b85] focus-visible:ring-offset-2 rounded"
+                    className="text-sm font-medium text-[#D4AF37] hover:text-[#c9a432] transition-colors mb-6 w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f2554] rounded"
                     aria-expanded={expanded}
                   >
                     {expanded ? "Show less" : "Read full review"}
@@ -146,14 +148,10 @@ const Testimonials = () => {
                 )}
 
                 {/* Author info */}
-                <div className="pt-6">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-[#1a3b85] mb-1">
+                <div className="pt-6 border-t border-white/10">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-white">
                     {featured.name}
                   </h3>
-                  <div className="flex items-center gap-2 text-sm sm:text-base text-gray-500">
-                    <MapPin className="w-4 h-4 text-[#D4AF37] shrink-0" />
-                    <span>{featured.university}</span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -183,7 +181,7 @@ const Testimonials = () => {
         </div>
 
         {/* Thumbnail navigation */}
-        <div className="mt-10 sm:mt-12 lg:mt-16">
+        <div className="mt-10 sm:mt-14">
           <div className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
             {REVIEWS.map((review, index) => (
               <button
@@ -205,6 +203,7 @@ const Testimonials = () => {
                   fill
                   className="object-cover"
                   sizes="64px"
+                  unoptimized
                 />
                 {activeIndex === index && (
                   <div className="absolute inset-0 bg-[#D4AF37]/10" />

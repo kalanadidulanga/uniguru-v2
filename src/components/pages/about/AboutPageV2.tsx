@@ -122,42 +122,37 @@ const AboutPageV2 = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* ═══════════════ 1) HERO ═══════════════ */}
-      <div className="min-h-screen flex flex-col">
-        <section className="relative flex-1 flex items-center overflow-hidden">
-          <Image
-            src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=2000&q=90"
-            alt="London cityscape - Uniguru headquarters"
-            fill
-            quality={90}
-            className="object-cover object-center scale-105"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/75 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/60 via-transparent to-[#0a1628]/20" />
+      <section className="relative min-h-screen flex flex-col overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=2000&q=90"
+          alt="London cityscape - Uniguru headquarters"
+          fill
+          unoptimized
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
 
-          <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-[#D4AF37]/10 blur-2xl animate-pulse hidden lg:block" />
-          <div className="absolute bottom-40 right-40 w-24 h-24 rounded-full bg-white/5 blur-xl hidden lg:block" />
-
+        <div className="flex-1 flex items-center">
           <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28">
             <div className="max-w-4xl">
-              <div className="inline-flex items-center gap-3 mb-6">
-                <div className="w-10 h-[2px] bg-gradient-to-r from-[#D4AF37] to-[#D4AF37]/40" />
-                <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <Users size={14} className="text-[#D4AF37]" />
+                <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
                   About Uniguru
-                </p>
+                </span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-white leading-[1.1] tracking-tight mb-6 sm:mb-8">
-                <span className="bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
-                  London-led support
-                </span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] tracking-tight mb-6">
+                London-led support
                 <br />
-                <span className="bg-gradient-to-r from-[#D4AF37] to-[#f5d76e] bg-clip-text text-transparent">
+                <span className="text-[#D4AF37]">
                   for global study journeys.
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mb-3 max-w-2xl">
+              <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mb-3 max-w-3xl">
                 A disciplined, end-to-end process - from shortlist to settlement
                 - with regulated guidance where required.
               </p>
@@ -181,7 +176,7 @@ const AboutPageV2 = () => {
               <div className="flex flex-wrap gap-3 sm:gap-4">
                 <a
                   href="/book"
-                  className="group inline-flex items-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-[#D4AF37] to-[#c9a432] hover:from-[#e5c04a] hover:to-[#D4AF37] text-[#0d1b3e] font-semibold rounded-xl shadow-lg shadow-[#D4AF37]/20 hover:shadow-xl hover:shadow-[#D4AF37]/30 transition-all duration-300 text-sm sm:text-base"
+                  className="group inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg transition-all duration-200 text-sm shadow-md"
                 >
                   Get My Shortlist
                   <ArrowRight
@@ -193,7 +188,7 @@ const AboutPageV2 = () => {
                   href={COMPANY_INFO.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-5 sm:px-6 py-3.5 sm:py-4 bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white font-semibold rounded-xl transition-all duration-300 text-sm sm:text-base"
+                  className="inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg transition-all duration-200 text-sm border border-white/30"
                 >
                   <MessageCircle size={18} className="text-[#25D366]" />
                   Chat on WhatsApp
@@ -201,26 +196,24 @@ const AboutPageV2 = () => {
               </div>
             </div>
           </div>
-
-          <div className="absolute bottom-10 right-10 opacity-10 hidden xl:block">
-            <Users size={120} className="text-white" />
-          </div>
-        </section>
+        </div>
 
         {/* 2) Trust Bar */}
         <TrustBarSection />
-      </div>
+      </section>
 
       {/* ═══════════════ 3) WHO WE ARE ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-5">
-                  <Users size={14} />
-                  Who we are
-                </span>
+                <div className="inline-flex items-center gap-2 mb-4">
+                  <Users size={14} className="text-[#D4AF37]" />
+                  <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                    Who we are
+                  </span>
+                </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-6">
                   Clarity, credibility,
                   <br />
@@ -240,6 +233,7 @@ const AboutPageV2 = () => {
                   src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85"
                   alt="Uniguru team working in London office"
                   fill
+                  unoptimized
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f2554]/30 to-transparent" />
@@ -250,13 +244,15 @@ const AboutPageV2 = () => {
       </section>
 
       {/* ═══════════════ 4) WHAT WE DO ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-14">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-              <FileText size={14} />
-              Services
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <FileText size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Services
+              </span>
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight">
               End-to-End Support
             </h2>
@@ -284,7 +280,7 @@ const AboutPageV2 = () => {
       </section>
 
       {/* ═══════════════ 5) HOW WE WORK ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-[#0f2554] relative overflow-hidden">
+      <section className="py-16 sm:py-20 bg-[#0f2554] relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-white blur-3xl" />
           <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-[#D4AF37] blur-3xl" />
@@ -329,13 +325,15 @@ const AboutPageV2 = () => {
       </section>
 
       {/* ═══════════════ 6) EXECUTIVE LEADERSHIP ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-14">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-              <Users size={14} />
-              Team
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Users size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Team
+              </span>
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight">
               Executive Leadership
             </h2>
@@ -355,6 +353,7 @@ const AboutPageV2 = () => {
                         src={person.image}
                         alt={person.name}
                         fill
+                        unoptimized
                         className="object-cover"
                       />
                     </div>
@@ -391,6 +390,7 @@ const AboutPageV2 = () => {
                         src={person.image}
                         alt={person.name}
                         fill
+                        unoptimized
                         className="object-cover"
                       />
                     </div>
@@ -418,13 +418,15 @@ const AboutPageV2 = () => {
       </section>
 
       {/* ═══════════════ 7) PARTNER WITH UNIGURU ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-5">
-              <Handshake size={14} />
-              Partners
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Handshake size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Partners
+              </span>
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-4 sm:mb-6">
               Partner with Uniguru
             </h2>
@@ -503,7 +505,7 @@ const AboutPageV2 = () => {
               ))}
             </div>
             <p className="text-white/40 text-xs">
-              WhatsApp {COMPANY_INFO.phone} &middot; {COMPANY_INFO.email}
+              WhatsApp {COMPANY_INFO.phone} | {COMPANY_INFO.email}
             </p>
           </div>
         </div>

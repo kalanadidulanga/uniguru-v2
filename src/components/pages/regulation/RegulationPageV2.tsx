@@ -9,14 +9,13 @@ import {
   Scale,
   AlertTriangle,
   ChevronRight,
-  MapPin,
-  BadgeCheck,
   Ban,
   CheckCircle2,
 } from "lucide-react";
 import { COMPANY_INFO } from "@/constants/data";
+import TrustBarSection from "@/components/homev2/TrustBarSection";
 
-const BOOK_LINK = "https://uniguru-v2.vercel.app/book";
+const BOOK_LINK = "/book";
 
 const STANDARDS = [
   "No false documents.",
@@ -29,7 +28,7 @@ const RegulationPageV2 = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* ── SECTION 1 - Hero ── */}
-      <section className="relative overflow-hidden">
+      <section className="relative min-h-screen flex flex-col overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85"
@@ -37,86 +36,64 @@ const RegulationPageV2 = () => {
             fill
             className="object-cover"
             priority
+            unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/90 via-[#0a1628]/80 to-[#0a1628]/95" />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
         </div>
 
-        <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-16 sm:pb-20 lg:pb-24">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-1.5 mb-6">
-              <Shield size={14} className="text-[#D4AF37]" />
-              <span className="text-white/90 text-xs sm:text-sm font-medium">
-                Regulation & Scope
-              </span>
-            </div>
+        <div className="flex-1 flex items-center">
+          <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <Shield size={14} className="text-[#D4AF37]" />
+                <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                  Regulation & Scope
+                </span>
+              </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-white tracking-tight leading-tight mb-5 sm:mb-6">
-              Regulated immigration support,{" "}
-              <span className="text-[#D4AF37]">delivered with clear scope</span>
-            </h1>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white tracking-tight leading-tight mb-5 sm:mb-6 mx-auto">
+                Regulated immigration support,{" "}
+                <span className="text-[#D4AF37]">delivered with clear scope</span>
+              </h1>
 
-            <p className="text-white/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mb-8 sm:mb-10">
-              Immigration Advice Authority (IAA) regulated guidance where
-              required - with fixed fees and disciplined preparation.
-            </p>
+              <p className="text-white/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10">
+                Immigration Advice Authority (IAA) regulated guidance where
+                required - with fixed fees and disciplined preparation.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">
-              <Link
-                href={BOOK_LINK}
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0a1628] font-semibold text-sm sm:text-base rounded-lg shadow-lg hover:shadow-xl transition-all"
-              >
-                Book free 15-minute triage
-                <ChevronRight size={16} />
-              </Link>
-              <button className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white font-medium text-sm sm:text-base rounded-lg border border-white/20 transition-all">
-                <FileCheck size={16} />
-                Request Fixed Fee Scale (PDF)
-              </button>
-            </div>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 justify-center">
+                <Link
+                  href={BOOK_LINK}
+                  className="group inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg transition-all duration-200 text-sm shadow-md"
+                >
+                  Book free 15-minute triage
+                  <ChevronRight size={16} />
+                </Link>
+                <button className="inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg transition-all duration-200 text-sm border border-white/30">
+                  <FileCheck size={16} />
+                  Request Fixed Fee Scale (PDF)
+                </button>
+              </div>
 
-            <p className="text-white/40 text-xs sm:text-sm max-w-lg">
-              Free triage. Paid services thereafter. Fixed fees confirmed in
-              writing before engagement.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SECTION 2 - Trust Bar ── */}
-      <section className="bg-[#0f2554] border-t border-white/10">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 lg:gap-10 text-center sm:text-left">
-            <div className="flex items-center gap-2">
-              <Shield size={16} className="text-[#D4AF37] shrink-0" />
-              <span className="text-white/90 text-xs sm:text-sm font-medium">
-                Immigration Advice Authority (IAA) Regulated
-              </span>
-            </div>
-            <div className="hidden sm:block w-px h-5 bg-white/20" />
-            <div className="flex items-center gap-2">
-              <BadgeCheck size={16} className="text-[#D4AF37] shrink-0" />
-              <span className="text-white/90 text-xs sm:text-sm font-medium">
-                Organisation Registration: {COMPANY_INFO.iaaReg}
-              </span>
-            </div>
-            <div className="hidden sm:block w-px h-5 bg-white/20" />
-            <div className="flex items-center gap-2">
-              <MapPin size={16} className="text-[#D4AF37] shrink-0" />
-              <span className="text-white/90 text-xs sm:text-sm font-medium">
-                {COMPANY_INFO.address}
-              </span>
+              <p className="text-white/40 text-xs sm:text-sm max-w-lg mx-auto text-center">
+                Free triage. Paid services thereafter. Fixed fees confirmed in
+                writing before engagement.
+              </p>
             </div>
           </div>
         </div>
+
+        <TrustBarSection />
       </section>
 
       {/* ── SECTION 3 - What regulation means for you ── */}
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-16 sm:py-20">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-[#1a3b85]/5 rounded-full px-4 py-1.5 mb-6">
-              <Scale size={14} className="text-[#1a3b85]" />
-              <span className="text-[#1a3b85] text-xs sm:text-sm font-medium">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Scale size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
                 What regulation means for you
               </span>
             </div>
@@ -134,14 +111,14 @@ const RegulationPageV2 = () => {
       </section>
 
       {/* ── SECTION 4 - Scope confirmation ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-3">
-                <div className="inline-flex items-center gap-2 bg-[#1a3b85]/5 rounded-full px-4 py-1.5 mb-5">
-                  <FileCheck size={14} className="text-[#1a3b85]" />
-                  <span className="text-[#1a3b85] text-xs sm:text-sm font-medium">
+                <div className="inline-flex items-center gap-2 mb-4">
+                  <FileCheck size={14} className="text-[#D4AF37]" />
+                  <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
                     Scope confirmation
                   </span>
                 </div>
@@ -173,11 +150,11 @@ const RegulationPageV2 = () => {
       </section>
 
       {/* ── SECTION 5 - Fees approach ── */}
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-16 sm:py-20">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-10 sm:mb-14">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0f2554] tracking-tight mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#0f2554] tracking-tight mb-4">
                 Fixed fees -{" "}
                 <span className="text-[#D4AF37]">not ranges</span>
               </h2>
@@ -218,10 +195,10 @@ const RegulationPageV2 = () => {
       </section>
 
       {/* ── SECTION 6 - Standards statement ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-[#0f2554]">
+      <section className="py-16 sm:py-20 bg-[#0f2554]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight mb-10 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white tracking-tight mb-10 sm:mb-12">
               Our standards
             </h2>
             <div className="space-y-4 sm:space-y-5">

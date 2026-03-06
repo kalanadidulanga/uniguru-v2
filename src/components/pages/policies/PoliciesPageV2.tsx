@@ -2,6 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import TrustBarSection from "@/components/homev2/TrustBarSection";
 import {
   Shield,
   Lock,
@@ -28,41 +30,46 @@ const PoliciesPageV2 = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* ── SECTION 1 - Hero ── */}
-      <section className="bg-[#0f2554] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(212,175,55,0.08),transparent_60%)]" />
-        <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-14 sm:pb-18 lg:pb-20">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-1.5 mb-6">
-              <Shield size={14} className="text-[#D4AF37]" />
-              <span className="text-white/90 text-xs sm:text-sm font-medium">
-                Policies
-              </span>
-            </div>
+      <section className="relative min-h-screen flex flex-col overflow-hidden">
+        <Image src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80" alt="Policies" fill className="object-cover" priority unoptimized />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
+        <div className="flex-1 flex items-center justify-center">
+          <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <Shield size={14} className="text-[#D4AF37]" />
+                <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                  Policies
+                </span>
+              </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-4 sm:mb-5">
-              Policies &{" "}
-              <span className="text-[#D4AF37]">client information</span>
-            </h1>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white tracking-tight leading-tight mb-4 sm:mb-5">
+                Policies &{" "}
+                <span className="text-[#D4AF37]">client information</span>
+              </h1>
 
-            <p className="text-white/60 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-8 sm:mb-10">
-              Clear standards, transparent processes, and firm-grade boundaries.
-            </p>
+              <p className="text-white/60 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10">
+                Clear standards, transparent processes, and firm-grade boundaries.
+              </p>
 
-            {/* Anchor links */}
-            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-              {ANCHOR_LINKS.map((item) => (
-                <a
-                  key={item.anchor}
-                  href={item.anchor}
-                  className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-white/8 hover:bg-white/15 backdrop-blur-sm text-white/80 hover:text-white text-xs sm:text-sm font-medium rounded-full border border-white/10 hover:border-white/20 transition-all"
-                >
-                  <item.icon size={14} className="text-[#D4AF37]" />
-                  {item.label}
-                </a>
-              ))}
+              {/* Anchor links */}
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+                {ANCHOR_LINKS.map((item) => (
+                  <a
+                    key={item.anchor}
+                    href={item.anchor}
+                    className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-white/8 hover:bg-white/15 backdrop-blur-sm text-white/80 hover:text-white text-xs sm:text-sm font-medium rounded-lg border border-white/10 hover:border-white/20 transition-all"
+                  >
+                    <item.icon size={14} className="text-[#D4AF37]" />
+                    {item.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
+        <TrustBarSection />
       </section>
 
       {/* ── SECTION 2 - Privacy Policy ── */}
@@ -73,7 +80,7 @@ const PoliciesPageV2 = () => {
               <div className="w-10 h-10 rounded-xl bg-[#1a3b85]/10 flex items-center justify-center">
                 <Lock size={20} className="text-[#1a3b85]" />
               </div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0f2554]">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#0f2554]">
                 Privacy Policy
               </h2>
             </div>
@@ -129,7 +136,7 @@ const PoliciesPageV2 = () => {
               <div className="w-10 h-10 rounded-xl bg-[#1a3b85]/10 flex items-center justify-center">
                 <FileText size={20} className="text-[#1a3b85]" />
               </div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0f2554]">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#0f2554]">
                 Terms of Service
               </h2>
             </div>
@@ -176,7 +183,7 @@ const PoliciesPageV2 = () => {
               <div className="w-10 h-10 rounded-xl bg-[#1a3b85]/10 flex items-center justify-center">
                 <Cookie size={20} className="text-[#1a3b85]" />
               </div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0f2554]">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#0f2554]">
                 Cookie Policy
               </h2>
             </div>
@@ -215,7 +222,7 @@ const PoliciesPageV2 = () => {
               <div className="w-10 h-10 rounded-xl bg-[#1a3b85]/10 flex items-center justify-center">
                 <MessageSquareWarning size={20} className="text-[#1a3b85]" />
               </div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0f2554]">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#0f2554]">
                 Complaints Procedure
               </h2>
             </div>
