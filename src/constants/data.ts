@@ -1175,8 +1175,8 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
     hero_section: {
       title: "Study in the Australia",
       images: [
-        { src: "/images/study_destinations/australia/1.jpg", alt: "" },
-        { src: "/images/study_destinations/australia/2.jpg", alt: "" },
+        { src: "/images/study_destinations/australia/1.jpg", alt: "Sydney harbour skyline at dusk" },
+        { src: "/images/study_destinations/australia/campus.jpg", alt: "Australian cityscape" },
       ],
       description:
         "Because high-scrutiny routes demand high-standard planning \u2014 you deserve clear, regulated guidance, not sales talk. Eligibility-led shortlisting and a compliant plan \u2014 from programme selection to visa-ready evidence.",
@@ -1395,18 +1395,21 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
           text: "Explore a curated list of institutions we work with.",
           cta_label: "View Australia partner universities",
           cta_link: "/universities",
+          image: "/images/study_destinations/australia/opportunities/universities.jpg",
         },
         {
           heading: "Scholarships (Australia)",
           text: "A practical overview of common scholarship types and eligibility.",
           cta_label: "Explore scholarships",
           cta_link: "/scholarships",
+          image: "/images/study_destinations/australia/opportunities/scholarships.jpg",
         },
         {
           heading: "Careers & industry insights",
           text: "Which courses lead to which outcomes \u2014 and what's credible for your profile.",
           cta_label: "See career insights",
           cta_link: "/careers",
+          image: "/images/study_destinations/australia/opportunities/careers.jpg",
         },
       ],
       cta_text:
@@ -1465,8 +1468,8 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
     hero_section: {
       title: "Study in the Netherlands",
       images: [
-        { src: "/images/study_destinations/netherlands/1.jpg", alt: "" },
-        { src: "/images/study_destinations/netherlands/2.jpg", alt: "" },
+        { src: "/images/study_destinations/netherlands/1.jpg", alt: "Netherlands canal cityscape" },
+        { src: "/images/study_destinations/netherlands/campus.jpg", alt: "Dutch architecture" },
       ],
       description:
         "Because a credible plan beats generic advice \u2014 you deserve regulated guidance and clear next steps. Eligibility-led shortlisting and a compliant plan \u2014 from programme selection to visa-ready evidence.",
@@ -1684,18 +1687,21 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
           text: "Explore a curated list of institutions we work with.",
           cta_label: "View Netherlands partner universities",
           cta_link: "/universities",
+          image: "/images/study_destinations/netherlands/opportunities/universities.jpg",
         },
         {
           heading: "Scholarships (Netherlands)",
           text: "A practical overview of common scholarship types and eligibility.",
           cta_label: "Explore scholarships",
           cta_link: "/scholarships",
+          image: "/images/study_destinations/netherlands/opportunities/scholarships.jpg",
         },
         {
           heading: "Careers & industry insights",
           text: "Which courses lead to which outcomes \u2014 and what's credible for your profile.",
           cta_label: "See career insights",
           cta_link: "/careers",
+          image: "/images/study_destinations/netherlands/opportunities/careers.jpg",
         },
       ],
       cta_text:
@@ -1754,8 +1760,8 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
     hero_section: {
       title: "Study in the Germany",
       images: [
-        { src: "/images/study_destinations/germany/1.jpg", alt: "" },
-        { src: "/images/study_destinations/germany/2.jpg", alt: "" },
+        { src: "/images/study_destinations/germany/1.jpg", alt: "German cityscape" },
+        { src: "/images/study_destinations/germany/campus.jpg", alt: "German architecture" },
       ],
       description:
         "Because value destinations still require precision \u2014 you deserve regulated guidance and zero guesswork. Eligibility-led shortlisting and a compliant plan \u2014 from programme selection to visa-ready evidence.",
@@ -1976,18 +1982,21 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
           text: "Explore a curated list of institutions we work with.",
           cta_label: "View Germany partner universities",
           cta_link: "/universities",
+          image: "/images/study_destinations/germany/opportunities/universities.jpg",
         },
         {
           heading: "Scholarships (Germany)",
           text: "A practical overview of common scholarship types and eligibility.",
           cta_label: "Explore scholarships",
           cta_link: "/scholarships",
+          image: "/images/study_destinations/germany/opportunities/scholarships.jpg",
         },
         {
           heading: "Careers & industry insights",
           text: "Which courses lead to which outcomes \u2014 and what's credible for your profile.",
           cta_label: "See career insights",
           cta_link: "/careers",
+          image: "/images/study_destinations/germany/opportunities/careers.jpg",
         },
       ],
       cta_text:
