@@ -99,28 +99,34 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
       {/* Intakes */}
       {dataSet.intakes_section && (
         <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-16 sm:py-20">
-          <div className="rounded-2xl bg-white border border-slate-200 shadow-sm p-8 sm:p-10 text-center">
-            <div className="flex items-center justify-center gap-3 mb-5">
-              <CalendarDays size={24} className="text-[#D4AF37]" />
-              <h2 className="text-2xl sm:text-3xl font-semibold text-[#1a3b85]">Intakes we support</h2>
+          <div className="relative rounded-2xl overflow-hidden p-8 sm:p-10 text-center">
+            <div className="absolute inset-0">
+              <Image src="/images/study_destinations/uk/library.jpg" alt="" fill unoptimized className="object-cover" sizes="100vw" />
+              <div className="absolute inset-0 bg-[#0f1d3a]/65" />
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-5">
-              {dataSet.intakes_section.intakes.map((intake, i) => (
-                <React.Fragment key={intake}>
-                  <span className="text-lg sm:text-xl font-medium text-gray-800">{intake}</span>
-                  {i < dataSet.intakes_section!.intakes.length - 1 && (
-                    <span className="text-[#D4AF37] text-xl">&#8226;</span>
-                  )}
-                </React.Fragment>
-              ))}
+            <div className="relative z-10">
+              <div className="flex items-center justify-center gap-3 mb-5">
+                <CalendarDays size={24} className="text-[#D4AF37]" />
+                <h2 className="text-2xl sm:text-3xl font-semibold text-white">Intakes we support</h2>
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-5">
+                {dataSet.intakes_section.intakes.map((intake, i) => (
+                  <React.Fragment key={intake}>
+                    <span className="text-lg sm:text-xl font-medium text-white">{intake}</span>
+                    {i < dataSet.intakes_section!.intakes.length - 1 && (
+                      <span className="text-[#D4AF37] text-xl">&#8226;</span>
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
+              <p className="text-white/70 text-sm sm:text-base mb-6">{dataSet.intakes_section.description}</p>
+              <Link
+                href="/free-eligibility-check"
+                className="inline-block px-6 py-3 rounded-xl bg-[#D4AF37] text-white font-semibold text-sm sm:text-base hover:bg-[#c9a432] transition-colors duration-200"
+              >
+                {dataSet.intakes_section.cta_label}
+              </Link>
             </div>
-            <p className="text-gray-500 text-sm sm:text-base mb-6">{dataSet.intakes_section.description}</p>
-            <Link
-              href="/free-eligibility-check"
-              className="inline-block px-6 py-3 rounded-xl bg-[#1a3b85] text-white font-medium text-sm sm:text-base hover:bg-[#15306b] transition-colors duration-200"
-            >
-              {dataSet.intakes_section.cta_label}
-            </Link>
           </div>
         </section>
       )}
