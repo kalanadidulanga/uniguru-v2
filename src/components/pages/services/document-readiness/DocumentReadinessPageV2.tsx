@@ -362,7 +362,7 @@ const DocumentReadinessPageV2 = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
 
           <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-            <div className="max-w-3xl">
+            <div className="max-w-4xl">
               <div className="inline-flex items-center gap-2 mb-4">
                 <ClipboardCheck size={16} className="text-[#D4AF37]" />
                 <p className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
@@ -380,11 +380,11 @@ const DocumentReadinessPageV2 = () => {
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed mb-2 sm:mb-3 max-w-2xl">
+              <p className="text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed mb-2 sm:mb-3 max-w-3xl">
                 A disciplined checklist, clean structure, and consistency checks
                 so your application reads professionally.
               </p>
-              <p className="text-sm sm:text-base text-white/60 leading-relaxed mb-6 sm:mb-8 lg:mb-10 max-w-2xl">
+              <p className="text-sm sm:text-base text-white/60 leading-relaxed mb-6 sm:mb-8 lg:mb-10 max-w-3xl">
                 We turn requirements into a practical evidence map and a
                 submission-ready folder structure, reducing avoidable mistakes
                 and last-minute chaos.
