@@ -121,7 +121,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
               </div>
               <p className="text-white/70 text-sm sm:text-base mb-6">{dataSet.intakes_section.description}</p>
               <Link
-                href="/free-eligibility-check"
+                href="/book"
                 className="inline-block px-6 py-3 rounded-xl bg-[#D4AF37] text-white font-semibold text-sm sm:text-base hover:bg-[#c9a432] transition-colors duration-200"
               >
                 {dataSet.intakes_section.cta_label}
@@ -452,7 +452,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
             <div className="mt-10 text-center">
               <p className="text-gray-500 text-sm sm:text-base mb-4">{dataSet.opportunities_hub_section.cta_text}</p>
               <Link
-                href="/free-eligibility-check"
+                href="/book"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1a3b85] text-white font-medium text-sm sm:text-base hover:bg-[#15306b] transition-colors duration-200"
               >
                 {dataSet.opportunities_hub_section.cta_button_label}

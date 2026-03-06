@@ -10,6 +10,8 @@ import {
   Home,
   Briefcase,
   MessageCircle,
+  ArrowRight,
+  Layers,
 } from "lucide-react";
 import { COMPANY_INFO } from "@/constants/data";
 
@@ -80,64 +82,68 @@ const steps = [
 const HowWeHelp = () => {
   return (
     <section
-      className="relative bg-[#0f2554] py-20 sm:py-24 lg:py-28 font-sans overflow-hidden"
+      className="relative bg-[#0f2554] py-16 sm:py-20 overflow-hidden"
       aria-labelledby="how-we-help-heading"
     >
-      <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-5 lg:px-6 xl:px-8 2xl:px-10">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <header className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-3 sm:mb-4">
-            Our Process
-          </p>
+        <header className="text-center mb-10 sm:mb-14">
+          <div className="inline-flex items-center gap-2 mb-4">
+            <Layers size={14} className="text-[#D4AF37]" />
+            <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+              Our Process
+            </span>
+          </div>
           <h2
             id="how-we-help-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold text-white tracking-tight leading-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight"
           >
             End to End Support{" "}
             <span className="text-[#D4AF37]">(London led)</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-white/70 max-w-3xl leading-relaxed mx-auto">
+          <p className="mt-4 text-base sm:text-lg text-white/70 max-w-2xl leading-relaxed mx-auto">
             One team, one process from shortlist to settlement, with regulated
             guidance where required.
           </p>
         </header>
 
-        {/* Steps – 6 cards grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-5 lg:gap-4">
+        {/* Steps - 6 cards grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-4">
           {steps.map((step) => (
             <article
               key={step.id}
-              className="relative flex flex-col bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl overflow-hidden transition-all duration-300 hover:border-[#D4AF37]/40 hover:bg-white/15 group"
+              className="relative flex flex-col bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden transition-all duration-300 hover:border-[#D4AF37]/40 hover:bg-white/10 group"
             >
               {/* Image */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#1a3b85]/30">
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
                 <Image
                   src={step.imageUrl}
                   alt={step.imageAlt}
                   fill
+                  unoptimized
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 16vw"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
                 />
               </div>
 
               {/* Icon badge */}
               <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white/90 backdrop-blur-sm border border-white/50 shadow-sm flex items-center justify-center">
-                  <step.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#0f2554]" aria-hidden />
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#1a3b85] shadow-sm flex items-center justify-center">
+                  <step.icon className="w-4 h-4 sm:w-[18px] sm:h-[18px] text-white" aria-hidden />
                 </div>
               </div>
 
               {/* Content */}
-              <div className="flex-1 p-3 sm:p-4 sm:p-5">
-                <h3 className="text-sm sm:text-base sm:text-lg font-semibold text-white mb-1 leading-tight">
+              <div className="flex-1 p-3 sm:p-4">
+                <h3 className="text-sm sm:text-base font-semibold text-white mb-1 leading-tight">
                   {step.title}
                 </h3>
                 {step.subtitle && (
-                  <p className="text-[10px] sm:text-xs text-[#D4AF37] font-medium mb-2">
+                  <p className="text-[10px] sm:text-xs text-[#D4AF37] font-medium mb-1.5">
                     {step.subtitle}
                   </p>
                 )}
-                <p className="text-[11px] sm:text-xs sm:text-sm text-white/70 leading-relaxed">
+                <p className="text-[11px] sm:text-xs text-white/70 leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -146,22 +152,22 @@ const HowWeHelp = () => {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 sm:mt-16">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-10 sm:mt-14">
           <Link
             href="/book"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0f2554] font-semibold rounded-full transition-colors text-sm sm:text-base shadow-lg shadow-[#D4AF37]/20"
+            className="group inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg transition-all duration-200 text-sm shadow-md"
           >
             Get My Shortlist
+            <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
           </Link>
           <a
             href={COMPANY_INFO.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Chat on WhatsApp to request your UK shortlist"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-medium rounded-full transition-colors text-sm sm:text-base"
+            className="inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg transition-all duration-200 text-sm border border-white/30"
           >
-            <MessageCircle className="w-4 h-4" />
-            Get my UK shortlist on WhatsApp
+            <MessageCircle size={15} className="text-[#25D366]" />
+            WhatsApp Us
           </a>
         </div>
       </div>
