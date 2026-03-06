@@ -910,12 +910,12 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
     partner_institutions_section: {
       title: "Selected UK partner institutions",
       partners: [
-        { name: "University of Law" },
-        { name: "Wrexham University" },
-        { name: "University College Birmingham" },
-        { name: "Northumbria University London" },
-        { name: "Ulster University" },
-        { name: "Coventry University" },
+        { name: "University of Law", logo: "/images/study_destinations/uk/logos/university-of-law.png" },
+        { name: "Wrexham University", logo: "/images/study_destinations/uk/logos/wrexham.png" },
+        { name: "University College Birmingham", logo: "/images/study_destinations/uk/logos/ucb.png" },
+        { name: "Northumbria University London", logo: "/images/study_destinations/uk/logos/northumbria.png" },
+        { name: "Ulster University", logo: "/images/study_destinations/uk/logos/ulster.png" },
+        { name: "Coventry University", logo: "/images/study_destinations/uk/logos/coventry.png" },
       ],
       note: "Final recommendations depend on your profile, budget, and course goals.",
     },

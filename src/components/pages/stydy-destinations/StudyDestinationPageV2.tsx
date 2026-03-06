@@ -137,20 +137,20 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-8 text-center">
             {dataSet.partner_institutions_section.title}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
             {dataSet.partner_institutions_section.partners.map((partner) => (
               <div
                 key={partner.name}
-                className="flex items-center justify-center rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 min-h-[80px] shadow-sm hover:shadow-md transition-shadow duration-200"
+                className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-slate-200 bg-white px-5 py-6 shadow-sm hover:shadow-md hover:border-[#D4AF37]/30 transition-all duration-200"
               >
-                {partner.logo ? (
-                  <img src={partner.logo} alt={partner.name} className="h-10 object-contain" />
-                ) : (
-                  <div className="flex items-center gap-2">
-                    <GraduationCap size={16} className="text-[#1a3b85] shrink-0" />
-                    <span className="text-sm font-medium text-gray-700 text-center leading-tight">{partner.name}</span>
-                  </div>
-                )}
+                <div className="w-12 h-12 rounded-xl bg-[#1a3b85]/5 border border-[#1a3b85]/10 flex items-center justify-center shrink-0 overflow-hidden">
+                  {partner.logo ? (
+                    <Image src={partner.logo} alt={partner.name} width={32} height={32} className="object-contain" />
+                  ) : (
+                    <GraduationCap size={22} className="text-[#1a3b85]" />
+                  )}
+                </div>
+                <span className="text-sm font-semibold text-gray-800 leading-tight text-center">{partner.name}</span>
               </div>
             ))}
           </div>
