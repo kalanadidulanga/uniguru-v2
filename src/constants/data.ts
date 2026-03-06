@@ -16,6 +16,10 @@ export const COMPANY_INFO = {
 
 export const NAVBAR_DATA = [
   {
+    name: "Home",
+    link: "/",
+  },
+  {
     name: "Study Destinations",
     link: "/study-destinations",
     subOptions: [
