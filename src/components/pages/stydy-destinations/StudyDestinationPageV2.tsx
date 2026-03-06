@@ -42,7 +42,7 @@ interface StudyDestinationPageV2Props {
 
 const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
   const bgImage1 =
-    dataSet.hero_section.images?.[0]?.src || "/images/study_destinations/uk/1.jpg";
+    dataSet.hero_section.images?.[1]?.src || dataSet.hero_section.images?.[0]?.src || "/images/study_destinations/uk/2.jpg";
 
   return (
     <div
@@ -52,7 +52,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
       <DestinationHero dataSet={dataSet} />
 
       {/* Bento: Why Choose + Quick Facts (+ Cost if no detailed costs section) */}
-      <div id="details" className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-12 sm:py-16">
+      <div id="details" className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <DestinationWhyChoose data={dataSet.why_choose_section} />
           <DestinationQuickFacts data={dataSet.quick_facts_section} />
@@ -63,7 +63,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
       </div>
 
       {dataSet.who_is_it_for_section && (
-        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-16 sm:py-20">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-8 text-center">
             {dataSet.who_is_it_for_section.title}
           </h2>
@@ -98,7 +98,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* Intakes */}
       {dataSet.intakes_section && (
-        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-16 sm:py-20">
           <div className="rounded-2xl bg-white border border-slate-200 shadow-sm p-8 sm:p-10 text-center">
             <div className="flex items-center justify-center gap-3 mb-5">
               <CalendarDays size={24} className="text-[#D4AF37]" />
@@ -127,7 +127,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* Partner Institutions */}
       {dataSet.partner_institutions_section && (
-        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-16 sm:py-20">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-8 text-center">
             {dataSet.partner_institutions_section.title}
           </h2>
@@ -158,7 +158,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* The Uniguru Method */}
       {dataSet.uniguru_method_section && (
-        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-16 sm:py-20">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-3">
               {dataSet.uniguru_method_section.title}
@@ -191,7 +191,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* IAA Regulated Support */}
       {dataSet.iaa_section && (
-        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-16 sm:py-20">
           <div className="rounded-2xl bg-[#1a3b85] text-white p-8 sm:p-10">
             <div className="flex items-start gap-4 mb-4">
               <div className="p-3 rounded-xl bg-white/10 shrink-0" aria-hidden>
@@ -223,7 +223,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* Graduate Route */}
       {dataSet.graduate_route_section && (
-        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-16 sm:py-20">
           <div className="rounded-2xl bg-white border border-slate-200 shadow-sm p-8 sm:p-10">
             <div className="flex items-start gap-4 mb-5">
               <div className="p-3 rounded-xl bg-[#D4AF37]/15 shrink-0" aria-hidden>
@@ -250,7 +250,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* Costs and Planning — half-bleed bg image */}
       {dataSet.costs_planning_section && (
-        <section className="relative overflow-hidden py-12 sm:py-16">
+        <section className="relative overflow-hidden py-16 sm:py-20">
           {/* Full-width background image */}
           <div className="absolute inset-0">
             <Image src={bgImage1} alt="" fill className="object-cover object-center brightness-[0.6]" sizes="100vw" priority />
@@ -338,7 +338,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* FAQ */}
       {dataSet.faq_section && (
-        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
+        <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-16 sm:py-20">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-8 text-center">
             {dataSet.faq_section.title}
           </h2>
@@ -381,7 +381,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
         ];
 
         return (
-          <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
+          <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-16 sm:py-20">
             <div className="text-center mb-8">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-3">
                 {dataSet.opportunities_hub_section.title}
@@ -429,7 +429,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
 
       {/* CTA - Start with clarity */}
       {dataSet.cta_section && (
-        <section id="eligibility-form" className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pb-12 sm:pb-16">
+        <section id="eligibility-form" className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 py-16 sm:py-20">
           <div className="rounded-2xl bg-[#1a3b85] text-white p-8 sm:p-10 text-center">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-2">{dataSet.cta_section.title}</h2>
             <p className="text-white/80 text-base sm:text-lg mb-5">{dataSet.cta_section.subtitle}</p>
