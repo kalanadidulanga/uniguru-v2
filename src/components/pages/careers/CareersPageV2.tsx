@@ -47,7 +47,7 @@ const CareersPageV2 = () => {
             <section className="relative min-h-screen flex flex-col overflow-hidden">
                 {/* Background Image */}
                 <Image
-                    src="/images/careers/post1.png"
+                    src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1920&q=80"
                     alt="Uniguru Team"
                     fill
                     className="object-cover"

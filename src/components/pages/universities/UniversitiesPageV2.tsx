@@ -81,7 +81,7 @@ const UniversitiesPageV2 = () => {
             {/* --- HERO SECTION --- */}
             <section className="relative min-h-screen flex flex-col overflow-hidden">
                 <Image
-                    src="/images/universities-hero.jpg"
+                    src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1920&q=80"
                     alt="Universities"
                     fill
                     className="object-cover"
