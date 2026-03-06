@@ -353,33 +353,27 @@ const DocumentReadinessPageV2 = () => {
             src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=2000&q=90"
             alt="Professional documents and folders on a desk"
             fill
+            unoptimized
             quality={90}
             className="object-cover object-center scale-105"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/75 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/60 via-transparent to-[#0a1628]/20" />
-
-          {/* Floating decorative elements */}
-          <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-[#D4AF37]/10 blur-2xl animate-pulse hidden lg:block" />
-          <div className="absolute bottom-40 right-40 w-24 h-24 rounded-full bg-white/5 blur-xl hidden lg:block" />
-          <div className="absolute top-1/3 right-1/4 w-16 h-16 rounded-full bg-[#D4AF37]/5 blur-lg hidden lg:block" />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
 
           <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-3 mb-4 sm:mb-6">
-                <div className="w-8 sm:w-10 h-[2px] bg-gradient-to-r from-[#D4AF37] to-[#D4AF37]/40" />
-                <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <ClipboardCheck size={16} className="text-[#D4AF37]" />
+                <p className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
                   Submission Readiness
                 </p>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-[1.1] tracking-tight mb-4 sm:mb-6">
-                <span className="bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
-                  Document readiness:
-                </span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] tracking-tight mb-4 sm:mb-6">
+                Document readiness:
                 <br />
-                <span className="bg-gradient-to-r from-[#D4AF37] to-[#f5d76e] bg-clip-text text-transparent">
+                <span className="text-[#D4AF37]">
                   the difference between
                   <br className="hidden sm:block" />
                   {" "}&lsquo;submitted&rsquo; and &lsquo;credible&rsquo;
@@ -417,7 +411,7 @@ const DocumentReadinessPageV2 = () => {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
                 <a
                   href="#document-pack"
-                  className="group inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-[#D4AF37] to-[#c9a432] hover:from-[#e5c04a] hover:to-[#D4AF37] text-[#0d1b3e] font-semibold rounded-xl shadow-lg shadow-[#D4AF37]/20 hover:shadow-xl hover:shadow-[#D4AF37]/30 transition-all duration-300 text-sm sm:text-base"
+                  className="group inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg transition-all duration-200 text-sm shadow-md"
                 >
                   Get My Document Pack
                   <ArrowRight
@@ -429,7 +423,7 @@ const DocumentReadinessPageV2 = () => {
                   href={COMPANY_INFO.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 sm:py-4 bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white font-semibold rounded-xl transition-all duration-300 text-sm sm:text-base"
+                  className="inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg transition-all duration-200 text-sm border border-white/30"
                 >
                   <MessageCircle size={18} className="text-[#25D366]" />
                   Chat on WhatsApp
@@ -441,11 +435,6 @@ const DocumentReadinessPageV2 = () => {
               </p>
             </div>
           </div>
-
-          {/* Decorative icon */}
-          <div className="absolute bottom-10 right-10 opacity-10 hidden xl:block">
-            <ClipboardCheck size={120} className="text-white" />
-          </div>
         </section>
 
         {/* 2) Trust Bar */}
@@ -453,13 +442,15 @@ const DocumentReadinessPageV2 = () => {
       </div>
 
       {/* ═══════════════ 3) WHAT YOU GET ═══════════════ */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-3 sm:mb-4">
-              <FolderOpen size={14} />
-              Document Readiness Pack
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <FolderOpen size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Document Readiness Pack
+              </span>
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight">
               What you get
             </h2>
@@ -469,9 +460,9 @@ const DocumentReadinessPageV2 = () => {
             {WHAT_YOU_GET.map((item, i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow duration-300 text-center"
+                className="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow duration-300 text-center"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#1a3b85] text-white mb-4 sm:mb-5">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#1a3b85] text-white mb-4 sm:mb-5">
                   {item.icon}
                 </div>
                 <h3 className="text-base sm:text-lg font-semibold text-[#1a3b85] mb-2 sm:mb-3">
@@ -487,13 +478,15 @@ const DocumentReadinessPageV2 = () => {
       </section>
 
       {/* ═══════════════ 4) WHAT WE CHECK ═══════════════ */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1a3b85]/10 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-3 sm:mb-4">
-              <Eye size={14} />
-              Premium Detail
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Eye size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Premium Detail
+              </span>
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-2 sm:mb-3">
               What we check
             </h2>
@@ -534,33 +527,37 @@ const DocumentReadinessPageV2 = () => {
         </div>
       </section>
 
-      {/* ═══════════════ 5) WHO THIS IS FOR ═══════════════ */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      {/* ═══════════════ 5) WHO THIS IS FOR (Boundaries) ═══════════════ */}
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-3 sm:mb-4">
-              <Users size={14} />
-              Best Fit
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Users size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Best Fit
+              </span>
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] tracking-tight">
               Who this is for
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
-            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
-              <div className="bg-[#1a3b85] px-4 sm:px-6 py-3 sm:py-4 flex items-center gap-3">
-                <CheckCircle2 size={18} className="text-[#D4AF37] flex-shrink-0" />
-                <h3 className="text-white font-semibold text-sm sm:text-base lg:text-lg">
+            <div className="rounded-2xl border-2 border-emerald-200 bg-white shadow-sm p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-4 sm:mb-5">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 size={20} className="text-emerald-600" />
+                </div>
+                <h3 className="font-semibold text-sm sm:text-base lg:text-lg text-gray-900">
                   Best fit
                 </h3>
               </div>
-              <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {BEST_FIT.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle2
                       size={16}
-                      className="text-green-500 flex-shrink-0 mt-0.5"
+                      className="text-emerald-600 flex-shrink-0 mt-0.5"
                     />
                     <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       {item}
@@ -570,19 +567,21 @@ const DocumentReadinessPageV2 = () => {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
-              <div className="bg-gray-100 px-4 sm:px-6 py-3 sm:py-4 flex items-center gap-3">
-                <XCircle size={18} className="text-gray-400 flex-shrink-0" />
-                <h3 className="text-gray-800 font-semibold text-sm sm:text-base lg:text-lg">
+            <div className="rounded-2xl border-2 border-red-200 bg-white shadow-sm p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-4 sm:mb-5">
+                <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center flex-shrink-0">
+                  <XCircle size={20} className="text-red-500" />
+                </div>
+                <h3 className="font-semibold text-sm sm:text-base lg:text-lg text-gray-900">
                   Not for
                 </h3>
               </div>
-              <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {NOT_FOR.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <XCircle
                       size={16}
-                      className="text-red-400 flex-shrink-0 mt-0.5"
+                      className="text-red-500 flex-shrink-0 mt-0.5"
                     />
                     <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       {item}
@@ -596,17 +595,15 @@ const DocumentReadinessPageV2 = () => {
       </section>
 
       {/* ═══════════════ 6) HOW IT WORKS ═══════════════ */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-[#0f2554] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-48 sm:w-64 h-48 sm:h-64 rounded-full bg-white blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-64 sm:w-80 h-64 sm:h-80 rounded-full bg-[#D4AF37] blur-3xl" />
-        </div>
-
+      <section className="py-16 sm:py-20 bg-[#0f2554] relative overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-3 sm:mb-4 block">
-              Process
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <ListChecks size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Process
+              </span>
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white tracking-tight">
               How it works
             </h2>
@@ -684,26 +681,20 @@ const DocumentReadinessPageV2 = () => {
       {/* ═══════════════ 8) FORM SECTION ═══════════════ */}
       <section
         id="document-pack"
-        className="scroll-mt-20 py-12 sm:py-16 lg:py-20 relative overflow-hidden"
+        className="scroll-mt-20 py-16 sm:py-20 relative overflow-hidden"
       >
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2070&auto=format&fit=crop"
-            alt=""
-            fill
-            className="object-cover"
-            priority={false}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0f2554]/95 via-[#1a3b85]/92 to-[#0f2554]/95" />
-        </div>
+        <div className="absolute inset-0 bg-[#0f2554]" />
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-5 lg:gap-8 xl:gap-12">
             {/* Form Column */}
             <div className="lg:col-span-3 mb-8 lg:mb-0">
-              <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-3 sm:mb-4 block">
-                2-Minute Form
-              </span>
+              <div className="inline-flex items-center gap-2 mb-4">
+                <Send size={14} className="text-[#D4AF37]" />
+                <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                  2-Minute Form
+                </span>
+              </div>
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-white tracking-tight mb-2">
                 Document Pack Request
               </h2>
@@ -813,7 +804,7 @@ const DocumentReadinessPageV2 = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="group w-full inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-[#D4AF37] to-[#c9a432] hover:from-[#e5c04a] hover:to-[#D4AF37] text-[#0d1b3e] font-semibold rounded-xl shadow-lg shadow-[#D4AF37]/20 hover:shadow-xl hover:shadow-[#D4AF37]/30 transition-all duration-300 text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group w-full inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg transition-all duration-200 text-sm shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <>
@@ -840,7 +831,7 @@ const DocumentReadinessPageV2 = () => {
             {/* Sidebar */}
             <div className="lg:col-span-2 space-y-4 sm:space-y-5">
               {/* Quick contact */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/15 p-4 sm:p-6">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/15 p-5">
                 <h3 className="text-white font-semibold text-sm sm:text-base mb-3 sm:mb-4">
                   Prefer to chat?
                 </h3>
@@ -859,7 +850,7 @@ const DocumentReadinessPageV2 = () => {
               </div>
 
               {/* What happens next */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/15 p-4 sm:p-6">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/15 p-5">
                 <h3 className="text-white font-semibold text-sm sm:text-base mb-3 sm:mb-4">
                   What happens next?
                 </h3>
@@ -881,7 +872,7 @@ const DocumentReadinessPageV2 = () => {
               </div>
 
               {/* Trust signals */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/15 p-4 sm:p-6">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/15 p-5">
                 <div className="space-y-2.5 sm:space-y-3">
                   {[
                     {

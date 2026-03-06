@@ -31,7 +31,7 @@ const WHAT_YOU_GET = [
     icon: <Route size={24} />,
     title: "Route shortlist",
     description:
-      "2\u20134 sensible options (arrival city, connection time, baggage assumptions).",
+      "2-4 sensible options (arrival city, connection time, baggage assumptions).",
   },
   {
     icon: <Timer size={24} />,
@@ -287,39 +287,33 @@ const AirTicketingPageV2 = () => {
             src="https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&fit=crop&w=2000&q=90"
             alt="London Heathrow airport with airplane at sunset"
             fill
+            unoptimized
             quality={90}
             className="object-cover object-center scale-105"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/75 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/60 via-transparent to-[#0a1628]/20" />
-
-          {/* Floating decorative elements */}
-          <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-[#D4AF37]/10 blur-2xl animate-pulse hidden lg:block" />
-          <div className="absolute bottom-40 right-40 w-24 h-24 rounded-full bg-white/5 blur-xl hidden lg:block" />
-          <div className="absolute top-1/3 right-1/4 w-16 h-16 rounded-full bg-[#D4AF37]/5 blur-lg hidden lg:block" />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
 
           <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-3 mb-6">
-                <div className="w-10 h-[2px] bg-gradient-to-r from-[#D4AF37] to-[#D4AF37]/40" />
-                <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <Plane size={16} className="text-[#D4AF37]" />
+                <p className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
                   London to Anywhere
                 </p>
               </div>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] tracking-tight mb-6 sm:mb-8">
-                <span className="bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
-                  Your flight,
-                </span>
+                Your flight,
                 <br />
-                <span className="bg-gradient-to-r from-[#D4AF37] to-[#f5d76e] bg-clip-text text-transparent">
+                <span className="text-[#D4AF37]">
                   planned right
                 </span>
               </h1>
 
               <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-3 max-w-2xl">
-                Timing, routes, baggage, arrival  - everything aligned.
+                Timing, routes, baggage, arrival - everything aligned.
               </p>
               <p className="text-base sm:text-lg text-white/60 leading-relaxed mb-10 max-w-2xl">
                 We shortlist smart flight options through trusted travel partners
@@ -348,7 +342,7 @@ const AirTicketingPageV2 = () => {
               <div className="flex flex-wrap gap-4 mb-8">
                 <a
                   href="#travel-plan"
-                  className="group inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#c9a432] hover:from-[#e5c04a] hover:to-[#D4AF37] text-[#0d1b3e] font-semibold rounded-xl shadow-lg shadow-[#D4AF37]/20 hover:shadow-xl hover:shadow-[#D4AF37]/30 transition-all duration-300 text-sm sm:text-base"
+                  className="group inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg transition-all duration-200 text-sm shadow-md"
                 >
                   Get My Travel Plan
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -357,7 +351,7 @@ const AirTicketingPageV2 = () => {
                   href={COMPANY_INFO.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-6 py-4 bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white font-semibold rounded-xl transition-all duration-300 text-sm sm:text-base"
+                  className="inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg transition-all duration-200 text-sm border border-white/30"
                 >
                   <MessageCircle size={18} className="text-[#25D366]" />
                   Chat on WhatsApp
@@ -365,15 +359,10 @@ const AirTicketingPageV2 = () => {
               </div>
 
               <p className="text-xs sm:text-sm text-white/40 max-w-lg">
-                Prices change quickly  - we plan conservatively and confirm fare
+                Prices change quickly - we plan conservatively and confirm fare
                 conditions before you book.
               </p>
             </div>
-          </div>
-
-          {/* Decorative airplane silhouette */}
-          <div className="absolute bottom-10 right-10 opacity-10 hidden xl:block">
-            <Plane size={120} className="text-white rotate-45" />
           </div>
         </section>
 
@@ -382,13 +371,15 @@ const AirTicketingPageV2 = () => {
       </div>
 
       {/* ═══════════════ 3) WHAT YOU GET ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-              <Plane size={14} />
-              What You Get
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Plane size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                What You Get
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1a3b85] tracking-tight">
               Your travel plan includes
             </h2>
@@ -416,18 +407,15 @@ const AirTicketingPageV2 = () => {
       </section>
 
       {/* ═══════════════ 4) HOW IT WORKS ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-[#0f2554] relative overflow-hidden">
-        {/* Subtle background pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-white blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-[#D4AF37] blur-3xl" />
-        </div>
-
+      <section className="py-16 sm:py-20 bg-[#0f2554] relative overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12 sm:mb-16">
-            <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-4 block">
-              Process
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Route size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Process
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight">
               How it works
             </h2>
@@ -476,13 +464,15 @@ const AirTicketingPageV2 = () => {
       </section>
 
       {/* ═══════════════ 5) BOUNDARIES TABLE ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-              <Shield size={14} />
-              Transparency
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Shield size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Transparency
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1a3b85] tracking-tight">
               What we will and will not do
             </h2>
@@ -490,19 +480,21 @@ const AirTicketingPageV2 = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {/* Will do */}
-            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
-              <div className="bg-[#1a3b85] px-6 py-4 flex items-center gap-3">
-                <CheckCircle2 size={20} className="text-[#D4AF37]" />
-                <h3 className="text-white font-semibold text-base sm:text-lg">
+            <div className="rounded-2xl border-2 border-emerald-200 bg-white shadow-sm p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center">
+                  <CheckCircle2 size={20} className="text-emerald-600" />
+                </div>
+                <h3 className="text-[#1a3b85] font-semibold text-base sm:text-lg">
                   What we will do
                 </h3>
               </div>
-              <div className="p-6 space-y-4">
+              <div className="space-y-4">
                 {WILL_DO.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle2
                       size={18}
-                      className="text-green-500 flex-shrink-0 mt-0.5"
+                      className="text-emerald-600 flex-shrink-0 mt-0.5"
                     />
                     <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       {item}
@@ -513,19 +505,21 @@ const AirTicketingPageV2 = () => {
             </div>
 
             {/* Won't do */}
-            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
-              <div className="bg-gray-100 px-6 py-4 flex items-center gap-3">
-                <XCircle size={20} className="text-gray-400" />
-                <h3 className="text-gray-800 font-semibold text-base sm:text-lg">
+            <div className="rounded-2xl border-2 border-red-200 bg-white shadow-sm p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center">
+                  <XCircle size={20} className="text-red-500" />
+                </div>
+                <h3 className="text-[#1a3b85] font-semibold text-base sm:text-lg">
                   What we will not do
                 </h3>
               </div>
-              <div className="p-6 space-y-4">
+              <div className="space-y-4">
                 {WONT_DO.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <XCircle
                       size={18}
-                      className="text-red-400 flex-shrink-0 mt-0.5"
+                      className="text-red-500 flex-shrink-0 mt-0.5"
                     />
                     <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       {item}
@@ -541,42 +535,31 @@ const AirTicketingPageV2 = () => {
       {/* ═══════════════ 6+7) MID-PAGE CTA ═══════════════ */}
       <section
         id="travel-plan"
-        className="scroll-mt-20 py-16 sm:py-20 lg:py-24 relative overflow-hidden"
+        className="scroll-mt-20 py-16 sm:py-20 relative overflow-hidden"
       >
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop"
-            alt=""
-            fill
-            className="object-cover"
-            priority={false}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0f2554]/95 via-[#1a3b85]/92 to-[#0f2554]/95" />
-        </div>
-
-        {/* Decorative Elements */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-[#D4AF37]/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-white/5 rounded-full blur-2xl" />
+        {/* Solid background */}
+        <div className="absolute inset-0 bg-[#0f2554]" />
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* CTA Header */}
           <div className="text-center mb-12 sm:mb-16">
-            <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-4 block drop-shadow-sm">
-              Get Started
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5 drop-shadow-md">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Send size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Get Started
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5">
               Ready to plan your flight properly?
             </h2>
-            <p className="text-white text-base sm:text-lg max-w-xl mx-auto font-medium drop-shadow-sm">
+            <p className="text-white text-base sm:text-lg max-w-xl mx-auto font-medium">
               Get a travel plan aligned to your destination, intake, and baggage
               without pressure.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start max-w-[1200px] mx-auto">
-            {/* Left side  - Form (3/5) */}
+            {/* Left side - Form (3/5) */}
             <div className="lg:col-span-3">
               <form
                 onSubmit={handleSubmit}
@@ -592,7 +575,7 @@ const AirTicketingPageV2 = () => {
                   </p>
                 </div>
 
-                {/* Row 1  - Destination + Arrival */}
+                {/* Row 1 - Destination + Arrival */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
@@ -626,7 +609,7 @@ const AirTicketingPageV2 = () => {
                   </div>
                 </div>
 
-                {/* Row 2  - WhatsApp + Email */}
+                {/* Row 2 - WhatsApp + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
@@ -660,7 +643,7 @@ const AirTicketingPageV2 = () => {
                   </div>
                 </div>
 
-                {/* Row 3  - Departure + Budget */}
+                {/* Row 3 - Departure + Budget */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
@@ -689,7 +672,7 @@ const AirTicketingPageV2 = () => {
                   </div>
                 </div>
 
-                {/* Row 4  - Baggage */}
+                {/* Row 4 - Baggage */}
                 <div>
                   <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
                     Baggage needs (optional)
@@ -727,7 +710,7 @@ const AirTicketingPageV2 = () => {
               </form>
             </div>
 
-            {/* Right side  - Sidebar (2/5) */}
+            {/* Right side - Sidebar (2/5) */}
             <div className="lg:col-span-2 flex flex-col gap-5">
               {/* Quick stats */}
               <div className="grid grid-cols-2 gap-3">
@@ -756,7 +739,7 @@ const AirTicketingPageV2 = () => {
                     <Shield size={18} className="text-[#D4AF37]" />
                   </div>
                   <span className="text-white text-sm font-medium leading-snug">
-                    IAA Regulated &middot; {COMPANY_INFO.iaaReg}
+                    IAA Regulated | {COMPANY_INFO.iaaReg}
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -792,7 +775,7 @@ const AirTicketingPageV2 = () => {
                   Chat on WhatsApp
                 </a>
                 <p className="text-white/60 text-xs mt-2.5 text-center">
-                  {COMPANY_INFO.phone} &middot; {COMPANY_INFO.email}
+                  {COMPANY_INFO.phone} | {COMPANY_INFO.email}
                 </p>
               </div>
 

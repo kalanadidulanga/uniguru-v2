@@ -99,22 +99,25 @@ const AccommodationPageV2 = () => {
           className="object-cover object-center"
           priority
         />
-        {/* Left-heavy overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/90 via-[#0a1628]/70 to-[#0a1628]/40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/35 via-transparent to-[#0a1628]/50" />
+        {/* Clean overlay */}
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
 
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
             {/* Left  - copy (3 cols) */}
             <div className="lg:col-span-3 text-center lg:text-left">
-              <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-4 sm:mb-5">
-                Student Housing Support
+              <p className="inline-flex items-center gap-2 mb-4 sm:mb-5">
+                <Home size={16} className="text-[#D4AF37]" />
+                <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                  Student Housing Support
+                </span>
               </p>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.15] tracking-tight mb-6 sm:mb-8">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] tracking-tight mb-6 sm:mb-8">
                 Accommodation,
                 <br />
-                made simple
+                <span className="text-[#D4AF37]">made simple</span>
               </h1>
 
               <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-3 max-w-xl mx-auto lg:mx-0 font-normal">
@@ -146,7 +149,7 @@ const AccommodationPageV2 = () => {
               <div className="flex flex-col sm:flex-row items-center lg:items-start gap-3 sm:gap-4">
                 <a
                   href="#accommodation-shortlist"
-                  className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#0d1b3e] font-semibold py-3.5 px-8 rounded-lg hover:bg-[#c9a432] transition-colors text-sm sm:text-base"
+                  className="group inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg transition-all duration-200 text-sm shadow-md"
                 >
                   Get My Accommodation Shortlist
                   <ArrowRight className="w-4 h-4" />
@@ -155,9 +158,9 @@ const AccommodationPageV2 = () => {
                   href={COMPANY_INFO.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#25D366] text-white font-medium py-3.5 px-6 rounded-lg hover:bg-[#20bd5a] transition-colors text-sm sm:text-base"
+                  className="inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg transition-all duration-200 text-sm border border-white/30"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <MessageCircle className="w-4 h-4 text-[#25D366]" />
                   Chat on WhatsApp
                 </a>
               </div>
@@ -175,6 +178,7 @@ const AccommodationPageV2 = () => {
                   alt="Student accommodation"
                   fill
                   quality={100}
+                  unoptimized
                   className="object-cover"
                 />
               </div>
@@ -184,6 +188,7 @@ const AccommodationPageV2 = () => {
                   alt="Student room"
                   fill
                   quality={100}
+                  unoptimized
                   className="object-cover"
                 />
               </div>
@@ -199,8 +204,8 @@ const AccommodationPageV2 = () => {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
           <Shield className="w-4 h-4 text-[#D4AF37] shrink-0" />
           <p className="text-white/90 text-xs sm:text-sm tracking-wide text-center">
-            Immigration Advice Authority (IAA) Regulated &bull; {COMPANY_INFO.iaaReg} &bull;
-            {COMPANY_INFO.address} &bull; {COMPANY_INFO.googleReviews} Google Reviews
+            Immigration Advice Authority (IAA) Regulated | {COMPANY_INFO.iaaReg} |
+            {COMPANY_INFO.address} | {COMPANY_INFO.googleReviews} Google Reviews
           </p>
         </div>
       </section>
@@ -209,11 +214,14 @@ const AccommodationPageV2 = () => {
       {/* ═══════════════════════════════════════════════════
           3) WHAT WE HELP WITH  - 3 clean cards
          ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <header className="mb-12 sm:mb-14">
-            <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-3">
-              Our Support
+            <p className="inline-flex items-center gap-2 mb-4">
+              <Shield size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Our Support
+              </span>
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#1a3b85] tracking-tight leading-tight">
               What we help with
@@ -240,9 +248,9 @@ const AccommodationPageV2 = () => {
             ].map((card, i) => (
               <div
                 key={i}
-                className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow"
+                className="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="w-12 h-12 rounded-lg bg-[#1a3b85] text-white flex items-center justify-center mb-5">
+                <div className="w-14 h-14 rounded-2xl bg-[#1a3b85] text-white flex items-center justify-center mb-5">
                   {card.icon}
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-[#1a3b85] mb-2">
@@ -260,11 +268,14 @@ const AccommodationPageV2 = () => {
       {/* ═══════════════════════════════════════════════════
           4) HOW IT WORKS  - dark section (same as WhyUniguru)
          ═══════════════════════════════════════════════════ */}
-      <section className="bg-[#0f2554] py-16 sm:py-20 lg:py-24">
+      <section className="bg-[#0f2554] py-16 sm:py-20">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <header className="mb-12 sm:mb-14">
-            <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-3">
-              Simple Process
+            <p className="inline-flex items-center gap-2 mb-4">
+              <Clock size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Simple Process
+              </span>
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight">
               How it works
@@ -303,10 +314,10 @@ const AccommodationPageV2 = () => {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-[#132d5e] border border-white/10 rounded-lg p-6 sm:p-7 hover:bg-[#163573] transition-all"
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 sm:p-7 hover:bg-white/10 transition-all"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl sm:text-3xl font-semibold text-[#D4AF37]/50">
+                  <span className="w-10 h-10 rounded-full bg-[#D4AF37] text-[#0d1b3e] font-bold text-sm flex items-center justify-center">
                     {item.step}
                   </span>
                   <div className="w-8 h-8 rounded-lg bg-white/10 text-[#D4AF37] flex items-center justify-center">
@@ -333,11 +344,14 @@ const AccommodationPageV2 = () => {
       {/* ═══════════════════════════════════════════════════
           5) CHOOSE YOUR DESTINATION  - country tiles
          ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <header className="mb-12 sm:mb-14">
-            <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-3">
-              Destinations
+            <p className="inline-flex items-center gap-2 mb-4">
+              <ArrowRight size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Destinations
+              </span>
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#1a3b85] tracking-tight leading-tight">
               Choose your destination
@@ -357,6 +371,7 @@ const AccommodationPageV2 = () => {
                     alt={item.name}
                     fill
                     quality={100}
+                    unoptimized
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
@@ -367,6 +382,7 @@ const AccommodationPageV2 = () => {
                         alt=""
                         fill
                         quality={100}
+                        unoptimized
                         className="object-cover"
                       />
                     </div>
@@ -392,7 +408,7 @@ const AccommodationPageV2 = () => {
       {/* ═══════════════════════════════════════════════════
           6) WHAT YOU RECEIVE  - image + list
          ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Image */}
@@ -402,14 +418,18 @@ const AccommodationPageV2 = () => {
                 alt="Student accommodation"
                 fill
                 quality={100}
+                unoptimized
                 className="object-cover"
               />
             </div>
 
             {/* Content */}
             <div>
-              <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-3">
-                Deliverables
+              <p className="inline-flex items-center gap-2 mb-4">
+                <CheckCircle2 size={14} className="text-[#D4AF37]" />
+                <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                  Deliverables
+                </span>
               </p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#1a3b85] tracking-tight leading-tight mb-8">
                 What you receive
@@ -457,7 +477,7 @@ const AccommodationPageV2 = () => {
       {/* ═══════════════════════════════════════════════════
           7) MID-PAGE CTA  - dark section
          ═══════════════════════════════════════════════════ */}
-      <section className="bg-[#0f2554] py-16 sm:py-20 lg:py-24">
+      <section className="bg-[#0f2554] py-16 sm:py-20">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight mb-5">
             Need help choosing accommodation?
@@ -469,7 +489,7 @@ const AccommodationPageV2 = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="#accommodation-shortlist"
-              className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#0d1b3e] font-semibold py-3.5 px-8 rounded-lg hover:bg-[#c9a432] transition-colors"
+              className="group inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg transition-all duration-200 text-sm shadow-md"
             >
               Get My Accommodation Shortlist
               <ArrowRight className="w-4 h-4" />
@@ -478,9 +498,9 @@ const AccommodationPageV2 = () => {
               href={COMPANY_INFO.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] text-white font-medium py-3.5 px-6 rounded-lg hover:bg-[#20bd5a] transition-colors text-sm sm:text-base"
+              className="inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg transition-all duration-200 text-sm border border-white/30"
             >
-              <MessageCircle className="w-4 h-4" />
+              <MessageCircle className="w-4 h-4 text-[#25D366]" />
               Chat on WhatsApp
             </a>
           </div>
@@ -492,170 +512,216 @@ const AccommodationPageV2 = () => {
          ═══════════════════════════════════════════════════ */}
       <section
         id="accommodation-shortlist"
-        className="py-16 sm:py-20 lg:py-24 bg-slate-50 scroll-mt-20"
+        className="relative py-16 sm:py-20 scroll-mt-20 overflow-hidden"
       >
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-8 sm:mb-10">
-            <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-3">
-              Get Started
+        <div className="absolute inset-0 bg-[#0f2554]" />
+
+        <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="mb-8 sm:mb-10">
+            <p className="inline-flex items-center gap-2 mb-4">
+              <Send size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Get Started
+              </span>
             </p>
-            <h2 className="text-3xl sm:text-4xl font-semibold text-[#1a3b85] tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight leading-tight">
               Accommodation Shortlist Request
             </h2>
-            <p className="text-sm text-gray-500 mt-2">Takes about 2 minutes</p>
+            <p className="text-sm text-white/50 mt-2">Takes about 2 minutes</p>
           </header>
 
-          <form
-            onSubmit={handleSubmit}
-            className="bg-white rounded-2xl border border-gray-100 shadow-2xl p-6 sm:p-8 lg:p-10 space-y-3.5 sm:space-y-4"
-          >
-            {/* Destination + Intake row */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
-              <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
-                  Destination <span className="text-red-400">*</span>
-                </label>
-                <select
-                  value={form.destination}
-                  onChange={(e) =>
-                    setForm({ ...form, destination: e.target.value })
-                  }
-                  className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#1a3b85]/20 focus:border-[#1a3b85] bg-white transition-colors"
-                  required
-                >
-                  <option value="">Select a destination</option>
-                  <option value="UK">UK</option>
-                  <option value="Canada">Canada</option>
-                  <option value="Australia">Australia</option>
-                  <option value="Netherlands">Netherlands</option>
-                  <option value="Germany">Germany</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
-                  Intake / move in month
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. September 2026"
-                  value={form.intake}
-                  onChange={(e) =>
-                    setForm({ ...form, intake: e.target.value })
-                  }
-                  className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#1a3b85]/20 focus:border-[#1a3b85] transition-colors"
-                />
-              </div>
-            </div>
-
-            {/* WhatsApp */}
-            <div>
-              <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
-                WhatsApp number <span className="text-red-400">*</span>
-              </label>
-              <input
-                type="tel"
-                placeholder="+94 7X XXX XXXX"
-                value={form.whatsapp}
-                onChange={(e) =>
-                  setForm({ ...form, whatsapp: e.target.value })
-                }
-                className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#1a3b85]/20 focus:border-[#1a3b85] transition-colors"
-                required
-              />
-            </div>
-
-            {/* Optional fields */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4">
-              <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
-                  Budget band{" "}
-                  <span className="text-xs text-gray-400 font-normal">
-                    (optional)
-                  </span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="600 to 900/mo"
-                  value={form.budget}
-                  onChange={(e) =>
-                    setForm({ ...form, budget: e.target.value })
-                  }
-                  className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#1a3b85]/20 focus:border-[#1a3b85] transition-colors"
-                />
-              </div>
-              <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
-                  City / area{" "}
-                  <span className="text-xs text-gray-400 font-normal">
-                    (optional)
-                  </span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. Manchester"
-                  value={form.city}
-                  onChange={(e) =>
-                    setForm({ ...form, city: e.target.value })
-                  }
-                  className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#1a3b85]/20 focus:border-[#1a3b85] transition-colors"
-                />
-              </div>
-              <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
-                  Max commute{" "}
-                  <span className="text-xs text-gray-400 font-normal">
-                    (optional)
-                  </span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. 30 mins"
-                  value={form.commute}
-                  onChange={(e) =>
-                    setForm({ ...form, commute: e.target.value })
-                  }
-                  className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#1a3b85]/20 focus:border-[#1a3b85] transition-colors"
-                />
-              </div>
-            </div>
-
-            {/* Submit */}
-            <div className="pt-2">
-              <button
-                type="submit"
-                disabled={loading}
-                className="relative w-full h-11 sm:h-12 bg-[#1a3b85] text-white font-medium text-sm sm:text-base rounded-lg hover:bg-[#152d6b] shadow-md hover:shadow-lg transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-10">
+            {/* Form - 3/5 */}
+            <div className="lg:col-span-3">
+              <form
+                onSubmit={handleSubmit}
+                className="bg-white rounded-2xl border border-gray-100 shadow-2xl p-6 sm:p-8 lg:p-10 space-y-3.5 sm:space-y-4"
               >
-                {loading ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin" /> Sending...
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-4 h-4" /> Get My Accommodation Shortlist
-                  </>
-                )}
-              </button>
-              <p className="text-[10px] sm:text-xs text-gray-500 text-center pt-3">
-                Shortlist typically within 24 to 48 hours (working days).
-              </p>
+                {/* Destination + Intake row */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                  <div>
+                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
+                      Destination <span className="text-red-400">*</span>
+                    </label>
+                    <select
+                      value={form.destination}
+                      onChange={(e) =>
+                        setForm({ ...form, destination: e.target.value })
+                      }
+                      className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#1a3b85]/20 focus:border-[#1a3b85] bg-white transition-colors"
+                      required
+                    >
+                      <option value="">Select a destination</option>
+                      <option value="UK">UK</option>
+                      <option value="Canada">Canada</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Netherlands">Netherlands</option>
+                      <option value="Germany">Germany</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
+                      Intake / move in month
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g. September 2026"
+                      value={form.intake}
+                      onChange={(e) =>
+                        setForm({ ...form, intake: e.target.value })
+                      }
+                      className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#1a3b85]/20 focus:border-[#1a3b85] transition-colors"
+                    />
+                  </div>
+                </div>
+
+                {/* WhatsApp */}
+                <div>
+                  <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
+                    WhatsApp number <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="+94 7X XXX XXXX"
+                    value={form.whatsapp}
+                    onChange={(e) =>
+                      setForm({ ...form, whatsapp: e.target.value })
+                    }
+                    className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#1a3b85]/20 focus:border-[#1a3b85] transition-colors"
+                    required
+                  />
+                </div>
+
+                {/* Optional fields */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4">
+                  <div>
+                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
+                      Budget band{" "}
+                      <span className="text-xs text-gray-400 font-normal">
+                        (optional)
+                      </span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="600 to 900/mo"
+                      value={form.budget}
+                      onChange={(e) =>
+                        setForm({ ...form, budget: e.target.value })
+                      }
+                      className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#1a3b85]/20 focus:border-[#1a3b85] transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
+                      City / area{" "}
+                      <span className="text-xs text-gray-400 font-normal">
+                        (optional)
+                      </span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Manchester"
+                      value={form.city}
+                      onChange={(e) =>
+                        setForm({ ...form, city: e.target.value })
+                      }
+                      className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#1a3b85]/20 focus:border-[#1a3b85] transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5">
+                      Max commute{" "}
+                      <span className="text-xs text-gray-400 font-normal">
+                        (optional)
+                      </span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g. 30 mins"
+                      value={form.commute}
+                      onChange={(e) =>
+                        setForm({ ...form, commute: e.target.value })
+                      }
+                      className="w-full h-11 border border-gray-300 rounded-lg px-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#1a3b85]/20 focus:border-[#1a3b85] transition-colors"
+                    />
+                  </div>
+                </div>
+
+                {/* Submit */}
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="relative w-full h-11 sm:h-12 bg-[#1a3b85] text-white font-medium text-sm sm:text-base rounded-lg hover:bg-[#152d6b] shadow-md hover:shadow-lg transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  >
+                    {loading ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" /> Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" /> Get My Accommodation Shortlist
+                      </>
+                    )}
+                  </button>
+                  <p className="text-[10px] sm:text-xs text-gray-500 text-center pt-3">
+                    Shortlist typically within 24 to 48 hours (working days).
+                  </p>
+                </div>
+              </form>
             </div>
-          </form>
+
+            {/* Sidebar - 2/5 */}
+            <div className="lg:col-span-2 space-y-4">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/15">
+                <div className="flex items-center gap-3 mb-3">
+                  <Clock className="w-5 h-5 text-[#D4AF37]" />
+                  <h3 className="text-white font-semibold text-sm">Quick Turnaround</h3>
+                </div>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  Shortlist and next steps typically within 24 to 48 hours on working days.
+                </p>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/15">
+                <div className="flex items-center gap-3 mb-3">
+                  <Shield className="w-5 h-5 text-[#D4AF37]" />
+                  <h3 className="text-white font-semibold text-sm">Guided, Not Pressured</h3>
+                </div>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  We guide you through options and key terms. No upsell, no pressure - just clear decision-making.
+                </p>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/15">
+                <div className="flex items-center gap-3 mb-3">
+                  <DollarSign className="w-5 h-5 text-[#D4AF37]" />
+                  <h3 className="text-white font-semibold text-sm">Budget Aligned</h3>
+                </div>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  Options matched to your budget, commute preferences, and timeline requirements.
+                </p>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/15">
+                <div className="flex items-center gap-2">
+                  <Shield className="w-3.5 h-3.5 text-[#D4AF37]" />
+                  <p className="text-xs text-white/40">
+                    IAA Regulated | {COMPANY_INFO.iaaReg} | {COMPANY_INFO.address} | {COMPANY_INFO.googleReviews} Google Reviews
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Disclosure */}
-          <div className="mt-8 text-center space-y-2.5">
-            <p className="text-xs text-gray-400 leading-relaxed max-w-2xl mx-auto">
+          <div className="mt-8 text-center">
+            <p className="text-xs text-white/40 leading-relaxed max-w-2xl mx-auto">
               Accommodation options are provided via third party housing
               partners. We guide you in selecting suitable options and
               understanding key terms; availability, pricing, and contract terms
               are set by the provider.
             </p>
-            <div className="flex items-center justify-center gap-2">
-              <Shield className="w-3.5 h-3.5 text-[#D4AF37]" />
-              <p className="text-xs text-gray-400">
-                IAA Regulated &bull; {COMPANY_INFO.iaaReg} &bull; {COMPANY_INFO.address} &bull; {COMPANY_INFO.googleReviews} Google Reviews
-              </p>
-            </div>
           </div>
         </div>
       </section>

@@ -105,33 +105,27 @@ const FreeIeltsServicePageV2 = () => {
             src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=2000&q=90"
             alt="Student studying with books and notes for IELTS preparation"
             fill
+            unoptimized
             quality={90}
             className="object-cover object-center scale-105"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/75 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/60 via-transparent to-[#0a1628]/20" />
-
-          {/* Floating decorative elements */}
-          <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-[#D4AF37]/10 blur-2xl animate-pulse hidden lg:block" />
-          <div className="absolute bottom-40 right-40 w-24 h-24 rounded-full bg-white/5 blur-xl hidden lg:block" />
-          <div className="absolute top-1/3 right-1/4 w-16 h-16 rounded-full bg-[#D4AF37]/5 blur-lg hidden lg:block" />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
 
           <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-3 mb-6">
-                <div className="w-10 h-[2px] bg-gradient-to-r from-[#D4AF37] to-[#D4AF37]/40" />
-                <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <BookOpen size={16} className="text-[#D4AF37]" />
+                <p className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
                   Free IELTS Resources
                 </p>
               </div>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] tracking-tight mb-6 sm:mb-8">
-                <span className="bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
-                  Master IELTS with
-                </span>
+                Master IELTS with
                 <br />
-                <span className="bg-gradient-to-r from-[#D4AF37] to-[#f5d76e] bg-clip-text text-transparent">
+                <span className="text-[#D4AF37]">
                   free resources
                 </span>
               </h1>
@@ -167,7 +161,7 @@ const FreeIeltsServicePageV2 = () => {
               <div className="flex flex-wrap gap-4 mb-8">
                 <a
                   href="#modules"
-                  className="group inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#c9a432] hover:from-[#e5c04a] hover:to-[#D4AF37] text-[#0d1b3e] font-semibold rounded-xl shadow-lg shadow-[#D4AF37]/20 hover:shadow-xl hover:shadow-[#D4AF37]/30 transition-all duration-300 text-sm sm:text-base"
+                  className="group inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg transition-all duration-200 text-sm shadow-md"
                 >
                   Start Learning
                   <ArrowRight
@@ -179,7 +173,7 @@ const FreeIeltsServicePageV2 = () => {
                   href={GOOGLE_DRIVE_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-6 py-4 bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white font-semibold rounded-xl transition-all duration-300 text-sm sm:text-base"
+                  className="inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg transition-all duration-200 text-sm border border-white/30"
                 >
                   <Download size={18} className="text-[#D4AF37]" />
                   Access Free Materials
@@ -198,11 +192,6 @@ const FreeIeltsServicePageV2 = () => {
               </p>
             </div>
           </div>
-
-          {/* Decorative icon */}
-          <div className="absolute bottom-10 right-10 opacity-10 hidden xl:block">
-            <GraduationCap size={120} className="text-white" />
-          </div>
         </section>
 
         {/* 2) Trust Bar */}
@@ -210,12 +199,14 @@ const FreeIeltsServicePageV2 = () => {
       </div>
 
       {/* ═══════════════ 3) WHAT YOU GET ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-              <BookOpen size={14} />
-              Free Resources
+            <span className="inline-flex items-center gap-2 mb-4">
+              <BookOpen size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Free Resources
+              </span>
             </span>
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1a3b85] tracking-tight">
               What you get
@@ -244,13 +235,15 @@ const FreeIeltsServicePageV2 = () => {
       </section>
 
       {/* ═══════════════ 4) WHY FREE ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
             <div>
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1a3b85]/10 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-                <Shield size={14} />
-                Why Free
+              <span className="inline-flex items-center gap-2 mb-4">
+                <Shield size={14} className="text-[#D4AF37]" />
+                <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                  Why Free
+                </span>
               </span>
               <h2 className="text-3xl sm:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-6">
                 Why we offer this for free
@@ -292,6 +285,7 @@ const FreeIeltsServicePageV2 = () => {
                   src="/images/services/free-ielts-service/02.png"
                   alt="IELTS studying"
                   fill
+                  unoptimized
                   className="object-cover"
                 />
               </div>
@@ -300,6 +294,7 @@ const FreeIeltsServicePageV2 = () => {
                   src="/images/services/free-ielts-service/01.png"
                   alt="IELTS materials"
                   fill
+                  unoptimized
                   className="object-cover"
                 />
               </div>
@@ -309,6 +304,7 @@ const FreeIeltsServicePageV2 = () => {
                 src="/images/services/free-ielts-service/01.png"
                 alt="IELTS materials"
                 fill
+                unoptimized
                 className="object-cover"
               />
             </div>
@@ -317,12 +313,14 @@ const FreeIeltsServicePageV2 = () => {
       </section>
 
       {/* ═══════════════ 5) COURSE MODULES ═══════════════ */}
-      <section id="modules" className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-white">
+      <section id="modules" className="scroll-mt-20 py-16 sm:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-              <GraduationCap size={14} />
-              Study Material
+            <span className="inline-flex items-center gap-2 mb-4">
+              <GraduationCap size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Study Material
+              </span>
             </span>
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1a3b85] tracking-tight">
               Course modules
@@ -347,6 +345,7 @@ const FreeIeltsServicePageV2 = () => {
                       src={mod.image}
                       alt={`${mod.title} module`}
                       fill
+                      unoptimized
                       className="object-contain p-4 group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
@@ -377,7 +376,7 @@ const FreeIeltsServicePageV2 = () => {
               href={GOOGLE_DRIVE_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#c9a432] hover:from-[#e5c04a] hover:to-[#D4AF37] text-[#0d1b3e] font-semibold rounded-xl shadow-lg shadow-[#D4AF37]/20 hover:shadow-xl hover:shadow-[#D4AF37]/30 transition-all duration-300 text-sm sm:text-base"
+              className="group inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg transition-all duration-200 text-sm shadow-md"
             >
               <Download size={18} />
               Access All Free Materials
@@ -391,16 +390,14 @@ const FreeIeltsServicePageV2 = () => {
       </section>
 
       {/* ═══════════════ 6) UPGRADE CTA ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-[#0f2554] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-white blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-[#D4AF37] blur-3xl" />
-        </div>
-
+      <section className="py-16 sm:py-20 bg-[#0f2554] relative overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-4 block">
-              Need More?
+            <span className="inline-flex items-center gap-2 mb-4 justify-center">
+              <Target size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Need More?
+              </span>
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5">
               Want personalised coaching?
@@ -415,7 +412,7 @@ const FreeIeltsServicePageV2 = () => {
             <div className="flex flex-wrap gap-4 justify-center mb-8">
               <Link
                 href="/services/ielts-interview-prep"
-                className="group inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#c9a432] hover:from-[#e5c04a] hover:to-[#D4AF37] text-[#0d1b3e] font-semibold rounded-xl shadow-lg shadow-[#D4AF37]/20 hover:shadow-xl hover:shadow-[#D4AF37]/30 transition-all duration-300 text-sm sm:text-base"
+                className="group inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg transition-all duration-200 text-sm shadow-md"
               >
                 Get My Prep Plan
                 <ArrowRight
@@ -427,7 +424,7 @@ const FreeIeltsServicePageV2 = () => {
                 href={COMPANY_INFO.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-4 bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white font-semibold rounded-xl transition-all duration-300 text-sm sm:text-base"
+                className="inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg transition-all duration-200 text-sm border border-white/30"
               >
                 <MessageCircle size={18} className="text-[#25D366]" />
                 Chat on WhatsApp
@@ -437,7 +434,7 @@ const FreeIeltsServicePageV2 = () => {
             {/* Trust line */}
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-10">
               {[
-                { icon: <Shield size={14} />, text: `IAA Regulated \u00B7 ${COMPANY_INFO.iaaReg}` },
+                { icon: <Shield size={14} />, text: `IAA Regulated | ${COMPANY_INFO.iaaReg}` },
                 { icon: <CheckCircle2 size={14} />, text: `${COMPANY_INFO.googleReviews} Google Reviews` },
                 { icon: <MapPin size={14} />, text: COMPANY_INFO.address },
               ].map((item, i) => (
@@ -452,7 +449,7 @@ const FreeIeltsServicePageV2 = () => {
             </div>
 
             <p className="text-white/40 text-xs mt-4">
-              WhatsApp {COMPANY_INFO.phone} &middot; {COMPANY_INFO.email}
+              WhatsApp {COMPANY_INFO.phone} | {COMPANY_INFO.email}
             </p>
           </div>
         </div>

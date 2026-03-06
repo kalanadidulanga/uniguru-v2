@@ -138,7 +138,7 @@ const JOB_SOURCES = [
     icon: <MapPin size={20} />,
     title: "Google Maps target list",
     description:
-      "Local restaurants, retailers, warehouses \u2014 with outreach scripts.",
+      "Local restaurants, retailers, warehouses - with outreach scripts.",
   },
   {
     icon: <Users size={20} />,
@@ -149,16 +149,16 @@ const JOB_SOURCES = [
 
 const SPRINT_DAYS = [
   { day: "Day 1", tasks: "CV final + profile setup + shortlist target roles" },
-  { day: "Day 2", tasks: "Apply to 15\u201325 roles + follow-up template" },
+  { day: "Day 2", tasks: "Apply to 15-25 roles + follow-up template" },
   {
     day: "Day 3",
-    tasks: "Apply to 15\u201325 roles + improve based on responses",
+    tasks: "Apply to 15-25 roles + improve based on responses",
   },
   {
     day: "Day 4",
-    tasks: "Interview prep + mock questions + apply 10\u201315 roles",
+    tasks: "Interview prep + mock questions + apply 10-15 roles",
   },
-  { day: "Day 5", tasks: "Apply 15\u201325 roles + referrals/outreach" },
+  { day: "Day 5", tasks: "Apply 15-25 roles + referrals/outreach" },
   {
     day: "Day 6",
     tasks: "Shift focus to best-performing channels + reapply smartly",
@@ -620,7 +620,7 @@ const PartTimeWorkPageV2 = () => {
       formData.append("mobile", form.whatsapp);
       formData.append(
         "subject",
-        `Work Plan Request \u2014 ${form.city}${form.roles.length > 0 ? ` \u2014 ${form.roles.join(", ")}` : ""}`
+        `Work Plan Request - ${form.city}${form.roles.length > 0 ? ` - ${form.roles.join(", ")}` : ""}`
       );
       formData.append("message", message);
 
@@ -657,49 +657,44 @@ const PartTimeWorkPageV2 = () => {
             src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2000&q=90"
             alt="Young professionals in a modern workplace"
             fill
+            unoptimized
             quality={90}
             className="object-cover object-center scale-105"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/75 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/60 via-transparent to-[#0a1628]/20" />
-
-          <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-[#D4AF37]/10 blur-2xl animate-pulse hidden lg:block" />
-          <div className="absolute bottom-40 right-40 w-24 h-24 rounded-full bg-white/5 blur-xl hidden lg:block" />
-          <div className="absolute top-1/3 right-1/4 w-16 h-16 rounded-full bg-[#D4AF37]/5 blur-lg hidden lg:block" />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
 
           <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-3 mb-6">
-                <div className="w-10 h-[2px] bg-gradient-to-r from-[#D4AF37] to-[#D4AF37]/40" />
-                <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <Briefcase size={16} className="text-[#D4AF37]" />
+                <p className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
                   Work Readiness Support
                 </p>
               </div>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] tracking-tight mb-6 sm:mb-8">
-                <span className="bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
-                  Part&#8209;time work support
-                </span>
+                Part&#8209;time work support
                 <br />
-                <span className="bg-gradient-to-r from-[#D4AF37] to-[#f5d76e] bg-clip-text text-transparent">
+                <span className="text-[#D4AF37]">
                    - done responsibly
                 </span>
               </h1>
 
               <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-3 max-w-2xl">
-                Because the goal isn&apos;t a promise  - it&apos;s readiness,
+                Because the goal isn&apos;t a promise - it&apos;s readiness,
                 access, and fast execution.
               </p>
               <p className="text-base sm:text-lg text-white/60 leading-relaxed mb-10 max-w-2xl">
                 We help you prepare for part&#8209;time work with a CV &amp;
                 profile pack, a daily job-search system, and practical interview
-                readiness  - with partner direction where available.
+                readiness - with partner direction where available.
               </p>
 
               <div className="flex flex-wrap gap-x-8 gap-y-3 mb-10">
                 {[
-                  "Work plan in 24\u201348h (working days)",
+                  "Work plan in 24-48h (working days)",
                   "CV + application templates",
                   "Job-search system + tracking",
                 ].map((chip, i) => (
@@ -716,7 +711,7 @@ const PartTimeWorkPageV2 = () => {
               <div className="flex flex-wrap gap-4 mb-8">
                 <a
                   href="#work-plan"
-                  className="group inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#c9a432] hover:from-[#e5c04a] hover:to-[#D4AF37] text-[#0d1b3e] font-semibold rounded-xl shadow-lg shadow-[#D4AF37]/20 hover:shadow-xl hover:shadow-[#D4AF37]/30 transition-all duration-300 text-sm sm:text-base"
+                  className="group inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg transition-all duration-200 text-sm shadow-md"
                 >
                   Get My Work Plan
                   <ArrowRight
@@ -728,7 +723,7 @@ const PartTimeWorkPageV2 = () => {
                   href={COMPANY_INFO.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-6 py-4 bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white font-semibold rounded-xl transition-all duration-300 text-sm sm:text-base"
+                  className="inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg transition-all duration-200 text-sm border border-white/30"
                 >
                   <MessageCircle size={18} className="text-[#25D366]" />
                   Chat on WhatsApp
@@ -741,23 +736,21 @@ const PartTimeWorkPageV2 = () => {
               </p>
             </div>
           </div>
-
-          <div className="absolute bottom-10 right-10 opacity-10 hidden xl:block">
-            <Briefcase size={120} className="text-white" />
-          </div>
         </section>
 
         <TrustBarSection />
       </div>
 
       {/* ═══════════════ 3) WHAT YOU GET ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-              <Briefcase size={14} />
-              Work Plan Pack
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Briefcase size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Work Plan Pack
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1a3b85] tracking-tight">
               What you get
             </h2>
@@ -785,13 +778,15 @@ const PartTimeWorkPageV2 = () => {
       </section>
 
       {/* ═══════════════ 4) ROLES WE SUPPORT ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1a3b85]/10 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-              <Briefcase size={14} />
-              Roles
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Briefcase size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Roles
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1a3b85] tracking-tight">
               Roles we can support
             </h2>
@@ -826,13 +821,15 @@ const PartTimeWorkPageV2 = () => {
       </section>
 
       {/* ═══════════════ CITY SELECTOR ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-              <Globe size={14} />
-              By City
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Globe size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                By City
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1a3b85] tracking-tight">
               Choose your city
             </h2>
@@ -934,13 +931,15 @@ const PartTimeWorkPageV2 = () => {
       </section>
 
       {/* ═══════════════ LOCATION-FIRST STRATEGY ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1a3b85]/10 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-              <Navigation size={14} />
-              Strategy
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Navigation size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Strategy
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-3">
               Location-first strategy
             </h2>
@@ -987,13 +986,15 @@ const PartTimeWorkPageV2 = () => {
       </section>
 
       {/* ═══════════════ JOB SOURCES ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1a3b85]/10 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-              <Search size={14} />
-              Sources
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Search size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Sources
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1a3b85] tracking-tight mb-3">
               Job sources we structure for you
             </h2>
@@ -1036,32 +1037,36 @@ const PartTimeWorkPageV2 = () => {
       </section>
 
       {/* ═══════════════ 5) WHO THIS IS FOR ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-              <Users size={14} />
-              Best Fit
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Users size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Best Fit
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1a3b85] tracking-tight">
               Who this is for
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
-              <div className="bg-[#1a3b85] px-6 py-4 flex items-center gap-3">
-                <CheckCircle2 size={20} className="text-[#D4AF37]" />
-                <h3 className="text-white font-semibold text-base sm:text-lg">
+            <div className="rounded-2xl border-2 border-emerald-200 bg-white shadow-sm p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center">
+                  <CheckCircle2 size={20} className="text-emerald-600" />
+                </div>
+                <h3 className="text-[#1a3b85] font-semibold text-base sm:text-lg">
                   Best fit
                 </h3>
               </div>
-              <div className="p-6 space-y-4">
+              <div className="space-y-4">
                 {BEST_FIT.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle2
                       size={18}
-                      className="text-green-500 flex-shrink-0 mt-0.5"
+                      className="text-emerald-600 flex-shrink-0 mt-0.5"
                     />
                     <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       {item}
@@ -1071,19 +1076,21 @@ const PartTimeWorkPageV2 = () => {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
-              <div className="bg-gray-100 px-6 py-4 flex items-center gap-3">
-                <XCircle size={20} className="text-gray-400" />
-                <h3 className="text-gray-800 font-semibold text-base sm:text-lg">
+            <div className="rounded-2xl border-2 border-red-200 bg-white shadow-sm p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center">
+                  <XCircle size={20} className="text-red-500" />
+                </div>
+                <h3 className="text-[#1a3b85] font-semibold text-base sm:text-lg">
                   Not for
                 </h3>
               </div>
-              <div className="p-6 space-y-4">
+              <div className="space-y-4">
                 {NOT_FOR.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <XCircle
                       size={18}
-                      className="text-red-400 flex-shrink-0 mt-0.5"
+                      className="text-red-500 flex-shrink-0 mt-0.5"
                     />
                     <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       {item}
@@ -1097,17 +1104,15 @@ const PartTimeWorkPageV2 = () => {
       </section>
 
       {/* ═══════════════ 6) HOW IT WORKS ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-[#0f2554] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-white blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-[#D4AF37] blur-3xl" />
-        </div>
-
+      <section className="py-16 sm:py-20 bg-[#0f2554] relative overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12 sm:mb-16">
-            <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-4 block">
-              Process
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <BarChart3 size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Process
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight">
               How it works
             </h2>
@@ -1164,13 +1169,15 @@ const PartTimeWorkPageV2 = () => {
       </section>
 
       {/* ═══════════════ 7) 7-DAY SPRINT ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-              <Zap size={14} />
-              Sprint
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Zap size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Sprint
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1a3b85] tracking-tight">
               The 7&#8209;Day Execution Sprint
             </h2>
@@ -1202,39 +1209,43 @@ const PartTimeWorkPageV2 = () => {
           <div className="text-center mt-8">
             <p className="text-gray-500 text-sm max-w-lg mx-auto">
               This sprint is a system. The output is momentum and improved
-              conversion from application \u2192 interview.
+              conversion from application to interview.
             </p>
           </div>
         </div>
       </section>
 
       {/* ═══════════════ 8) BOUNDARIES ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-              <Shield size={14} />
-              Transparency
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Shield size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Transparency
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1a3b85] tracking-tight">
               What we will and will not do
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
-              <div className="bg-[#1a3b85] px-6 py-4 flex items-center gap-3">
-                <CheckCircle2 size={20} className="text-[#D4AF37]" />
-                <h3 className="text-white font-semibold text-base sm:text-lg">
+            <div className="rounded-2xl border-2 border-emerald-200 bg-white shadow-sm p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center">
+                  <CheckCircle2 size={20} className="text-emerald-600" />
+                </div>
+                <h3 className="text-[#1a3b85] font-semibold text-base sm:text-lg">
                   What we will do
                 </h3>
               </div>
-              <div className="p-6 space-y-4">
+              <div className="space-y-4">
                 {WILL_DO.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle2
                       size={18}
-                      className="text-green-500 flex-shrink-0 mt-0.5"
+                      className="text-emerald-600 flex-shrink-0 mt-0.5"
                     />
                     <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       {item}
@@ -1244,19 +1255,21 @@ const PartTimeWorkPageV2 = () => {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
-              <div className="bg-gray-100 px-6 py-4 flex items-center gap-3">
-                <XCircle size={20} className="text-gray-400" />
-                <h3 className="text-gray-800 font-semibold text-base sm:text-lg">
+            <div className="rounded-2xl border-2 border-red-200 bg-white shadow-sm p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center">
+                  <XCircle size={20} className="text-red-500" />
+                </div>
+                <h3 className="text-[#1a3b85] font-semibold text-base sm:text-lg">
                   What we will not do
                 </h3>
               </div>
-              <div className="p-6 space-y-4">
+              <div className="space-y-4">
                 {WONT_DO.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <XCircle
                       size={18}
-                      className="text-red-400 flex-shrink-0 mt-0.5"
+                      className="text-red-500 flex-shrink-0 mt-0.5"
                     />
                     <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       {item}
@@ -1292,33 +1305,23 @@ const PartTimeWorkPageV2 = () => {
       {/* ═══════════════ 10) FORM SECTION ═══════════════ */}
       <section
         id="work-plan"
-        className="scroll-mt-20 py-16 sm:py-20 lg:py-24 relative overflow-hidden"
+        className="scroll-mt-20 py-16 sm:py-20 relative overflow-hidden"
       >
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop"
-            alt=""
-            fill
-            className="object-cover"
-            priority={false}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0f2554]/95 via-[#1a3b85]/92 to-[#0f2554]/95" />
-        </div>
-
-        <div className="absolute top-0 left-0 w-72 h-72 bg-[#D4AF37]/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-white/5 rounded-full blur-2xl" />
+        <div className="absolute inset-0 bg-[#0f2554]" />
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-4 block drop-shadow-sm">
-              Get Started
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5 drop-shadow-md">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Send size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Get Started
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5">
               Ready to start your job search properly?
             </h2>
-            <p className="text-white text-base sm:text-lg max-w-xl mx-auto font-medium drop-shadow-sm">
-              Get a structured work plan, CV pack, and 7-day sprint  - tailored
+            <p className="text-white/80 text-base sm:text-lg max-w-xl mx-auto">
+              Get a structured work plan, CV pack, and 7-day sprint - tailored
               to your city and availability.
             </p>
           </div>
@@ -1336,7 +1339,7 @@ const PartTimeWorkPageV2 = () => {
                   </h3>
                   <p className="text-gray-500 text-sm mt-1">
                     Takes about 2 minutes. Plan &amp; next steps typically within
-                    24\u201348 hours (working days).
+                    24-48 hours (working days).
                   </p>
                 </div>
 
@@ -1470,7 +1473,7 @@ const PartTimeWorkPageV2 = () => {
                 </button>
 
                 <p className="text-[10px] sm:text-xs text-gray-400 text-center pt-0.5">
-                  Plan &amp; next steps typically within 24\u201348 hours
+                  Plan &amp; next steps typically within 24-48 hours
                   (working days).
                 </p>
               </form>
@@ -1481,7 +1484,7 @@ const PartTimeWorkPageV2 = () => {
               <div className="grid grid-cols-2 gap-3">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/15">
                   <div className="text-2xl sm:text-3xl font-bold text-[#D4AF37] mb-0.5">
-                    24&ndash;48h
+                    24-48h
                   </div>
                   <div className="text-white/80 text-xs sm:text-sm">
                     Response time
@@ -1503,7 +1506,7 @@ const PartTimeWorkPageV2 = () => {
                     <Shield size={18} className="text-[#D4AF37]" />
                   </div>
                   <span className="text-white text-sm font-medium leading-snug">
-                    IAA Regulated &middot; {COMPANY_INFO.iaaReg}
+                    IAA Regulated | {COMPANY_INFO.iaaReg}
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -1538,7 +1541,7 @@ const PartTimeWorkPageV2 = () => {
                   Chat on WhatsApp
                 </a>
                 <p className="text-white/60 text-xs mt-2.5 text-center">
-                  {COMPANY_INFO.phone} &middot; {COMPANY_INFO.email}
+                  {COMPANY_INFO.phone} | {COMPANY_INFO.email}
                 </p>
               </div>
 

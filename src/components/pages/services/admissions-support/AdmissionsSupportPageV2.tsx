@@ -311,113 +311,89 @@ const AdmissionsSupportPageV2 = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* ═══════════════ 1) HERO ═══════════════ */}
-      <div className="min-h-screen flex flex-col">
-        <section className="relative flex-1 flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex flex-col overflow-hidden">
+        <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=2000&q=90"
             alt="Student working on university admissions application"
             fill
-            quality={90}
-            className="object-cover object-center scale-105"
+            unoptimized
+            className="object-cover object-center"
+            sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/75 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/60 via-transparent to-[#0a1628]/20" />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
+        </div>
 
-          <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-[#D4AF37]/10 blur-2xl animate-pulse hidden lg:block" />
-          <div className="absolute bottom-40 right-40 w-24 h-24 rounded-full bg-white/5 blur-xl hidden lg:block" />
-          <div className="absolute top-1/3 right-1/4 w-16 h-16 rounded-full bg-[#D4AF37]/5 blur-lg hidden lg:block" />
+        <div className="relative z-10 flex-1 flex flex-col justify-center w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28">
+          <div className="max-w-3xl space-y-6">
+            <div className="inline-flex items-center gap-2">
+              <GraduationCap size={16} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Admissions Support
+              </span>
+            </div>
 
-          <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28">
-            <div className="max-w-4xl">
-              <div className="inline-flex items-center gap-3 mb-6">
-                <div className="w-10 h-[2px] bg-gradient-to-r from-[#D4AF37] to-[#D4AF37]/40" />
-                <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase">
-                  Admissions Support
-                </p>
-              </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] tracking-tight">
+              Admissions support with{" "}
+              <span className="text-[#D4AF37]">structure and speed.</span>
+            </h1>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] tracking-tight mb-6 sm:mb-8">
-                <span className="bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
-                  Admissions support with
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-[#D4AF37] to-[#f5d76e] bg-clip-text text-transparent">
-                  structure and speed.
-                </span>
-              </h1>
+            <p className="text-lg sm:text-xl text-white/85 leading-relaxed max-w-2xl">
+              Clean submissions, controlled timelines, and consistent documentation. We guide your application from shortlist to submission.
+            </p>
 
-              <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-3 max-w-2xl">
-                Clean submissions, controlled timelines, and consistent
-                documentation.
-              </p>
-              <p className="text-base sm:text-lg text-white/60 leading-relaxed mb-10 max-w-2xl">
-                We guide your application from shortlist to submission with
-                disciplined document control - so your application is coherent,
-                complete, and on time.
-              </p>
-
-              <div className="flex flex-wrap gap-x-8 gap-y-3 mb-10">
-                {[
-                  "Admissions plan in 24-48h (working days)",
-                  "Document checklist + structure",
-                  "Timeline control + clear next steps",
-                ].map((chip, i) => (
-                  <span
-                    key={i}
-                    className="inline-flex items-center gap-2.5 text-white/90 text-sm font-medium"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
-                    {chip}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap gap-4 mb-8">
-                <a
-                  href="#admissions"
-                  className="group inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#c9a432] hover:from-[#e5c04a] hover:to-[#D4AF37] text-[#0d1b3e] font-semibold rounded-xl shadow-lg shadow-[#D4AF37]/20 hover:shadow-xl hover:shadow-[#D4AF37]/30 transition-all duration-300 text-sm sm:text-base"
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              {[
+                "Admissions plan in 24-48h",
+                "Document checklist + structure",
+                "Timeline control + clear next steps",
+              ].map((chip, i) => (
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-2 text-white/70 text-sm"
                 >
-                  Get My Admissions Plan
-                  <ArrowRight
-                    size={18}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </a>
-                <a
-                  href={COMPANY_INFO.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-6 py-4 bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white font-semibold rounded-xl transition-all duration-300 text-sm sm:text-base"
-                >
-                  <MessageCircle size={18} className="text-[#25D366]" />
-                  Chat on WhatsApp
-                </a>
-              </div>
+                  <CheckCircle2 size={14} className="text-[#D4AF37]" />
+                  {chip}
+                </span>
+              ))}
+            </div>
 
-              <p className="text-xs sm:text-sm text-white/40 max-w-lg">
-                Premium admissions is process control - fewer mistakes, faster
-                progress.
-              </p>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <a
+                href="#admissions"
+                className="group inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg transition-all duration-200 text-sm shadow-md"
+              >
+                Get My Admissions Plan
+                <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
+              </a>
+              <a
+                href={COMPANY_INFO.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg transition-all duration-200 text-sm border border-white/30"
+              >
+                <MessageCircle size={15} className="text-[#25D366]" />
+                WhatsApp Us
+              </a>
             </div>
           </div>
-
-          <div className="absolute bottom-10 right-10 opacity-10 hidden xl:block">
-            <GraduationCap size={120} className="text-white" />
-          </div>
-        </section>
+        </div>
 
         <TrustBarSection />
-      </div>
+      </section>
 
       {/* ═══════════════ 2) WHAT YOU GET ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-              <FileText size={14} />
-              Admissions Pack
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <FileText size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Admissions Pack
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1a3b85] tracking-tight">
               What you get
             </h2>
@@ -449,17 +425,15 @@ const AdmissionsSupportPageV2 = () => {
       </section>
 
       {/* ═══════════════ 3) HOW IT WORKS ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-[#0f2554] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-white blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-[#D4AF37] blur-3xl" />
-        </div>
-
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-16 sm:py-20 bg-[#0f2554]">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-4 block">
-              Process
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Clock size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Process
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight">
               How it works
             </h2>
@@ -496,32 +470,36 @@ const AdmissionsSupportPageV2 = () => {
       </section>
 
       {/* ═══════════════ 4) BOUNDARIES ═══════════════ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#1a3b85] font-semibold text-xs uppercase tracking-widest mb-4">
-              <Shield size={14} />
-              Transparency
-            </span>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Shield size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Transparency
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-semibold text-[#1a3b85] tracking-tight">
               What we will and will not do
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
-            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
-              <div className="bg-[#1a3b85] px-6 py-4 flex items-center gap-3">
-                <CheckCircle2 size={20} className="text-[#D4AF37]" />
-                <h3 className="text-white font-semibold text-base sm:text-lg">
+            <div className="rounded-2xl border-2 border-emerald-200 bg-white shadow-sm p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center">
+                  <CheckCircle2 size={20} className="text-emerald-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">
                   What we will do
                 </h3>
               </div>
-              <div className="p-6 space-y-4">
+              <div className="space-y-4">
                 {WILL_DO.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle2
                       size={18}
-                      className="text-green-500 flex-shrink-0 mt-0.5"
+                      className="text-emerald-500 flex-shrink-0 mt-0.5"
                     />
                     <span className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       {item}
@@ -531,14 +509,16 @@ const AdmissionsSupportPageV2 = () => {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
-              <div className="bg-gray-100 px-6 py-4 flex items-center gap-3">
-                <XCircle size={20} className="text-gray-400" />
-                <h3 className="text-gray-800 font-semibold text-base sm:text-lg">
+            <div className="rounded-2xl border-2 border-red-200 bg-white shadow-sm p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center">
+                  <XCircle size={20} className="text-red-500" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">
                   What we will not do
                 </h3>
               </div>
-              <div className="p-6 space-y-4">
+              <div className="space-y-4">
                 {WONT_DO.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <XCircle
@@ -559,32 +539,22 @@ const AdmissionsSupportPageV2 = () => {
       {/* ═══════════════ 5) FORM SECTION ═══════════════ */}
       <section
         id="admissions"
-        className="scroll-mt-20 py-16 sm:py-20 lg:py-24 relative overflow-hidden"
+        className="scroll-mt-20 py-16 sm:py-20 relative overflow-hidden"
       >
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop"
-            alt=""
-            fill
-            className="object-cover"
-            priority={false}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0f2554]/95 via-[#1a3b85]/92 to-[#0f2554]/95" />
-        </div>
-
-        <div className="absolute top-0 left-0 w-72 h-72 bg-[#D4AF37]/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-white/5 rounded-full blur-2xl" />
+        <div className="absolute inset-0 bg-[#0f2554]" />
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-4 block drop-shadow-sm">
-              Get Started
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5 drop-shadow-md">
+          <div className="text-center mb-10 sm:mb-12">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Send size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Get Started
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight mb-4">
               Ready to start your application?
             </h2>
-            <p className="text-white text-base sm:text-lg max-w-xl mx-auto font-medium drop-shadow-sm">
+            <p className="text-white/70 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
               Submit your details and receive an admissions plan tailored to your
               route and timeline.
             </p>
@@ -725,7 +695,7 @@ const AdmissionsSupportPageV2 = () => {
                 </button>
 
                 <p className="text-[10px] sm:text-xs text-gray-400 text-center pt-0.5">
-                  Plan &amp; next steps typically within 24&ndash;48 hours
+                  Plan &amp; next steps typically within 24-48 hours
                   (working days).
                 </p>
               </form>
@@ -736,7 +706,7 @@ const AdmissionsSupportPageV2 = () => {
               <div className="grid grid-cols-2 gap-3">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/15">
                   <div className="text-2xl sm:text-3xl font-bold text-[#D4AF37] mb-0.5">
-                    24&ndash;48h
+                    24-48h
                   </div>
                   <div className="text-white/80 text-xs sm:text-sm">
                     Response time
@@ -758,7 +728,7 @@ const AdmissionsSupportPageV2 = () => {
                     <Shield size={18} className="text-[#D4AF37]" />
                   </div>
                   <span className="text-white text-sm font-medium leading-snug">
-                    IAA Regulated &middot; {COMPANY_INFO.iaaReg}
+                    IAA Regulated | {COMPANY_INFO.iaaReg}
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -793,7 +763,7 @@ const AdmissionsSupportPageV2 = () => {
                   Chat on WhatsApp
                 </a>
                 <p className="text-white/60 text-xs mt-2.5 text-center">
-                  {COMPANY_INFO.phone} &middot; {COMPANY_INFO.email}
+                  {COMPANY_INFO.phone} | {COMPANY_INFO.email}
                 </p>
               </div>
 
