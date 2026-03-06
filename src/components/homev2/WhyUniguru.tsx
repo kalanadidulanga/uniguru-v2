@@ -101,7 +101,7 @@ const WhyUniguru = () => {
           ))}
         </div>
 
-        {/* Bottom Row — Trust + CTA */}
+        {/* Bottom Row - Trust + CTA */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p className="text-xs sm:text-sm text-white/40">
             Trusted by 10,000+ students worldwide · {COMPANY_INFO.address}

@@ -27,7 +27,7 @@ const ANCHOR_LINKS = [
 const PoliciesPageV2 = () => {
   return (
     <div className="min-h-screen bg-white">
-      {/* ── SECTION 1 — Hero ── */}
+      {/* ── SECTION 1 - Hero ── */}
       <section className="bg-[#0f2554] relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(212,175,55,0.08),transparent_60%)]" />
         <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-14 sm:pb-18 lg:pb-20">
@@ -65,7 +65,7 @@ const PoliciesPageV2 = () => {
         </div>
       </section>
 
-      {/* ── SECTION 2 — Privacy Policy ── */}
+      {/* ── SECTION 2 - Privacy Policy ── */}
       <section id="privacy" className="py-14 sm:py-18 lg:py-20 scroll-mt-24">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
@@ -121,7 +121,7 @@ const PoliciesPageV2 = () => {
         <div className="border-t border-gray-100" />
       </div>
 
-      {/* ── SECTION 3 — Terms of Service ── */}
+      {/* ── SECTION 3 - Terms of Service ── */}
       <section id="terms" className="py-14 sm:py-18 lg:py-20 scroll-mt-24">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
@@ -168,7 +168,7 @@ const PoliciesPageV2 = () => {
         <div className="border-t border-gray-100" />
       </div>
 
-      {/* ── SECTION 4 — Cookie Policy ── */}
+      {/* ── SECTION 4 - Cookie Policy ── */}
       <section id="cookies" className="py-14 sm:py-18 lg:py-20 scroll-mt-24">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
@@ -204,7 +204,7 @@ const PoliciesPageV2 = () => {
         <div className="border-t border-gray-100" />
       </div>
 
-      {/* ── SECTION 5 — Complaints Procedure ── */}
+      {/* ── SECTION 5 - Complaints Procedure ── */}
       <section
         id="complaints"
         className="py-14 sm:py-18 lg:py-20 scroll-mt-24"
@@ -270,7 +270,7 @@ const PoliciesPageV2 = () => {
         </div>
       </section>
 
-      {/* ── SECTION 6 — Final contact strip ── */}
+      {/* ── SECTION 6 - Final contact strip ── */}
       <section className="bg-[#0f2554]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">

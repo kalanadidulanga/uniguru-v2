@@ -75,7 +75,7 @@ const DestinationHero = ({ dataSet }: DestinationHeroProps) => {
 
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Background Image — destination hero image */}
+      {/* Background Image - destination hero image */}
       <div className="absolute inset-0">
         {heroImage1 ? (
           <Image
@@ -98,7 +98,7 @@ const DestinationHero = ({ dataSet }: DestinationHeroProps) => {
       {/* Main Content Container */}
       <div className="relative z-10 flex-1 flex flex-col w-full max-w-[1400px] mx-auto px-4 sm:px-5 lg:px-6 xl:px-8 2xl:px-10 pt-16 sm:pt-20 lg:pt-24">
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-5 gap-12 sm:gap-16 lg:gap-20 xl:gap-24 items-end lg:items-center pb-8 lg:pb-0">
-          {/* Left Side — Text Content */}
+          {/* Left Side - Text Content */}
           <div className="flex flex-col justify-start space-y-5 sm:space-y-6 lg:space-y-7 text-center lg:text-left pb-8 lg:pb-0 lg:col-span-3 w-full min-w-0">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-white leading-[1.2] tracking-tight w-full mx-auto lg:mx-0">
               {hero.title}
@@ -124,7 +124,7 @@ const DestinationHero = ({ dataSet }: DestinationHeroProps) => {
             </div>
           </div>
 
-          {/* Right Side — Eligibility Form Card */}
+          {/* Right Side - Eligibility Form Card */}
           <div className="w-full max-w-lg mx-auto lg:max-w-none lg:col-span-2 lg:self-end">
             <div className="bg-white rounded-t-2xl shadow-2xl p-5 sm:p-6 lg:p-7 border border-gray-100">
               {/* Form Header */}
@@ -283,7 +283,7 @@ const DestinationHero = ({ dataSet }: DestinationHeroProps) => {
         </div>
       </div>
 
-      {/* Trust Bar — Bottom of Hero Section */}
+      {/* Trust Bar - Bottom of Hero Section */}
       <TrustBarSection />
     </section>
   );

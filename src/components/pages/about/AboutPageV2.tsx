@@ -126,7 +126,7 @@ const AboutPageV2 = () => {
         <section className="relative flex-1 flex items-center overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=2000&q=90"
-            alt="London cityscape — Uniguru headquarters"
+            alt="London cityscape - Uniguru headquarters"
             fill
             quality={90}
             className="object-cover object-center scale-105"
@@ -158,8 +158,8 @@ const AboutPageV2 = () => {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mb-3 max-w-2xl">
-                A disciplined, end-to-end process — from shortlist to settlement
-                — with regulated guidance where required.
+                A disciplined, end-to-end process - from shortlist to settlement
+                - with regulated guidance where required.
               </p>
 
               <div className="flex flex-wrap gap-x-8 gap-y-3 mb-10">
@@ -228,7 +228,7 @@ const AboutPageV2 = () => {
                 </h2>
                 <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed">
                   Uniguru supports students and families through the decisions
-                  and logistics of moving abroad — with a London-led standard for
+                  and logistics of moving abroad - with a London-led standard for
                   clarity, credibility, and delivery. We prioritise
                   eligibility-led planning, disciplined documentation, and calm
                   execution.

@@ -22,13 +22,13 @@ const STANDARDS = [
   "No false documents.",
   "No shortcuts.",
   "No outcome guarantees.",
-  "We guarantee disciplined preparation and clear next steps — not results.",
+  "We guarantee disciplined preparation and clear next steps - not results.",
 ];
 
 const RegulationPageV2 = () => {
   return (
     <div className="min-h-screen bg-white">
-      {/* ── SECTION 1 — Hero ── */}
+      {/* ── SECTION 1 - Hero ── */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
@@ -57,7 +57,7 @@ const RegulationPageV2 = () => {
 
             <p className="text-white/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mb-8 sm:mb-10">
               Immigration Advice Authority (IAA) regulated guidance where
-              required — with fixed fees and disciplined preparation.
+              required - with fixed fees and disciplined preparation.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">
@@ -82,7 +82,7 @@ const RegulationPageV2 = () => {
         </div>
       </section>
 
-      {/* ── SECTION 2 — Trust Bar ── */}
+      {/* ── SECTION 2 - Trust Bar ── */}
       <section className="bg-[#0f2554] border-t border-white/10">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 lg:gap-10 text-center sm:text-left">
@@ -110,7 +110,7 @@ const RegulationPageV2 = () => {
         </div>
       </section>
 
-      {/* ── SECTION 3 — What regulation means for you ── */}
+      {/* ── SECTION 3 - What regulation means for you ── */}
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
@@ -123,7 +123,7 @@ const RegulationPageV2 = () => {
             <p className="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed">
               Regulation means clear standards, accountable advice, and proper
               boundaries. When immigration advice is required, we provide
-              structured guidance you can rely on —{" "}
+              structured guidance you can rely on -{" "}
               <span className="font-semibold text-[#1a3b85]">
                 not sales talk
               </span>
@@ -133,7 +133,7 @@ const RegulationPageV2 = () => {
         </div>
       </section>
 
-      {/* ── SECTION 4 — Scope confirmation ── */}
+      {/* ── SECTION 4 - Scope confirmation ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
@@ -172,13 +172,13 @@ const RegulationPageV2 = () => {
         </div>
       </section>
 
-      {/* ── SECTION 5 — Fees approach ── */}
+      {/* ── SECTION 5 - Fees approach ── */}
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-10 sm:mb-14">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0f2554] tracking-tight mb-4">
-                Fixed fees —{" "}
+                Fixed fees -{" "}
                 <span className="text-[#D4AF37]">not ranges</span>
               </h2>
               <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
@@ -217,7 +217,7 @@ const RegulationPageV2 = () => {
         </div>
       </section>
 
-      {/* ── SECTION 6 — Standards statement ── */}
+      {/* ── SECTION 6 - Standards statement ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-[#0f2554]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
@@ -247,7 +247,7 @@ const RegulationPageV2 = () => {
         </div>
       </section>
 
-      {/* ── SECTION 7 — Complaints and policies ── */}
+      {/* ── SECTION 7 - Complaints and policies ── */}
       <section className="py-12 sm:py-16 bg-gray-50 border-t border-gray-200">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">

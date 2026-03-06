@@ -74,7 +74,7 @@ const StudyDestinations = () => {
         style={{ backgroundImage: `url(${LONDON_BG_URL})` }}
         aria-hidden
       />
-      {/* Overlay — strong at top for text, fades to let image show below */}
+      {/* Overlay - strong at top for text, fades to let image show below */}
       <div
         className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/65 to-white/20"
         aria-hidden

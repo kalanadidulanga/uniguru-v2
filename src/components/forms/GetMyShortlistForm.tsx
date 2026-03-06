@@ -469,7 +469,7 @@ export const GetMyShortlistSection = ({
           Not sure what you need?
         </h2>
         <p className="text-white text-base sm:text-lg max-w-xl mx-auto font-medium drop-shadow-sm">
-          Start with your shortlist — we&apos;ll guide you from there.
+          Start with your shortlist - we&apos;ll guide you from there.
         </p>
       </div>
 

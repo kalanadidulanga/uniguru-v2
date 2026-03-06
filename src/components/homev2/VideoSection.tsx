@@ -63,7 +63,7 @@ const VideoSection = () => {
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-          {/* Left — Video */}
+          {/* Left - Video */}
           <div>
             <div className="relative aspect-video rounded-lg overflow-hidden bg-[#0f2554] group">
               <video
@@ -78,7 +78,7 @@ const VideoSection = () => {
             </div>
           </div>
 
-          {/* Right — Content */}
+          {/* Right - Content */}
           <div>
             <p className="text-xs font-semibold tracking-widest text-[#D4AF37] uppercase mb-3">
               Why Uniguru
@@ -109,7 +109,7 @@ const VideoSection = () => {
               ))}
             </ul>
 
-            {/* CTA — Matching header button style */}
+            {/* CTA - Matching header button style */}
             <Link
               href="/book"
               className="inline-flex items-center gap-2 bg-[#1a3b85] hover:bg-[#152d6b] text-white text-sm font-semibold px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all relative overflow-hidden group"

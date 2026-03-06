@@ -14,7 +14,7 @@ import { COMPANY_INFO } from "@/constants/data";
 const BookPageV2 = () => {
   return (
     <div className="relative min-h-screen">
-      {/* London backdrop — absolute on mobile, fixed on desktop */}
+      {/* London backdrop - absolute on mobile, fixed on desktop */}
       <div className="absolute lg:fixed inset-0 z-0">
         <Image
           src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=2000&q=90"
@@ -50,7 +50,7 @@ const BookPageV2 = () => {
               <GetMyShortlistForm variant="section" />
             </div>
 
-            {/* Sidebar — on mobile: compact horizontal strip, on desktop: vertical */}
+            {/* Sidebar - on mobile: compact horizontal strip, on desktop: vertical */}
             <div className="lg:col-span-2 order-2 flex flex-col gap-3 sm:gap-4 lg:gap-5">
               {/* Stats row */}
               <div className="grid grid-cols-2 gap-2 sm:gap-3">

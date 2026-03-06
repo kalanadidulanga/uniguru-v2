@@ -28,7 +28,7 @@ const VisionMission = () => {
           </div>
 
           <h2 className="text-3xl lg:text-4xl font-extrabold text-[#1a3b85] mb-3">
-            Our Purpose — What Guides Us
+            Our Purpose - What Guides Us
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto">
             We combine expert advising with human-first support to help students
@@ -56,7 +56,7 @@ const VisionMission = () => {
                     </h3>
                     <p className="text-slate-600 leading-relaxed">
                       To build a transparent, AI-enhanced education platform that
-                      connects students and universities — making global study
+                      connects students and universities - making global study
                       opportunities accessible, personalized, and data-driven.
                     </p>
                     <p className="mt-4 text-sm text-slate-500 font-medium">
@@ -88,7 +88,7 @@ const VisionMission = () => {
                     <p className="text-slate-600 leading-relaxed">
                       To enable students to achieve their academic goals by
                       delivering expert counseling, end-to-end application
-                      assistance, and post-arrival support — with empathy and
+                      assistance, and post-arrival support - with empathy and
                       measurable outcomes.
                     </p>
 

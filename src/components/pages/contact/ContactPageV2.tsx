@@ -141,7 +141,7 @@ const ContactPageV2 = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* ── SECTION 1 — Hero ── */}
+      {/* ── SECTION 1 - Hero ── */}
       <section className="bg-[#0f2554] relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(212,175,55,0.08),transparent_60%)]" />
         <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-14 sm:pb-16 lg:pb-20">
@@ -150,7 +150,7 @@ const ContactPageV2 = () => {
               Contact
             </h1>
             <p className="text-white/60 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-8">
-              Tell us what you need — we&apos;ll direct you to the right
+              Tell us what you need - we&apos;ll direct you to the right
               service.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
@@ -175,11 +175,11 @@ const ContactPageV2 = () => {
         </div>
       </section>
 
-      {/* ── SECTIONS 2 & 3 — Contact details + Form ── */}
+      {/* ── SECTIONS 2 & 3 - Contact details + Form ── */}
       <section className="py-14 sm:py-18 lg:py-24">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 max-w-6xl mx-auto">
-            {/* Left — Contact details */}
+            {/* Left - Contact details */}
             <div className="lg:col-span-2 space-y-6">
               <h2 className="text-xl sm:text-2xl font-bold text-[#0f2554]">
                 Get in touch
@@ -248,7 +248,7 @@ const ContactPageV2 = () => {
               </div>
             </div>
 
-            {/* Right — Form */}
+            {/* Right - Form */}
             <div className="lg:col-span-3">
               <form
                 onSubmit={handleSubmit}
@@ -348,7 +348,7 @@ const ContactPageV2 = () => {
                 </p>
               </form>
 
-              {/* ── SECTION 4 — Important note ── */}
+              {/* ── SECTION 4 - Important note ── */}
               <div className="mt-4 bg-gray-50 rounded-xl border border-gray-100 px-4 sm:px-5 py-3 sm:py-4">
                 <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
                   <span className="font-medium text-gray-600">Note:</span>{" "}
@@ -362,7 +362,7 @@ const ContactPageV2 = () => {
         </div>
       </section>
 
-      {/* ── SECTION 5 — Footer strip ── */}
+      {/* ── SECTION 5 - Footer strip ── */}
       <section className="bg-[#0f2554]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">

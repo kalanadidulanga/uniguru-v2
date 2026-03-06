@@ -552,12 +552,12 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         },
       ],
       description:
-        "Because moving countries is a life decision \u2014 you deserve calm, regulated guidance, not pressure. Eligibility-led shortlisting and a compliant plan \u2014 from programme selection to visa-ready evidence.",
+        "Because moving countries is a life decision - you deserve calm, regulated guidance, not pressure. Eligibility-led shortlisting and a compliant plan - from programme selection to visa-ready evidence.",
     },
     why_choose_section: {
       title: "Why Canada?",
       content:
-        "Canada is a strong choice when you want reputable education and clear progression routes \u2014 provided the course choice is credible and the evidence plan is clean.",
+        "Canada is a strong choice when you want reputable education and clear progression routes - provided the course choice is credible and the evidence plan is clean.",
       bullets: [
         "Global recognition: qualifications employers understand",
         "Programme breadth: wide options across provinces and subjects",
@@ -571,7 +571,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         "Biometrics fee (individual): CAD $85",
         "Proof of financial support (living expenses, excluding tuition and transportation): CAN$22,895 for 1 applicant (outside Quebec)",
       ],
-      note: "Our Approach: Advice is tailored to your profile \u2014 eligibility first, no guesswork.",
+      note: "Our Approach: Advice is tailored to your profile - eligibility first, no guesswork.",
     },
     who_is_it_for_section: {
       title: "Who Canada Is For",
@@ -617,15 +617,15 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         },
         {
           step: "Step 2",
-          title: "Shortlist + Plan (24\u201348 hours)",
+          title: "Shortlist + Plan (24\-48 hours)",
           description:
-            "A realistic shortlist based on academic fit, budget, and credibility \u2014 with clear next steps.",
+            "A realistic shortlist based on academic fit, budget, and credibility - with clear next steps.",
         },
         {
           step: "Step 3",
           title: "Offer/Admission \u2192 Evidence plan",
           description:
-            "We guide you through what to prepare, how to present it, and what to avoid \u2014 so your submission is clean and consistent.",
+            "We guide you through what to prepare, how to present it, and what to avoid - so your submission is clean and consistent.",
         },
         {
           step: "Step 4",
@@ -642,7 +642,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
       registration:
         "Regulated by the Immigration Advice Authority (IAA) - Organisation Registration: F202537807",
       description:
-        "When immigration advice is required, we provide guidance that's regulated, accountable, and standards-led. That means clear boundaries, proper record-keeping, and advice you can rely on \u2014 not sales talk.",
+        "When immigration advice is required, we provide guidance that's regulated, accountable, and standards-led. That means clear boundaries, proper record-keeping, and advice you can rely on - not sales talk.",
       benefits_title: "What this means for you",
       benefits: [
         "Accountability: regulated standards and transparent processes",
@@ -651,7 +651,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         "Integrity: no shortcuts, no pressure tactics",
       ],
       disclaimer:
-        "We do not guarantee outcomes \u2014 we deliver compliant guidance and clear next steps based on your profile.",
+        "We do not guarantee outcomes - we deliver compliant guidance and clear next steps based on your profile.",
     },
     graduate_route_section: {
       title: "Post-Graduation Work Permit (PGWP)",
@@ -716,7 +716,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         ],
       },
       disclaimer:
-        "Final amounts depend on your institution, course level, visa length/route, and current government requirements \u2014 we confirm these during your eligibility review.",
+        "Final amounts depend on your institution, course level, visa length/route, and current government requirements - we confirm these during your eligibility review.",
     },
     faq_section: {
       title: "Frequently asked questions",
@@ -734,7 +734,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         {
           question: "How long does the process take?",
           answer:
-            "Timelines vary by institution and intake. Shortlists are typically issued within 24\u201348 hours (working days).",
+            "Timelines vary by institution and intake. Shortlists are typically issued within 24\-48 hours (working days).",
         },
         {
           question: "Can I work while studying?",
@@ -756,16 +756,16 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
       fields: ["Destination (Canada)", "Intake", "WhatsApp"],
       button_label: "Get My Canada Shortlist",
       micro_text:
-        "Shortlist & next steps typically within 24\u201348 hours (working days).",
+        "Shortlist & next steps typically within 24\-48 hours (working days).",
       trust_line:
-        "Immigration Advice Authority (IAA) Regulated \u2022 Organisation Registration: F202537807 \u2022 128 City Road, London EC1V 2NX \u2022 100+ Google Reviews",
+        "Immigration Advice Authority (IAA) Regulated | Organisation Registration: F202537807 | 128 City Road, London EC1V 2NX | 100+ Google Reviews",
       disclaimer:
         "We provide regulated guidance where required. We do not guarantee outcomes.",
     },
     opportunities_hub_section: {
       title: "Canada Opportunities Hub",
       subline:
-        "Curated resources and partner options \u2014 your final shortlist depends on your profile and intake.",
+        "Curated resources and partner options - your final shortlist depends on your profile and intake.",
       cards: [
         {
           heading: "Partner institutions (Canada)",
@@ -783,7 +783,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         },
         {
           heading: "Careers & industry insights",
-          text: "Which courses lead to which outcomes \u2014 and what's credible for your profile.",
+          text: "Which courses lead to which outcomes - and what's credible for your profile.",
           cta_label: "See career insights",
           cta_link: "/careers",
           image: "/images/study_destinations/canada/opportunities/careers.jpg",
@@ -1007,8 +1007,8 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         {
           label: "Living costs - practical planning range",
           points: [
-            "London: \u00A31,300\u2013\u00A31,400 per month",
-            "Rest of the UK: \u00A3900\u2013\u00A31,300 per month",
+            "London: \u00A31,300\-\u00A31,400 per month",
+            "Rest of the UK: \u00A3900\-\u00A31,300 per month",
           ],
           footnote:
             "For practical budgeting (rent + bills + food + transport), the British Council suggests these planning ranges.",
@@ -1094,7 +1094,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
       micro_text:
         "Shortlist & next steps typically within 24-48 hours (working days).",
       trust_line:
-        "Immigration Advice Authority (IAA) Regulated \u2022 Organisation Registration: F202537807 \u2022 128 City Road, London EC1V 2NX \u2022 100+ Google Reviews",
+        "Immigration Advice Authority (IAA) Regulated | Organisation Registration: F202537807 | 128 City Road, London EC1V 2NX | 100+ Google Reviews",
       disclaimer:
         "We provide regulated guidance where required. We do not guarantee outcomes.",
     },
@@ -1179,12 +1179,12 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         { src: "/images/study_destinations/australia/campus.jpg", alt: "Australian cityscape" },
       ],
       description:
-        "Because high-scrutiny routes demand high-standard planning \u2014 you deserve clear, regulated guidance, not sales talk. Eligibility-led shortlisting and a compliant plan \u2014 from programme selection to visa-ready evidence.",
+        "Because high-scrutiny routes demand high-standard planning - you deserve clear, regulated guidance, not sales talk. Eligibility-led shortlisting and a compliant plan - from programme selection to visa-ready evidence.",
     },
     why_choose_section: {
       title: "Why Australia?",
       content:
-        "Australia can be a strong option for globally recognised education and graduate outcomes \u2014 when your course choice is credible and your evidence is consistent.",
+        "Australia can be a strong option for globally recognised education and graduate outcomes - when your course choice is credible and your evidence is consistent.",
       bullets: [
         "Programme choice across sectors and levels",
         "Structured admission and compliance requirements",
@@ -1197,7 +1197,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         "Student visa (Subclass 500) application charge: from AUD $2,000 (unless exempt)",
         "Financial capacity requirement: Home Affairs publishes minimum funds expectations and periodically updates them",
       ],
-      note: "Our Approach: Advice is tailored to your profile \u2014 eligibility first, no guesswork.",
+      note: "Our Approach: Advice is tailored to your profile - eligibility first, no guesswork.",
     },
     who_is_it_for_section: {
       title: "Who Australia Is For",
@@ -1243,15 +1243,15 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         },
         {
           step: "Step 2",
-          title: "Shortlist + Plan (24\u201348 hours)",
+          title: "Shortlist + Plan (24\-48 hours)",
           description:
-            "A realistic shortlist based on academic fit, budget, and credibility \u2014 with clear next steps.",
+            "A realistic shortlist based on academic fit, budget, and credibility - with clear next steps.",
         },
         {
           step: "Step 3",
           title: "Offer/Admission \u2192 Evidence plan",
           description:
-            "We guide you through what to prepare, how to present it, and what to avoid \u2014 so your submission is clean and consistent.",
+            "We guide you through what to prepare, how to present it, and what to avoid - so your submission is clean and consistent.",
         },
         {
           step: "Step 4",
@@ -1268,7 +1268,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
       registration:
         "Regulated by the Immigration Advice Authority (IAA) - Organisation Registration: F202537807",
       description:
-        "When immigration advice is required, we provide guidance that's regulated, accountable, and standards-led. That means clear boundaries, proper record-keeping, and advice you can rely on \u2014 not sales talk.",
+        "When immigration advice is required, we provide guidance that's regulated, accountable, and standards-led. That means clear boundaries, proper record-keeping, and advice you can rely on - not sales talk.",
       benefits_title: "What this means for you",
       benefits: [
         "Accountability: regulated standards and transparent processes",
@@ -1277,7 +1277,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         "Integrity: no shortcuts, no pressure tactics",
       ],
       disclaimer:
-        "We do not guarantee outcomes \u2014 we deliver compliant guidance and clear next steps based on your profile.",
+        "We do not guarantee outcomes - we deliver compliant guidance and clear next steps based on your profile.",
     },
     graduate_route_section: {
       title: "Temporary Graduate Visa (Subclass 485)",
@@ -1339,7 +1339,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         ],
       },
       disclaimer:
-        "Final amounts depend on your institution, course level, visa length/route, and current government requirements \u2014 we confirm these during your eligibility review.",
+        "Final amounts depend on your institution, course level, visa length/route, and current government requirements - we confirm these during your eligibility review.",
     },
     faq_section: {
       title: "Frequently asked questions",
@@ -1357,7 +1357,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         {
           question: "How long does the process take?",
           answer:
-            "Timelines vary by institution and intake. Shortlists are typically issued within 24\u201348 hours (working days).",
+            "Timelines vary by institution and intake. Shortlists are typically issued within 24\-48 hours (working days).",
         },
         {
           question: "Can I work while studying?",
@@ -1379,16 +1379,16 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
       fields: ["Destination (Australia)", "Intake", "WhatsApp"],
       button_label: "Get My Australia Shortlist",
       micro_text:
-        "Shortlist & next steps typically within 24\u201348 hours (working days).",
+        "Shortlist & next steps typically within 24\-48 hours (working days).",
       trust_line:
-        "Immigration Advice Authority (IAA) Regulated \u2022 Organisation Registration: F202537807 \u2022 128 City Road, London EC1V 2NX \u2022 100+ Google Reviews",
+        "Immigration Advice Authority (IAA) Regulated | Organisation Registration: F202537807 | 128 City Road, London EC1V 2NX | 100+ Google Reviews",
       disclaimer:
         "We provide regulated guidance where required. We do not guarantee outcomes.",
     },
     opportunities_hub_section: {
       title: "Australia Opportunities Hub",
       subline:
-        "Curated resources and partner options \u2014 your final shortlist depends on your profile and intake.",
+        "Curated resources and partner options - your final shortlist depends on your profile and intake.",
       cards: [
         {
           heading: "Partner institutions (Australia)",
@@ -1406,7 +1406,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         },
         {
           heading: "Careers & industry insights",
-          text: "Which courses lead to which outcomes \u2014 and what's credible for your profile.",
+          text: "Which courses lead to which outcomes - and what's credible for your profile.",
           cta_label: "See career insights",
           cta_link: "/careers",
           image: "/images/study_destinations/australia/opportunities/careers.jpg",
@@ -1472,12 +1472,12 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         { src: "/images/study_destinations/netherlands/campus.jpg", alt: "Dutch architecture" },
       ],
       description:
-        "Because a credible plan beats generic advice \u2014 you deserve regulated guidance and clear next steps. Eligibility-led shortlisting and a compliant plan \u2014 from programme selection to visa-ready evidence.",
+        "Because a credible plan beats generic advice - you deserve regulated guidance and clear next steps. Eligibility-led shortlisting and a compliant plan - from programme selection to visa-ready evidence.",
     },
     why_choose_section: {
       title: "Why Netherlands?",
       content:
-        "The Netherlands offers strong English-taught options and a structured student residence system \u2014 but the financial and sponsor requirements must be handled precisely.",
+        "The Netherlands offers strong English-taught options and a structured student residence system - but the financial and sponsor requirements must be handled precisely.",
       bullets: [
         "Strong English-taught programme availability",
         "Sponsor-led admission/residence permit process",
@@ -1489,7 +1489,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
       facts: [
         "IND required amount for study (HBO/university) 2026: EUR 1,130.77 per month",
       ],
-      note: "Our Approach: Advice is tailored to your profile \u2014 eligibility first, no guesswork.",
+      note: "Our Approach: Advice is tailored to your profile - eligibility first, no guesswork.",
     },
     who_is_it_for_section: {
       title: "Who Netherlands Is For",
@@ -1535,15 +1535,15 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         },
         {
           step: "Step 2",
-          title: "Shortlist + Plan (24\u201348 hours)",
+          title: "Shortlist + Plan (24\-48 hours)",
           description:
-            "A realistic shortlist based on academic fit, budget, and credibility \u2014 with clear next steps.",
+            "A realistic shortlist based on academic fit, budget, and credibility - with clear next steps.",
         },
         {
           step: "Step 3",
           title: "Offer/Admission \u2192 Evidence plan",
           description:
-            "We guide you through what to prepare, how to present it, and what to avoid \u2014 so your submission is clean and consistent.",
+            "We guide you through what to prepare, how to present it, and what to avoid - so your submission is clean and consistent.",
         },
         {
           step: "Step 4",
@@ -1560,7 +1560,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
       registration:
         "Regulated by the Immigration Advice Authority (IAA) - Organisation Registration: F202537807",
       description:
-        "When immigration advice is required, we provide guidance that's regulated, accountable, and standards-led. That means clear boundaries, proper record-keeping, and advice you can rely on \u2014 not sales talk.",
+        "When immigration advice is required, we provide guidance that's regulated, accountable, and standards-led. That means clear boundaries, proper record-keeping, and advice you can rely on - not sales talk.",
       benefits_title: "What this means for you",
       benefits: [
         "Accountability: regulated standards and transparent processes",
@@ -1569,7 +1569,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         "Integrity: no shortcuts, no pressure tactics",
       ],
       disclaimer:
-        "We do not guarantee outcomes \u2014 we deliver compliant guidance and clear next steps based on your profile.",
+        "We do not guarantee outcomes - we deliver compliant guidance and clear next steps based on your profile.",
     },
     graduate_route_section: {
       title: "Orientation Year Residence Permit",
@@ -1631,7 +1631,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         ],
       },
       disclaimer:
-        "Final amounts depend on your institution, course level, visa length/route, and current government requirements \u2014 we confirm these during your eligibility review.",
+        "Final amounts depend on your institution, course level, visa length/route, and current government requirements - we confirm these during your eligibility review.",
     },
     faq_section: {
       title: "Frequently asked questions",
@@ -1649,7 +1649,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         {
           question: "How long does the process take?",
           answer:
-            "Timelines vary by institution and intake. Shortlists are typically issued within 24\u201348 hours (working days).",
+            "Timelines vary by institution and intake. Shortlists are typically issued within 24\-48 hours (working days).",
         },
         {
           question: "Can I work while studying?",
@@ -1671,16 +1671,16 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
       fields: ["Destination (Netherlands)", "Intake", "WhatsApp"],
       button_label: "Get My Netherlands Shortlist",
       micro_text:
-        "Shortlist & next steps typically within 24\u201348 hours (working days).",
+        "Shortlist & next steps typically within 24\-48 hours (working days).",
       trust_line:
-        "Immigration Advice Authority (IAA) Regulated \u2022 Organisation Registration: F202537807 \u2022 128 City Road, London EC1V 2NX \u2022 100+ Google Reviews",
+        "Immigration Advice Authority (IAA) Regulated | Organisation Registration: F202537807 | 128 City Road, London EC1V 2NX | 100+ Google Reviews",
       disclaimer:
         "We provide regulated guidance where required. We do not guarantee outcomes.",
     },
     opportunities_hub_section: {
       title: "Netherlands Opportunities Hub",
       subline:
-        "Curated resources and partner options \u2014 your final shortlist depends on your profile and intake.",
+        "Curated resources and partner options - your final shortlist depends on your profile and intake.",
       cards: [
         {
           heading: "Partner institutions (Netherlands)",
@@ -1698,7 +1698,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         },
         {
           heading: "Careers & industry insights",
-          text: "Which courses lead to which outcomes \u2014 and what's credible for your profile.",
+          text: "Which courses lead to which outcomes - and what's credible for your profile.",
           cta_label: "See career insights",
           cta_link: "/careers",
           image: "/images/study_destinations/netherlands/opportunities/careers.jpg",
@@ -1764,12 +1764,12 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         { src: "/images/study_destinations/germany/campus.jpg", alt: "German architecture" },
       ],
       description:
-        "Because value destinations still require precision \u2014 you deserve regulated guidance and zero guesswork. Eligibility-led shortlisting and a compliant plan \u2014 from programme selection to visa-ready evidence.",
+        "Because value destinations still require precision - you deserve regulated guidance and zero guesswork. Eligibility-led shortlisting and a compliant plan - from programme selection to visa-ready evidence.",
     },
     why_choose_section: {
       title: "Why Germany?",
       content:
-        "Germany is compelling for strong academics and value \u2014 but the evidence plan must be precise, especially around finances and route requirements.",
+        "Germany is compelling for strong academics and value - but the evidence plan must be precise, especially around finances and route requirements.",
       bullets: [
         "Academic strength and structured routes",
         "High value in many programmes (route-dependent)",
@@ -1782,7 +1782,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         "Blocked account benchmark for 2026 commonly cited: EUR 11,904/year (EUR 992/month)",
         "Prospects after graduation: residence permit up to 18 months to seek qualified employment (conditions apply)",
       ],
-      note: "Our Approach: Advice is tailored to your profile \u2014 eligibility first, no guesswork.",
+      note: "Our Approach: Advice is tailored to your profile - eligibility first, no guesswork.",
     },
     who_is_it_for_section: {
       title: "Who Germany Is For",
@@ -1828,15 +1828,15 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         },
         {
           step: "Step 2",
-          title: "Shortlist + Plan (24\u201348 hours)",
+          title: "Shortlist + Plan (24\-48 hours)",
           description:
-            "A realistic shortlist based on academic fit, budget, and credibility \u2014 with clear next steps.",
+            "A realistic shortlist based on academic fit, budget, and credibility - with clear next steps.",
         },
         {
           step: "Step 3",
           title: "Offer/Admission \u2192 Evidence plan",
           description:
-            "We guide you through what to prepare, how to present it, and what to avoid \u2014 so your submission is clean and consistent.",
+            "We guide you through what to prepare, how to present it, and what to avoid - so your submission is clean and consistent.",
         },
         {
           step: "Step 4",
@@ -1853,7 +1853,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
       registration:
         "Regulated by the Immigration Advice Authority (IAA) - Organisation Registration: F202537807",
       description:
-        "When immigration advice is required, we provide guidance that's regulated, accountable, and standards-led. That means clear boundaries, proper record-keeping, and advice you can rely on \u2014 not sales talk.",
+        "When immigration advice is required, we provide guidance that's regulated, accountable, and standards-led. That means clear boundaries, proper record-keeping, and advice you can rely on - not sales talk.",
       benefits_title: "What this means for you",
       benefits: [
         "Accountability: regulated standards and transparent processes",
@@ -1862,7 +1862,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         "Integrity: no shortcuts, no pressure tactics",
       ],
       disclaimer:
-        "We do not guarantee outcomes \u2014 we deliver compliant guidance and clear next steps based on your profile.",
+        "We do not guarantee outcomes - we deliver compliant guidance and clear next steps based on your profile.",
     },
     graduate_route_section: {
       title: "Post-Study Residence Permit (Germany)",
@@ -1926,7 +1926,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         ],
       },
       disclaimer:
-        "Final amounts depend on your institution, course level, visa length/route, and current government requirements \u2014 we confirm these during your eligibility review.",
+        "Final amounts depend on your institution, course level, visa length/route, and current government requirements - we confirm these during your eligibility review.",
     },
     faq_section: {
       title: "Frequently asked questions",
@@ -1944,7 +1944,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         {
           question: "How long does the process take?",
           answer:
-            "Timelines vary by institution and intake. Shortlists are typically issued within 24\u201348 hours (working days).",
+            "Timelines vary by institution and intake. Shortlists are typically issued within 24\-48 hours (working days).",
         },
         {
           question: "Can I work while studying?",
@@ -1966,16 +1966,16 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
       fields: ["Destination (Germany)", "Intake", "WhatsApp"],
       button_label: "Get My Germany Shortlist",
       micro_text:
-        "Shortlist & next steps typically within 24\u201348 hours (working days).",
+        "Shortlist & next steps typically within 24\-48 hours (working days).",
       trust_line:
-        "Immigration Advice Authority (IAA) Regulated \u2022 Organisation Registration: F202537807 \u2022 128 City Road, London EC1V 2NX \u2022 100+ Google Reviews",
+        "Immigration Advice Authority (IAA) Regulated | Organisation Registration: F202537807 | 128 City Road, London EC1V 2NX | 100+ Google Reviews",
       disclaimer:
         "We provide regulated guidance where required. We do not guarantee outcomes.",
     },
     opportunities_hub_section: {
       title: "Germany Opportunities Hub",
       subline:
-        "Curated resources and partner options \u2014 your final shortlist depends on your profile and intake.",
+        "Curated resources and partner options - your final shortlist depends on your profile and intake.",
       cards: [
         {
           heading: "Partner institutions (Germany)",
@@ -1993,7 +1993,7 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
         },
         {
           heading: "Careers & industry insights",
-          text: "Which courses lead to which outcomes \u2014 and what's credible for your profile.",
+          text: "Which courses lead to which outcomes - and what's credible for your profile.",
           cta_label: "See career insights",
           cta_link: "/careers",
           image: "/images/study_destinations/germany/opportunities/careers.jpg",

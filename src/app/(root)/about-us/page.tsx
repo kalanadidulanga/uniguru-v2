@@ -5,7 +5,7 @@ import React from "react";
 export const metadata: Metadata = {
   title: "About Uniguru | London-led support",
   description:
-    "A disciplined, end-to-end process — from shortlist to settlement — with regulated guidance where required.",
+    "A disciplined, end-to-end process - from shortlist to settlement - with regulated guidance where required.",
 };
 
 const Page = () => {

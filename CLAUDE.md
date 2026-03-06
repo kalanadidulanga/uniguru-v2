@@ -23,20 +23,20 @@ No test runner is configured. Prisma generates on `postinstall`.
 
 ### Route Groups
 
-- `(root)/` — Public marketing site with `HeaderV2` + `FooterV2` layout
-- `(auth)/` — Login page; redirects logged-in users by role
-- `superadmin/`, `admin/`, `partner/`, `student/` — Role-gated portals; each layout checks `session.user.role` server-side and redirects to `/login` if unauthorized
+- `(root)/` - Public marketing site with `HeaderV2` + `FooterV2` layout
+- `(auth)/` - Login page; redirects logged-in users by role
+- `superadmin/`, `admin/`, `partner/`, `student/` - Role-gated portals; each layout checks `session.user.role` server-side and redirects to `/login` if unauthorized
 
 ### Key Directories
 
-- `src/actions/` — Server actions (`"use server"`). Email sending in `mailSending.ts`, auth wrappers, Gemini AI search (`gemini.ts`), CRUD actions organized by role (`superAdmin/`, `partner/`)
-- `src/components/pages/` — Page-level components. Active versions use `*V2` suffix. Organized by route: `services/`, `stydy-destinations/` (typo is intentional), `contact/`, etc.
-- `src/components/ui/` — shadcn/ui primitives (Radix-based)
-- `src/components/homev2/` — Homepage sections (shared `TrustBarSection` used across service pages)
-- `src/constants/data.ts` — `NAVBAR_DATA`, `COMPANY_INFO` (phone, email, WhatsApp), `STUDY_DESTINATIONS_FULLDATA`, `ACCOMMODATION_COUNTRY_FULLDATA`
-- `src/lib/clients.ts` — Singleton Prisma client (uses global in dev to prevent hot-reload exhaustion)
-- `src/lib/getSession.ts` — React `cache()`-wrapped `auth()` for server component session reads
-- `src/lib/utils.ts` — `cn()` for merging Tailwind classes
+- `src/actions/` - Server actions (`"use server"`). Email sending in `mailSending.ts`, auth wrappers, Gemini AI search (`gemini.ts`), CRUD actions organized by role (`superAdmin/`, `partner/`)
+- `src/components/pages/` - Page-level components. Active versions use `*V2` suffix. Organized by route: `services/`, `stydy-destinations/` (typo is intentional), `contact/`, etc.
+- `src/components/ui/` - shadcn/ui primitives (Radix-based)
+- `src/components/homev2/` - Homepage sections (shared `TrustBarSection` used across service pages)
+- `src/constants/data.ts` - `NAVBAR_DATA`, `COMPANY_INFO` (phone, email, WhatsApp), `STUDY_DESTINATIONS_FULLDATA`, `ACCOMMODATION_COUNTRY_FULLDATA`
+- `src/lib/clients.ts` - Singleton Prisma client (uses global in dev to prevent hot-reload exhaustion)
+- `src/lib/getSession.ts` - React `cache()`-wrapped `auth()` for server component session reads
+- `src/lib/utils.ts` - `cn()` for merging Tailwind classes
 
 ### Auth
 
@@ -70,7 +70,7 @@ Services landing page at `/services` organizes all services into 4 stages: Decid
 
 ### AI Search
 
-`/ai-search` — Gemini AI-powered course finder. Server action in `src/actions/gemini.ts` uses `gemini-2.5-flash` with `responseMimeType: "application/json"`. Returns course recommendations with university, country, fees, match percentage. Client component in `src/app/(root)/ai-search/AISearchClient.tsx`.
+`/ai-search` - Gemini AI-powered course finder. Server action in `src/actions/gemini.ts` uses `gemini-2.5-flash` with `responseMimeType: "application/json"`. Returns course recommendations with university, country, fees, match percentage. Client component in `src/app/(root)/ai-search/AISearchClient.tsx`.
 
 ## Patterns
 
@@ -78,14 +78,14 @@ Services landing page at `/services` organizes all services into 4 stages: Decid
 - Import Prisma client from `@/lib/clients`, never instantiate directly
 - Use `getSession()` from `@/lib/getSession.ts` for server-side session reads
 - Use `cn()` from `@/lib/utils` for Tailwind class merging
-- Use `COMPANY_INFO` from `@/constants/data` for phone, email, WhatsApp links — never hardcode contact info
+- Use `COMPANY_INFO` from `@/constants/data` for phone, email, WhatsApp links - never hardcode contact info
 - Nav links are defined in `src/constants/data.ts` via `NAVBAR_DATA`
 
 ## Design System
 
 ### Header
 
-`HeaderV2` — Fixed position, transparent by default, white bg on scroll. Text colors swap dynamically based on scroll state (white on transparent for dark hero pages, dark on white bg). AI Search link stays gold `#D4AF37` in all states. Height: `h-14`. Container: `max-w-[1400px]`.
+`HeaderV2` - Fixed position, transparent by default, white bg on scroll. Text colors swap dynamically based on scroll state (white on transparent for dark hero pages, dark on white bg). AI Search link stays gold `#D4AF37` in all states. Height: `h-14`. Container: `max-w-[1400px]`.
 
 ### Service Pages
 

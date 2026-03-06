@@ -335,7 +335,7 @@ const EligibilityShortlistPageV2 = () => {
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-[#D4AF37] to-[#f5d76e] bg-clip-text text-transparent">
-                  your profile — and holds up.
+                  your profile - and holds up.
                 </span>
               </h1>
 
@@ -345,7 +345,7 @@ const EligibilityShortlistPageV2 = () => {
               </p>
               <p className="text-base sm:text-lg text-white/60 leading-relaxed mb-10 max-w-2xl">
                 We help you choose options that make sense on paper and in real
-                life — with clear next steps and disciplined documentation.
+                life - with clear next steps and disciplined documentation.
               </p>
 
               {/* Trust chips */}

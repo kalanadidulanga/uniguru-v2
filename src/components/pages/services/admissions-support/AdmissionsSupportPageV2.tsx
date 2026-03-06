@@ -353,7 +353,7 @@ const AdmissionsSupportPageV2 = () => {
               </p>
               <p className="text-base sm:text-lg text-white/60 leading-relaxed mb-10 max-w-2xl">
                 We guide your application from shortlist to submission with
-                disciplined document control — so your application is coherent,
+                disciplined document control - so your application is coherent,
                 complete, and on time.
               </p>
 
@@ -396,7 +396,7 @@ const AdmissionsSupportPageV2 = () => {
               </div>
 
               <p className="text-xs sm:text-sm text-white/40 max-w-lg">
-                Premium admissions is process control — fewer mistakes, faster
+                Premium admissions is process control - fewer mistakes, faster
                 progress.
               </p>
             </div>

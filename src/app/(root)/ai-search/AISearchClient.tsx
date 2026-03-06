@@ -122,7 +122,7 @@ export default function AISearchClient() {
             </h1>
 
             <p className="text-white/60 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto">
-              Tell us your background, budget, and goals — our AI finds the
+              Tell us your background, budget, and goals - our AI finds the
               best university programmes for you.
             </p>
           </div>

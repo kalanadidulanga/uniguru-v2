@@ -277,7 +277,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
             </div>
           </div>
 
-          {/* Bottom: Cost cards + Will/Won't — light bg */}
+          {/* Bottom: Cost cards + Will/Won't - light bg */}
           <div className="bg-slate-50 py-12 sm:py-16">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
               {/* Cost Items */}
@@ -309,7 +309,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
                 </div>
               </div>
 
-              {/* Will / Won't — two-column card layout */}
+              {/* Will / Won't - two-column card layout */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Will Do */}
                 <div className="rounded-2xl bg-white border border-emerald-200 p-6 sm:p-7">
@@ -494,7 +494,7 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
         </section>
       )}
 
-      {/* Legacy sections — only for destinations without Opportunities Hub */}
+      {/* Legacy sections - only for destinations without Opportunities Hub */}
       {!dataSet.opportunities_hub_section && (
         <>
           <DestinationCareers dataSet={dataSet} />
