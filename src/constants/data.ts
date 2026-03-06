@@ -545,10 +545,10 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
     hero_section: {
       title: "Study in Canada",
       images: [
-        { src: "/images/study_destinations/canada/1.png", alt: "Canada Flag" },
+        { src: "/images/study_destinations/canada/hero.jpg", alt: "Toronto skyline with CN Tower" },
         {
-          src: "/images/study_destinations/canada/2.png",
-          alt: "Canadian Landscape",
+          src: "/images/study_destinations/canada/campus.jpg",
+          alt: "Canadian cityscape",
         },
       ],
       description:
@@ -772,18 +772,21 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
           text: "Explore a curated list of institutions we work with.",
           cta_label: "View Canada partner universities",
           cta_link: "/universities",
+          image: "/images/study_destinations/canada/opportunities/universities.jpg",
         },
         {
           heading: "Scholarships (Canada)",
           text: "A practical overview of common scholarship types and eligibility.",
           cta_label: "Explore scholarships",
           cta_link: "/scholarships",
+          image: "/images/study_destinations/canada/opportunities/scholarships.jpg",
         },
         {
           heading: "Careers & industry insights",
           text: "Which courses lead to which outcomes \u2014 and what's credible for your profile.",
           cta_label: "See career insights",
           cta_link: "/careers",
+          image: "/images/study_destinations/canada/opportunities/careers.jpg",
         },
       ],
       cta_text:
