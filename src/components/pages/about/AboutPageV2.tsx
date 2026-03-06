@@ -134,9 +134,9 @@ const AboutPageV2 = () => {
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
 
-        <div className="flex-1 flex items-center">
-          <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28">
-            <div className="max-w-4xl">
+        <div className="flex-1 flex items-center justify-center">
+          <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 mb-4">
                 <Users size={14} className="text-[#D4AF37]" />
                 <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
@@ -144,43 +144,26 @@ const AboutPageV2 = () => {
                 </span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] tracking-tight mb-6">
-                London-led support
-                <br />
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white tracking-tight leading-tight mb-5 sm:mb-6">
+                London-led support{" "}
                 <span className="text-[#D4AF37]">
-                  for global study journeys.
+                  for global study journeys
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mb-3 max-w-3xl">
+              <p className="text-white/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10">
                 A disciplined, end-to-end process - from shortlist to settlement
                 - with regulated guidance where required.
               </p>
 
-              <div className="flex flex-wrap gap-x-8 gap-y-3 mb-10">
-                {[
-                  "Clear scope",
-                  "Fixed deliverables",
-                  "No pressure tactics",
-                ].map((chip, i) => (
-                  <span
-                    key={i}
-                    className="inline-flex items-center gap-2.5 text-white/90 text-sm font-medium"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
-                    {chip}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap gap-3 sm:gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 justify-center">
                 <a
                   href="/book"
                   className="group inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg transition-all duration-200 text-sm shadow-md"
                 >
                   Get My Shortlist
                   <ArrowRight
-                    size={18}
+                    size={16}
                     className="group-hover:translate-x-1 transition-transform"
                   />
                 </a>
@@ -190,10 +173,14 @@ const AboutPageV2 = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg transition-all duration-200 text-sm border border-white/30"
                 >
-                  <MessageCircle size={18} className="text-[#25D366]" />
+                  <MessageCircle size={16} className="text-[#25D366]" />
                   Chat on WhatsApp
                 </a>
               </div>
+
+              <p className="text-white/40 text-xs sm:text-sm max-w-lg mx-auto text-center">
+                Clear scope | Fixed deliverables | No pressure tactics
+              </p>
             </div>
           </div>
         </div>
@@ -287,10 +274,13 @@ const AboutPageV2 = () => {
         </div>
 
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12 sm:mb-16">
-            <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-4 block">
-              Our Approach
-            </span>
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Target size={14} className="text-[#D4AF37]" />
+              <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                Our Approach
+              </span>
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white tracking-tight">
               How we work
             </h2>
