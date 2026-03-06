@@ -453,22 +453,22 @@ export const GetMyShortlistSection = ({
 }) => (
   <section
     id="shortlist"
-    className="scroll-mt-20 py-16 sm:py-20 lg:py-24 relative overflow-hidden"
+    className="scroll-mt-20 py-16 sm:py-20 relative overflow-hidden"
   >
-    <div className="absolute inset-0 bg-gradient-to-br from-[#0f2554] via-[#1a3b85] to-[#0f2554]" />
-    <div className="absolute top-0 left-0 w-72 h-72 bg-[#D4AF37]/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-    <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-    <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-white/5 rounded-full blur-2xl" />
+    <div className="absolute inset-0 bg-[#0f2554]" />
 
     <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-12 sm:mb-16">
-        <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-4 block drop-shadow-sm">
-          Get Started
-        </span>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5 drop-shadow-md">
+      <div className="text-center mb-10 sm:mb-12">
+        <div className="inline-flex items-center gap-2 mb-4">
+          <Send size={14} className="text-[#D4AF37]" />
+          <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+            Get Started
+          </span>
+        </div>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight mb-4">
           Not sure what you need?
         </h2>
-        <p className="text-white text-base sm:text-lg max-w-xl mx-auto font-medium drop-shadow-sm">
+        <p className="text-white/70 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
           Start with your shortlist - we&apos;ll guide you from there.
         </p>
       </div>
@@ -483,21 +483,21 @@ export const GetMyShortlistSection = ({
         </div>
 
         {/* Sidebar (2/5) */}
-        <div className="lg:col-span-2 flex flex-col gap-5">
+        <div className="lg:col-span-2 flex flex-col gap-4">
           <div className="grid grid-cols-2 gap-3">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/15">
               <div className="text-2xl sm:text-3xl font-bold text-[#D4AF37] mb-0.5">
-                24&ndash;48h
+                24-48h
               </div>
-              <div className="text-white/80 text-xs sm:text-sm">
+              <div className="text-white/70 text-xs sm:text-sm">
                 Response time
               </div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/15">
               <div className="text-2xl sm:text-3xl font-bold text-[#D4AF37] mb-0.5">
-                3&ndash;7
+                3-7
               </div>
-              <div className="text-white/80 text-xs sm:text-sm">
+              <div className="text-white/70 text-xs sm:text-sm">
                 Options shortlisted
               </div>
             </div>
@@ -509,7 +509,7 @@ export const GetMyShortlistSection = ({
                 <Shield size={18} className="text-[#D4AF37]" />
               </div>
               <span className="text-white text-sm font-medium leading-snug">
-                IAA Regulated &middot; {COMPANY_INFO.iaaReg}
+                IAA Regulated | {COMPANY_INFO.iaaReg}
               </span>
             </div>
             <div className="flex items-center gap-3">
@@ -544,7 +544,7 @@ export const GetMyShortlistSection = ({
               Chat on WhatsApp
             </a>
             <p className="text-white/60 text-xs mt-2.5 text-center">
-              {COMPANY_INFO.phone} &middot; {COMPANY_INFO.email}
+              {COMPANY_INFO.phone} | {COMPANY_INFO.email}
             </p>
           </div>
         </div>
