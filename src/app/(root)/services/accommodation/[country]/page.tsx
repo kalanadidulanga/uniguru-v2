@@ -1,5 +1,6 @@
-import { ACCOMMODATION_DESTINATIONS } from "@/constants/data";
-import AccommodationCountryPageV2 from "@/components/pages/services/accommodation/AccommodationCountryPageV2";
+import { ACCOMMODATION_COUNTRY_FULLDATA } from "@/constants/accommodation-country-data";
+import AccommodationCountryPage from "@/components/pages/services/accommodation/country/AccommodationCountryPage";
+import { notFound } from "next/navigation";
 
 interface PageProps {
   params: {
@@ -8,14 +9,19 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const paths = ACCOMMODATION_DESTINATIONS.map((item) => ({
+  return ACCOMMODATION_COUNTRY_FULLDATA.map((item) => ({
     country: item.country,
   }));
-  return paths;
 }
 
 const Page = ({ params }: PageProps) => {
-  return <AccommodationCountryPageV2 params={params} />;
+  const dataSet = ACCOMMODATION_COUNTRY_FULLDATA.find(
+    (d) => d.country === params.country
+  );
+
+  if (!dataSet) return notFound();
+
+  return <AccommodationCountryPage dataSet={dataSet} />;
 };
 
 export default Page;

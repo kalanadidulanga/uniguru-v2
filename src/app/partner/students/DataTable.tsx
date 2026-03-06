@@ -122,7 +122,7 @@ const DataTable = ({ data, isLoading, reload }: any) => {
                 </TableCell>
                 <TableCell>
                   {row?.createdAt
-                    ? new Date(row.createdAt).toLocaleString()
+                    ? new Date(row.createdAt).toLocaleString("en-US")
                     : "No date available"}
                 </TableCell>
                 <TableCell>

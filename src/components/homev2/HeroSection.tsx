@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import {
   Select,
   SelectContent,
@@ -14,8 +13,9 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { STUDY_DESTINATIONS_v2 } from "@/constants/data";
-import { ArrowRight, Star, MapPin, CheckCircle2, ChevronDown } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronDown } from "lucide-react";
 import { sendEligibilityAssessmentEmail } from "@/actions/mailSending";
+import TrustBarSection from "./TrustBarSection";
 
 const CODES = [
   { code: "+44", flag: "gb" }, { code: "+1",  flag: "us" },
@@ -80,15 +80,14 @@ const HeroSection = () => {
           <div className="flex flex-col justify-start space-y-5 sm:space-y-6 lg:space-y-7 text-center lg:text-left pb-8 lg:pb-0 lg:col-span-3 w-full min-w-0">
             {/* Main Heading - uses full 3-column width */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-white leading-[1.2] tracking-tight w-full mx-auto lg:mx-0">
-              Study abroad,
+              Study Abroad,
               <br />
-              guided from London
+              Guided From London
             </h1>
 
             {/* Supporting Text - uses full 3-column width */}
             <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed w-full mx-auto lg:mx-0 font-normal">
-              Free eligibility check, personalised shortlist in 4-6 hours,
-              consultation within 6 hours.
+              Moving abroad is personal. Get clear, regulated guidance without pressure, without guesswork.
             </p>
 
             {/* Logo/Brand Element */}
@@ -168,10 +167,10 @@ const HeroSection = () => {
                         <SelectValue placeholder="Select intake period" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="January 2026">January 2026</SelectItem>
+                        <SelectItem value="May 2026">May 2026</SelectItem>
                         <SelectItem value="September 2026">September 2026</SelectItem>
                         <SelectItem value="January 2027">January 2027</SelectItem>
-                        <SelectItem value="September 2027">September 2027</SelectItem>
+                        <SelectItem value="May 2027">May 2027</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -233,7 +232,8 @@ const HeroSection = () => {
                       htmlFor="consultation"
                       className="text-xs sm:text-sm text-gray-600 cursor-pointer leading-relaxed"
                     >
-                      Book a free consultation within 1 hour
+                      Free eligibility check, personalised shortlist in 4-6 hours,
+                      consultation within 6 hours.
                     </label>
                   </div>
 
@@ -267,72 +267,7 @@ const HeroSection = () => {
       </div>
 
       {/* Trust Bar - Bottom of Hero Section */}
-      <div className="relative z-10 w-full border-t border-white/20 bg-white/95 backdrop-blur-sm mt-auto">
-        <div className="max-w-[1800px] mx-auto px-4 sm:px-5 lg:px-6 xl:px-8 2xl:px-10 py-4 sm:py-5">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8">
-            {/* Google Reviews */}
-            <Link
-              href="https://www.google.com/search?q=uniguru+reviews"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2.5 sm:gap-3 group"
-            >
-              <div className="flex items-center gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-[#D4AF37] text-[#D4AF37]"
-                  />
-                ))}
-              </div>
-              <div>
-                <p className="text-xs sm:text-sm font-semibold text-gray-900 group-hover:text-[#1a3b85] transition-colors">
-                  97+ Google Reviews
-                </p>
-                <p className="text-[10px] sm:text-xs text-gray-500">
-                  Trusted by students
-                </p>
-              </div>
-            </Link>
-
-            {/* Divider */}
-            <div className="hidden sm:block w-px h-8 sm:h-10 bg-gray-200"></div>
-
-            {/* IAA Regulated */}
-            <div className="flex items-center gap-2.5 sm:gap-3">
-              <div className="relative w-14 h-7 sm:w-16 sm:h-8 flex-shrink-0">
-                <Image src="/iaa-logo.png" alt="IAA Regulated" fill className="object-contain" />
-              </div>
-              <div>
-                <p className="text-xs sm:text-sm font-semibold text-gray-900">
-                  IAA Regulated
-                </p>
-                <p className="text-[10px] sm:text-xs text-gray-500">
-                  Immigration Advisers Authority
-                </p>
-              </div>
-            </div>
-
-            {/* Divider */}
-            <div className="hidden sm:block w-px h-8 sm:h-10 bg-gray-200"></div>
-
-            {/* London Registered Address */}
-            <div className="flex items-center gap-2.5 sm:gap-3">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#1a3b85]/5 flex items-center justify-center">
-                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#1a3b85]" />
-              </div>
-              <div>
-                <p className="text-xs sm:text-sm font-semibold text-gray-900">
-                  London Registered
-                </p>
-                <p className="text-[10px] sm:text-xs text-gray-500">
-                  128 City Road, London EC1V 2NX
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <TrustBarSection />
     </section>
   );
 };

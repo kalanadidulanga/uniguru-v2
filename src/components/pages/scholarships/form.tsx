@@ -63,7 +63,7 @@ const ScholarshipsForm = ({ country }: { country: string }) => {
       onSubmit={submitForm}
       className=" w-full h-auto flex flex-col gap-10"
     >
-      <h3 className=" text-4xl font-bold text-my-blue text-center">
+      <h3 className=" text-4xl font-bold text-[#0f2554] text-center">
         Scholarships
       </h3>
 
@@ -76,16 +76,16 @@ const ScholarshipsForm = ({ country }: { country: string }) => {
             {STUDY_DESTINATIONS.map((item, index) => (
               <div
                 key={index}
-                className={` border-2 flex flex-col sm:flex-row items-center gap-3 p-2 rounded-lg cursor-pointer border-my-blue ${
+                className={` border-2 flex flex-col sm:flex-row items-center gap-3 p-2 rounded-lg cursor-pointer border-[#0f2554] ${
                   destination === item.name
-                    ? "bg-my-blue text-white"
-                    : "text-my-blue"
+                    ? "bg-[#0f2554] text-white"
+                    : "text-[#0f2554]"
                 }`}
                 onClick={() => {
                   setDestination(item.name);
                 }}
               >
-                <Image src={item.src} alt="" width={30} height={30} />
+                <Image src={item.src} alt="" width={30} height={30} unoptimized />
                 <span className="font-semibold text-sm ">{item.name}</span>
               </div>
             ))}

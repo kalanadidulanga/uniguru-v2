@@ -94,7 +94,7 @@ const NoticeBoard = () => {
             </Button>
             <div className="font-semibold text-sm">
               {datetime
-                ? new Date(datetime).toLocaleString()
+                ? new Date(datetime).toLocaleString("en-US")
                 : "No date available"}
             </div>
           </div>

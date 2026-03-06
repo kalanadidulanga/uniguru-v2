@@ -9,6 +9,7 @@ import {
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { COMPANY_INFO } from "@/constants/data";
 
 const features = [
   {
@@ -51,8 +52,8 @@ const WhyUniguru = () => {
 
         {/* Header */}
         <header className="text-center mb-12 sm:mb-14 lg:mb-16">
-          <p className="text-xs font-semibold tracking-widest text-[#D4AF37] uppercase mb-3">
-            Why Uniguru
+          <p className="text-xs sm:text-sm font-semibold tracking-widest text-[#D4AF37] uppercase mb-3 sm:mb-4">
+            Why Choose Us
           </p>
           <h2
             id="why-uniguru-heading"
@@ -67,32 +68,32 @@ const WhyUniguru = () => {
         </header>
 
         {/* Feature Cards with Images */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 sm:mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6 mb-10 sm:mb-12">
           {features.map((feature, index) => (
             <article
               key={index}
               className="group bg-[#132d5e] border border-white/10 rounded-lg overflow-hidden hover:bg-[#163573] transition-all"
             >
               {/* Image */}
-              <div className="relative h-40 overflow-hidden">
+              <div className="relative h-28 sm:h-36 lg:h-40 overflow-hidden">
                 <Image
                   src={feature.image}
                   alt={feature.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
                 />
-                <div className="absolute bottom-3 left-3 w-10 h-10 rounded-md bg-[#D4AF37] flex items-center justify-center">
-                  <feature.icon className="w-5 h-5 text-white" aria-hidden />
+                <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 w-8 h-8 sm:w-10 sm:h-10 rounded-md bg-[#D4AF37] flex items-center justify-center">
+                  <feature.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" aria-hidden />
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-5">
-                <h3 className="text-base sm:text-lg font-semibold text-white mb-2">
+              <div className="p-3 sm:p-4 lg:p-5">
+                <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-white mb-1 sm:mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-white/50 leading-relaxed">
+                <p className="text-xs sm:text-sm text-white/50 leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -100,13 +101,13 @@ const WhyUniguru = () => {
           ))}
         </div>
 
-        {/* Bottom Row — Trust + CTA */}
+        {/* Bottom Row - Trust + CTA */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-sm text-white/40">
-            Trusted by 10,000+ students worldwide · 128 City Road, London EC1V 2NX
+          <p className="text-xs sm:text-sm text-white/40">
+            Trusted by 10,000+ students worldwide · {COMPANY_INFO.address}
           </p>
           <Link
-            href="/book"
+            href={COMPANY_INFO.bookUrl}
             className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#c5a030] text-white text-sm font-semibold px-6 py-3 rounded-full transition-colors flex-shrink-0"
           >
             Get started

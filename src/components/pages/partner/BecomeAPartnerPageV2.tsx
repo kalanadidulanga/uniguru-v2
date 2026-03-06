@@ -142,7 +142,7 @@ const BecomeAPartnerPageV2 = () => {
                         <FeatureCard
                             icon={<Laptop className="w-8 h-8 text-[#2B59C3]" />}
                             title="Work Remotely"
-                            description="Work from anywhere—home, vacation, or a café. All you need is an internet connection and your network."
+                            description="Work from anywhere-home, vacation, or a café. All you need is an internet connection and your network."
                             border="border-l-4 border-blue-400"
                         />
                         <FeatureCard

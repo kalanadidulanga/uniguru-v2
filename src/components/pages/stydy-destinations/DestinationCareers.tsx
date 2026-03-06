@@ -19,7 +19,7 @@ const DestinationCareers = ({ dataSet }: DestinationCareersProps) => {
       className="py-16 sm:py-20 lg:py-24 bg-white"
       aria-labelledby="careers-heading"
     >
-      <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
         <div className="rounded-2xl overflow-hidden bg-slate-50/80 border border-slate-100 p-8 lg:p-12 xl:p-16 shadow-[0_4px_24px_rgba(26,59,133,0.06)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
             <div>
@@ -30,7 +30,7 @@ const DestinationCareers = ({ dataSet }: DestinationCareersProps) => {
               <h2 id="careers-heading" className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#1a3b85] mb-6">
                 {careers.title}
               </h2>
-              <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-8">
                 {careers.content}
               </p>
               <div className="space-y-4">
@@ -42,7 +42,7 @@ const DestinationCareers = ({ dataSet }: DestinationCareersProps) => {
                   {courses.courses.map((course, index) => (
                     <span
                       key={index}
-                      className="px-4 py-2 rounded-xl bg-white text-slate-700 font-medium text-sm border border-slate-200 hover:border-[#D4AF37]/40 hover:text-[#1a3b85] hover:bg-[#D4AF37]/5 transition-colors"
+                      className="px-4 py-2 rounded-xl bg-white text-gray-700 font-medium text-sm border border-slate-200 hover:border-[#D4AF37]/40 hover:text-[#1a3b85] hover:bg-[#D4AF37]/5 transition-colors"
                     >
                       {course}
                     </span>

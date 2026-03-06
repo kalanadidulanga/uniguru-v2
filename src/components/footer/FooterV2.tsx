@@ -2,166 +2,222 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { SOCIAL_LINKS } from "@/constants/data";
-import { MapPin, Phone, Mail, ChevronRight } from "lucide-react";
+import { MapPin, Phone, Mail, Send } from "lucide-react";
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube, FaTiktok, FaWhatsapp } from "react-icons/fa6";
+import { COMPANY_INFO } from "@/constants/data";
 
-const QUICK_LINKS = [
-    { name: "Home", href: "/" },
-    { name: "About Us", href: "/about-us" },
-    { name: "Careers", href: "/careers" },
-    { name: "Contact", href: "/contact" },
-] as const;
+const SOCIAL_ICONS = [
+  { icon: FaFacebookF, link: "https://facebook.com/uniguruedu/", color: "#1877F2", label: "Facebook" },
+  { icon: FaLinkedinIn, link: "https://www.linkedin.com/company/uniguru-solutions/", color: "#0A66C2", label: "LinkedIn" },
+  { icon: FaInstagram, link: "https://www.instagram.com/uniguruedu/", color: "#E4405F", label: "Instagram" },
+  { icon: FaYoutube, link: "https://www.youtube.com/@Uniguru_", color: "#FF0000", label: "YouTube" },
+  { icon: FaTiktok, link: "https://www.tiktok.com/@uniguru_", color: "#000000", label: "TikTok" },
+  { icon: FaWhatsapp, link: COMPANY_INFO.whatsapp, color: "#25D366", label: "WhatsApp" },
+];
 
-const SERVICES = [
-    { name: "Universities", href: "/universities" },
-    { name: "Scholarships", href: "/scholarships" },
-    { name: "Become a Partner", href: "/become-a-partner" },
-] as const;
-
-const RESOURCES = [
-    { name: "AI App", href: "/ai-search" },
-    { name: "Guides", href: "/scholarships" },
-    { name: "Book Now", href: "/book" },
-] as const;
+const FOOTER_LINKS = {
+    navigate: [
+        { name: "Home", href: "/" },
+        { name: "About", href: "/about-us" },
+        { name: "Services", href: "/services" },
+        { name: "Contact", href: "/contact" },
+    ],
+    legal: [
+        { name: "Careers", href: "/careers" },
+        { name: "Partner", href: "/become-a-partner" },
+        { name: "Regulation", href: "/regulation" },
+        { name: "Policies", href: "/policies" },
+    ],
+    services: [
+        { name: "Eligibility & Shortlist", href: "/services/eligibility-shortlist" },
+        { name: "Admissions Support", href: "/services/admissions-support" },
+        { name: "IELTS & Interview Prep", href: "/services/ielts-interview-prep" },
+        { name: "Financial Help", href: "/services/financial-help" },
+        { name: "Accommodation", href: "/services/accommodation" },
+        { name: "Air Ticketing", href: "/services/air-ticketing" },
+    ],
+    destinations: [
+        { name: "UK", href: "/study-destinations/uk" },
+        { name: "Canada", href: "/study-destinations/canada" },
+        { name: "Australia", href: "/study-destinations/australia" },
+        { name: "USA", href: "/study-destinations/usa" },
+    ],
+} as const;
 
 const FooterV2 = () => {
     return (
         <footer
-            className="relative bg-[#0f172a] text-white overflow-hidden"
+            className="relative bg-[#0f1a2e] text-white overflow-hidden"
             role="contentinfo"
             aria-label="Site footer"
         >
-            {/* Top Content */}
-            <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+            <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
                 
-                {/* Links grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10">
+                {/* Main Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 mb-10 pb-10 border-b border-white/10">
                     
-                    {/* Quick Links */}
-                    <div>
-                        <h4 className="text-sm font-semibold text-white mb-4 border-b-2 border-[#D4AF37] pb-2 inline-block">
-                            Quick Links
-                        </h4>
-                        <ul className="space-y-2.5 mt-4" role="list">
-                            {QUICK_LINKS.map((item) => (
-                                <li key={item.name}>
-                                    <Link
-                                        href={item.href}
-                                        className="text-gray-400 text-sm hover:text-[#D4AF37] transition-colors flex items-center gap-2 group"
-                                    >
-                                        <ChevronRight size={14} className="text-[#D4AF37] shrink-0 group-hover:translate-x-0.5 transition-transform" />
-                                        {item.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    {/* Brand + Contact */}
+                    <div className="lg:col-span-4 space-y-6">
+                        <Link href="/" className="inline-flex items-center gap-3">
+                            <Image
+                                src="/logo-1.png"
+                                alt="Uniguru Logo"
+                                width={40}
+                                height={40}
+                                className="h-10 w-auto"
+                            />
+                            <span className="text-3xl font-bold tracking-tight">
+                                Uniguru
+                            </span>
+                        </Link>
+                        <p className="text-white/50 text-sm leading-relaxed max-w-xs">
+                            London-led guidance for international students. Clear scope, fixed deliverables.
+                        </p>
+                        
+                        {/* Contact - Compact */}
+                        <div className="space-y-2 text-sm text-white/60">
+                            <div className="flex items-center gap-2">
+                                <MapPin size={14} className="text-[#D4AF37] shrink-0" />
+                                <span>{COMPANY_INFO.addressShort}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Phone size={14} className="text-[#D4AF37] shrink-0" />
+                                <span>{COMPANY_INFO.phone}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Mail size={14} className="text-[#D4AF37] shrink-0" />
+                                <span>{COMPANY_INFO.email}</span>
+                            </div>
+                        </div>
 
-                    {/* Services */}
-                    <div>
-                        <h4 className="text-sm font-semibold text-white mb-4 border-b-2 border-[#D4AF37] pb-2 inline-block">
-                            Services
-                        </h4>
-                        <ul className="space-y-2.5 mt-4" role="list">
-                            {SERVICES.map((item) => (
-                                <li key={item.name}>
-                                    <Link
-                                        href={item.href}
-                                        className="text-gray-400 text-sm hover:text-[#D4AF37] transition-colors flex items-center gap-2 group"
-                                    >
-                                        <ChevronRight size={14} className="text-[#D4AF37] shrink-0 group-hover:translate-x-0.5 transition-transform" />
-                                        {item.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Resources */}
-                    <div>
-                        <h4 className="text-sm font-semibold text-white mb-4 border-b-2 border-[#D4AF37] pb-2 inline-block">
-                            Resources
-                        </h4>
-                        <ul className="space-y-2.5 mt-4" role="list">
-                            {RESOURCES.map((item) => (
-                                <li key={item.name}>
-                                    <Link
-                                        href={item.href}
-                                        className="text-gray-400 text-sm hover:text-[#D4AF37] transition-colors flex items-center gap-2 group"
-                                    >
-                                        <ChevronRight size={14} className="text-[#D4AF37] shrink-0 group-hover:translate-x-0.5 transition-transform" />
-                                        {item.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Contact Us */}
-                    <div>
-                        <h4 className="text-sm font-semibold text-white mb-4 border-b-2 border-[#D4AF37] pb-2 inline-block">
-                            Contact Us
-                        </h4>
-                        <ul className="space-y-3 mt-4 text-gray-400 text-sm" role="list">
-                            <li className="flex items-start gap-2">
-                                <MapPin size={16} className="text-[#D4AF37] shrink-0 mt-0.5" aria-hidden />
-                                <span>128 City Road, London EC1V 2NX</span>
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <Phone size={16} className="text-[#D4AF37] shrink-0" aria-hidden />
-                                <span>+44 20 1234 5678</span>
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <Mail size={16} className="text-[#D4AF37] shrink-0" aria-hidden />
-                                <span>info@uniguru.co.uk</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-
-            {/* Bottom section with London background */}
-            <div className="relative h-72 sm:h-80">
-                {/* Background Image */}
-                <div className="absolute inset-0">
-                    <Image
-                        src="/1.jpg"
-                        alt="London skyline"
-                        fill
-                        className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/50" />
-                </div>
-
-                {/* Social icons and copyright */}
-                <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-center text-center">
-                    
-                    {/* Social Icons */}
-                    <div className="flex gap-3 mb-6">
-                        {SOCIAL_LINKS.map((item, index) => (
+                        {/* CTA Buttons */}
+                        <div className="flex items-center gap-2 pt-2">
                             <Link
-                                key={index}
+                                href="/book"
+                                className="inline-flex items-center gap-2 px-4 py-2 bg-[#D4AF37] text-[#0f1a2e] text-xs font-semibold rounded-full hover:bg-[#e6c456] transition-colors"
+                            >
+                                Get My Shortlist
+                                <Send size={12} />
+                            </Link>
+                            <Link
+                                href="/contact"
+                                className="inline-flex items-center px-4 py-2 bg-white/5 text-white text-xs font-medium rounded-full border border-white/10 hover:bg-white/10 transition-colors"
+                            >
+                                Contact
+                            </Link>
+                        </div>
+                    </div>
+
+                    {/* Links Section */}
+                    <div className="lg:col-span-8">
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4">
+                            
+                            {/* Navigate */}
+                            <div>
+                                <h4 className="text-[10px] font-semibold text-white/30 uppercase tracking-widest mb-3">
+                                    Navigate
+                                </h4>
+                                <ul className="space-y-1.5">
+                                    {FOOTER_LINKS.navigate.map((item) => (
+                                        <li key={item.name}>
+                                            <Link
+                                                href={item.href}
+                                                className="text-white/60 text-sm hover:text-[#D4AF37] transition-colors"
+                                            >
+                                                {item.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* More */}
+                            <div>
+                                <h4 className="text-[10px] font-semibold text-white/30 uppercase tracking-widest mb-3">
+                                    More
+                                </h4>
+                                <ul className="space-y-1.5">
+                                    {FOOTER_LINKS.legal.map((item) => (
+                                        <li key={item.name}>
+                                            <Link
+                                                href={item.href}
+                                                className="text-white/60 text-sm hover:text-[#D4AF37] transition-colors"
+                                            >
+                                                {item.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Services */}
+                            <div>
+                                <h4 className="text-[10px] font-semibold text-white/30 uppercase tracking-widest mb-3">
+                                    Services
+                                </h4>
+                                <ul className="space-y-1.5">
+                                    {FOOTER_LINKS.services.map((item) => (
+                                        <li key={item.name}>
+                                            <Link
+                                                href={item.href}
+                                                className="text-white/60 text-sm hover:text-[#D4AF37] transition-colors"
+                                            >
+                                                {item.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Destinations */}
+                            <div>
+                                <h4 className="text-[10px] font-semibold text-white/30 uppercase tracking-widest mb-3">
+                                    Destinations
+                                </h4>
+                                <ul className="space-y-1.5">
+                                    {FOOTER_LINKS.destinations.map((item) => (
+                                        <li key={item.name}>
+                                            <Link
+                                                href={item.href}
+                                                className="text-white/60 text-sm hover:text-[#D4AF37] transition-colors"
+                                            >
+                                                Study in {item.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bottom Bar */}
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
+                    {/* Copyright */}
+                    <p>© {new Date().getFullYear()} Uniguru. All rights reserved.</p>
+                    
+                    {/* Social Icons - Center */}
+                    <div className="flex items-center gap-2 order-first sm:order-none">
+                        {SOCIAL_ICONS.map((item) => (
+                            <Link
+                                key={item.label}
                                 href={item.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center hover:bg-[#D4AF37] transition-colors"
-                                aria-label={`${item.name || "Social link"}`}
+                                className="w-10 h-10 rounded-full bg-white border border-white/10 flex items-center justify-center hover:scale-110 transition-all"
+                                aria-label={item.label}
                             >
-                                <Image
-                                    src={item.src}
-                                    alt=""
-                                    width={18}
-                                    height={18}
-                                    className="brightness-0"
-                                />
+                                <item.icon className="w-5 h-5 transition-colors" style={{ color: item.color }} />
                             </Link>
                         ))}
                     </div>
-
-                    {/* Copyright */}
-                    <div className="text-xs sm:text-sm text-white space-y-1">
-                        <p>© {new Date().getFullYear()} Uniguru • All Rights Reserved</p>
+                    
+                    {/* Legal Links */}
+                    <div className="flex items-center gap-4">
+                        <Link href="/policies" className="hover:text-white/60 transition-colors">Privacy</Link>
+                        <Link href="/policies" className="hover:text-white/60 transition-colors">Terms</Link>
+                        <span className="hidden sm:inline">IAA Reg: {COMPANY_INFO.iaaReg}</span>
+                        <span className="sm:hidden">IAA Regulated</span>
                     </div>
                 </div>
             </div>

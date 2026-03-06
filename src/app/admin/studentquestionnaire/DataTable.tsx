@@ -199,7 +199,7 @@ const DataTable = ({ data, isLoading, reloadStudentQuestionnaire }: any) => {
               <TableCell>{row?.country || "-"}</TableCell>
               <TableCell>
                 {row?.createdAt
-                  ? new Date(row.createdAt).toLocaleString()
+                  ? new Date(row.createdAt).toLocaleString("en-US")
                   : "No date available"}
               </TableCell>
               <TableCell>

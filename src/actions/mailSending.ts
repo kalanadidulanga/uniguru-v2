@@ -384,7 +384,7 @@ const sendEligibilityAssessmentEmail = async (
   const mailOptions = {
     from: "Eligibility Assessment noreply@uniguru.co",
     to: "info@uniguru.co",
-    subject: `New Eligibility Assessment Request — ${destination}`,
+    subject: `New Eligibility Assessment Request - ${destination}`,
     html: `
       <h2>New Eligibility Assessment Request</h2>
       <br />

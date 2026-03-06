@@ -179,7 +179,7 @@ const Dashboard: React.FC = () => {
           <div dangerouslySetInnerHTML={{ __html: value }}></div>
           <p className="font-semibold text-sm mt-3">
             {datetime
-              ? new Date(datetime).toLocaleString()
+              ? new Date(datetime).toLocaleString("en-US")
               : "No date available"}
           </p>
         </div>

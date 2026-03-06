@@ -175,7 +175,7 @@ const LatestNews = () => {
                                 video.snippet.thumbnails.high?.url ||
                                 video.snippet.thumbnails.medium?.url;
                             const isFeatured = index === 0;
-                            const publishedDate = new Date(video.snippet.publishedAt).toLocaleDateString(undefined, {
+                            const publishedDate = new Date(video.snippet.publishedAt).toLocaleDateString("en-US", {
                                 day: "numeric",
                                 month: "short",
                                 year: "numeric",

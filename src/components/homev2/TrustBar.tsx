@@ -1,5 +1,6 @@
 import { Star, Shield, MapPin } from "lucide-react";
 import Link from "next/link";
+import { COMPANY_INFO } from "@/constants/data";
 
 const TrustBar = () => {
   return (
@@ -23,7 +24,7 @@ const TrustBar = () => {
             </div>
             <div>
               <p className="text-sm font-semibold text-gray-900 group-hover:text-[#2B59C3] transition-colors">
-                97+ Google Reviews
+                {COMPANY_INFO.googleReviews} Google Reviews
               </p>
               <p className="text-xs text-gray-500">Trusted by students</p>
             </div>
@@ -60,7 +61,7 @@ const TrustBar = () => {
                 London Registered
               </p>
               <p className="text-xs text-gray-500">
-                128 City Road, London EC1V 2NX
+                {COMPANY_INFO.address}
               </p>
             </div>
           </div>

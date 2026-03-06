@@ -15,7 +15,7 @@ const NavButtonsV2 = ({ className }: NavButtonsV2Props) => {
       </Link>
       <Link href="/book" className="w-full sm:w-auto hidden xl:block">
         <button className="w-full sm:w-auto bg-[#1a3b85] text-white px-6 py-2.5 rounded-full font-semibold hover:bg-[#152d6b] transition-all shadow-md hover:shadow-lg whitespace-nowrap text-sm relative overflow-hidden group">
-          <span className="relative z-10">Book a Consultation</span>
+          <span className="relative z-10">Free eligibility check</span>
           <span className="absolute top-0 right-0 w-1 h-full bg-[#D4AF37]"></span>
         </button>
       </Link>

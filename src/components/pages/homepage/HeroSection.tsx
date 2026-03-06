@@ -23,7 +23,7 @@ const HeroSection = () => {
           </p>
           <div className=" mt-10 flex gap-4">
             <Link href={"/book"}>
-              <Button>Book a Consultation</Button>
+              <Button>Free eligibility check</Button>
             </Link>
             <Link
               href={"/about-us"}

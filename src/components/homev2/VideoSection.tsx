@@ -23,10 +23,10 @@ const VideoSection = () => {
 
           <div className="relative grid grid-cols-2 lg:grid-cols-4">
             {[
-              { value: "100%", label: "Compliant", icon: CheckCircle2 },
-              { value: "IAA", label: "Regulated", icon: Shield },
-              { value: "5000+", label: "Students", icon: Users },
-              { value: "6 hrs", label: "Response time", icon: Clock },
+              { value: "98%", label: "Visa success", icon: CheckCircle2 },
+              { value: "5000+", label: "Happy students", icon: Users },
+              { value: "500+", label: "Partner universities", icon: Shield },
+              { value: "12+", label: "Years experience", icon: Clock },
             ].map((stat, i) => (
               <div
                 key={i}
@@ -46,13 +46,9 @@ const VideoSection = () => {
                 </div>
 
                 {/* Value */}
-                {stat.value === "IAA" ? (
-                  <div className="relative w-24 h-10 sm:w-28 sm:h-12">
-                    <Image src="/iaa-logo.png" alt="IAA Regulated" fill className="object-contain" />
-                  </div>
-                ) : (
-                  <p className="text-4xl sm:text-5xl font-black text-white leading-none tracking-tight">{stat.value}</p>
-                )}
+                <p className="text-4xl sm:text-5xl font-black text-white leading-none tracking-tight">
+                  {stat.value}
+                </p>
 
                 {/* Gold divider line */}
                 <span className="w-6 h-[2px] bg-[#D4AF37] rounded-full my-2.5" />
@@ -67,7 +63,7 @@ const VideoSection = () => {
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-          {/* Left — Video */}
+          {/* Left - Video */}
           <div>
             <div className="relative aspect-video rounded-lg overflow-hidden bg-[#0f2554] group">
               <video
@@ -82,7 +78,7 @@ const VideoSection = () => {
             </div>
           </div>
 
-          {/* Right — Content */}
+          {/* Right - Content */}
           <div>
             <p className="text-xs font-semibold tracking-widest text-[#D4AF37] uppercase mb-3">
               Why Uniguru
@@ -113,7 +109,7 @@ const VideoSection = () => {
               ))}
             </ul>
 
-            {/* CTA — Matching header button style */}
+            {/* CTA - Matching header button style */}
             <Link
               href="/book"
               className="inline-flex items-center gap-2 bg-[#1a3b85] hover:bg-[#152d6b] text-white text-sm font-semibold px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all relative overflow-hidden group"
