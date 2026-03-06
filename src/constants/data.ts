@@ -1105,18 +1105,21 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
           text: "Explore a curated list of institutions we work with.",
           cta_label: "View UK partner universities",
           cta_link: "/universities",
+          image: "/images/study_destinations/uk/opportunities/universities.jpg",
         },
         {
           heading: "Scholarships (UK)",
           text: "A practical overview of common scholarship types and eligibility.",
           cta_label: "Explore scholarships",
           cta_link: "/scholarships",
+          image: "/images/study_destinations/uk/opportunities/scholarships.jpg",
         },
         {
           heading: "Careers & industry insights",
           text: "Which courses lead to which outcomes - and what's credible for your profile.",
           cta_label: "See career insights",
           cta_link: "/careers",
+          image: "/images/study_destinations/uk/opportunities/careers.jpg",
         },
       ],
       cta_text:

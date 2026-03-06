@@ -401,19 +401,34 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
                 <Link
                   key={card.heading}
                   href={card.cta_link}
-                  className="group rounded-2xl bg-white border border-slate-200 p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col"
+                  className="group rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[#1a3b85]/5 border border-[#1a3b85]/10 flex items-center justify-center mb-4">
-                    {cardIcons[i] || cardIcons[0]}
+                  {card.image ? (
+                    <div className="relative h-44 w-full overflow-hidden">
+                      <Image
+                        src={card.image}
+                        alt={card.heading}
+                        fill
+                        unoptimized
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                    </div>
+                  ) : (
+                    <div className="w-10 h-10 rounded-lg bg-[#1a3b85]/5 border border-[#1a3b85]/10 flex items-center justify-center m-6 mb-0">
+                      {cardIcons[i] || cardIcons[0]}
+                    </div>
+                  )}
+                  <div className="p-6 sm:p-7 flex flex-col flex-1">
+                    <h3 className="text-lg font-semibold text-[#1a3b85] mb-2">
+                      {card.heading}
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed mb-5 flex-1">{card.text}</p>
+                    <span className="inline-flex items-center gap-2 text-sm font-medium text-[#1a3b85] group-hover:text-[#D4AF37] transition-colors">
+                      {card.cta_label}
+                      <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
                   </div>
-                  <h3 className="text-lg font-semibold text-[#1a3b85] mb-2">
-                    {card.heading}
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed mb-5 flex-1">{card.text}</p>
-                  <span className="inline-flex items-center gap-2 text-sm font-medium text-[#1a3b85] group-hover:text-[#D4AF37] transition-colors">
-                    {card.cta_label}
-                    <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform duration-300" />
-                  </span>
                 </Link>
               ))}
             </div>

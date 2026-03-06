@@ -168,6 +168,7 @@ export interface OpportunityCard {
   text: string;
   cta_label: string;
   cta_link: string;
+  image?: string;
 }
 
 export interface OpportunitiesHubSectionData {
