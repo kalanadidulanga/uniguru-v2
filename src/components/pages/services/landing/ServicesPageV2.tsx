@@ -23,9 +23,7 @@ import {
 } from "lucide-react";
 import TrustBarSection from "@/components/homev2/TrustBarSection";
 import { GetMyShortlistSection } from "@/components/forms/GetMyShortlistForm";
-
-const WHATSAPP_LINK =
-  "https://wa.me/447747525946?text=Hi%2C%20I%20need%20help%20choosing%20the%20right%20services";
+import { COMPANY_INFO } from "@/constants/data";
 
 /* ── Stage & Service Data ── */
 
@@ -239,75 +237,75 @@ const ServicesPageV2 = () => {
       {/* ═══════════════ HERO + TRUST BAR + YOUR JOURNEY (all in one screen) ═══════════════ */}
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
-        <section className="relative flex items-center overflow-hidden flex-1 min-h-[70vh]">
-          <Image
-            src="/1.jpg"
-            alt="Big Ben and Houses of Parliament London at golden hour"
-            fill
-            quality={90}
-            className="object-cover object-center scale-105"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/85 to-[#0a1628]/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/80 via-transparent to-transparent" />
-          
-          {/* Decorative floating elements */}
-          <div className="absolute top-20 right-20 w-64 h-64 bg-[#D4AF37]/10 rounded-full blur-3xl animate-pulse hidden lg:block" />
-          <div className="absolute bottom-32 right-40 w-40 h-40 bg-[#1a3b85]/20 rounded-full blur-2xl hidden lg:block" />
+        <section className="relative min-h-[80vh] flex flex-col overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/1.jpg"
+              alt="Big Ben and Houses of Parliament London at golden hour"
+              fill
+              unoptimized
+              className="object-cover object-center"
+              sizes="100vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/55" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" />
+          </div>
 
-          <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-3 mb-6">
-                <div className="w-10 h-[3px] bg-gradient-to-r from-[#D4AF37] to-[#e6c456] rounded-full" />
-                <p className="text-xs sm:text-sm font-bold tracking-[0.2em] text-[#D4AF37] uppercase">
-                  London-led Support System
-                </p>
+          {/* Content - vertically centered */}
+          <div className="relative z-10 flex-1 flex flex-col justify-center w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28">
+            <div className="max-w-3xl mx-auto text-center space-y-6">
+              <div className="inline-flex items-center gap-2">
+                <MapPin size={16} className="text-[#D4AF37]" />
+                <span className="text-xs font-semibold text-[#D4AF37] uppercase tracking-widest">
+                  London-led Support
+                </span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-6">
-                Services
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-white leading-[1.1] tracking-tight">
+                Your Journey,{" "}
+                <span className="text-[#D4AF37]">Our Services</span>
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl text-white/95 leading-relaxed mb-2 font-medium">
-                End-to-end support - from shortlist to settlement - with regulated guidance where required.
-              </p>
-              <p className="text-sm sm:text-base text-white/70 leading-relaxed mb-8 max-w-xl">
-                Choose the support you need below. Clear scope. Fixed deliverables. No pressure tactics.
+              <p className="text-lg sm:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto">
+                End-to-end support from shortlist to settlement. Clear scope. Fixed deliverables. No pressure tactics.
               </p>
 
-              {/* Stats Row */}
-              <div className="flex flex-wrap gap-6 sm:gap-8 mb-8">
-                <div className="flex flex-col">
-                  <span className="text-2xl sm:text-3xl font-bold text-[#D4AF37]">4</span>
-                  <span className="text-xs sm:text-sm text-white/60">Journey Stages</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-2xl sm:text-3xl font-bold text-white">11</span>
-                  <span className="text-xs sm:text-sm text-white/60">Specialist Services</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-2xl sm:text-3xl font-bold text-white">UK</span>
-                  <span className="text-xs sm:text-sm text-white/60">Based Team</span>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <div className="flex flex-wrap gap-3 pt-2 justify-center">
                 <a
                   href="#stages"
-                  className="group inline-flex items-center justify-center gap-3 px-7 py-4 bg-gradient-to-r from-[#D4AF37] to-[#e6c456] hover:from-[#c9a432] hover:to-[#D4AF37] text-[#0d1b3e] font-bold rounded-xl transition-all duration-300 text-sm sm:text-base shadow-lg shadow-[#D4AF37]/20 hover:shadow-[#D4AF37]/30 hover:scale-[1.02]"
+                  className="group inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-[#D4AF37] hover:bg-[#c9a432] text-[#0d1b3e] font-bold rounded-lg transition-all duration-200 text-sm shadow-md"
                 >
                   Get My Shortlist
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
                 </a>
                 <a
-                  href={WHATSAPP_LINK}
+                  href={COMPANY_INFO.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-3 px-7 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all duration-300 text-sm sm:text-base border border-white/20 hover:border-white/30 backdrop-blur-sm"
+                  className="inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg transition-all duration-200 text-sm border border-white/30"
                 >
-                  <MessageCircle size={16} className="text-[#25D366]" />
-                  Chat on WhatsApp
+                  <MessageCircle size={15} className="text-[#25D366]" />
+                  WhatsApp Us
                 </a>
+              </div>
+
+              {/* Stats Row */}
+              <div className="flex items-center justify-center gap-8 sm:gap-12 pt-8">
+                <div className="flex items-center gap-2.5">
+                  <span className="text-3xl sm:text-4xl font-bold text-[#D4AF37]">4</span>
+                  <span className="text-sm text-white/60">Stages</span>
+                </div>
+                <div className="w-px h-7 bg-white/20" />
+                <div className="flex items-center gap-2.5">
+                  <span className="text-3xl sm:text-4xl font-bold text-white">11</span>
+                  <span className="text-sm text-white/60">Services</span>
+                </div>
+                <div className="w-px h-7 bg-white/20" />
+                <div className="flex items-center gap-2.5">
+                  <Shield size={18} className="text-[#D4AF37]" />
+                  <span className="text-sm text-white/60">IAA Regulated</span>
+                </div>
               </div>
             </div>
           </div>
@@ -538,6 +536,7 @@ const ServicesPageV2 = () => {
                           src={service.image}
                           alt={service.title}
                           fill
+                          unoptimized
                           className="object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
@@ -604,7 +603,7 @@ const ServicesPageV2 = () => {
                       className="group bg-white rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all duration-200 overflow-hidden flex flex-col"
                     >
                       <div className="relative h-36 sm:h-40 overflow-hidden">
-                        <Image src={service.image} alt={service.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <Image src={service.image} alt={service.title} fill unoptimized className="object-cover group-hover:scale-105 transition-transform duration-300" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                         {service.badge && (
                           <div className="absolute top-3 right-3 px-2 py-1 rounded bg-[#D4AF37] text-[#0d1b3e] text-[10px] font-bold uppercase tracking-wide flex items-center gap-1">
