@@ -315,7 +315,7 @@ const ServicesPageV2 = () => {
         <TrustBarSection />
 
         {/* Your Journey - Stage Navigation */}
-        <section className="py-4 sm:py-5 lg:py-6 bg-gradient-to-b from-white to-gray-50/80 backdrop-blur-md border-b border-gray-200/60 sticky top-0 z-40">
+        <section className="py-3 sm:py-4 lg:py-5 bg-gradient-to-b from-white to-gray-50/80 backdrop-blur-md border-b border-gray-200/60 sticky top-0 z-40">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
             {/* Desktop & Tablet Layout */}
             <div className="hidden sm:flex items-center justify-between gap-6 lg:gap-8">
@@ -342,7 +342,7 @@ const ServicesPageV2 = () => {
                               activeStage === stage.number ? null : stage.number
                             )
                           }
-                          className={`group relative flex items-center justify-center gap-2 lg:gap-3 px-4 lg:px-5 py-2.5 lg:py-3 rounded-xl text-xs lg:text-sm font-semibold transition-all duration-300 ease-out ${
+                          className={`group relative flex items-center justify-center gap-2 lg:gap-3 px-4 lg:px-5 py-2 lg:py-2.5 rounded-xl text-xs lg:text-sm font-semibold transition-all duration-300 ease-out ${
                             isActive
                               ? "bg-gradient-to-r from-[#D4AF37] to-[#e6c456] text-[#0f2554] scale-[1.02]"
                               : isShowingAll
@@ -414,7 +414,7 @@ const ServicesPageV2 = () => {
             </div>
 
             {/* Mobile Layout - Compact & Clean */}
-            <div className="sm:hidden space-y-3">
+            <div className="sm:hidden space-y-2">
               {/* Stage Pills - Scrollable */}
               <div className="flex items-center justify-center">
                 <div className="inline-flex items-center bg-gradient-to-r from-[#0f2554] to-[#1a3b85] rounded-2xl p-1.5 gap-1 border border-[#1a3b85]/30">
@@ -429,7 +429,7 @@ const ServicesPageV2 = () => {
                             activeStage === stage.number ? null : stage.number
                           )
                         }
-                        className={`relative flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-[11px] font-semibold transition-all duration-300 ${
+                        className={`relative flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl text-[11px] font-semibold transition-all duration-300 ${
                           isActive
                             ? "bg-gradient-to-r from-[#D4AF37] to-[#e6c456] text-[#0f2554]"
                             : isShowingAll
@@ -459,7 +459,7 @@ const ServicesPageV2 = () => {
               <div className="flex justify-center">
                 <button
                   onClick={() => setActiveStage(null)}
-                  className={`flex items-center justify-center gap-1.5 px-4 py-2 rounded-full text-[10px] font-semibold transition-all duration-300 ${
+                  className={`flex items-center justify-center gap-1.5 px-4 py-1.5 rounded-full text-[10px] font-semibold transition-all duration-300 ${
                     activeStage === null
                       ? "bg-[#0f2554] text-white"
                       : "bg-gray-100 text-gray-600 hover:bg-[#0f2554] hover:text-white"
