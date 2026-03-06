@@ -253,9 +253,8 @@ const StudyDestinationPageV2 = ({ dataSet }: StudyDestinationPageV2Props) => {
         <section className="relative overflow-hidden py-16 sm:py-20">
           {/* Full-width background image */}
           <div className="absolute inset-0">
-            <Image src={bgImage1} alt="" fill className="object-cover object-center brightness-[0.6]" sizes="100vw" priority />
+            <Image src={bgImage1} alt="" fill unoptimized className="object-cover object-center" sizes="100vw" priority />
             <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-transparent to-slate-50" />
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-transparent to-slate-50" />
           </div>
 
           <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">

@@ -83,6 +83,7 @@ const DestinationHero = ({ dataSet }: DestinationHeroProps) => {
             alt={heroImage1.alt || `Study in ${destinationLabel}`}
             fill
             priority
+            unoptimized
             className="object-cover"
             sizes="100vw"
           />
@@ -90,7 +91,8 @@ const DestinationHero = ({ dataSet }: DestinationHeroProps) => {
           <div className="absolute inset-0 bg-[#1a3b85]" />
         )}
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/70" />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
       </div>
 
       {/* Main Content Container */}

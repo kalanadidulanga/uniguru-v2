@@ -842,8 +842,8 @@ export const STUDY_DESTINATIONS_FULLDATA: StudyDestinationDataSet[] = [
     hero_section: {
       title: "Study in the UK",
       images: [
-        { src: "/images/study_destinations/uk/1.jpg", alt: "" },
-        { src: "/images/study_destinations/uk/2.jpg", alt: "" },
+        { src: "https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=1920", alt: "UK university students studying" },
+        { src: "/images/study_destinations/uk/campus.jpg", alt: "London Tower Bridge" },
       ],
       description:
         "With an academic reputation built on centuries-old heritage, the UK is home to some of the world's oldest and most prestigious universities. Known for their consistent high rankings and rich legacy of welcoming international students, UK universities offer an unforgettable student experience, catering well to the needs and aspirations of their students.",
